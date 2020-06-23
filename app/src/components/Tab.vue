@@ -2,9 +2,21 @@
   <div>
     <b-card>
       <b-tabs v-model="tabIndex" card>
-   
-        <b-tab title="HOME" :title-link-class="linkClass(0)" active><Home></Home></b-tab>
-        <b-tab title="TEST" :title-link-class="linkClass(1)"><ModelTest></ModelTest></b-tab>
+        <b-tab title="network" :title-link-class="linkClass(0)" active>
+             <b-form>
+                        <label>  choose blockchain networks</label>
+                        <b-form-select id="inline-form-custom-select-contract-abi" class="mb-3" v-model="network"  @change="OnSelectnetwork"
+                          >
+                              <b-form-select-option :value="null">network</b-form-select-option>
+                              <b-form-select-option value="fisco-bcos">FISCO-BCOS</b-form-select-option>
+                              <b-form-select-option value="ethereum">Ethereum</b-form-select-option>
+                          </b-form-select>
+                          <span v-if="network">current network: {{network}}</span>
+             </b-form>             
+        
+    </b-tab>
+        <b-tab title="HOME" :title-link-class="linkClass(1)" active><Home></Home></b-tab>
+        <b-tab title="TEST" :title-link-class="linkClass(2)"><ModelTest></ModelTest></b-tab>
          <!-- <b-tab title="SETTING" :title-link-class="linkClass(0)"></b-tab> -->
         <!-- <b-tab title="test" :title-link-class="linkClass(2)"><Test></Test></b-tab> -->
       </b-tabs>
@@ -27,7 +39,8 @@ export default {
   },
   data() {
       return {
-        tabIndex: 0
+        tabIndex: 1,
+        network: null
       }
     },
     created: function(){
@@ -40,6 +53,10 @@ export default {
         } else {
           return ['bg-light', 'text-info']
         }
+      },
+      OnSelectnetwork(){
+        this.$fsmservice.network = this.network;
+        console.log(this.$fsmservice);
       }
     }
 };

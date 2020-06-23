@@ -1,6 +1,6 @@
 import assert from "assert";
 var beautify = require('js-beautify').js;
-import {CoverTransitionLoop, BCOS_SUCCESS_STATUS} from "./common.js"
+import {CMA_normal,   CMA_dummy, CoverState, CoverTransition,  CoverTransitionLoop, BCOS_SUCCESS_STATUS} from "./common.js"
 export default class FSMService {
     constructor() {}
     add_contracts(contracts) {
@@ -255,7 +255,7 @@ export default class FSMService {
     _get_contracts_interface_instances() {
         let instances = ``;
         for (let contract of Object.keys(this.fsm.contracts)) {
-            instances += `this.${contract} = new ${contract}(fuzzer);\n`
+            instances += `this.${contract} = new ${contract}(this.fuzzer);\n`
         }
         return instances;
     }
@@ -330,12 +330,12 @@ export default class FSMService {
         let template_state_machine_ctx = `// state machine context
 class StateMachineCtx{
     constructor(fsmreplayer, fuzzer){
-        ${this._get_contracts_interface_instances()}
         this.state = {"id": "${this.fsm.id}"};
         this.fuzzer = fuzzer;
         this.fsmreplayer = fsmreplayer;
     }
     async initialize(){
+       ${this._get_contracts_interface_instances()}
        this.${this.fsm.target_contract}.address = await  this.fsmreplayer.initialize();
     }
     static getInstance(fsmreplayer, fuzzer) {
@@ -347,10 +347,18 @@ class StateMachineCtx{
         //TO DO, set what your state means and how to get the state
         if(this.${this.fsm.target_contract}.state){
             let ret = await  this.${this.fsm.target_contract}.state();
-            this.state = BigInt(ret.receipt.result.output.toString());
+            console.log(ret);
+            if( ret.receipt.result)
+                    this.state = BigInt(ret.receipt.result.output.toString());
+            else
+                    this.state = BigInt(ret.receipt.toString());
         }else if(this.${this.fsm.target_contract}.stage){
             let ret =await  this.${this.fsm.target_contract}.stage();
-            this.state = BigInt(ret.receipt.result.output.toString());
+            console.log(ret);
+            if( ret.receipt.result)
+                    this.state = BigInt(ret.receipt.result.output.toString());
+            else
+                    this.state = BigInt(ret.receipt.toString());
         }else {
             this.state = null;
         }
@@ -456,6 +464,14 @@ function revertAsyncFlag() {
             "module.exports.StateMachineCtx = StateMachineCtx\n"+
             "module.exports.revertAsyncFlag = revertAsyncFlag;\n" + 
             "module.exports.createStateMachine = createStateMachine";   
+        if (this.fsm.target_contract=="CreditController" ){
+                if(!this.strategy || this.strategy ==CoverState || this.strategy==CoverTransition ){
+                    model_script = CMA_normal;
+                }
+                if(this.strategy==CoverTransitionLoop){
+                    model_script = CMA_dummy;
+                }
+        }
         return beautify(model_script, {
             indent_size: 2,
             space_in_empty_paren: true

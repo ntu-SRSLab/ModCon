@@ -75,8 +75,13 @@
                               >
                               Confirm model driver
                     </b-form-checkbox>
-                    <b-button :disabled ="disableTest"  class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantTest" @click="OnTest()">{{textTestButton}}</b-button>
+                    <b-button :disabled ="disableTest"  class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantTest" @click="OnTest()">
+                             <span>{{textTestButton}}</span>
+                              <b-spinner small   v-if = "status_stop_start&&disabledRandomTest"></b-spinner>
+                      </b-button>
+                     
                      <!-- <b-button :disabled ="disableTest"  class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantRandomTest" @click="OnRandomTest()">{{textRandomTestButton}}</b-button> -->
+                     <!-- <b-spinner small   v-if = "status_stop_start&&disabledTest"></b-spinner> -->
                      <download-csv
                                     v-if = "test_results.length>0"
                                     :data   = "test_results">
@@ -182,6 +187,8 @@
 
       textTestButton: "Test",
       textRandomTestButton: "Random Test",
+
+      status_stop_start: false,
       
         // test case priority
         states: [
@@ -283,6 +290,19 @@
                  var s = new XMLSerializer();
                  obj.lSVGInAString= s.serializeToString(xmlDoc);
       });
+
+      this.$socket.on("server-stop", data =>{
+          console.log("server stopped:", data);
+          obj.status_stop_start = false;
+          obj.isTestStart  = false;
+          if(obj.disabledRandomTest){
+                  obj.textTestButton = "Test";
+                  obj.disabledRandomTest = false;
+          }else if(obj.disabledTest) {
+                  obj.textRandomTestButton = "Random Test";
+                  obj.disabledTest = false;
+          }
+      });
     },
     methods: {
       GenerateSVGXMLString(sm_cat_json){
@@ -354,17 +374,18 @@
                         test_priority: {state: this.selected_state, transition:this.selected_transition}, 
                         target_contract:this.$fsmservice.get_fsm().target_contract, 
                         file_name: "statemachine.js", 
-                        model_script: this.model
+                        model_script: this.model,
+                        network: this.$fsmservice.network
                     }
                   });
                   this.isTestStart = true;
                   this.disabledRandomTest = true;
                   this.textTestButton = "Stop"
               }else{
-                  this.isTestStart  = false;
                   this.$socket.emit("client-stop",{command: "stop testing!"});
-                  this.disabledRandomTest = false;
-                  this.textTestButton = "Test";
+                  //  this.isTestStart  = false;
+                  // this.disabledRandomTest = false;
+                  // this.textTestButton = "Test";
               }
        }else{
            alert("random testing  in progress!");
@@ -384,31 +405,33 @@
                         test_priority: {state: this.selected_state, transition:this.selected_transition}, 
                         target_contract:this.$fsmservice.get_fsm().target_contract, 
                         file_name: "statemachine.js", 
-                        model_script: this.model
+                        model_script: this.model,
+                        network: this.$fsmservice.network
                     }
                   });
                   this.isTestStart = true;
                   this.disabledTest = true;
                   this.textRandomTestButton = "Stop";
             }else{
-                  this.isTestStart  = false;
                   this.$socket.emit("client-stop",{command: "stop testing!"});
-                  this.disabledTest = false;
-                  this.textRandomTestButton = "Random Test";
+                  // this.isTestStart  = false;
+                  // this.disabledTest = false;
+                  // this.textRandomTestButton = "Random Test";
             }
         }
     },
     OnClearTable(){
       this.test_results = [];
     },
-      OnMouseOverFSM(){
+    OnMouseOverFSM(){
           console.log("MouseOverFSM");
           this.mouseOverFSM = true;
       },
       OnMouseOutFSM(){
          console.log("MouseLeaveFSM");
          this.mouseOverFSM = false;
-         this.OnStateMachineChange();
+         if(!this.isTestStart)
+                  this.OnStateMachineChange();
       },
       OnCoverStrategy(){
         console.log(`current strategy ${this.covering_strategy}`)

@@ -4,16 +4,9 @@
         <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-        <a class="navbar-brand" href="#page-top">ModCon</a>
-        
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#my-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar">hello world</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            hello world
-        </button>
+                     <a class="navbar-brand" href="#page-top">ModCon</a>
         </div>
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="my-navbar-collapse">
         <ul class="nav navbar-nav navbar-right">

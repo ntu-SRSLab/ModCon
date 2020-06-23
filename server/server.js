@@ -6,8 +6,13 @@ const fs = require("fs");
 var io = require('socket.io')(http)
 var assert = require("assert")
 var compiler = require("./scripts/compile");
-var Deployer = require("./connection/fisco/fuzzer").FiscoDeployer;
+var FiscoContractKit = require("./connection/fisco/fuzzer").FiscoDeployer;
 var FiscoFuzzer = require("./connection/fisco/fuzzer").FiscoFuzzer;
+
+var EthereumContractKit = require("./connection/ethereum/fuzzer").EthereumContractKit;
+var EthereumFuzzer = require("./connection/ethereum/fuzzer").EthereumFuzzer;
+
+
 const interpret = require("xstate").interpret;
 const createModel = require("@xstate/test").createModel;
 const aa = require("aa");
@@ -26,9 +31,8 @@ app.get('/clients', (req, res) => {
   res.send(Object.keys(io.sockets.clients().connected))
 })
 // start  fisco-bcos network
-shell.exec("cd ../Vultron-FISCO-BCOS && ./quickstart.sh ");
+shell.exec("cd ../fisco-bcos && ./quickstart.sh ");
 
-const deployer = Deployer.getInstance("./deployed_contract");
 const event_Upload = "Upload";
 const event_Compile = "Compile";
 const event_Deploy = "Deploy";
@@ -66,6 +70,7 @@ class FSMStrategyManager {
   _cover_states(machine) {
     const toggleModel = createModel(machine);
     console.log(JSON.stringify(toggleModel)); // Do not remove this line otherwise there would be a covert null  error as for xstate.  The reason is unknown.
+    // console.log(toggleModel); // Do not remove this line otherwise there would be a covert null  error as for xstate.  The reason is unknown.
     console.log("******************************");
     let plans = toggleModel.getShortestPathPlans();
     console.log("******************************");
@@ -129,63 +134,76 @@ class FSMTestCaseProrityManager {
 // replay all transitions, 
 // randomWalk transitions among different states even there is no legal transition.
 class FSMStateReplayer {
-  constructor(deployment_configuration_data) {
-    assert(deployment_configuration_data);
+  constructor(network) {
+    this.network = network;
+    if (!this.network || this.network == "fisco-bcos") {
+      this.deployer = FiscoContractKit.getInstance("./deployed_contract");
+    }
+    if (this.network == "ethereum") {
+      this.deployer = EthereumContractKit.getInstance("./deployed_contract");
+    }
+  }
+  addConfig(deployment_configuration_data) {
     this.deployment_configuration_data = deployment_configuration_data;
   }
-  static setInstance(deployment_configuration_data) {
-    FSMStateReplayer.instance = new FSMStateReplayer(deployment_configuration_data);
-  }
-  static getInstance(deployment_configuration_data) {
-    if (!FSMStateReplayer.instance) {
-      FSMStateReplayer.instance = new FSMStateReplayer(deployment_configuration_data);
+  static getInstance(network) {
+    if (!FSMStateReplayer.instance|| network!=FSMStateReplayer.instance.network) {
+      let oldConfig = null;
+      if(FSMStateReplayer.instance)
+          oldConfig = FSMStateReplayer.instance.deployment_configuration_data;
+      FSMStateReplayer.instance = new FSMStateReplayer(network);
+      if(oldConfig)
+        FSMStateReplayer.instance.deployment_configuration_data = oldConfig;
     }
     return FSMStateReplayer.instance;
   }
-  async add_transition() {
 
-  }
-  // make state=initial, by redeploying smart contract
+  // make state=initial, by re-deploying smart contracts to Ethereum or FiscoBcos
   async initialize() {
-    let contract_instance = await deployer.deploy_contract_precompiled_params(FSMStateReplayer.getInstance().deployment_configuration_data.contract,
+    let contract_instance = await this.deployer.deploy_contract_precompiled_params(FSMStateReplayer.getInstance().deployment_configuration_data.contract,
       FSMStateReplayer.getInstance().deployment_configuration_data.func,
       FSMStateReplayer.getInstance().deployment_configuration_data.params);
     console.log("initialize:", contract_instance);
     return contract_instance.address;
   }
-  // replay all transitions .
-  replay() {
-
-  }
-  // random walk possible or impossible transitions defined by model
-  randomWalk() {
-
-  }
 }
-class FiscoStateMachineTestEngine extends FiscoFuzzer {
-  constructor(seed, contract_name, ) {
-    super(seed, contract_name);
-  }
-  static getInstance(seed, contract_name) {
-    if (!FiscoStateMachineTestEngine.instance) {
-      FiscoStateMachineTestEngine.instance = new FiscoStateMachineTestEngine(seed, contract_name)
+
+class FiscoStateMachineTestEngine {
+  constructor(seed, contract_name, network) {
+    //  super(seed, contract_name);
+    this.network = network;
+    if (!this.network || this.network == "fisco-bcos") {
+      this.fuzzer = FiscoFuzzer.getInstance(seed, contract_name)
     }
-    return FiscoStateMachineTestEngine.instance;
+    if (this.network == "ethereum") {
+      this.fuzzer = EthereumFuzzer.getInstance(seed, contract_name);
+    }
+    this.replayer = FSMStateReplayer.getInstance(network);
   }
+  // static getInstance(seed, contract_name, network) {
+  //   if (!FiscoStateMachineTestEngine.instance) {
+  //     FiscoStateMachineTestEngine.instance = new FiscoStateMachineTestEngine(seed, contract_name, network)
+  //   }
+  //   return FiscoStateMachineTestEngine.instance;
+  // }
   _getRandomInt(max) {
     return Math.floor((1 - Math.random()) * Math.floor(max));
   }
   async randomTest(createStateMachine, StateMachineCtx, revertAsyncFlag, covering_strategy, test_priority, socket) {
     let stateMachine = createStateMachine(
       StateMachineCtx.getInstance(
-        FSMStateReplayer.getInstance(),
-        FiscoStateMachineTestEngine.getInstance()
+        // this.replayer,
+        // this.fuzzer
+        null,
+        null
       ));
     let service = interpret(stateMachine).onTransition(state => {
       console.log(state.value);
     });
     let plans = FSMStrategyManager.getInstance(socket, covering_strategy).execute_strategy(stateMachine);
     FSMTestCaseProrityManager.getInstance(test_priority).rearrange(plans);
+    StateMachineCtx.getInstance().fsmreplayer = this.replayer;
+    StateMachineCtx.getInstance().fuzzer = this.fuzzer;
 
     let actions_pool = new Set();
     for (let plan of plans) {
@@ -194,15 +212,15 @@ class FiscoStateMachineTestEngine extends FiscoFuzzer {
         let events = path.description.split("via ")[1].split(" → ");
         let state = service.send(events);
         // actions_pool = actions_pool.concat(state.actions)
-        for(let action of   state.actions){
-            actions_pool.add(action);
+        for (let action of state.actions) {
+          actions_pool.add(action);
         }
         service.stop();
       }
     }
     revertAsyncFlag();
-   actions_pool = Array.from(actions_pool);
-   console.log("the size of action pool is:", actions_pool.length);
+    actions_pool = Array.from(actions_pool);
+    console.log("the size of action pool is:", actions_pool.length);
 
 
     let startTime = Date.now() / 1000;
@@ -216,9 +234,10 @@ class FiscoStateMachineTestEngine extends FiscoFuzzer {
 
     let current_total_test_cases = 0;
     while (!isStop) {
+      
       await StateMachineCtx.getInstance().initialize();
       let action_index = 0;
-      for (let i = 0;  i< DEPTH; i++) {
+      for (let i = 0; i < DEPTH; i++) {
         try {
           let action = actions_pool[this._getRandomInt(actions_pool.length)];
           let ret = await action.exec();
@@ -236,15 +255,16 @@ class FiscoStateMachineTestEngine extends FiscoFuzzer {
             }
           });
           count = 0;
-
-          if (isStop) {
-            return "stopped";
-          }
+          
         } catch (err) {
           console.error(err);
           current_total_test_cases += MAX_COUNT;
-          continue;
+        }finally{
+          if (isStop) {
+            return "stopped";
+          }
         }
+
       }
     }
     return "success";
@@ -252,14 +272,18 @@ class FiscoStateMachineTestEngine extends FiscoFuzzer {
   async bootstrap(createStateMachine, StateMachineCtx, revertAsyncFlag, covering_strategy, test_priority, socket) {
     let stateMachine = createStateMachine(
       StateMachineCtx.getInstance(
-        FSMStateReplayer.getInstance(),
-        FiscoStateMachineTestEngine.getInstance()
+        // this.replayer,
+        // this.fuzzer
+        null,
+        null
       ));
     let service = interpret(stateMachine).onTransition(state => {
       console.log(state.value);
     });
     let plans = FSMStrategyManager.getInstance(socket, covering_strategy).execute_strategy(stateMachine);
     FSMTestCaseProrityManager.getInstance(test_priority).rearrange(plans);
+    StateMachineCtx.getInstance().fsmreplayer = this.replayer;
+    StateMachineCtx.getInstance().fuzzer = this.fuzzer;
     service = aa.promisifyAll(service);
     let index = 0;
     for (let plan of plans) {
@@ -269,7 +293,7 @@ class FiscoStateMachineTestEngine extends FiscoFuzzer {
       }
     }
     console.log("******************************");
-    
+
 
     let isStop = false;
     socket.on("client-stop", function (data) {
@@ -279,77 +303,83 @@ class FiscoStateMachineTestEngine extends FiscoFuzzer {
 
     let current_total_test_cases = 0;
     let startTime = Date.now() / 1000;
-    
+
     index = 0;
     while (!isStop) {
       let len = plans.length;
-      while(index<len){
-            let hasFailure = false;
-            let plan = plans[index];
-            console.log("plan#", index++);
-            /**
-             * for coverage improvement,
-             * we care more about failed paths
-             * insert these path at the beginning of plan paths.
-             */
-            for (let path of plan.paths) {
-              await StateMachineCtx.getInstance().initialize();
-              service.start();
-              let events = path.description.split("via ")[1].split(" → ");
-              console.log(path.description);
-              // console.log("transition by event ", events);
-              let state = service.send(events);
-              // console.log(state.actions);
-              revertAsyncFlag();
-              let action_index = 0;
-              let count = 0; // count how many errors when handling 
-              try {
-                for (let action of state.actions) {
-                  action_index++;
-                  let ret = await action.exec();
-                  current_total_test_cases += ret.length;
-                  socket.emit("server", {
-                    event: "Action_Report",
-                    data: {
-                      startTime: startTime,
-                      currentTime: Date.now() / 1000,
-                      test_cases: current_total_test_cases,
-                      plan: state.actions,
-                      action: action.type,
-                      index: action_index
-                    }
-                  });
-                  count = 0;
-                  if (isStop) {
-                    return "stopped";
-                  }
+      while (index < len) {
+        let hasFailure = false;
+        let plan = plans[index];
+        console.log("plan#", index++);
+        /**
+         * for coverage improvement,
+         * we care more about failed paths
+         * insert these path at the beginning of plan paths.
+         */
+        for (let path of plan.paths) {
+          await StateMachineCtx.getInstance().initialize();
+          service.start();
+          let events = path.description.split("via ")[1].split(" → ");
+          console.log(path.description);
+          // console.log("transition by event ", events);
+          let state = service.send(events);
+          // console.log(state.actions);
+          revertAsyncFlag();
+          let action_index = 0;
+          let count = 0; // count how many errors when handling 
+          try {
+            for (let action of state.actions) {
+              action_index++;
+              let ret = await action.exec();
+              current_total_test_cases += ret.length;
+              socket.emit("server", {
+                event: "Action_Report",
+                data: {
+                  startTime: startTime,
+                  currentTime: Date.now() / 1000,
+                  test_cases: current_total_test_cases,
+                  plan: state.actions,
+                  action: action.type,
+                  index: action_index
                 }
-              } catch (err) {
-                      if (err.toString().indexOf("TIMEOUT") != -1 || err.toString().indexOf("postCondition violated:")!=-1) {
-                            current_total_test_cases += MAX_COUNT;
-                            console.log("unhandled timeout counter: ", count);
-                      }
-                      console.log(err);
-                      hasFailure = true;
+              });
+              count = 0;
+              if (isStop) {
+                socket.emit("server-stop", ` Server stopped at the time at ${(new Date()).toString()}.`)
+                return "stopped";
               }
-              revertAsyncFlag();
-              service.stop();
             }
-            console.log("Approaching fsm state->", plan.state.value);
-            console.log("********************************************");
-            if(hasFailure){// add more chance to the failed plan
-                plans.push(plan);
+          } catch (err) {
+            if (err.toString().indexOf("TIMEOUT") != -1 || err.toString().indexOf("postCondition violated:") != -1) {
+              current_total_test_cases += MAX_COUNT;
+              console.log("unhandled timeout counter: ", count);
             }
-            len = plans.length;
-            if(index==len){ //restart the testing process
-                   index = 0;
-            }
+            console.log(err);
+            hasFailure = true;
+          }
+          if (isStop) {
+            socket.emit("server-stop", ` Server stopped at the time at ${(new Date()).toString()}.`)
+            return "stopped";
+        }
+          revertAsyncFlag();
+          service.stop();
+        }
+        
+        console.log("Approaching fsm state->", plan.state.value);
+        console.log("********************************************");
+        if (hasFailure) { // add more chance to the failed plan
+          plans.push(plan);
+        }
+        len = plans.length;
+        if (index == len) { //restart the testing process
+          index = 0;
+        }
       }
     }
     socket.emit("server", {
       event: "event_Test_Done"
     });
-
+    socket.emit("server-stop", ` Server stopped at the time at ${(new Date()).toString()}.`)
     return "success";
   }
 
@@ -383,10 +413,17 @@ class EventHandler {
   Deploy_client(data) {
     console.log(data);
     var socket = this.socket;
+    let deployer;
+    if (!data.network || data.network == "fisco-bcos") {
+          deployer = FiscoContractKit.getInstance("./deployed_contract");
+    }else  if (data.network == "ethereum") {
+          deployer = EthereumContractKit.getInstance("./deployed_contract");
+    }
+    assert(deployer, ` unsupported network ${data.network}`);
     deployer.deploy_contract_precompiled_params(data.contract, data.func, data.params).then(function (ret_data) {
-      FSMStateReplayer.setInstance(data);
-      console.log(event_Deploy, ret_data);
-      socket.emit(event_Deploy, ret_data);
+          FSMStateReplayer.getInstance(data.network).addConfig(data);
+          console.log(event_Deploy, ret_data);
+          socket.emit(event_Deploy, ret_data);
     }).catch(function (err) {
       console.log(err);
       console.log("deploy error: for data ", data)
@@ -413,6 +450,7 @@ class EventHandler {
     let file_name = data.file_name;
     let target_contract = data.target_contract;
     let model_script = data.model_script;
+    let network = data.network;
     shell.mkdir("-p", `./model_testing`);
     let date = new Date();
     fs.writeFileSync(`./model_testing/${file_name+"."+date.toISOString()}`, model_script, "utf-8");
@@ -421,8 +459,8 @@ class EventHandler {
         let StateMachineCtx = require(`./model_testing/${file_name+"."+date.toISOString()}`).StateMachineCtx;
         let createStateMachine = require(`./model_testing/${file_name+"."+date.toISOString()}`).createStateMachine;
         let revertAsyncFlag = require(`./model_testing/${file_name+"."+date.toISOString()}`).revertAsyncFlag;
-        let engine = FiscoStateMachineTestEngine.getInstance(1, target_contract);
-        engine.load();
+        let engine = new FiscoStateMachineTestEngine(1, target_contract, network);
+        // engine.load();
         engine.bootstrap(createStateMachine, StateMachineCtx, revertAsyncFlag, covering_strategy, test_priority, this.socket).then(data => {
           console.log(data);
         }).catch(err => {
@@ -433,8 +471,8 @@ class EventHandler {
         let StateMachineCtx = require(`./model_testing/${file_name+"."+date.toISOString()}`).StateMachineCtx;
         let createStateMachine = require(`./model_testing/${file_name+"."+date.toISOString()}`).createStateMachine;
         let revertAsyncFlag = require(`./model_testing/${file_name+"."+date.toISOString()}`).revertAsyncFlag;
-        let engine = FiscoStateMachineTestEngine.getInstance(1, target_contract);
-        engine.load();
+        let engine = new FiscoStateMachineTestEngine(1, target_contract, network);
+        // engine.load();
         engine.randomTest(createStateMachine, StateMachineCtx, revertAsyncFlag, covering_strategy, test_priority, this.socket).then(data => {
           console.log(data);
         }).catch(err => {

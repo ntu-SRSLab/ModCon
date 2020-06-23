@@ -7,12 +7,8 @@ Configuration.setConfig(path.join(__dirname, './config.json'));
 const readJSON = require("./common.js").readJSON;
 const write2file = require("./common.js").write2file;
 const types = require("./common.js").types;
-// const gen_callFun = require("./common.js").gen_callFun;
-const gen_callFun = require("./common_randompool.js").gen_callFun;
-
-const findCandSequence = require("./common.js").findCandSequence;
 const UserAccount = require("./common.js").UserAccount;
-const randomNum = require("./common.js").randomNum;
+const gen_callFun = require("./common_randompool.js").gen_callFun;
 
 const tracer = require('../EVM2Code');
 const fs = require('fs');
@@ -174,6 +170,12 @@ class FiscoFuzzer extends Web3jService {
         assert(this.seed, "seed is undefined");
         assert(this.contract_name, "contract name is undefined");
         assert(this.instance);
+    }
+    static getInstance(seed, contract_name) {
+        if (!FiscoFuzzer.instance) {
+            FiscoFuzzer.instance = new FiscoFuzzer(seed, contract_name);
+        }
+        return FiscoFuzzer.instance;
     }
     async test() {
         this.getBlockNumber().then((res) => {

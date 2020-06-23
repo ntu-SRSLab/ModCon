@@ -2,6 +2,7 @@
   <div class="container">
     <b-card class="mt-3" header="ModCon: The Model-based Testing Platforms for Smart Contract."  header-class= "lg"   header-bg-variant="light" header-text-variant="default">
       <b-form>
+        <!-- <span> current network:{{$fsmservice.network}} </span> -->
         <b-form-group id="input-group-1" label-align="left" label="Contracts(.sol):" label-for="input-select-upload"
           description="We'll never share your software asset with anyone else.">
           <b-form-file id="input-select-upload" v-model="files" :state="Boolean(file)" accetpt=".sol"
@@ -105,6 +106,9 @@
       };
     },
     created: function () {
+
+      console.log(`network:`, this.network);
+
       // lisent server event
       var obj = this;
       this.$socket.on(event_Compile, function (data) {
@@ -131,6 +135,7 @@
           obj.addresses[`${data.name}`] = [];
         }
         obj.addresses[`${data.name}`].push(`${data.address}`);
+        console.log("hello world,", obj.contract_addresses[0]);
         if (obj.contract_addresses[0].value=="0x"){
             obj.contract_addresses = [{
                 value: data.address,
@@ -225,7 +230,8 @@
               contract: this.selected_contract.split(".sol")[0],
               address: this.selected_address,
               func: this.selected_abi.name + "(" + this.selected_abi.inputs + ")",
-              params: JSON.parse("[" + this.$refs.inputs[0].localValue + "]")
+              params: JSON.parse("[" + this.$refs.inputs[0].localValue + "]"),
+              network: this.$fsmservice.network
             }
           }
           console.log(deployEvent);
@@ -238,7 +244,8 @@
               contract: this.selected_contract.split(".sol")[0],
               address: this.selected_address,
               func: this.selected_abi.name + "(" + this.selected_abi.inputs + ")",
-              params: JSON.parse("[" + this.$refs.inputs[0].localValue + "]")
+              params: JSON.parse("[" + this.$refs.inputs[0].localValue + "]"),
+              network: this.$fsmservice.network
             }
           }
           console.log(transactionEvent);

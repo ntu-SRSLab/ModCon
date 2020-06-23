@@ -77,6 +77,8 @@ contracts/
 **/server/model_testing/**
 **/server/legacy_experiment/**
 **/server/benchmark/**
+**/ethereum/Ethereum/geth/**
+**/fisco-bcos/nodes/**
 
 **/*.sw*
 *.*.js.sw*
