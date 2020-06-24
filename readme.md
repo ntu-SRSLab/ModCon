@@ -34,7 +34,7 @@ ModCon is a model-based testing platform, relying on user-specified models to de
 
 ### User Guide
 
-We had shared a demo vedio on Youtube about [ModCon](https://youtu.be/vcYM3iX-pj8), where you can learn the basic workflow of ModCon.
+We had shared a demo video on Youtube about [ModCon](https://youtu.be/vcYM3iX-pj8), where you can learn the basic workflow of ModCon.
 
 If you have any question, please contact us.
 
