@@ -15,7 +15,7 @@
     "collections": "^5.1.11",
     "dedent": "^0.7.0",
     "i": "^0.3.6",
-    "jquery": "^1.12.4",
+    "jquery": "^3.5.0",
     "js-beautify": "^1.11.0",
     "json-stringify-pretty-compact": "^2.0.0",
     "konva": "^6.0.0",
