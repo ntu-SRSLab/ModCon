@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const assert = require("assert");
-const Web3 = require("web3-vultron");
+const Web3 = require("web3");
 const truffle_Contract = require("truffle-contract");
 
 const readJSON = require("./common.js").readJSON;
@@ -33,29 +33,25 @@ class EthereumContractKit {
     }
     async initialize(){
         if(!this.initialized){
-        this.Provider = new Web3.providers.HttpProvider(this.httprpc);
-        this.web3 =  new Web3(this.Provider); 
-        console.log(`connect to ethereum?  ${this.web3.isConnected()? "yes":"no"}`);
-        console.log(   `ethereum accounts: ${this.web3.eth.accounts}`);
-        let account = this.web3.eth.accounts[0];
-        for(let acc of this.web3.eth.accounts){
-                if(this.web3.eth.getBalance(acc) > this.web3.eth.getBalance(account) )
-                    account = acc;
-        }
-        console.log("user account: ", account);
-        this.defaultAmountParamsWithValue = {
-            from: account,
-            value: this.max_value,
-            gas: this.max_gas
-        };
-        this.defaultAmountParams = {
-            from: account,
-            gas: this.max_gas
-        };
-        importAccounts(this.web3.eth.accounts);
-        this.initialized = true;
-    }
-        return this;
+                this.Provider = new Web3.providers.HttpProvider(this.httprpc);
+                this.web3 =  new Web3(this.Provider); 
+                console.log(`connect to ethereum?  ${this.web3? "yes":"no"}`);
+                let accounts =  await this.web3.eth.getAccounts();
+                console.log(   `ethereum accounts: ${accounts}`);
+
+                this.defaultAmountParamsWithValue = {
+                    from: accounts[0],
+                    value: this.max_value,
+                    gas: this.max_gas
+                };
+                this.defaultAmountParams = {
+                    from: accounts[0],
+                    gas: this.max_gas
+                };
+                importAccounts(accounts);
+                this.initialized = true;
+       }
+       return this;
     }
     _get_truffle_contract(config){
         let Contract;
@@ -91,7 +87,7 @@ class EthereumContractKit {
             bytecode: bytecode
         });
         // console.log(this.defaultAmountParams);
-        this.defaultAmountParams.gas = this.web3.eth.getBlock("latest").gasLimit-3;
+        this.defaultAmountParams.gas = this.web3.eth.getBlock("latest").gasLimit/3;
         console.log(this.defaultAmountParams.gas);
         let instance = await Contract.new(this.defaultAmountParams);
         contract_mapping[contract_name] =  instance;
@@ -108,7 +104,7 @@ class EthereumContractKit {
             abi: abi,
             bytecode: bytecode
         });
-        this.defaultAmountParams.gas = 5*this.web3.eth.getBlock("latest").gasLimit/6;
+        this.defaultAmountParams.gas = this.web3.eth.getBlock("latest").gasLimit/3;
         console.log(this.defaultAmountParams.gas);
         let instance = await Contract.new(this.defaultAmountParams);
         contract_mapping[contract_name] =  instance;
@@ -126,7 +122,7 @@ class EthereumContractKit {
             abi: abi,
             bytecode: bytecode
         });
-        this.defaultAmountParams.gas = 5*this.web3.eth.getBlock("latest").gasLimit/6;
+        this.defaultAmountParams.gas = this.web3.eth.getBlock("latest").gasLimit/3;
         console.log(this.defaultAmountParams.gas);
         let instance;
         if(params && params.length){
@@ -151,22 +147,13 @@ class EthereumContractKit {
         let fun_name = full_func.split("(")[0];
         console.log(contract_name, address, full_func,  params);
         let receipt;
-        this.defaultAmountParams.gas = 5*this.web3.eth.getBlock("latest").gasLimit/6;
+        this.defaultAmountParams.gas = this.web3.eth.getBlock("latest").gasLimit/3;
         console.log(this.defaultAmountParams.gas);
-        let attempt_count =  0;
-        while(!receipt&&attempt_count<10){
-                    if(params && params.length){
-                        receipt = await  instance[fun_name](...params, this.defaultAmountParams);
-                        // assert(receipt, "receipt is null");
-                    }
-                    else{
-                        receipt = await  instance[fun_name]( this.defaultAmountParams);
-                        // assert(receipt, "receipt is null");
-                    }
-        }
-        assert(receipt, "receipt is null, and the reason is unknown");
-        console.log("receipt: ", receipt);
-        if(receipt && receipt.receipt)
+        if(params && params.length)
+            receipt = await  instance[fun_name](...params, this.defaultAmountParams);
+        else
+            receipt = await  instance[fun_name]( this.defaultAmountParams);
+        if(receipt.receipt)
             receipt.status = this.defaultAmountParams.gas == receipt.receipt.gasUsed?"-0x1":"0x0";
         return receipt;
     }

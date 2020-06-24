@@ -43,6 +43,9 @@ class FiscoDeployer extends Web3jService {
         }
         return FiscoDeployer.instance;
     }
+    async initialize(){
+        return this;
+    }
     /**
      * Not precompiled
      * contract HelloWorld{

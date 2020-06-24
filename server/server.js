@@ -420,14 +420,16 @@ class EventHandler {
           deployer = EthereumContractKit.getInstance("./deployed_contract");
     }
     assert(deployer, ` unsupported network ${data.network}`);
-    deployer.deploy_contract_precompiled_params(data.contract, data.func, data.params).then(function (ret_data) {
-          FSMStateReplayer.getInstance(data.network).addConfig(data);
-          console.log(event_Deploy, ret_data);
-          socket.emit(event_Deploy, ret_data);
-    }).catch(function (err) {
-      console.log(err);
-      console.log("deploy error: for data ", data)
-    });
+    deployer.initialize().then(deployer =>{
+         deployer.deploy_contract_precompiled_params(data.contract, data.func, data.params).then(function (ret_data) {
+                FSMStateReplayer.getInstance(data.network).addConfig(data);
+                console.log(event_Deploy, ret_data);
+                socket.emit(event_Deploy, ret_data);
+          }).catch(function (err) {
+            console.log(err);
+            console.log("deploy error: for data ", data)
+          });
+       });
   }
   Call_client(data) {
     console.log(data);
