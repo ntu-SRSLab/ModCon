@@ -9,27 +9,13 @@ ModCon is a model-based testing platform, relying on user-specified models to de
 git clone git@github.com:ntu-SRSLab/ModCon.git
 cd ModCon
 ```
-
-* Run any one of Ethereum clients (including Geth and Aleth)
-    * Start the Geth client.
-    ```bash
-    cd ./ethereum/geth-ethereum 
-    sh ./runEthereum.sh
-    ```
-    * Start the Aleth client.
-    ```bash
-    cd ./ethereum/aleth-ethereum 
-    sh ./runAleth.sh & 
-    sh ./bootstrap.sh
-    ```
-
 * Run the back-end server of ModCon.
     ```bash
     cd ./server && npm install && node server.js
     ```
     The server would be listening on 3000 port.
     
- * Run the front-end app of ModCon.
+* Run the front-end app of ModCon.
    ```bash
    cd ./app && npm install && npm run serve
    ```

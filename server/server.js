@@ -32,6 +32,8 @@ app.get('/clients', (req, res) => {
 })
 // start  fisco-bcos network
 shell.exec("cd ../fisco-bcos && ./quickstart.sh ");
+// start  geth-ethereum network
+shell.exec("cd ../ethereum/geth-ethereum && ./quickstart.sh &",{async:true} );
 
 const event_Upload = "Upload";
 const event_Compile = "Compile";
