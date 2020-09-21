@@ -504,6 +504,7 @@ io.on('connection', socket => {
 
   // Make an instance of SocketIOFileUpload and listen on this socket:
   var uploader = new SocketIOFileUpload();
+  shell.mkdir("-p", "./uploads");
   uploader.dir = "./uploads";
   uploader.listen(socket);
 
