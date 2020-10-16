@@ -4,10 +4,9 @@ if ! command -v geth &> /dev/null
 then
         echo "geth could not be found"
 	echo "install geth"
-
-	wget 	https://gethstore.blob.core.windows.net/builds/geth-linux-386-1.8.23-c9427004.tar.gz
-        tar -zxvf geth-linux-386-1.8.23-c9427004.tar.gz 
-        sudo cp geth-linux-386-1.8.23-c9427004/geth /usr/bin
+	wget 	https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.23-c9427004.tar.gz
+        tar -zxvf geth-linux-amd64-1.8.23-c9427004.tar.gz
+        cp geth-linux-amd64-1.8.23-c9427004/geth /usr/bin
         echo $(geth --version) "has been installed" 
 fi
 geth --nousb --datadir "$(pwd)/Ethereum" removedb&&geth --datadir "$(pwd)/Ethereum"  init "$(pwd)/CustomGenisis.json"
