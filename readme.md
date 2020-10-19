@@ -5,12 +5,12 @@ ModCon is a model-based testing platform, relying on user-specified models to de
 ### Quick Start
 * Pull the docker images 
 ```bash
-docker pull liuyedocker/ntu-srslab-modcon
+docker pull liuyedocker/ntusrslab-modcon
 ```
 
 * Run the docker images
 ```bash
-docker run -it -p 8080:8080 -p 3000:3000 -it liuyedocker/ntu-srslab-modcon
+docker run -it -p 8080:8080 -p 3000:3000 -it liuyedocker/ntusrslab-modcon
 ```
    The ModCon website application can be assessed on: http://localhost:8080/.
 ### Get Started
