@@ -2,6 +2,17 @@
 
 ModCon is a model-based testing platform, relying on user-specified models to define test oracles, guide test generation, and measure test adequacy. ModCon is Web-based and supports both permissionless and permissioned blockchain platforms.
 
+### Quick Start
+* Pull the docker images 
+```bash
+docker pull liuyedocker/ntu-srslab-modcon
+```
+
+* Run the docker images
+```bash
+docker run -it -p 8080:8080 -p 3000:3000 -it liuyedocker/ntu-srslab-modcon
+```
+   The ModCon website application can be assessed on: http://localhost:8080/.
 ### Get Started
 * Clone the repository into your local machine.
 
