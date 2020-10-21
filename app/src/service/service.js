@@ -2,7 +2,9 @@ import assert from "assert";
 var beautify = require('js-beautify').js;
 import {CMA_normal,   CMA_dummy, CoverState, CoverTransition,  CoverTransitionLoop, BCOS_SUCCESS_STATUS} from "./common.js"
 export default class FSMService {
-    constructor() {}
+    constructor() {
+        this.random_test = false;
+    }
     add_contracts(contracts) {
         this.contracts = contracts;
         return this;
@@ -10,10 +12,12 @@ export default class FSMService {
     enable_randomTest(){
         this.random_test = true;
         this.add_covering_strategy(this.strategy);
+        return this;
     }
     disable_randomTest(){
         this.random_test = false;
         this.add_covering_strategy(this.strategy);
+        return this;
     }
     get_fsm(){
         return this.fsm;
@@ -165,28 +169,30 @@ export default class FSMService {
                     }
         }else{
             if(this.action_Report){
-                this.action_Report.action= [this.action_Report.action.split("action_")[1]];
-                if(this.previous_action_Report){
-                    this.action_Report.action = this.previous_action_Report.action.concat(this.action_Report.action);
+              if(this.action_Report.action && typeof this.action_Report.action=="string"){
+                    this.action_Report.action= [this.action_Report.action.split("action_")[1]];
+                    if(this.previous_action_Report){
+                        this.action_Report.action = this.previous_action_Report.action.concat(this.action_Report.action);
+                    }
+                    console.log(`fresh result ${this.isFresh_result? "yes":"no"}`);
+                    if(this.action_Report && this.isFresh_result == true){
+                                    let ret =  {
+                                        //  Contract: this.fsm.target_contract,
+                                        "#Strategy": "Random Test",
+                                        "#States": this.currentState,
+                                        "#Paths": this.action_Report.action,
+                                        "#Test Cases": this.action_Report.test_cases,
+                                        "#Times(s)": (this.action_Report.currentTime-this.action_Report.startTime).toFixed(3)
+                                    };
+                                    this.previous_action_Report = this.action_Report;
+                                    this.action_Report  = null;
+                                    return ret;
+                                }else{
+                                    this.previous_action_Report = this.action_Report;
+                                    this.action_Report  = null;
+                                    return null;
+                                }
                 }
-                console.log(`fresh result ${this.isFresh_result? "yes":"no"}`);
-                if(this.action_Report && this.isFresh_result == true){
-                                let ret =  {
-                                    //  Contract: this.fsm.target_contract,
-                                    "#Strategy": "Random Test",
-                                    "#States": this.currentState,
-                                    "#Paths": this.action_Report.action,
-                                    "#Test Cases": this.action_Report.test_cases,
-                                    "#Times(s)": (this.action_Report.currentTime-this.action_Report.startTime).toFixed(3)
-                                };
-                                this.previous_action_Report = this.action_Report;
-                                this.action_Report  = null;
-                                return ret;
-                            }else{
-                                this.previous_action_Report = this.action_Report;
-                                this.action_Report  = null;
-                                return null;
-                            }
             }
          }
    return null;
@@ -287,12 +293,18 @@ export default class FSMService {
                 } 
             }
         }
-        return {
-            "prePredicate":   `let preState = await ctx.getState();
-            assert(null==preState||${prePredication.join("||").replace(/state/gi, "preState")}, "preCondition violated: current state is "+preState  );`,
-            "postPredicate": `let postState = await ctx.getState();
-            assert(null==postState||${postPredication.join("||").replace(/state/gi, "postState")},  "postCondition violated: current state is "+postState );`
-        }
+        if (!this.random_test)// model based testing 
+            return {
+                "prePredicate":   `let preState = await ctx.getState();
+                assert(null==preState||${prePredication.join("||").replace(/state/gi, "preState")}, "preCondition violated: current state is "+preState  );`,
+                "postPredicate": `let postState = await ctx.getState();
+                assert(null==postState||${postPredication.join("||").replace(/state/gi, "postState")},  "postCondition violated: current state is "+postState );`
+            }
+        else 
+            return {
+                "prePredicate":   `let preState = await ctx.getState();`,
+                "postPredicate":  `let postState = await ctx.getState();`
+            }
     }
     _get_action_functions_mapping() {
         let mapping = ``;
@@ -316,8 +328,9 @@ export default class FSMService {
                         if(count>=MAX_COUNT){
                             throw "TIMEOUT,  too many failed test cases!";
                         }
-                        ${prepost.postPredicate}
                         // PostCondition. 
+                        ${prepost.postPredicate}
+                     
                 }
                 return ret;
             }`

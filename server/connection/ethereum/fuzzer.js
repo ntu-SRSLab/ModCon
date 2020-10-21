@@ -167,7 +167,7 @@ class EthereumContractKit {
         assert(receipt, "receipt is null, and the reason is unknown");
         console.log("receipt: ", receipt);
         if(receipt && receipt.receipt)
-            receipt.status = this.defaultAmountParams.gas == receipt.receipt.gasUsed?"-0x1":"0x0";
+            receipt.status = ((this.defaultAmountParams.gas == receipt.receipt.gasUsed) && (receipt.receipt.gasUsed !=2300)) ?"-0x1":"0x0";
         return receipt;
     }
     async getInstance(contract_name, address) {

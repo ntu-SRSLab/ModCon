@@ -75,13 +75,20 @@
                               >
                               Confirm model driver
                     </b-form-checkbox>
-                    <b-button :disabled ="disableTest"  class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantTest" @click="OnTest()">
-                             <span>{{textTestButton}}</span>
-                              <b-spinner small   v-if = "status_stop_start&&disabledRandomTest"></b-spinner>
-                      </b-button>
-                     
-                     <!-- <b-button :disabled ="disableTest"  class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantRandomTest" @click="OnRandomTest()">{{textRandomTestButton}}</b-button> -->
-                     <!-- <b-spinner small   v-if = "status_stop_start&&disabledTest"></b-spinner> -->
+                    <b-form-checkbox v-model="chooseRandom"  class = "mr-3 mb-2" name="check-button" @input="OnChooseRandomTest" switch>
+                         <span>{{chooseRandom?"Random":"Model Based"}}</span>
+                    </b-form-checkbox>
+                    <b-button :disabled ="disableTest"  class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantTest" @click="OnTest">
+                             <span>{{!isTestStart?"Test":"Stop"}}</span>
+                             <!-- <span>disableTest</span> -->
+                              <b-spinner small v-if = "status_stop_start&&isTestStart"></b-spinner>
+                    </b-button>
+<!--                      
+                    <b-button :disabled ="disableRandomTest"  class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantRandomTest" @click="OnRandomTest()">
+                       <span>{{textRandomTestButton}}</span>
+                       <b-spinner small   v-if = "status_stop_start&&disabledTest"></b-spinner>
+                    </b-button> -->
+                    
                      <download-csv
                                     v-if = "test_results.length>0"
                                     :data   = "test_results">
@@ -112,6 +119,7 @@
 
 
 <script>
+  
   import dedent from 'dedent'
   
   import stringify from "json-stringify-pretty-compact"
@@ -163,6 +171,9 @@
   import stateMachine from '../../assets/stateMachine.json'
   import betting  from '../../assets/betting-simple.json'
   import assetTransfer  from '../../assets/assetTransfer.json'
+
+  const RandomTestLimit = 50;
+  var counter = 0;
   export default {
     name: "ModelTest",
     data: function () {
@@ -175,6 +186,7 @@
 
         fsm_status:"not_confirmed",
         model_status: "not_confirmed",
+        chooseRandom: false,
         lSVGInAString: null,
 
         mouseOverFSM: false, // if mouse over fsm box
@@ -189,6 +201,8 @@
       textRandomTestButton: "Random Test",
 
       status_stop_start: false,
+
+      isTestStart: false,
       
         // test case priority
         states: [
@@ -295,12 +309,12 @@
           console.log("server stopped:", data);
           obj.status_stop_start = false;
           obj.isTestStart  = false;
-          if(obj.disabledRandomTest){
-                  obj.textTestButton = "Test";
-                  obj.disabledRandomTest = false;
-          }else if(obj.disabledTest) {
-                  obj.textRandomTestButton = "Random Test";
-                  obj.disabledTest = false;
+          if(obj.chooseRandom){
+                  counter++;
+                  if (counter<RandomTestLimit){
+                    console.log("next random test...");
+                    console.log("next random test done.");
+                  }
           }
       });
     },
@@ -363,7 +377,10 @@
         }
       },
       OnTest(){
-        if(!this.disabledTest){
+        if (this.chooseRandom){
+            this.OnRandomTest();
+        }
+        else{
               if(!this.isTestStart){
                   const client_Test = "Test_client";
                   console.log(client_Test);
@@ -379,21 +396,14 @@
                     }
                   });
                   this.isTestStart = true;
-                  this.disabledRandomTest = true;
-                  this.textTestButton = "Stop"
               }else{
+                  this.status_stop_start = true;
                   this.$socket.emit("client-stop",{command: "stop testing!"});
-                  //  this.isTestStart  = false;
-                  // this.disabledRandomTest = false;
-                  // this.textTestButton = "Test";
               }
-       }else{
-           alert("random testing  in progress!");
        }
-       
     },
       OnRandomTest(){
-        if(!this.disabledRandomTest){
+        if(this.chooseRandom){
             if(!this.isTestStart){
                   const client_Test = "Test_client";
                   console.log(client_Test);
@@ -410,13 +420,11 @@
                     }
                   });
                   this.isTestStart = true;
-                  this.disabledTest = true;
-                  this.textRandomTestButton = "Stop";
+                  // loop call; 
+                  setTimeout(this.OnTest, 20*60*1000);
             }else{
+                  this.status_stop_start = true;
                   this.$socket.emit("client-stop",{command: "stop testing!"});
-                  // this.isTestStart  = false;
-                  // this.disabledTest = false;
-                  // this.textRandomTestButton = "Random Test";
             }
         }
     },
@@ -431,7 +439,7 @@
          console.log("MouseLeaveFSM");
          this.mouseOverFSM = false;
          if(!this.isTestStart)
-                  this.OnStateMachineChange();
+              this.OnStateMachineChange();
       },
       OnCoverStrategy(){
         console.log(`current strategy ${this.covering_strategy}`)
@@ -441,8 +449,16 @@
       OnTransitions(){
         console.log(this.selected_transition_startstate);
         this.transitions = this.$fsmservice.get_possible_transitions(this.selected_transition_startstate);
+      },
+      OnChooseRandomTest(){
+         console.log(this.chooseRandom);
+         console.log(`current testing is ${this.chooseRandom?"Random Testing":"Model Based Testing"}`)
+         if (this.chooseRandom)
+            this.model = this.$fsmservice.enable_randomTest().get_model_script();
+         else
+            this.model = this.$fsmservice.disable_randomTest().get_model_script();
+         this.GenerateSVGXMLString(this.$fsmservice.get_sm_cat());
       }
-      
 
     },
     computed: {

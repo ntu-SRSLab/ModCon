@@ -35,6 +35,7 @@ shell.exec("cd ../fisco-bcos && ./quickstart.sh ");
 // start  geth-ethereum network
 shell.exec("cd ../ethereum/geth-ethereum && ./quickstart.sh &",{async:true} );
 shell.mkdir("-p","./uploads")
+shell.mkdir("-p","./logs")
 
 const event_Upload = "Upload";
 const event_Compile = "Compile";
@@ -236,15 +237,17 @@ class FiscoStateMachineTestEngine {
     const DEPTH = 6;
 
     let current_total_test_cases = 0;
+   
     while (!isStop) {
-      
       await StateMachineCtx.getInstance().initialize();
       let action_index = 0;
+      let all_test_cases =[];
       for (let i = 0; i < DEPTH; i++) {
         try {
           let action = actions_pool[this._getRandomInt(actions_pool.length)];
           let ret = await action.exec();
           current_total_test_cases += ret.length;
+          all_test_cases = all_test_cases.concat(ret);
           let state = await StateMachineCtx.getInstance().getState();
           socket.emit("server", {
             event: "RandomTestAction_Report",
@@ -264,12 +267,15 @@ class FiscoStateMachineTestEngine {
           current_total_test_cases += MAX_COUNT;
         }finally{
           if (isStop) {
+            fs.writeFileSync("./logs/transactions.log"+(new Date()).toString(),JSON.stringify(all_test_cases),{encoding:"utf8",flag:"a"});
+            socket.emit("server-stop", ` Server stopped at the time at ${(new Date()).toString()}.`)
             return "stopped";
           }
         }
-
       }
+      fs.writeFileSync("./logs/transactions.log"+(new Date()).toString(),JSON.stringify(all_test_cases),{encoding:"utf8",flag:"a"});
     }
+    socket.emit("server-stop", ` Server stopped at the time at ${(new Date()).toString()}.`);
     return "success";
   }
   async bootstrap(createStateMachine, StateMachineCtx, revertAsyncFlag, covering_strategy, test_priority, socket) {
