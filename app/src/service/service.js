@@ -326,7 +326,7 @@ export default class FSMService {
                             ${this.__get_action_functions(this.fsm.actions[action])}
                         }\n
                         if(count>=MAX_COUNT){
-                            throw "TIMEOUT,  too many failed test cases!";
+                            ${this.random_test?"return ret;":"throw \"TIMEOUT,  too many failed test cases!\""};
                         }
                         // PostCondition. 
                         ${prepost.postPredicate}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "org.learnlib.modcon.driver";
+option java_outer_classname = "ModConServiceProto";
+option java_multiple_files = true;
+
+package grpc;
+
+// Server Interface Class
+service ModCon {
+  // Interface Method
+  rpc SendTransaction (Transaction) returns (TransactionReceipt) {}
+}
+
+// Transaction (Request)
+message Transaction {
+  string method = 1;
+  string parameters = 2;
+}
+
+// Transaction Receipt (Response)
+message TransactionReceipt {
+  string status = 1;
+  string events = 2;
+}

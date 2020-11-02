@@ -183,13 +183,22 @@ class FiscoStateMachineTestEngine {
       this.fuzzer = EthereumFuzzer.getInstance(seed, contract_name);
     }
     this.replayer = FSMStateReplayer.getInstance(network);
+   
+    // current address of smart contract instance .
+    this.address = null;
   }
-  // static getInstance(seed, contract_name, network) {
-  //   if (!FiscoStateMachineTestEngine.instance) {
-  //     FiscoStateMachineTestEngine.instance = new FiscoStateMachineTestEngine(seed, contract_name, network)
-  //   }
-  //   return FiscoStateMachineTestEngine.instance;
-  // }
+  static getInstance(seed, contract_name, network) {
+    if (!FiscoStateMachineTestEngine.instance) {
+      FiscoStateMachineTestEngine.instance = new FiscoStateMachineTestEngine(seed, contract_name, network)
+    }
+    return FiscoStateMachineTestEngine.instance;
+  }
+  async reset(){
+    this.address  =  await this.replayer.initialize();
+  }
+  async fuzz(method){
+    await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, this.address, method) 
+  }
   _getRandomInt(max) {
     return Math.floor((1 - Math.random()) * Math.floor(max));
   }
@@ -210,6 +219,7 @@ class FiscoStateMachineTestEngine {
     StateMachineCtx.getInstance().fuzzer = this.fuzzer;
 
     let actions_pool = new Set();
+    let unique_functions = new Set();
     for (let plan of plans) {
       for (let path of plan.paths) {
         service.start();
@@ -217,12 +227,17 @@ class FiscoStateMachineTestEngine {
         let state = service.send(events);
         // actions_pool = actions_pool.concat(state.actions)
         for (let action of state.actions) {
-          actions_pool.add(action);
+        
+          if (!unique_functions.has(action.type)){
+              actions_pool.add(action);
+              unique_functions.add(action.type);
+          }
         }
         service.stop();
       }
     }
     revertAsyncFlag();
+    console.log(actions_pool);
     actions_pool = Array.from(actions_pool);
     console.log("the size of action pool is:", actions_pool.length);
 
@@ -496,6 +511,21 @@ class EventHandler {
     };
   }
 }
+
+class MemberShipQuery{
+  constructor(){
+
+  }
+  static reset(){
+
+  }
+  static execute(){
+
+  }
+
+}
+
+
 io.on('connection', socket => {
   console.log(`A user connected with socket id ${socket.id}`)
   socket.on('pingServer', data => {

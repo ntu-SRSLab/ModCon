@@ -421,7 +421,7 @@
                   });
                   this.isTestStart = true;
                   // loop call; 
-                  setTimeout(this.OnTest, 20*60*1000);
+                  setTimeout(this.OnTest, 30*60*1000);
             }else{
                   this.status_stop_start = true;
                   this.$socket.emit("client-stop",{command: "stop testing!"});
