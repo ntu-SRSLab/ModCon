@@ -5,6 +5,7 @@ const shell = require("shelljs");
 const fs = require("fs");
 var io = require('socket.io')(http)
 var assert = require("assert")
+var membershipQueryServer = require("./connection/protos/Server");
 var compiler = require("./scripts/compile");
 var FiscoContractKit = require("./connection/fisco/fuzzer").FiscoDeployer;
 var FiscoFuzzer = require("./connection/fisco/fuzzer").FiscoFuzzer;
@@ -172,6 +173,48 @@ class FSMStateReplayer {
   }
 }
 
+const MEMBERQUERY_LIMIT = 10;
+class MembershipQueryEngine{
+  constructor(seed, contract_name, network) {
+      //  super(seed, contract_name);
+      this.network = network;
+      if (this.network && this.network == "fisco-bcos") {
+        this.fuzzer = FiscoFuzzer.getInstance(seed, contract_name)
+      }else{
+        this.fuzzer = EthereumFuzzer.getInstance(seed, contract_name);
+      }
+      this.replayer = FSMStateReplayer.getInstance(network);
+      // current address of smart contract instance .
+      this.address = null;
+  }
+  static getOrCreateInstance(seed, contract_name, network) {
+    if (!MembershipQueryEngine.instance) {
+      MembershipQueryEngine.instance = new MembershipQueryEngine(seed, contract_name, network)
+    }
+    return MembershipQueryEngine.instance;
+  }
+  async reset(){
+    this.address  =  await this.replayer.initialize();
+  }
+  async fuzz(method){
+    let ret = new Object();
+    let count = 0;
+    while ((
+          (!ret || !ret.receipt || !ret.receipt.status) // result is null
+          || 
+          (ret.receipt.status!="0x0") // result is not null but the status is not "0x0" ("0x0" means no error)
+          )
+        && count<MEMBERQUERY_LIMIT  // maximum number to try to make staus at "0x0"
+        ){
+      ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, this.address, method);
+      
+      count++;
+    }
+    return ret.receipt&& ret.receipt.status=="0x0";
+  }
+}
+
+
 class FiscoStateMachineTestEngine {
   constructor(seed, contract_name, network) {
     //  super(seed, contract_name);
@@ -184,21 +227,9 @@ class FiscoStateMachineTestEngine {
     }
     this.replayer = FSMStateReplayer.getInstance(network);
    
-    // current address of smart contract instance .
-    this.address = null;
+   
   }
-  static getInstance(seed, contract_name, network) {
-    if (!FiscoStateMachineTestEngine.instance) {
-      FiscoStateMachineTestEngine.instance = new FiscoStateMachineTestEngine(seed, contract_name, network)
-    }
-    return FiscoStateMachineTestEngine.instance;
-  }
-  async reset(){
-    this.address  =  await this.replayer.initialize();
-  }
-  async fuzz(method){
-    await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, this.address, method) 
-  }
+  
   _getRandomInt(max) {
     return Math.floor((1 - Math.random()) * Math.floor(max));
   }
@@ -438,7 +469,9 @@ class EventHandler {
     console.log(data);
     var socket = this.socket;
     let deployer;
-    if (!data.network || data.network == "fisco-bcos") {
+    if (!data.network)
+      data.network = "ethereum";
+    if ( data.network == "fisco-bcos") {
           deployer = FiscoContractKit.getInstance("./deployed_contract");
     }else  if (data.network == "ethereum") {
           deployer = EthereumContractKit.getInstance("./deployed_contract");
@@ -510,20 +543,16 @@ class EventHandler {
       console.error(err);
     };
   }
+  Learn_client(data){
+    let target_contract = data.target_contract;
+    let network = data.network;
+    let mqQueryEngine = MembershipQueryEngine.getOrCreateInstance(1, target_contract, network);
+    console.log(mqQueryEngine);
+    membershipQueryServer.setMembershipQueryEngine(mqQueryEngine);
+    membershipQueryServer.bootstrap();
+  }
 }
 
-class MemberShipQuery{
-  constructor(){
-
-  }
-  static reset(){
-
-  }
-  static execute(){
-
-  }
-
-}
 
 
 io.on('connection', socket => {

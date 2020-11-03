@@ -26,8 +26,8 @@ var SocketInstance = SocketIO('http://localhost:3000', {
 });
 if (myArgs.length>0){
   assert(myArgs.length==1);
-  var serverIp = myArgs[0];
-  SocketInstance = SocketIO('http://'+serverIp+':3000', {
+  var server = myArgs[0];
+  SocketInstance = SocketIO(server, {
     reconnection: true,
     reconnectionDelay: 3000
   });

@@ -83,6 +83,9 @@
                              <!-- <span>disableTest</span> -->
                               <b-spinner small v-if = "status_stop_start&&isTestStart"></b-spinner>
                     </b-button>
+                    <b-button class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantTest" @click="OnLearn">
+                             <span>Learn</span> 
+                    </b-button>
 <!--                      
                     <b-button :disabled ="disableRandomTest"  class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantRandomTest" @click="OnRandomTest()">
                        <span>{{textRandomTestButton}}</span>
@@ -376,6 +379,16 @@
             }
         }
       },
+      OnLearn(){
+        const client_Learn = "Learn_client";
+        console.log(client_Learn);
+        this.$socket.emit("client",{type: client_Learn,
+                  data: {
+                        target_contract:this.$fsmservice.get_fsm().target_contract,                     
+                        network: this.$fsmservice.network
+                    }
+                  });
+      },
       OnTest(){
         if (this.chooseRandom){
             this.OnRandomTest();
@@ -401,7 +414,7 @@
                   this.$socket.emit("client-stop",{command: "stop testing!"});
               }
        }
-    },
+      },
       OnRandomTest(){
         if(this.chooseRandom){
             if(!this.isTestStart){

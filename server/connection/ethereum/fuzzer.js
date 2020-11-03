@@ -235,6 +235,8 @@ static getInstance(seed, contract_name) {
     }
 
   async full_fuzz_fun(contract_name, address, fun_name, option){
+        console.log("full_fuzz_fun: "+ contract_name);
+        // assert(false);
         if(fun_name.indexOf("("))
             fun_name = fun_name.split("(")[0];
         let instance = await this.Kit.getInstance(contract_name, address);
