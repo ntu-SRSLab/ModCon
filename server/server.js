@@ -185,7 +185,7 @@ class MembershipQueryEngine{
       }
       this.replayer = FSMStateReplayer.getInstance(network);
       // current address of smart contract instance .
-      this.address = null;
+      this.addressMap  = new Map();
   }
   static getOrCreateInstance(seed, contract_name, network) {
     if (!MembershipQueryEngine.instance) {
@@ -193,10 +193,12 @@ class MembershipQueryEngine{
     }
     return MembershipQueryEngine.instance;
   }
-  async reset(){
-    this.address  =  await this.replayer.initialize();
+  async reset(uniqueId){
+    let address  =  await this.replayer.initialize();
+    this.addressMap.set(uniqueId,address);
   }
-  async fuzz(method){
+  async fuzz(uniqueId, method){
+    assert(this.addressMap.has(uniqueId));
     let ret = new Object();
     let count = 0;
     while ((
@@ -206,7 +208,7 @@ class MembershipQueryEngine{
           )
         && count<MEMBERQUERY_LIMIT  // maximum number to try to make staus at "0x0"
         ){
-      ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, this.address, method);
+      ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, this.addressMap.get(uniqueId), method);
       
       count++;
     }

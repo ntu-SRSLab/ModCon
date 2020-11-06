@@ -16,9 +16,10 @@ function main() {
   var client = new grpc.ModCon('localhost:50051',
                                 Grpc.credentials.createInsecure());
  
+  var uniqueId = "0er234";
   var method = "helo";
   var parameters = "";                                         
-  client.SendTransaction({method: method, parameters: parameters}, function(err, response) {
+  client.SendTransaction({uniqueId: uniqueId, method: method, parameters: parameters}, function(err, response) {
     console.log('Status:', response.status);
     console.log('Events:', response.events);
   });

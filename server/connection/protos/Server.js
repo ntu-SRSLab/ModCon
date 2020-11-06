@@ -24,13 +24,13 @@ function setMembershipQueryEngine(mqEngine){
 function SendTransaction(call, callback) {
    console.log(call);
    if (call.request.method == "Create"){
-     membershipQueryEngine.reset().then(result =>{
+     membershipQueryEngine.reset(call.request.uniqueId).then(result =>{
         callback(null, {status: "1", events:"Deployment Success"});
      }).catch(err=>{
         callback(null, {status: "0", events:"Deployment Failure"});
      });
    }else{
-      membershipQueryEngine.fuzz(call.request.method).then(result =>{
+      membershipQueryEngine.fuzz(call.request.uniqueId, call.request.method).then(result =>{
           callback(null,   {status: result?"1":"0", events:"Transaction Result (1: Success, 0: Failure)"});
       }).catch(err=>{
           console.log(err);
