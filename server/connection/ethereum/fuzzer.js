@@ -167,7 +167,7 @@ class EthereumContractKit {
         assert(receipt, "receipt is null, and the reason is unknown");
         console.log("receipt: ", receipt);
         if(receipt && receipt.receipt)
-            receipt.status = ((this.defaultAmountParams.gas == receipt.receipt.gasUsed) && (receipt.receipt.gasUsed !=2300)) ?"-0x1":"0x0";
+            receipt.status = ((this.defaultAmountParams.gas == receipt.receipt.gasUsed) && (receipt.receipt.gasUsed !=2300)) ?"0x4":"0x0";
         return receipt;
     }
     async getInstance(contract_name, address) {
@@ -235,7 +235,7 @@ static getInstance(seed, contract_name) {
     }
 
   async full_fuzz_fun(contract_name, address, fun_name, option){
-        console.log("full_fuzz_fun: "+ contract_name);
+        // console.log("full_fuzz_fun: "+ contract_name);
         // assert(false);
         if(fun_name.indexOf("("))
             fun_name = fun_name.split("(")[0];
@@ -244,7 +244,7 @@ static getInstance(seed, contract_name) {
         let abi = instance.abi.filter(e => {
             return e.name == fun_name.split("(")[0]
         });
-        console.log(fun_name, abi);
+        console.log(fun_name, JSON.stringify(abi));
         if (abi[0].constant || abi[0].stateMutability=="view") {
             let receipt = await this.Kit.transcation_send(contract_name, instance.address, raw_tx.fun, raw_tx.param);
             return {receipt: receipt, logs: null, raw_tx:raw_tx};
@@ -261,7 +261,6 @@ static getInstance(seed, contract_name) {
             return e.name == fun_name
         });
         assert(abi && abi.length == 1, "matched abi array is empty");
-        console.log(abi, fun_name);
         let ret = await gen_callFun(abi[0], address, option);
         //console.log(ret);
         return {

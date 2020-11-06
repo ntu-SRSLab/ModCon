@@ -198,7 +198,13 @@
         this.status_compile_start = false;
       },
       OnUpload() {
+
+        console.log(this.files, this.$socket, this.$socket.connected);
+        this.$socket.open();
+        console.log(this.files, this.$socket, this.$socket.connected);
+
         // this.log += "<br> uploaded contracts to server:" + JSON.stringify(this.selected);
+        
         this.$socket.emit("client", {
           type: client_Upload,
           data: this.selected

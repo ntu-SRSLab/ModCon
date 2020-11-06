@@ -3,8 +3,8 @@ var http = require('http').Server(app)
 var path = require('path');
 const shell = require("shelljs");
 const fs = require("fs");
-var io = require('socket.io')(http)
-var assert = require("assert")
+
+var assert = require("assert");
 var membershipQueryServer = require("./connection/protos/Server");
 var compiler = require("./scripts/compile");
 var FiscoContractKit = require("./connection/fisco/fuzzer").FiscoDeployer;
@@ -13,6 +13,8 @@ var FiscoFuzzer = require("./connection/fisco/fuzzer").FiscoFuzzer;
 var EthereumContractKit = require("./connection/ethereum/fuzzer").EthereumContractKit;
 var EthereumFuzzer = require("./connection/ethereum/fuzzer").EthereumFuzzer;
 
+
+const io = require('socket.io')(http);
 
 const interpret = require("xstate").interpret;
 const createModel = require("@xstate/test").createModel;
@@ -178,7 +180,7 @@ class MembershipQueryEngine{
   constructor(seed, contract_name, network) {
       //  super(seed, contract_name);
       this.network = network;
-      if (this.network && this.network == "fisco-bcos") {
+      if (!this.network && this.network == "fisco-bcos") {
         this.fuzzer = FiscoFuzzer.getInstance(seed, contract_name)
       }else{
         this.fuzzer = EthereumFuzzer.getInstance(seed, contract_name);
@@ -221,13 +223,11 @@ class FiscoStateMachineTestEngine {
     this.network = network;
     if (!this.network || this.network == "fisco-bcos") {
       this.fuzzer = FiscoFuzzer.getInstance(seed, contract_name)
-    }
-    if (this.network == "ethereum") {
+    }else{
       this.fuzzer = EthereumFuzzer.getInstance(seed, contract_name);
     }
     this.replayer = FSMStateReplayer.getInstance(network);
-   
-   
+    
   }
   
   _getRandomInt(max) {
@@ -469,9 +469,8 @@ class EventHandler {
     console.log(data);
     var socket = this.socket;
     let deployer;
-    if (!data.network)
-      data.network = "ethereum";
-    if ( data.network == "fisco-bcos") {
+ 
+    if ( !data.network || data.network == "fisco-bcos") {
           deployer = FiscoContractKit.getInstance("./deployed_contract");
     }else  if (data.network == "ethereum") {
           deployer = EthereumContractKit.getInstance("./deployed_contract");

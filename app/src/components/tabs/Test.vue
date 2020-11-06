@@ -83,9 +83,9 @@
                              <!-- <span>disableTest</span> -->
                               <b-spinner small v-if = "status_stop_start&&isTestStart"></b-spinner>
                     </b-button>
-                    <b-button class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantTest" @click="OnLearn">
+                    <!-- <b-button class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantTest" @click="OnLearn">
                              <span>Learn</span> 
-                    </b-button>
+                    </b-button> -->
 <!--                      
                     <b-button :disabled ="disableRandomTest"  class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantRandomTest" @click="OnRandomTest()">
                        <span>{{textRandomTestButton}}</span>

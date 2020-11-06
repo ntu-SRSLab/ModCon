@@ -7,9 +7,9 @@
                         <label>  choose blockchain networks</label>
                         <b-form-select id="inline-form-custom-select-contract-abi" class="mb-3" v-model="network"  @change="OnSelectnetwork"
                           >
-                              <b-form-select-option :value="null">network</b-form-select-option>
+                              <!-- <b-form-select-option :value="null">network</b-form-select-option> -->
                               <b-form-select-option value="fisco-bcos">FISCO-BCOS</b-form-select-option>
-                              <b-form-select-option value="ethereum">Ethereum</b-form-select-option>
+                              <b-form-select-option value="ethereum" >Ethereum</b-form-select-option>
                           </b-form-select>
                           <span v-if="network">current network: {{network}}</span>
              </b-form>             
@@ -40,11 +40,12 @@ export default {
   data() {
       return {
         tabIndex: 1,
-        network: null
+        network: "ethereum"
       }
     },
     created: function(){
          this.$socket.on('customEmit', function(data){ console.log(data)});
+         this.$fsmservice.network = this.network;
     },
     methods: {
       linkClass(idx) {
