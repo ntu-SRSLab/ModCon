@@ -7,7 +7,6 @@
                         <label>  choose blockchain networks</label>
                         <b-form-select id="inline-form-custom-select-contract-abi" class="mb-3" v-model="network"  @change="OnSelectnetwork"
                           >
-                              <b-form-select-option :value="null">network</b-form-select-option>
                               <b-form-select-option value="fisco-bcos">FISCO-BCOS</b-form-select-option>
                               <b-form-select-option value="ethereum">Ethereum</b-form-select-option>
                           </b-form-select>
@@ -40,7 +39,7 @@ export default {
   data() {
       return {
         tabIndex: 1,
-        network: null
+        network: "fisco-bcos"
       }
     },
     created: function(){
