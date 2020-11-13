@@ -6,7 +6,9 @@ const fs = require("fs");
 var io = require('socket.io')(http)
 var assert = require("assert")
 var membershipQueryServer = require("./connection/protos/Server");
-var compiler = require("./scripts/compile");
+var compiler = require("./utils/compile");
+var TransactionCacheTrie = require("./utils/TransactionTrie").TransactionCacheTrie;
+
 var FiscoContractKit = require("./connection/fisco/fuzzer").FiscoDeployer;
 var FiscoFuzzer = require("./connection/fisco/fuzzer").FiscoFuzzer;
 
@@ -34,7 +36,7 @@ app.get('/clients', (req, res) => {
 // start  fisco-bcos network
 shell.exec("cd ../fisco-bcos && ./quickstart.sh ");
 // start  geth-ethereum network
-shell.exec("cd ../ethereum/geth-ethereum && ./quickstart.sh &",{async:true} );
+// shell.exec("cd ../ethereum/geth-ethereum && ./quickstart.sh &",{async:true} );
 shell.mkdir("-p","./uploads")
 shell.mkdir("-p","./logs")
 
@@ -165,20 +167,28 @@ class FSMStateReplayer {
 
   // make state=initial, by re-deploying smart contracts to Ethereum or FiscoBcos
   async initialize() {
-    let contract_instance = await this.deployer.deploy_contract_precompiled_params(FSMStateReplayer.getInstance().deployment_configuration_data.contract,
-      FSMStateReplayer.getInstance().deployment_configuration_data.func,
-      FSMStateReplayer.getInstance().deployment_configuration_data.params);
+    let contract_instance = null;
+    while(!contract_instance || !contract_instance.address){
+      try {
+        contract_instance = await this.deployer.deploy_contract_precompiled_params(FSMStateReplayer.getInstance().deployment_configuration_data.contract,
+          FSMStateReplayer.getInstance().deployment_configuration_data.func,
+          FSMStateReplayer.getInstance().deployment_configuration_data.params);
+      } catch (error) {
+        console.error(error);
+        continue;
+      }
+    }
     console.log("initialize:", contract_instance);
     return contract_instance.address;
   }
 }
 
-const MEMBERQUERY_LIMIT = 10;
+const MEMBERQUERY_LIMIT = 50;
 class MembershipQueryEngine{
   constructor(seed, contract_name, network) {
       //  super(seed, contract_name);
       this.network = network;
-      if (this.network && this.network == "fisco-bcos") {
+      if (!this.network || this.network == "fisco-bcos") {
         this.fuzzer = FiscoFuzzer.getInstance(seed, contract_name)
       }else{
         this.fuzzer = EthereumFuzzer.getInstance(seed, contract_name);
@@ -186,6 +196,8 @@ class MembershipQueryEngine{
       this.replayer = FSMStateReplayer.getInstance(network);
       // current address of smart contract instance .
       this.addressMap  = new Map();
+      // Transaction Cache Trie
+      this.trie = new TransactionCacheTrie(null);
   }
   static getOrCreateInstance(seed, contract_name, network) {
     if (!MembershipQueryEngine.instance) {
@@ -199,21 +211,157 @@ class MembershipQueryEngine{
   }
   async fuzz(uniqueId, method){
     assert(this.addressMap.has(uniqueId));
-    let ret = new Object();
-    let count = 0;
-    while ((
-          (!ret || !ret.receipt || !ret.receipt.status) // result is null
-          || 
-          (ret.receipt.status!="0x0") // result is not null but the status is not "0x0" ("0x0" means no error)
-          )
-        && count<MEMBERQUERY_LIMIT  // maximum number to try to make staus at "0x0"
-        ){
-      ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, this.addressMap.get(uniqueId), method);
-      
-      count++;
+      let ret = new Object();
+      let count = 0;
+      while ((
+            (!ret || !ret.receipt || !ret.receipt.status) // result is null
+            || 
+            (ret.receipt.status!="0x0") // result is not null but the status is not "0x0" ("0x0" means no error)
+            )
+          && count<MEMBERQUERY_LIMIT  // maximum number to try to make staus at "0x0"
+          ){
+        ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, this.addressMap.get(uniqueId), method);
+        
+        count++;
+      }
+      return ret.receipt&& ret.receipt.status=="0x0";
     }
-    return ret.receipt&& ret.receipt.status=="0x0";
-  }
+   // tranlate predicate
+   /* eg. "a>0,b=0"  into 
+      {
+        predicates:[
+            { index:0, predicate:{greater:true, pivot:0} }, 
+            { index:1,  predicate:{equal:true, pivot:0} }]
+      }
+    */
+   tranlateToPredicates(predicatesStr){
+      console.log(predicatesStr);
+      let predicates = [];
+      for(let predicateStr of predicatesStr.split(",")){
+        if(predicateStr.indexOf(">")!=-1){
+          // greater predicate
+          let lrs = predicateStr.split(">");
+          let index = lrs[0].charCodeAt(0)-"a".charCodeAt(0);
+          let pivot = parseInt(lrs[1]);
+          predicates.push({index:index, predicate:{greater:true, pivot:pivot}});
+        }else if(predicateStr.indexOf("<")!=-1){
+          // greater predicate
+          let lrs = predicateStr.split("<");
+          let index = lrs[0].charCodeAt(0)-"a".charCodeAt(0);
+          let pivot = parseInt(lrs[1]);
+          predicates.push({index:index, predicate:{less:true, pivot:pivot}});
+        }else if(predicateStr.indexOf("=")!=-1){
+          // greater predicate
+          let lrs = predicateStr.split("=");
+          let index = lrs[0].charCodeAt(0)-"a".charCodeAt(0);
+          let pivot = parseInt(lrs[1]);
+          predicates.push({index:index, predicate:{equal:true, pivot:pivot}});
+        }
+      }
+      return {predicates:predicates};
+   }
+   
+   async answerQuery(uniqueId, query){  
+      console.log("Incoming Query: "+query);
+      let methods = query.split("-->");
+      let i = methods.length;
+      for (; i>0; i--){
+            let node = this.trie.contains(methods.slice(0,i)).node;
+            if(node){
+              let transactions = node.getTransactions().slice(1);
+              let address = await this.replayer.initialize();
+              let ret = null;
+              for (let transaction of transactions){
+                console.log("replay transaction");
+                transaction.raw_tx.to = address;
+                ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, transaction.method.split(" ")[0],{raw_tx: transaction.raw_tx});        
+                if(ret.receipt.status!="0x0"){
+                  console.log("try more time");
+                  ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, transaction.method.split(" ")[0],{raw_tx: transaction.raw_tx});        
+                }
+              }
+              for(let method of methods.slice(i)){
+                let count = 0;
+                
+                // Predicate handling
+                if(method.split(" ").length>1){
+                  ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
+                }else{
+                  ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
+                }
+
+                while (ret.receipt.status!="0x0" // result is null // result is not null but the status is not "0x0" ("0x0" means no error)
+                    && ++count < MEMBERQUERY_LIMIT ) // maximum number to try to make staus at "0x0"
+                {
+                    // Predicate handling
+                    if(method.split(" ").length>1){
+                      ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
+                    }else{
+                      ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
+                    }
+                }   
+                
+                if(ret.receipt.status=="0x0"){
+                    node = node.addTransaction({method:method, raw_tx:ret.raw_tx});
+                }else{
+                    console.log("NO: (semi-) old query: "+query);
+                    return false;
+                }
+                
+              }
+              if(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0"){
+                console.log("YES: (semi-) old query: "+query);
+              }else{
+                console.log("NO: (semi-) old query: "+query);
+              }
+              return ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0";
+           }
+      }
+      assert(i==0);
+      if (i==0){
+            // default: this is a totally new query
+            let address = await this.replayer.initialize();
+            let node = this.trie.root;
+            let ret = null;
+            for(let method of methods){
+
+              let count = 0;
+
+              // Predicate handling
+              if(method.split(" ").length>1){
+                ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
+              }else{
+                ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
+              }
+
+             
+              while (ret.receipt.status!="0x0" // result is null // result is not null but the status is not "0x0" ("0x0" means no error)
+                        && ++count < MEMBERQUERY_LIMIT ) // maximum number to try to make staus at "0x0"
+              {
+                     // Predicate handling
+                    if(method.split(" ").length>1){
+                      ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
+                    }else{
+                      ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
+                    }
+              }   
+              
+              if(ret.receipt.status=="0x0"){
+                  node = node.addTransaction({method:method, raw_tx:ret.raw_tx});
+              }else{
+                  console.log("NO: new query: "+query);
+                  return false;
+              }
+
+            }
+            if(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0"){
+              console.log("YES: new query: "+query);
+            }else{
+              console.log("NO: new query: "+query);
+            }
+            return ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0";
+        }
+    }
 }
 
 
@@ -471,9 +619,7 @@ class EventHandler {
     console.log(data);
     var socket = this.socket;
     let deployer;
-    if (!data.network)
-      data.network = "ethereum";
-    if ( data.network == "fisco-bcos") {
+    if (!data.network|| data.network == "fisco-bcos") {
           deployer = FiscoContractKit.getInstance("./deployed_contract");
     }else  if (data.network == "ethereum") {
           deployer = EthereumContractKit.getInstance("./deployed_contract");

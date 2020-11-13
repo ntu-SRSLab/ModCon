@@ -8,6 +8,7 @@ option java_multiple_files = true;
 service ModCon {
   // Interface Method
   rpc SendTransaction (Transaction) returns (TransactionReceipt) {}
+  rpc SendQuery (Query) returns (QueryReceipt){}
 }
 
 // Transaction (Request)
@@ -21,4 +22,16 @@ message Transaction {
 message TransactionReceipt {
   string status = 1;
   string events = 2;
+}
+
+// Query (Request)
+message Query{
+    string uniqueId = 1;
+    string query = 2;
+}
+
+// Query Receipt (Response)
+message QueryReceipt {
+    string status = 1;
+    string events = 2;
 }

@@ -5,6 +5,8 @@ const gasMax = 8000000000;
 const UserAccount = "0xdf847c88bf4447225a482e7cdcedb3608ec5ea0b";
 
 const cryptoRandomString = require('crypto-random-string');
+const { round } = require("lodash");
+const randomInt = require('random-int');
 
 let g_targetContract = undefined;
 class Pool {
@@ -27,9 +29,10 @@ class Pool {
     random() {
         if (this.pool == undefined) {
             this.pool = [];
-            for (let i = 0; i < this.size; i++)
-                this.pool.push(this._random());
             this.pool = this.pool.concat(this._constant());
+            let constLen = this.pool.length;
+           for (let i = 0; i < (this.size-constLen); i++)
+                this.pool.push(this._random());
         }
         return this.pool[Math.floor(Math.random() * this.pool.length)];
     }
@@ -280,6 +283,73 @@ function randomNum(min, max) {
     }
 }
 
+
+function randgenPredicateValue(type, predicate){
+    let intXXXRegex = /int([0-9]+)/;
+    let uintXXXRegex = /uint([0-9]+)/;
+    if (type.match(uintXXXRegex)) {
+            let match = type.match(uintXXXRegex);
+            let size = Math.floor(parseInt(match[1]) / 8);
+            if(predicate.greater){
+                assert(predicate.pivot!=null);
+                let rand = "0x"+ cryptoRandomString({length:randomInt(1,size)*2});
+                while(BigInt(predicate.pivot)>=BigInt(rand)){
+                        rand = cryptoRandomString({length:randomInt(1,size)*2})
+                }
+                let bound = randomInt(predicate.pivot+1,predicate.pivot+10);
+                if(randomInt(100)%2 == 0){
+                    return bound;
+                }else{
+                    return rand;
+                }
+                
+            }else if(predicate.equal){
+                assert(predicate.pivot!=null);
+                let min = predicate.pivot;
+                return min;
+            }else if(predicate.less){
+                assert(predicate.pivot!=null && predicate.pivot>0);
+                let bound = randomInt(predicate.pivot-10,predicate.pivot-1);
+                let rand = randomInt(0,predicate.pivot-1);
+                if(randomInt(100)%2 == 0){
+                    return bound;
+                }else{
+                    return round;
+                }
+            }
+    } else if (type.match(intXXXRegex)) {
+        let match = type.match(intXXXRegex);
+        let size = Math.floor(parseInt(match[1]) / 8);
+        if(predicate.greater){
+            assert(predicate.pivot!=null);
+            let rand = "0x"+cryptoRandomString({length:randomInt(1,size)*2});
+            while(BigInt(predicate.pivot)>=BigInt(rand)){
+                    rand = cryptoRandomString({length:randomInt(1,size)*2-1})
+            }
+            let bound = randomInt(predicate.pivot+1,predicate.pivot+10);
+            if(randomInt(100)%2 == 0){
+                return bound;
+            }else{
+                return rand;
+            }
+            
+        }else if(predicate.equal){
+            assert(predicate.pivot!=null);
+            let min = predicate.pivot;
+            return min;
+        }else if(predicate.less){
+            assert(predicate.pivot!=null);
+            let bound = randomInt(predicate.pivot-10,predicate.pivot-1);
+            let rand = randomInt(predicate.pivot-Math.pow(10,7),predicate.pivot-1);
+            if(randomInt(100)%2 == 0){
+                return bound;
+            }else{
+                return rand;
+            }
+        }
+    }
+}
+
 /// generate the call input
 /// unum_min is defined, in most case it is 0
 /// unum_max may not be defined, e.g., undefined
@@ -290,9 +360,16 @@ async function gen_callInput(abi, option) {
         param_list.push(generate_random(param.type));
     });
     if (option) {
-        assert(option.static);
-        for (let target of option.static) {
-            param_list[target.index] = target.value;
+        assert(option.static||option.predicates);
+        if (option.static){
+            for (let target of option.static) {
+                param_list[target.index] = target.value;
+            }
+        }
+        if(option.predicates){
+            for(let target of option.predicates){
+                param_list[target.index] = randgenPredicateValue(abi.inputs[target.index].type, target.predicate);
+            }
         }
     }
     return param_list;

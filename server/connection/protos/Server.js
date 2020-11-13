@@ -37,11 +37,20 @@ function SendTransaction(call, callback) {
           callback(null, {status: "0", events:"Unknown Transaction Failure"});
       });
    }
-  //  if(call.request.method=="bid")
-  //       callback(null, {status: "0", events:"bid"});
-  //  else 
-  //       callback(null, {status: "0", events:"other functions"});
 }
+
+/**
+ * Implements the SendQuery RPC method.
+ */
+function SendQuery(call, callback) {
+     membershipQueryEngine.answerQuery(call.request.uniqueId, call.request.query).then(result =>{
+         callback(null,   {status: result?"1":"0", events:"Query Result (1: Success, 0: Failure)"});
+     }).catch(err=>{
+         console.log(err);
+         callback(null, {status: "0", events:"Unknown Query Failure"});
+     });
+}
+
 
 /**
  * Starts an RPC server that receives requests for the Greeter service at the
@@ -49,7 +58,8 @@ function SendTransaction(call, callback) {
  */
 function bootstrap() {
   var server = new Grpc.Server();
-  server.addService(grpc.ModCon.service, {SendTransaction: SendTransaction});
+  server.addService(grpc.ModCon.service, {SendTransaction: SendTransaction, SendQuery: SendQuery});
+  // server.addService(grpc.ModCon.service, {SendQuery: SendQuery});
   server.bind('0.0.0.0:50051', Grpc.ServerCredentials.createInsecure());
   server.start();
   console.log("grpc server '0.0.0.0:50051' is listening");

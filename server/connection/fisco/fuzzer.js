@@ -246,11 +246,16 @@ class FiscoFuzzer extends Web3jService {
 
 　async full_fuzz_fun(name, address, fun_name, option){
         let instance = FiscoDeployer.getInstance().addContractInstance(address, name).getContractInstance(name);
-        let raw_tx = await this._fuzz_fun(instance.address, readJSON(instance.abi), fun_name, option);
+        let raw_tx = null;
+        if (option!=null && option.raw_tx!=null){
+            raw_tx = option.raw_tx;
+        }else{
+            raw_tx = await this._fuzz_fun(instance.address, readJSON(instance.abi), fun_name, option);
+        }
         let abi = readJSON(instance.abi).filter(e => {
             return e.name == fun_name.split("(")[0]
         });
-        console.log(fun_name, abi);
+        // console.log(fun_name, abi);
         // console.log(abi.constant, abi.stateMutability);
         if (abi[0].constant || abi[0].stateMutability=="view") {
             let receipt = await this._send_call(raw_tx, readJSON(instance.abi));
