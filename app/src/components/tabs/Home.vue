@@ -201,7 +201,7 @@
         // this.log += "<br> uploaded contracts to server:" + JSON.stringify(this.selected);
         this.$socket.emit("client", {
           type: client_Upload,
-          data: this.selected
+          data: this.selected 
         });
         this.$uploader.submitFiles(this.files);
         this.status_upload_start = true;
