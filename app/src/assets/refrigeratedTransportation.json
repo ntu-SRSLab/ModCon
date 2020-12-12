@@ -1,0 +1,72 @@
+{
+    "id": "FSM#6",
+    "target_contract": "RefrigeratedTransportation",
+    "contracts": {
+      "RefrigeratedTransportation": {
+        "address": "0x00",
+        "name": "RefrigeratedTransportation"
+      }
+    },
+    "actions": {
+      "IngestTelemetry": {"RefrigeratedTransportation": ["IngestTelemetry"]},
+      "TransferResponsibility": {"RefrigeratedTransportation": ["TransferResponsibility"]},
+      "Complete": {"RefrigeratedTransportation": ["Complete"]}
+    },
+    "states": [
+      {"name": "Created", "type": "initial", "Predicate": "state==0"},
+      {"name": "InTransit", "type": "regular", "Predicate": "state==1"},
+      {"name": "Completed", "type": "regular", "Predicate": "state==2"},
+      {"name": "OutOfCompliance", "type": "regular", "Predicate": "state==3"}
+    ],
+    "transitions": [
+      {
+        "from": "Created",
+        "to": "InTransit",
+        "label": "TransferResponsibility",
+        "event": "TransferResponsibility",
+        "action": "TransferResponsibility"
+      },
+      {
+        "from": "Created",
+        "to": "OutOfCompliance",
+        "label": "IngestTelemetry",
+        "event": "IngestTelemetry",
+        "action": "IngestTelemetry"
+      },
+      {
+        "from": "Created",
+        "to": "Created",
+        "label": "IngestTelemetry",
+        "event": "IngestTelemetry",
+        "action": "IngestTelemetry"
+      },
+      {
+        "from": "InTransit",
+        "to": "InTransit",
+        "label": "TransferResponsibility",
+        "event": "TransferResponsibility",
+        "action": "TransferResponsibility"
+      },
+      {
+        "from": "InTransit",
+        "to": "OutOfCompliance",
+        "label": "IngestTelemetry",
+        "event": "IngestTelemetry",
+        "action": "IngestTelemetry"
+      },
+      {
+        "from": "InTransit",
+        "to": "InTransit",
+        "label": "IngestTelemetry",
+        "event": "IngestTelemetry",
+        "action": "IngestTelemetry"
+      },
+      {
+        "from": "InTransit",
+        "to": "Completed",
+        "label": "Complete",
+        "event": "Complete",
+        "action": "Complete"
+      }
+    ]
+  }

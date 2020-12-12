@@ -1,0 +1,8 @@
+characters
+a close()
+b enableRefunds()
+c transferOwnership(address)
+d deposit(address)
+e refund(address)
+positive examples
+negative examples

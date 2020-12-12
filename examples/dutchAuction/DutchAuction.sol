@@ -1,9 +1,10 @@
-pragma solidity 0.4.19;
+pragma solidity >=0.4.19;
 
 import './StandardERC20.sol';
 
 
-contract pinnsDutchAuction {
+//contract pinnsDutchAuction {
+contract DutchAuction {
     using SafeMath for uint256;
     uint constant public MAX_TOKENS = 30000000 * 10**18; // 30M pinns Token
     uint constant public minimumInvestment = 1 * 10**18; // 1 ether is minimum minimumInvestment        
@@ -84,7 +85,7 @@ contract pinnsDutchAuction {
         _;
     }
 
-    function pinnsDutchAuction(uint256 EtherPriceFactor)
+    function DutchAuction(uint256 EtherPriceFactor)
         public
     {
         require(EtherPriceFactor != 0);

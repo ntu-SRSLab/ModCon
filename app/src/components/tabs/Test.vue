@@ -174,6 +174,7 @@
   import stateMachine from '../../assets/stateMachine.json'
   import betting  from '../../assets/betting-simple.json'
   import assetTransfer  from '../../assets/assetTransfer.json'
+  import refrigeratedTransportation  from '../../assets/refrigeratedTransportation.json'
 
   const RandomTestLimit = 50;
   var counter = 0;
@@ -223,8 +224,9 @@
           { value:  credit, text: 'credit' },
           { value:  betting, text: 'betting' },
           { value: blindAction, text: 'blindAction' },
-           { value: assetTransfer, text: 'assetTransfer' },
+          { value: assetTransfer, text: 'assetTransfer' },
           { value:  stateMachine, text: 'stateMachine' },
+          { value:  refrigeratedTransportation, text: 'refrigeratedTransportation' },
           { value:  "Write your specication here", text: 'empty' }
         ],
        cmOptions_json: {

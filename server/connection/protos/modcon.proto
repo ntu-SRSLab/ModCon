@@ -28,6 +28,7 @@ message TransactionReceipt {
 message Query{
     string uniqueId = 1;
     string query = 2;
+    bool hasStateOutput = 3;
 }
 
 // Query Receipt (Response)

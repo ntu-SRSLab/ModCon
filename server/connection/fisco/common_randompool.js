@@ -296,7 +296,7 @@ function randgenPredicateValue(type, predicate){
                 while(BigInt(predicate.pivot)>=BigInt(rand)){
                         rand = cryptoRandomString({length:randomInt(1,size)*2})
                 }
-                let bound = randomInt(predicate.pivot+1,predicate.pivot+10);
+                let bound = randomInt(parseInt(predicate.pivot)+1,parseInt(predicate.pivot)+10);
                 if(randomInt(100)%2 == 0){
                     return bound;
                 }else{
@@ -308,13 +308,39 @@ function randgenPredicateValue(type, predicate){
                 let min = predicate.pivot;
                 return min;
             }else if(predicate.less){
-                assert(predicate.pivot!=null && predicate.pivot>0);
-                let bound = randomInt(predicate.pivot-10,predicate.pivot-1);
-                let rand = randomInt(0,predicate.pivot-1);
+                assert(predicate.pivot!=null && parseInt(predicate.pivot)>0);
+                let bound = randomInt(parseInt(predicate.pivot)-10,parseInt(predicate.pivot)-1);
+                let rand = randomInt(0,parseInt(predicate.pivot)-1);
                 if(randomInt(100)%2 == 0){
-                    return bound;
+                    return rand;
                 }else{
-                    return round;
+                    return bound;
+                }
+            }else if(predicate.range){// 0<x<1, 0=<x<=1
+                let left = parseInt(predicate.left);
+                let right = parseInt(predicate.right);
+                assert(left<=right);
+                if(predicate.leftop=="<"){
+                    left = left+1;
+                }else if (predicate.leftop=="=<"){
+                    left = left;
+                }
+                if(predicate.rightop=="<"){
+                    right = right-1;
+                }else if (predicate.rightop=="<="){
+                    right = right;
+                }
+                
+                let lowerbound = randomInt(left,Math.min(left+10,right));
+                let upperbound = randomInt(Math.max(right-10,left), right);
+                let rand = randomInt(left, right);
+                let randNum = randomInt(100);
+                if(randNum%3 == 0){
+                    return lowerbound;
+                }else if(randNum%3==1){
+                    return rand;
+                }else if(randNum%3==2){
+                    return upperbound;
                 }
             }
     } else if (type.match(intXXXRegex)) {
@@ -324,10 +350,11 @@ function randgenPredicateValue(type, predicate){
             assert(predicate.pivot!=null);
             let rand = "0x"+cryptoRandomString({length:randomInt(1,size)*2});
             while(BigInt(predicate.pivot)>=BigInt(rand)){
-                    rand = cryptoRandomString({length:randomInt(1,size)*2-1})
+                    rand ="0x"+ cryptoRandomString({length:randomInt(1,size)*2-1})
             }
-            let bound = randomInt(predicate.pivot+1,predicate.pivot+10);
-            if(randomInt(100)%2 == 0){
+            let bound = randomInt(parseInt(predicate.pivot)+1,parseInt(predicate.pivot)+10);
+             // if(randomInt(100)%2 == 0){
+            if(randomInt(100) >= 0){
                 return bound;
             }else{
                 return rand;
@@ -335,16 +362,51 @@ function randgenPredicateValue(type, predicate){
             
         }else if(predicate.equal){
             assert(predicate.pivot!=null);
-            let min = predicate.pivot;
+            let min = parseInt(predicate.pivot);
             return min;
         }else if(predicate.less){
             assert(predicate.pivot!=null);
-            let bound = randomInt(predicate.pivot-10,predicate.pivot-1);
-            let rand = randomInt(predicate.pivot-Math.pow(10,7),predicate.pivot-1);
-            if(randomInt(100)%2 == 0){
+            let bound = randomInt(parseInt(predicate.pivot)-10,parseInt(predicate.pivot)-1);
+            let rand = randomInt(parseInt(predicate.pivot)-Math.pow(10,7),parseInt(predicate.pivot)-1);
+            // if(randomInt(100)%2 == 0){
+            if(randomInt(100) >= 0){
                 return bound;
             }else{
                 return rand;
+            }
+        }else if(predicate.range){// 0<x<1, 0=<x<=1
+            let left = parseInt(predicate.left);
+            let right = parseInt(predicate.right);
+            try {
+                assert(left<=right);
+                if(predicate.leftop=="<"){
+                    left = left+1;
+                }else if (predicate.leftop=="=<"){
+                    left = left;
+                }
+                if(predicate.rightop=="<"){
+                    right = right-1;
+                }else if (predicate.rightop=="<="){
+                    right = right;
+                }
+                let min = Math.min(left+10,right);
+                // console.log(min);
+                let lowerbound = randomInt(left,min);
+                let max = Math.max(right-10,left);
+                // console.log(max);
+                let upperbound = randomInt(max, right);
+                let rand = randomInt(left, right);
+                let randNum = randomInt(100);
+                if(randNum%3 == 0){
+                    return lowerbound;
+                }else if(randNum%3==1){
+                    return rand;
+                }else if(randNum%3==2){
+                    return upperbound;
+                }
+            }catch(err){
+                console.error(predicate);
+                throw err;
             }
         }
     }

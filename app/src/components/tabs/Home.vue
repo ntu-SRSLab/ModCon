@@ -48,6 +48,9 @@
         </div>
         <b-button v-if="status_compile"  :disabled="!selected_abi" block variant="outline-primary" @click="OnDeploy" class="mt-2">  {{selected_abi?selected_abi.name==selected_contract.split(".sol")[0]?"Deploy":"SendTx":"Deploy Or SendTransaction"}}</b-button>
         <!-- <b-table striped hover :items="deployed"></b-table> -->
+        <b-button  class="mt-2" block variant="outline-primary"  @click="OnLearn">
+                    <span>Learn</span> 
+        </b-button>
         <b-card class="mt-3" header="Result">
           <span v-html="log"></span>
         </b-card>
@@ -253,7 +256,17 @@
           // this.log += `<br> server will handle transaction from ${this.selected_contract}`;
         }
       },
-
+      OnLearn(){
+        const client_Learn = "Learn_client";
+        console.log(client_Learn);
+        this.$socket.emit("client",{type: client_Learn,
+                  data: {
+                        target_contract: this.selected_contract.split(".sol")[0],                     
+                        network: this.$fsmservice.network
+                    }
+                  });
+      
+      },
       OnSelectContract(e) {
         console.log(e);
         console.log(`address of ${this.selected_contract}:`);

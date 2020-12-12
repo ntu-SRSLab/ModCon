@@ -243,7 +243,7 @@ class FiscoFuzzer extends Web3jService {
         // console.log(answer);
         return ret;
     }
-
+ 
 　async full_fuzz_fun(name, address, fun_name, option){
         let instance = FiscoDeployer.getInstance().addContractInstance(address, name).getContractInstance(name);
         let raw_tx = null;
@@ -286,10 +286,11 @@ class FiscoFuzzer extends Web3jService {
     }
     async _fuzz_fun(address, abis, fun_name, option) {
         // abi:[matched...]
+        assert(fun_name, "function name was empty");
         let abi = abis.filter(e => {
             return e.name == fun_name
         });
-        assert(abi && abi.length == 1, "matched abi array is empty");
+        assert(abi && abi.length == 1, fun_name+"matched abi array is empty");
         // console.log(abi, fun_name);
         let ret = await gen_callFun(abi[0], address, option);
         //console.log(ret);
@@ -323,6 +324,21 @@ class FiscoFuzzer extends Web3jService {
     _parse_receipt(receipt) {
         //console.log("events:", JSON.stringify(abiDecoder.decodeLogs(receipt.logs)));
         return abiDecoder.decodeLogs(receipt.logs);
+    }
+
+    async getState(name, address){
+        let instance = FiscoDeployer.getInstance().addContractInstance(address, name).getContractInstance(name);
+        // console.log(readJSON(instance.abi));
+        let stateGetter = readJSON(instance.abi).filter(item =>{
+            return item.constant && item.constant==true &&(item.name == "state" || item.name == "State" || item.name == "stage" || item.name == "Stage");
+        });
+        // console.log(stateGetter);
+        if(stateGetter.length!=1){
+            return null;
+        }
+        let state = await this.full_fuzz_fun(name, address, stateGetter[0].name);
+        console.log({state: Number(BigInt(state.receipt.result.output.toString()))});
+        return {state: parseInt(BigInt(state.receipt.result.output.toString()))};
     }
 }
 module.exports.FiscoFuzzer = FiscoFuzzer;

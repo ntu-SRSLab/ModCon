@@ -188,5 +188,5 @@ function tranlateToPredicates(predicatesStr){
   }
   return {predicates:predicates};
 }
-console.log(JSON.stringify(tranlateToPredicates("b=0")));
+// console.log(JSON.stringify(tranlateToPredicates("b=0")));
 exports.TransactionCacheTrie = TransactionCacheTrie;

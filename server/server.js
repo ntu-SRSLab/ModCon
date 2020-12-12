@@ -8,7 +8,9 @@ var assert = require("assert")
 var membershipQueryServer = require("./connection/protos/Server");
 var compiler = require("./utils/compile");
 var TransactionCacheTrie = require("./utils/TransactionTrie").TransactionCacheTrie;
+var InputDecisionTree = require("./utils/InputDecisionTree");
 
+const types = require("./connection/fisco/common.js").types;
 var FiscoContractKit = require("./connection/fisco/fuzzer").FiscoDeployer;
 var FiscoFuzzer = require("./connection/fisco/fuzzer").FiscoFuzzer;
 
@@ -21,6 +23,7 @@ const createModel = require("@xstate/test").createModel;
 const aa = require("aa");
 
 var SocketIOFileUpload = require('socketio-file-upload');
+const { has } = require('lodash');
 app.use(SocketIOFileUpload.router);
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -235,10 +238,23 @@ class MembershipQueryEngine{
       }
     */
    tranlateToPredicates(predicatesStr){
+      if(!predicatesStr)
+        return null;
       console.log(predicatesStr);
       let predicates = [];
+      
       for(let predicateStr of predicatesStr.split(",")){
-        if(predicateStr.indexOf(">")!=-1){
+        let regex = /\s*([0-9]*)(<|=<)([a-z])(<=|<)([0-9]*)\s*/; // 0<a<1
+        let match = predicateStr.match(regex);
+        if(match){
+          let left = match[1];
+          let right = match[5];
+          let leftop = match[2];
+          let rightop = match[4];
+          let index = match[3].charCodeAt(0)-"a".charCodeAt(0);
+          predicates.push({index:index, predicate:{range: true, left:left, leftop:leftop, right: right, rightop: rightop}});
+        }
+        else if(predicateStr.indexOf(">")!=-1){
           // greater predicate
           let lrs = predicateStr.split(">");
           let index = lrs[0].charCodeAt(0)-"a".charCodeAt(0);
@@ -261,10 +277,182 @@ class MembershipQueryEngine{
       return {predicates:predicates};
    }
    
-   async answerQuery(uniqueId, query){  
+  
+  async answerQueryWithAbstractionRefinement(uniqueId, query, hasStateOutput){
+    console.log("Incoming Query: "+query);
+    let methods = query.split("-->");
+    let i = methods.length;
+    let states = [];
+    for (; i>0; i--){
+          let node = this.trie.contains(methods.slice(0,i)).node;
+          // if(node){
+          if(false){
+            let transactions = node.getTransactions().slice(1);
+            let address = await this.replayer.initialize();
+            let ret = null;
+            for (let transaction of transactions){
+              console.log("replay transaction");
+              transaction.raw_tx.to = address;
+              ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, transaction.method.split(" ")[0],{raw_tx: transaction.raw_tx});        
+              if(ret.receipt.status!="0x0"){
+                console.log("try more time");
+                ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, transaction.method.split(" ")[0],{raw_tx: transaction.raw_tx});        
+              }
+              if (hasStateOutput){
+                let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
+                states.push(state.state);
+              }
+            }
+            // for(let method of methods.slice(i)){
+            for (let j=0;j<methods.slice(i).length;j++){
+              let method = methods.slice(i)[j];
+              let count = 0;
+              // Predicate handling
+              if(method.split(" ").length>1){
+                ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
+              }else{
+                ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
+              }
+
+              while (ret.receipt.status!="0x0" // result is null // result is not null but the status is not "0x0" ("0x0" means no error)
+                  && ++count < MEMBERQUERY_LIMIT // maximum number to try to make staus at "0x0"
+                  && ret.raw_tx.param.length>0) // if method has no parameters, we don't repeat the testing
+              {
+                  // Predicate handling
+                  if(method.split(" ").length>1){
+                    ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
+                  }else{
+                    ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
+                  }
+                  
+              }   
+              
+              if(ret.receipt.status=="0x0"){
+                  node = node.addTransaction({method:method, raw_tx:ret.raw_tx});
+                  if (hasStateOutput){
+                    let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
+                    states.push(state.state);
+                  }
+              }else{
+                  console.log("NO: (semi-) old query: "+query);
+                  if(!hasStateOutput){
+                    return false;
+                  }
+                  else
+                  {
+                    while(j<methods.slice(i).length){
+                      states.push(-1);
+                      j++;
+                    }
+                    console.log(states.join("-->"));
+                    return {"state":states.join("-->")};
+                    // return {"state": -1};
+                  }
+              } 
+            }
+            assert(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0");
+            console.log("YES: (semi-) old query: "+query);             
+            if (!hasStateOutput){
+                return true;
+            }else {
+                console.log(states);
+                console.log(states.join("-->"));
+                console.log(states.join());
+                return {"state":states.join("-->")};
+                // return {"state":states.pop()}
+            }
+         }
+    }
+    assert(i==0);
+    if (i==0){
+          // default: this is a totally new query
+          let address = await this.replayer.initialize();
+          let node = this.trie.root;
+          let ret = null;
+
+          let Rules = new Map();
+          // for(let method of methods){
+          for(let j=0; j<methods.length; j++){
+            let method = methods[j];
+            let count = 0;
+            
+            let flag = false;
+            
+            // Predicate handling
+            if(method.split(" ").length>1){
+              ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
+            }else{
+              ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
+            }
+            if(ret.receipt.status=="0x0"){
+              flag = true;
+            }
+           
+            InputDecisionTree.addMethodInputWithOutput(ret.raw_tx.fun, ret.raw_tx.param, ret.receipt.status=="0x0"?"pass":"failed");
+            while ( 
+              ret.receipt.status!="0x0"// result is not null but the status is not "0x0" ("0x0" means no error)
+              && ++count < MEMBERQUERY_LIMIT // maximum number to try to make staus at "0x0"
+            && ret.raw_tx.param.length>0) // if method has no parameters, we don't repeat the testing
+            {
+                   // Predicate handling
+                  if(method.split(" ").length>1){
+                    ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
+                  }else{
+                    ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
+                  }
+                  
+                  InputDecisionTree.addMethodInputWithOutput(ret.raw_tx.fun, ret.raw_tx.param, ret.receipt.status=="0x0"?"pass":"failed");
+                  if(ret.receipt.status=="0x0"){
+                    flag = true;
+                  }
+            }   
+            
+            if(flag){
+                if (hasStateOutput){
+                  let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
+                  states.push(state.state);
+                }
+                let methodrules = InputDecisionTree.getMethodInputRules(ret.raw_tx.fun);
+                if(methodrules && methodrules.length>0)
+                    Rules[method] = methodrules;
+            }else{
+                console.log("NO: new query: "+query);
+                if(!hasStateOutput){
+                  return {"status": false,  "rules": JSON.stringify(Rules)} ;
+                }
+                else
+                {
+                  while(j<methods.length){
+                    states.push(-1);
+                    j++;
+                  }
+                  console.log(states.join("-->"));
+                  return {"state":states.join("-->"), "rules": JSON.stringify(Rules)};
+                  // return {"state": -1};
+                }
+            }
+          }
+          assert(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0");
+          console.log("YES: (semi-) old query: "+query);             
+          if (!hasStateOutput){
+            return {"status": true,  "rules": JSON.stringify(Rules)} ;
+          }else {
+            console.log(states);
+            console.log(states.join("-->"));
+            console.log(states.join());
+            return {"state":states.join("-->"), "rules": JSON.stringify(Rules)};
+            // return {"state":states.pop()}
+          }
+      }
+  
+  }
+
+
+   async answerQuery(uniqueId, query, hasStateOutput){  
       console.log("Incoming Query: "+query);
       let methods = query.split("-->");
       let i = methods.length;
+      let states = [];
       for (; i>0; i--){
             let node = this.trie.contains(methods.slice(0,i)).node;
             if(node){
@@ -279,10 +467,15 @@ class MembershipQueryEngine{
                   console.log("try more time");
                   ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, transaction.method.split(" ")[0],{raw_tx: transaction.raw_tx});        
                 }
+                if (hasStateOutput){
+                  let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
+                  states.push(state.state);
+                }
               }
-              for(let method of methods.slice(i)){
+              // for(let method of methods.slice(i)){
+              for (let j=0;j<methods.slice(i).length;j++){
+                let method = methods.slice(i)[j];
                 let count = 0;
-                
                 // Predicate handling
                 if(method.split(" ").length>1){
                   ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
@@ -291,7 +484,8 @@ class MembershipQueryEngine{
                 }
 
                 while (ret.receipt.status!="0x0" // result is null // result is not null but the status is not "0x0" ("0x0" means no error)
-                    && ++count < MEMBERQUERY_LIMIT ) // maximum number to try to make staus at "0x0"
+                  && ++count < MEMBERQUERY_LIMIT // maximum number to try to make staus at "0x0"
+                  && ret.raw_tx.param.length>0) // if method has no parameters, we don't repeat the testing
                 {
                     // Predicate handling
                     if(method.split(" ").length>1){
@@ -303,18 +497,38 @@ class MembershipQueryEngine{
                 
                 if(ret.receipt.status=="0x0"){
                     node = node.addTransaction({method:method, raw_tx:ret.raw_tx});
+                    if (hasStateOutput){
+                      let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
+                      states.push(state.state);
+                    }
                 }else{
                     console.log("NO: (semi-) old query: "+query);
-                    return false;
-                }
-                
+                    if(!hasStateOutput){
+                      return false;
+                    }
+                    else
+                    {
+                      while(j<methods.slice(i).length){
+                        states.push(-1);
+                        j++;
+                      }
+                      console.log(states.join("-->"));
+                      return {"state":states.join("-->")};
+                      // return {"state": -1};
+                    }
+                } 
               }
-              if(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0"){
-                console.log("YES: (semi-) old query: "+query);
-              }else{
-                console.log("NO: (semi-) old query: "+query);
+              assert(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0");
+              console.log("YES: (semi-) old query: "+query);             
+              if (!hasStateOutput){
+                  return true;
+              }else {
+                  console.log(states);
+                  console.log(states.join("-->"));
+                  console.log(states.join());
+                  return {"state":states.join("-->")};
+                  // return {"state":states.pop()}
               }
-              return ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0";
            }
       }
       assert(i==0);
@@ -323,20 +537,20 @@ class MembershipQueryEngine{
             let address = await this.replayer.initialize();
             let node = this.trie.root;
             let ret = null;
-            for(let method of methods){
-
+            // for(let method of methods){
+            for(let j=0; j<methods.length; j++){
+              let method = methods[j];
               let count = 0;
-
               // Predicate handling
               if(method.split(" ").length>1){
                 ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
               }else{
                 ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
               }
-
              
               while (ret.receipt.status!="0x0" // result is null // result is not null but the status is not "0x0" ("0x0" means no error)
-                        && ++count < MEMBERQUERY_LIMIT ) // maximum number to try to make staus at "0x0"
+              && ++count < MEMBERQUERY_LIMIT // maximum number to try to make staus at "0x0"
+              && ret.raw_tx.param.length>0) // if method has no parameters, we don't repeat the testing
               {
                      // Predicate handling
                     if(method.split(" ").length>1){
@@ -348,18 +562,38 @@ class MembershipQueryEngine{
               
               if(ret.receipt.status=="0x0"){
                   node = node.addTransaction({method:method, raw_tx:ret.raw_tx});
+                  if (hasStateOutput){
+                    let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
+                    states.push(state.state);
+                  }
               }else{
                   console.log("NO: new query: "+query);
-                  return false;
+                  if(!hasStateOutput){
+                    return false;
+                  }
+                  else
+                  {
+                    while(j<methods.length){
+                      states.push(-1);
+                      j++;
+                    }
+                    console.log(states.join("-->"));
+                    return {"state":states.join("-->")};
+                    // return {"state": -1};
+                  }
               }
-
             }
-            if(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0"){
-              console.log("YES: new query: "+query);
-            }else{
-              console.log("NO: new query: "+query);
+            assert(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0");
+            console.log("YES: (semi-) old query: "+query);             
+            if (!hasStateOutput){
+                return true;
+            }else {
+              console.log(states);
+              console.log(states.join("-->"));
+              console.log(states.join());
+              return {"state":states.join("-->")};
+              // return {"state":states.pop()}
             }
-            return ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0";
         }
     }
 }
@@ -642,6 +876,12 @@ class EventHandler {
   Transaction_client(data) {
     console.log(data);
     var socket = this.socket;
+    let deployer;
+    if (!data.network|| data.network == "fisco-bcos") {
+          deployer = FiscoContractKit.getInstance("./deployed_contract");
+    }else  if (data.network == "ethereum") {
+          deployer = EthereumContractKit.getInstance("./deployed_contract");
+    }
     deployer.transcation_send(data.contract, data.address, data.func, data.params).then(function (data) {
       socket.emit(event_Transaction, data);
     }).catch(function (err) {
@@ -698,6 +938,22 @@ class EventHandler {
     console.log(mqQueryEngine);
     membershipQueryServer.setMembershipQueryEngine(mqQueryEngine);
     membershipQueryServer.bootstrap();
+    let abi = JSON.parse(fs.readFileSync("./deployed_contract/"+data.target_contract+"/"+data.target_contract+".abi",{encoding:'utf8'}));
+    // let content = data.target_contract;
+    let content = "characters";
+    let n = 0;
+    for(let item of abi){
+      if(item.type == "function" && item.stateMutability!="view" && item.stateMutability!="constant"){
+        let name = item.name+"("+types(item.inputs)+")";
+        content+="\n"+ String.fromCharCode(97+n)+" "+name;
+        n = n+1;
+      }
+    }
+    console.log(content);
+    content+="\npositive examples"
+    content+="\nnegative examples"
+    fs.writeFileSync("../data/"+data.target_contract+".txt", content, {encoding:'utf8',flag:"w"});
+    fs.writeFileSync("../data/learn.txt", content, {encoding:'utf8',flag:"w"});
   }
 }
 

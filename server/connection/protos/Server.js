@@ -2,6 +2,7 @@ var PROTO_PATH = __dirname + '/./modcon.proto';
 
 var Grpc = require('grpc');
 var protoLoader = require('@grpc/proto-loader');
+const { result } = require('lodash');
 var packageDefinition = protoLoader.loadSync(
     PROTO_PATH,
     {keepCase: true,
@@ -43,12 +44,28 @@ function SendTransaction(call, callback) {
  * Implements the SendQuery RPC method.
  */
 function SendQuery(call, callback) {
-     membershipQueryEngine.answerQuery(call.request.uniqueId, call.request.query).then(result =>{
-         callback(null,   {status: result?"1":"0", events:"Query Result (1: Success, 0: Failure)"});
+  if(!call.request.hasStateOutput)
+     membershipQueryEngine.answerQueryWithAbstractionRefinement(call.request.uniqueId, call.request.query).then(result =>{
+      if(!result.rules){
+         callback(null,   {status: result.status?"1":"0", events:"Query Result (1: Success, 0: Failure)"});
+      }else{
+         callback(null,   {status: result.status?"1":"0", events:"Query Result (1: Success, 0: Failure)\n Rules:" + result.rules});
+      }
      }).catch(err=>{
          console.log(err);
-         callback(null, {status: "0", events:"Unknown Query Failure"});
+         callback(null, {status: "0", events:"Unknown server failure"});
      });
+  else 
+    membershipQueryEngine.answerQueryWithAbstractionRefinement(call.request.uniqueId, call.request.query, call.request.hasStateOutput).then(result =>{
+      if(!result.rules){
+          callback(null,   {status: result.state, events:"State Output (404: nonexist; -1: call failure; 0,1,...,n: state value.)"});
+      }else{
+        callback(null,   {status: result.state, events:"State Output (404: nonexist; -1: call failure; 0,1,...,n: state value.)\n Rules:" + result.rules});
+      }
+    }).catch(err=>{
+        console.log(err);
+        callback(null, {status: "405", events:"Unknown server failure"});
+    });
 }
 
 

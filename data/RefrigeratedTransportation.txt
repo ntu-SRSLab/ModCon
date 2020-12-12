@@ -1,0 +1,6 @@
+characters
+a Complete()
+b TransferResponsibility(address)
+c IngestTelemetry(int256,int256,int256)
+positive examples
+negative examples
