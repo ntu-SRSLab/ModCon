@@ -201,6 +201,7 @@ class MembershipQueryEngine{
       this.addressMap  = new Map();
       // Transaction Cache Trie
       this.trie = new TransactionCacheTrie(null);
+      this.Rules = new Map();
   }
   static getOrCreateInstance(seed, contract_name, network) {
     if (!MembershipQueryEngine.instance) {
@@ -277,7 +278,36 @@ class MembershipQueryEngine{
       return {predicates:predicates};
    }
    
+
+  async replay(contractAddress, transaction){
+    let ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, contractAddress, transaction.method.split(" ")[0],{raw_tx: transaction.raw_tx});        
+    return ret;
+  }
+  async replayAllTransactions(transactions){
+    let address = await this.replayer.initialize();
+    let ret = null;
+    let states = [];
+    for (let transaction of transactions){
+      console.log("replay transaction");
+      transaction.raw_tx.to = address;
+      ret = await this.replay(address, transaction);        
+      if(ret.receipt.status!="0x0"){
+        console.log("try more time");
+        ret = await this.replay(address, transaction);            
+      }
+      if (hasStateOutput){
+        let state = await this.getState(address);
+        states.push(state.state);
+      }
+    }
+    return {"address": address, "ret": ret, "state": states};
+  }
   
+  async getState(contractAddress){
+    let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, contractAddress);
+    return state;
+  }
+
   async answerQueryWithAbstractionRefinement(uniqueId, query, hasStateOutput){
     console.log("Incoming Query: "+query);
     let methods = query.split("-->");
@@ -285,25 +315,12 @@ class MembershipQueryEngine{
     let states = [];
     for (; i>0; i--){
           let node = this.trie.contains(methods.slice(0,i)).node;
-          // if(node){
-          if(false){
+          if(node){
+          // if(false){
             let transactions = node.getTransactions().slice(1);
-            let address = await this.replayer.initialize();
-            let ret = null;
-            for (let transaction of transactions){
-              console.log("replay transaction");
-              transaction.raw_tx.to = address;
-              ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, transaction.method.split(" ")[0],{raw_tx: transaction.raw_tx});        
-              if(ret.receipt.status!="0x0"){
-                console.log("try more time");
-                ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, transaction.method.split(" ")[0],{raw_tx: transaction.raw_tx});        
-              }
-              if (hasStateOutput){
-                let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
-                states.push(state.state);
-              }
-            }
-            // for(let method of methods.slice(i)){
+            let result = await this.replayAllTransactions(transactions);
+            let address = result.address;
+    
             for (let j=0;j<methods.slice(i).length;j++){
               let method = methods.slice(i)[j];
               let count = 0;
@@ -313,7 +330,9 @@ class MembershipQueryEngine{
               }else{
                 ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
               }
-
+              
+              InputDecisionTree.addMethodInputWithOutput(ret.raw_tx.fun, ret.raw_tx.param, ret.receipt.status=="0x0"?"pass":"failed");
+              
               while (ret.receipt.status!="0x0" // result is null // result is not null but the status is not "0x0" ("0x0" means no error)
                   && ++count < MEMBERQUERY_LIMIT // maximum number to try to make staus at "0x0"
                   && ret.raw_tx.param.length>0) // if method has no parameters, we don't repeat the testing
@@ -324,7 +343,7 @@ class MembershipQueryEngine{
                   }else{
                     ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
                   }
-                  
+                  InputDecisionTree.addMethodInputWithOutput(ret.raw_tx.fun, ret.raw_tx.param, ret.receipt.status=="0x0"?"pass":"failed");
               }   
               
               if(ret.receipt.status=="0x0"){
@@ -333,33 +352,35 @@ class MembershipQueryEngine{
                     let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
                     states.push(state.state);
                   }
+                  let methodrules = InputDecisionTree.getMethodInputRules(ret.raw_tx.fun);
+                  if(methodrules && methodrules.length>0)
+                      this.Rules[method] = methodrules;
               }else{
                   console.log("NO: (semi-) old query: "+query);
                   if(!hasStateOutput){
-                    return false;
+                    return {"status": false,  "rules": JSON.stringify(this.Rules)} ;
                   }
                   else
                   {
-                    while(j<methods.slice(i).length){
+                    while(j<methods.length){
                       states.push(-1);
                       j++;
                     }
                     console.log(states.join("-->"));
-                    return {"state":states.join("-->")};
-                    // return {"state": -1};
+                    return {"state":states.join("-->"), "rules": JSON.stringify(this.Rules)};
                   }
               } 
             }
             assert(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0");
             console.log("YES: (semi-) old query: "+query);             
             if (!hasStateOutput){
-                return true;
+              return {"status": true,  "rules": JSON.stringify(this.Rules)} ;
             }else {
-                console.log(states);
-                console.log(states.join("-->"));
-                console.log(states.join());
-                return {"state":states.join("-->")};
-                // return {"state":states.pop()}
+              console.log(states);
+              console.log(states.join("-->"));
+              console.log(states.join());
+              return {"state":states.join("-->"), "rules": JSON.stringify(this.Rules)};
+              // return {"state":states.pop()}
             }
          }
     }
@@ -370,7 +391,7 @@ class MembershipQueryEngine{
           let node = this.trie.root;
           let ret = null;
 
-          let Rules = new Map();
+        
           // for(let method of methods){
           for(let j=0; j<methods.length; j++){
             let method = methods[j];
@@ -408,17 +429,18 @@ class MembershipQueryEngine{
             }   
             
             if(flag){
+                node = node.addTransaction({method:method, raw_tx:ret.raw_tx});
                 if (hasStateOutput){
                   let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
                   states.push(state.state);
                 }
                 let methodrules = InputDecisionTree.getMethodInputRules(ret.raw_tx.fun);
                 if(methodrules && methodrules.length>0)
-                    Rules[method] = methodrules;
+                    this.Rules[method] = methodrules;
             }else{
                 console.log("NO: new query: "+query);
                 if(!hasStateOutput){
-                  return {"status": false,  "rules": JSON.stringify(Rules)} ;
+                  return {"status": false,  "rules": JSON.stringify(this.Rules)} ;
                 }
                 else
                 {
@@ -427,20 +449,20 @@ class MembershipQueryEngine{
                     j++;
                   }
                   console.log(states.join("-->"));
-                  return {"state":states.join("-->"), "rules": JSON.stringify(Rules)};
+                  return {"state":states.join("-->"), "rules": JSON.stringify(this.Rules)};
                   // return {"state": -1};
                 }
             }
           }
           assert(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0");
-          console.log("YES: (semi-) old query: "+query);             
+          console.log("YES: new query: "+query);             
           if (!hasStateOutput){
-            return {"status": true,  "rules": JSON.stringify(Rules)} ;
+            return {"status": true,  "rules": JSON.stringify(this.Rules)} ;
           }else {
             console.log(states);
             console.log(states.join("-->"));
             console.log(states.join());
-            return {"state":states.join("-->"), "rules": JSON.stringify(Rules)};
+            return {"state":states.join("-->"), "rules": JSON.stringify(this.Rules)};
             // return {"state":states.pop()}
           }
       }
