@@ -362,7 +362,7 @@
         }
       },
       OnStateMachineChange() {
-        if(this.fsm){
+        if(this.fsm!=null){
             console.log("OnStateMachineChange");
             try {
               this.GenerateSVGXMLString( this.$fsmservice.add_fsm(this.fsm).get_sm_cat());
@@ -448,23 +448,23 @@
     OnMouseOverFSM(){
           console.log("MouseOverFSM");
           this.mouseOverFSM = true;
-      },
-      OnMouseOutFSM(){
+    },
+    OnMouseOutFSM(){
          console.log("MouseLeaveFSM");
          this.mouseOverFSM = false;
          if(!this.isTestStart)
-              this.OnStateMachineChange();
-      },
-      OnCoverStrategy(){
+            this.OnStateMachineChange();
+    },
+    OnCoverStrategy(){
         console.log(`current strategy ${this.covering_strategy}`)
          this.model = this.$fsmservice.add_covering_strategy(this.covering_strategy).get_model_script();
          this.GenerateSVGXMLString( this.$fsmservice.get_sm_cat());
       },
-      OnTransitions(){
+    OnTransitions(){
         console.log(this.selected_transition_startstate);
         this.transitions = this.$fsmservice.get_possible_transitions(this.selected_transition_startstate);
       },
-      OnChooseRandomTest(){
+    OnChooseRandomTest(){
          console.log(this.chooseRandom);
          console.log(`current testing is ${this.chooseRandom?"Random Testing":"Model Based Testing"}`)
          if (this.chooseRandom)

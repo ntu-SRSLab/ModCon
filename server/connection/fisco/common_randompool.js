@@ -1,8 +1,11 @@
 const assert = require("assert");
+const { randomInt } = require("crypto");
 /// the gas amount
 const gasMax = 8000000000;
 
 const UserAccount = "0xdf847c88bf4447225a482e7cdcedb3608ec5ea0b";
+
+const UserAccounts = ["0xdf847c88bf4447225a482e7cdcedb3608ec5ea0b", "0x8b620ec0225c01e8e2b1e3fd720cfce9db95a7b7"];
 
 const cryptoRandomString = require('crypto-random-string');
 
@@ -106,10 +109,10 @@ class AddressPool extends Pool {
         super(range, size, description);
     }
     _constant() {
-        return [UserAccount, "0x680e9f394ca08fea2dffe0cad74cc4c59bd1559d", "0x680e9f394ca08fea2dffe0cad74cc4c59bd1559d", "0x680e9f394ca08fea2dffe0cad74cc4c59bd1559d"];
+        return UserAccounts;
     }
     _random() {
-        return UserAccount;
+        return UserAccounts[randomNum(0,10)%2];
     }
 }
 class StringPool extends Pool {
@@ -308,7 +311,7 @@ async function gen_callFun(abi, address, option) {
     let gasLimit = await gen_callGasMax();
     let callFun = {
         /// g_account_list[0] is the initial account, which is also a miner account
-        from: UserAccount,
+        from: UserAccounts[randomNum(0,10)%UserAccounts.length],
         to: address,
         abi: abi,
         gas: gasLimit,
