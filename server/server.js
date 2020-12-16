@@ -186,7 +186,7 @@ class FSMStateReplayer {
   }
 }
 
-const MEMBERQUERY_LIMIT = 50;
+const MEMBERQUERY_LIMIT = 40;
 class MembershipQueryEngine{
   constructor(seed, contract_name, network) {
       //  super(seed, contract_name);
@@ -283,7 +283,7 @@ class MembershipQueryEngine{
     let ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, contractAddress, transaction.method.split(" ")[0],{raw_tx: transaction.raw_tx});        
     return ret;
   }
-  async replayAllTransactions(transactions){
+  async replayAllTransactions(transactions, hasStateOutput){
     let address = await this.replayer.initialize();
     let ret = null;
     let states = [];
@@ -300,173 +300,137 @@ class MembershipQueryEngine{
         states.push(state.state);
       }
     }
-    return {"address": address, "ret": ret, "state": states};
+    return {"address": address, "ret": ret, "states": states};
   }
   
   async getState(contractAddress){
     let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, contractAddress);
     return state;
   }
+  /**
+   * 
+   * @param {*} contractAddress contract address
+   * @param {*} methods method chain (contain many method)
+   * @param {*} index the index of current method to be executed
+   * @returns {*}    {
+   *                      {boolean} status:,   // true or false
+   *                      {Array} state:,    // if hasStateOutput, get state output
+   *                      {Map} rules: {method: rule}  // all abstraction rules
+   *                 }
+   */
+  async recursiveExecute(sucTransactions, methods, index, hasStateOutput){
+    // assertion
+    assert(index < methods.length);
+
+    // reachable output (state and status)
+    let rStates = [];
+    let rStatus = false;
+      
+    let method = methods[index];
+    let count = 0;
+    // call each method many times to have many concrete transactions
+    // analyze the concrete transactions and their outputs 
+    // use decision tree to refine the input abstraction
+    while( ++count < MEMBERQUERY_LIMIT){
+      // initialize states and status
+      let states = [];
+      let status = false;
+
+      // replay all previous success transactions
+      let result = await this.replayAllTransactions(sucTransactions, hasStateOutput);
+      let address = result.address;
+      states.push(...result.states);
+      
+      // execute abstract transactions via fuzzing and predicate technique
+      let ret;
+      if(method.split(" ").length>1){
+        ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
+      }else{
+        ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
+      }
+
+      // record concrete transaction with output (contain status "reverted" and variable "state")
+      if(!hasStateOutput){
+        InputDecisionTree.addMethodInputWithOutput(ret.raw_tx.fun, ret.raw_tx.param, ret.receipt.status=="0x0"?"pass":"failed");
+      }else{
+        let state = await this.getState(address);
+        console.log("state value: ", state.state);
+        InputDecisionTree.addMethodInputWithOutput(ret.raw_tx.fun, ret.raw_tx.param, ret.receipt.status=="0x0"?"pass#"+state.state:"failed");
+      }
+      
+      // if the concrete transaction was successful
+      if(ret.receipt.status == "0x0" ){
+        status = true;
+        if (hasStateOutput){
+          let state = await this.getState(address);
+          states.push(state.state);
+        }
+        if(methods.length-1 == index){
+          // reach the end of methods
+          status = true;
+          if (status && !rStatus){
+            rStatus = true;
+            rStates = JSON.parse(JSON.stringify(states));
+          }
+          continue;
+        }else{  
+          let nextSucTransactions = JSON.parse(JSON.stringify(sucTransactions))
+          nextSucTransactions.push({method:method, raw_tx:ret.raw_tx});
+          // execute next method
+          let result = await this.recursiveExecute(nextSucTransactions, methods, index+1, hasStateOutput);
+          // update global status;
+          status = status && result.status;
+          if (status && !rStatus){
+            console.log("child calls: ",result);
+            rStatus = true;
+            states.push(...result.states);
+            rStates = JSON.parse(JSON.stringify(states));
+          }
+        }
+       }
+      // once there is no parameter of the method
+      // break the loop
+      if(ret.raw_tx.param.length==0){
+          break;
+      }
+
+      // once there is no int parameter of the method
+      // try MEMBERQUERY_LIMTI/5 times to reduce testing efforts
+      if(ret.raw_tx.fun.indexOf("int")==-1){
+          if(count>Math.min(6,MEMBERQUERY_LIMIT/5)){
+              break;
+          }
+      }      
+    }
+    // since this.Rules is global variable, we don't need to depend on the result of child call
+    let methodrules = InputDecisionTree.getMethodInputRules(method.split(" ")[0]);
+    console.log(methodrules);
+    if(methodrules && methodrules.length>0)
+        this.Rules[method.split(" ")[0]] = methodrules;
+
+    return {status: rStatus, states: rStates, rules: JSON.stringify(this.Rules)};
+  }
 
   async answerQueryWithAbstractionRefinement(uniqueId, query, hasStateOutput){
-    console.log("Incoming Query: "+query);
+    console.log("Incoming Query#", uniqueId, " :", query);
     let methods = query.split("-->");
-    let i = methods.length;
-    let states = [];
-    for (; i>0; i--){
-          let node = this.trie.contains(methods.slice(0,i)).node;
-          if(node){
-          // if(false){
-            let transactions = node.getTransactions().slice(1);
-            let result = await this.replayAllTransactions(transactions);
-            let address = result.address;
-    
-            for (let j=0;j<methods.slice(i).length;j++){
-              let method = methods.slice(i)[j];
-              let count = 0;
-              // Predicate handling
-              if(method.split(" ").length>1){
-                ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
-              }else{
-                ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
-              }
-              
-              InputDecisionTree.addMethodInputWithOutput(ret.raw_tx.fun, ret.raw_tx.param, ret.receipt.status=="0x0"?"pass":"failed");
-              
-              while (ret.receipt.status!="0x0" // result is null // result is not null but the status is not "0x0" ("0x0" means no error)
-                  && ++count < MEMBERQUERY_LIMIT // maximum number to try to make staus at "0x0"
-                  && ret.raw_tx.param.length>0) // if method has no parameters, we don't repeat the testing
-              {
-                  // Predicate handling
-                  if(method.split(" ").length>1){
-                    ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
-                  }else{
-                    ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
-                  }
-                  InputDecisionTree.addMethodInputWithOutput(ret.raw_tx.fun, ret.raw_tx.param, ret.receipt.status=="0x0"?"pass":"failed");
-              }   
-              
-              if(ret.receipt.status=="0x0"){
-                  node = node.addTransaction({method:method, raw_tx:ret.raw_tx});
-                  if (hasStateOutput){
-                    let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
-                    states.push(state.state);
-                  }
-                  let methodrules = InputDecisionTree.getMethodInputRules(ret.raw_tx.fun);
-                  if(methodrules && methodrules.length>0)
-                      this.Rules[method] = methodrules;
-              }else{
-                  console.log("NO: (semi-) old query: "+query);
-                  if(!hasStateOutput){
-                    return {"status": false,  "rules": JSON.stringify(this.Rules)} ;
-                  }
-                  else
-                  {
-                    while(j<methods.length){
-                      states.push(-1);
-                      j++;
-                    }
-                    console.log(states.join("-->"));
-                    return {"state":states.join("-->"), "rules": JSON.stringify(this.Rules)};
-                  }
-              } 
-            }
-            assert(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0");
-            console.log("YES: (semi-) old query: "+query);             
-            if (!hasStateOutput){
-              return {"status": true,  "rules": JSON.stringify(this.Rules)} ;
-            }else {
-              console.log(states);
-              console.log(states.join("-->"));
-              console.log(states.join());
-              return {"state":states.join("-->"), "rules": JSON.stringify(this.Rules)};
-              // return {"state":states.pop()}
-            }
-         }
+    let sucTransactions = [];
+    // execute the methods iteractively by using recursion
+    let ret = await this.recursiveExecute(sucTransactions, methods, 0, hasStateOutput);
+    console.log(ret);
+    if(ret.status == true){
+      console.log("YES: " + query); 
+    }else{
+      console.log("NO: " + query); 
     }
-    assert(i==0);
-    if (i==0){
-          // default: this is a totally new query
-          let address = await this.replayer.initialize();
-          let node = this.trie.root;
-          let ret = null;
 
-        
-          // for(let method of methods){
-          for(let j=0; j<methods.length; j++){
-            let method = methods[j];
-            let count = 0;
-            
-            let flag = false;
-            
-            // Predicate handling
-            if(method.split(" ").length>1){
-              ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
-            }else{
-              ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
-            }
-            if(ret.receipt.status=="0x0"){
-              flag = true;
-            }
-           
-            InputDecisionTree.addMethodInputWithOutput(ret.raw_tx.fun, ret.raw_tx.param, ret.receipt.status=="0x0"?"pass":"failed");
-            while ( 
-              ret.receipt.status!="0x0"// result is not null but the status is not "0x0" ("0x0" means no error)
-              && ++count < MEMBERQUERY_LIMIT // maximum number to try to make staus at "0x0"
-            && ret.raw_tx.param.length>0) // if method has no parameters, we don't repeat the testing
-            {
-                   // Predicate handling
-                  if(method.split(" ").length>1){
-                    ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method.split(" ")[0], this.tranlateToPredicates(method.split(" ")[1]));  
-                  }else{
-                    ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, address, method);  
-                  }
-                  
-                  InputDecisionTree.addMethodInputWithOutput(ret.raw_tx.fun, ret.raw_tx.param, ret.receipt.status=="0x0"?"pass":"failed");
-                  if(ret.receipt.status=="0x0"){
-                    flag = true;
-                  }
-            }   
-            
-            if(flag){
-                node = node.addTransaction({method:method, raw_tx:ret.raw_tx});
-                if (hasStateOutput){
-                  let state = await this.fuzzer.getState(this.replayer.deployment_configuration_data.contract, address);
-                  states.push(state.state);
-                }
-                let methodrules = InputDecisionTree.getMethodInputRules(ret.raw_tx.fun);
-                if(methodrules && methodrules.length>0)
-                    this.Rules[method] = methodrules;
-            }else{
-                console.log("NO: new query: "+query);
-                if(!hasStateOutput){
-                  return {"status": false,  "rules": JSON.stringify(this.Rules)} ;
-                }
-                else
-                {
-                  while(j<methods.length){
-                    states.push(-1);
-                    j++;
-                  }
-                  console.log(states.join("-->"));
-                  return {"state":states.join("-->"), "rules": JSON.stringify(this.Rules)};
-                  // return {"state": -1};
-                }
-            }
-          }
-          assert(ret && ret.receipt && ret.receipt.status && ret.receipt.status=="0x0");
-          console.log("YES: new query: "+query);             
-          if (!hasStateOutput){
-            return {"status": true,  "rules": JSON.stringify(this.Rules)} ;
-          }else {
-            console.log(states);
-            console.log(states.join("-->"));
-            console.log(states.join());
-            return {"state":states.join("-->"), "rules": JSON.stringify(this.Rules)};
-            // return {"state":states.pop()}
-          }
-      }
-  
+    // insert -1 into states in case of incomplete success of method chain
+    let K = ret.states.length;
+    for(let i=K; i<methods.length; i++){
+      ret.states.push(-1);
+    }
+    // output tuples. 
+    return {status: ret.status, state: ret.states.join("-->"), rules: ret.rules};
   }
 
 

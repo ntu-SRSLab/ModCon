@@ -45,7 +45,7 @@ function SendTransaction(call, callback) {
  */
 function SendQuery(call, callback) {
   if(!call.request.hasStateOutput)
-     membershipQueryEngine.answerQueryWithAbstractionRefinement(call.request.uniqueId, call.request.query).then(result =>{
+     membershipQueryEngine.answerQueryWithAbstractionRefinement(call.request.uniqueId, call.request.query, false).then(result =>{
       if(!result.rules){
          callback(null,   {status: result.status?"1":"0", events:"Query Result (1: Success, 0: Failure)"});
       }else{
@@ -56,11 +56,11 @@ function SendQuery(call, callback) {
          callback(null, {status: "0", events:"Unknown server failure"});
      });
   else 
-    membershipQueryEngine.answerQueryWithAbstractionRefinement(call.request.uniqueId, call.request.query, call.request.hasStateOutput).then(result =>{
+    membershipQueryEngine.answerQueryWithAbstractionRefinement(call.request.uniqueId, call.request.query, true).then(result =>{
       if(!result.rules){
           callback(null,   {status: result.state, events:"State Output (404: nonexist; -1: call failure; 0,1,...,n: state value.)"});
       }else{
-        callback(null,   {status: result.state, events:"State Output (404: nonexist; -1: call failure; 0,1,...,n: state value.)\n Rules:" + result.rules});
+          callback(null,   {status: result.state, events:"State Output (404: nonexist; -1: call failure; 0,1,...,n: state value.)\n Rules:" + result.rules});
       }
     }).catch(err=>{
         console.log(err);

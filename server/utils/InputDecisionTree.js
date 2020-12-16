@@ -61,6 +61,114 @@ function notPredicate(predicateName){
         return ">=";
     }
 }
+
+class Pivot{
+    constructor(pivot){
+        this.pivot = pivot;
+        this.gt = [];
+        this.ge = [];
+        this.eq = [];
+        this.lt = [];
+        this.le = [];
+    }
+    addPredicate(predicateStr){
+        if(predicateStr.indexOf(">=")!=-1){
+            this.ge.push(parseInt(predicateStr.split(">=")[1]));
+        }else if(predicateStr.indexOf(">")!=-1){
+            this.gt.push(parseInt(predicateStr.split(">")[1]));
+        }else if(predicateStr.indexOf("==")!=-1){
+            this.eq.push(parseInt(predicateStr.split("==")[1]));
+        }else if(predicateStr.indexOf("<=")!=-1){
+            this.le.push(parseInt(predicateStr.split("<=")[1]));
+        }else if (predicateStr.indexOf("<")!=-1){
+            this.lt.push(parseInt(predicateStr.split("<")[1]));
+        }else {
+            assert(false, "wrong operater: ", predicateStr );
+        } 
+    }
+    getPredicate(){
+        if(this.eq.length>0){
+            return this.eq[0];
+        }
+        let left1 = null;
+        let left2 = null;
+        if(this.gt.length>0){
+            left1 = Math.max(...this.gt)+1;
+        }
+        if(this.ge.length>0){
+            left2 = Math.max(...this.ge);
+        }
+        let left = null;
+        if(left1 && left2){
+            left = Math.max(left1, left2);
+        }else if(left1){
+            left = left1;
+        }else {
+            left = left2;
+        }
+        
+        let right1 = null;
+        let right2 = null;
+        if(this.lt.length>0){
+            right1 = Math.min(...this.lt)-1;
+        }
+        if(this.le.length>0){
+            right2 = Math.min(...this.le);
+        }
+        let right = null;
+        if(right1 && right2){
+            right = Math.min(right1, right2);
+        }else if(right1){
+            right = right1;
+        }else {
+            right = right2;
+        }
+
+        if(left && right){
+            return left+" =< " + this.pivot + " <= " + right;
+        }else if(left){
+            return this.pivot +" >= " + left;
+        }else {
+            return this.pivot + " <= " + right;
+        }
+    }
+}
+class Predicate{
+    constructor(rulestr){
+        this.rulestr = rulestr;
+    }
+    minimize(){
+        let subPredicates = this.rulestr.split(";");
+        let pivots = new Map();
+        for (let predicate of subPredicates){
+            let pivot;
+            if(predicate.indexOf("a")!=-1){
+                pivot = "a";
+            }else if(predicate.indexOf("b")!=-1){
+                pivot = "b";
+            }else if(predicate.indexOf("c")!=-1){
+                pivot = "c";
+            }else if(predicate.indexOf("d")!=-1){
+                pivot = "d";
+            }else{
+                if(predicate.indexOf("true")!=-1){
+                    return predicate;
+                }
+                assert(false, "there are more than four parameters in method");
+            }
+            if(!pivots[pivot]){
+                pivots[pivot] = new Pivot(pivot);
+            }
+            pivots[pivot].addPredicate(predicate);
+        }
+        let rules = [];
+        for(let pivot of Object.keys(pivots)){
+            rules.push(pivots[pivot].getPredicate());
+        }
+        console.log(rules.join(", "));
+        return rules.join(", ");
+    }
+}
 class DecisionTree{
     constructor(config){
         this.stack = new Stack();
@@ -98,9 +206,9 @@ class DecisionTree{
                 // ignore current item
                 // do nothing 
             }
-
-
+            console.log("equal: ", item, " vs ", conflicts)
         }else{
+            console.log("added item: ",item);
             this.trainingDataSet.push(item);
         }
     }
@@ -121,19 +229,19 @@ class DecisionTree{
     predict(example, actualoutput){
         return actualoutput==this.decisionTree.predict(example);
     }
-    traverse(tree){
+    _traverse(tree){
         if(tree){
             if (tree.category){
-                this.rules.push(this.stack.peek().replace("true;",""));
+                this.rules.push(new Predicate(this.stack.peek().replace("true;","")).minimize());
                 console.log("Rule: ", this.stack.peek().replace("true;",""));
                 console.log("Category: ", tree.category);          
             }else {
                 // console.log(tree.attribute, tree.predicateName, tree.pivot);
                 this.stack.push(this.stack.peek()+"; "+tree.attribute +" "+ tree.predicateName +" "+ tree.pivot);
-                this.traverse(tree.match);
+                this._traverse(tree.match);
                 this.stack.pop();
                 this.stack.push(this.stack.peek()+"; "+tree.attribute +" "+notPredicate(tree.predicateName) +" "+ tree.pivot)
-                this.traverse(tree.notMatch);
+                this._traverse(tree.notMatch);
                 this.stack.pop();
             }
         }
@@ -141,7 +249,7 @@ class DecisionTree{
     outputRules(){
         // console.log(JSON.stringify(this.decisionTree.root,null, "  "));
         this.rules = new Array();
-        this.traverse(this.decisionTree.root);
+        this._traverse(this.decisionTree.root);
         return this.rules;
     }
 }
@@ -289,34 +397,38 @@ function addMethodInputWithOutput(method, input, output){
         // console.log(types[count], types[count].indexOf("[")!=-1 ,types[count].indexOf("byte")!=-1 , types[count].indexOf("string")!=-1);
         if(types[count].indexOf("[")!=-1  
         || types[count].indexOf("byte")!=-1  
-        || types[count].indexOf("string")!=-1){
+        || types[count].indexOf("string")!=-1
+        || typeof param == "string"){
             ignoredAttributes.push(String.fromCharCode("a".charCodeAt(0)+count));
         }
         count ++;
     }
     data.output = output.toString();
    
-    if (!tree[method]){
+    if (!tree[method.split("(")[0]]){
         if (ignoredAttributes){
             console.log("ignoreAttributes: ", ignoredAttributes);
-            tree[method] = new DecisionTree({ignoredAttributes: ignoredAttributes});
+            tree[method.split("(")[0]] = new DecisionTree({ignoredAttributes: ignoredAttributes});
         }else {
-            tree[method] = new DecisionTree();
+            tree[method.split("(")[0]] = new DecisionTree();
         }
        
     }
-    tree[method].addItem(data);
-   
+    // console.log("before training dataset: ", tree[method.split("(")[0]].trainingDataSet);
+    tree[method.split("(")[0]].addItem(data);
+    // console.log("after training dataset: ", tree[method.split("(")[0]].trainingDataSet);
 }
-function getMethodInputRules(method){
+function getMethodInputRules(methodName){
     // console.log(method, " ", tree.has(method), tree[method], tree);
-    if(tree[method]){
-        console.log(tree[method]);
-        tree[method].startTraining();
-        return tree[method].outputRules();
+    if(tree[methodName]){
+        console.log(tree[methodName]);
+        tree[methodName].startTraining();
+        return tree[methodName].outputRules();
     }
     return null;
 }
+
+new Predicate("b >= 20; b < 61; a < 11").minimize();
 
 exports.addMethodInputWithOutput = addMethodInputWithOutput;
 exports.getMethodInputRules = getMethodInputRules;

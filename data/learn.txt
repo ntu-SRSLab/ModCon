@@ -1,11 +1,6 @@
 characters
-a close(uint256)
-b unbid(uint256)
-c withdraw(uint256)
-d reveal(uint256,uint256[],bytes32[])
-e cancelRB(uint256)
-f cancelABB(uint256)
-g finish(uint256)
-h bid(uint256,bytes32)
+a Complete()
+b TransferResponsibility(address)
+c IngestTelemetry(int256,int256,int256)
 positive examples
 negative examples
