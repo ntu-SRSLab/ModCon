@@ -372,6 +372,7 @@
               this.status_test = false;
             } catch (pError) {
                  console.error(pError);
+                 alert(pError);
                   if(pError.toString().indexOf("abi")!=-1){
                         alert( "The application has not been deployed before." );
                   }
