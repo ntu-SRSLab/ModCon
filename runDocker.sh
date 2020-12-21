@@ -1,1 +1,1 @@
-sudo docker run -d -i -t -e IP=155.69.148.241 -p 8080:8080 -p 3000:3000 -it liuyedocker/ntusrslab-modcon
+sudo docker run  -i -t -p 8080:8080 -p 3000:3000  liuyedocker/ntusrslab-modcon:v4
