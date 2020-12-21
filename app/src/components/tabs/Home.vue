@@ -124,6 +124,14 @@
         obj.server_data[event_Compile] = data;
         obj.status_compile= true;
         obj.status_compile_start = false;
+
+        for (var contract in data) {
+          obj.contracts.push({
+            value: contract,
+            text: contract
+          });
+        }
+
       });
       this.$socket.on(event_Upload, function (data) {
         if (!obj.server_data)
@@ -215,13 +223,14 @@
           data: this.selected
         });
         this.status_compile_start = true;
-        // this.log += "<br> server compiled " + JSON.stringify(this.selected);
-        for (var instance of this.selected) {
-          this.contracts.push({
-            value: instance.contract,
-            text: instance.contract
-          });
-        }
+        
+        // @deprecated
+        // for (var instance of this.selected) {
+        //   this.contracts.push({
+        //     value: instance.contract,
+        //     text: instance.contract
+        //   });
+        // }
       },
       OnDeploy() {
         console.log(client_Call);

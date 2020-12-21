@@ -1,12 +1,21 @@
 #!/usr/local/bin/node
 
 const fs = require("fs");
-const solc = require("solc");
 const spath = require('path');
 const shell = require("shelljs");
-const solclatest = require("solc-latest");
-const solc419 = require("solc419");
 const { isRegExp } = require("util");
+
+function checkSolcInstalled(version){
+	const fs = require('fs');
+	let installed = false;
+	try {
+		fs.accessSync('./node_modules/solc-'+version);
+		installed = true;
+	} catch (err) {
+		installed = false;
+	}
+	return installed;
+}
 
 function write2File(dir, file_name, content) {
 	if (!fs.existsSync(dir)) {
@@ -85,7 +94,7 @@ function compileWecredit() {
 function compile(folder, contracts) {
 	let output = {};
 	let input = {};
-	let version = "0.4.20";
+	let version = "0.4.25";
 	for (let contract of contracts) {
 		input[contract.contract] = fs.readFileSync(spath.join(folder, contract.contract), 'utf8');
 		let match =  input[contract.contract].match(/solidity\s+(>=|>|\^)(.*);/);
@@ -95,53 +104,57 @@ function compile(folder, contracts) {
 	}
 	console.log("solidity version: ", version);
 	let compiledContract ;
-	if (version == "0.4.19")
-		compiledContract = solc419.compile({
-		sources: input
-	}, 1);
-	else 
+	if (version.indexOf("0.4")!=-1){
+		// install specific solc version
+		if(false == checkSolcInstalled(version))
+			shell.exec("npm install solc-"+version+"@npm:solc@"+version + " --save");
+		let solc = require("solc-"+version);
 		compiledContract = solc.compile({
 			sources: input
 		}, 1);
-	console.log("keys:", Object.keys(compiledContract.sources));
-	if (Object.keys(compiledContract.sources).length==0){
-		//compile failure,
-		// try new version
-		let standardInput = { language: "Solidity"};
-		standardInput.sources = {};
-		standardInput.settings = {
-			outputSelection: {
-			  '*': {
-				'*': ['*']
-			  }
-			  }
-		  };
-		for (let contract of Object.keys(input)){
-			standardInput.sources[contract]={
-				content: input[contract]
+		console.log("keys:", Object.keys(compiledContract.sources));
+	}else {
+		    // try new version
+		    if(false == checkSolcInstalled(version))
+				shell.exec("npm install solc-"+version+"@npm:solc@"+version + " --save");
+			let solc = require("solc-"+version);
+
+			let standardInput = { language: "Solidity"};
+			standardInput.sources = {};
+			standardInput.settings = {
+				outputSelection: {
+				'*': {
+					'*': ['*']
+				}
+				}
+			};
+			for (let contract of Object.keys(input)){
+				standardInput.sources[contract]={
+					content: input[contract]
+				}
 			}
-		}
-		compiledContract =JSON.parse(solclatest.compile(JSON.stringify(standardInput)));
-		console.log(compiledContract);
-		for (let source  of Object.keys(compiledContract.contracts)){
-			// console.log(source, compiledContract.contracts[source]);
-			let file_name = source.split(".")[0];
-			for(let contract_name of Object.keys(compiledContract.contracts[source])){
-					if(contract_name == file_name){
-						console.log(file_name, " to compile");
-						let content = compiledContract.contracts[source][contract_name];
-						content.sourcePath = spath.join(__dirname, "../" + folder, file_name + ".sol");
-						console.log(content.sourcePath);
-						write2File("./deployed_contract/" + file_name, file_name + ".abi", JSON.stringify(content.abi));
-						// console.log(content.evm.bytecode);
-						write2File("./deployed_contract/" + file_name, file_name + ".bin", JSON.stringify(content.evm.bytecode));
-						 write2File("./deployed_contract/" + file_name, file_name + ".artifact", JSON.stringify(content));
-						 shell.cp("-f",content.sourcePath, spath.join(__dirname,"../deployed_contract/", file_name));
-						 output[contract_name] = content.abi;
-					}
+			compiledContract =JSON.parse(solc.compile(JSON.stringify(standardInput)));
+			console.log(compiledContract);
+			for (let source  of Object.keys(compiledContract.contracts)){
+				// console.log(source, compiledContract.contracts[source]);
+				let file_name = source.split(".")[0];
+				console.log(source, " compiled");
+				for(let contract_name of Object.keys(compiledContract.contracts[source])){
+					
+							let content = compiledContract.contracts[source][contract_name];
+							content.sourcePath = spath.join(__dirname, "../" + folder, file_name + ".sol");
+							console.log(content.sourcePath);
+							write2File("./deployed_contract/" + contract_name, contract_name + ".abi", JSON.stringify(content.abi));
+							// console.log(content.evm.bytecode);
+							write2File("./deployed_contract/" + contract_name, contract_name + ".bin", JSON.stringify(content.evm.bytecode));
+							write2File("./deployed_contract/" + contract_name, contract_name + ".artifact", JSON.stringify(content));
+							shell.cp("-f",content.sourcePath, spath.join(__dirname,"../deployed_contract/", contract_name));
+							output[contract_name] = content.abi;
+				
+				}
 			}
-		}
-		return output;
+			return output;
+		
 	}
 	// console.log(compiledContract);
 	for (let contract of Object.keys(compiledContract.contracts)) {
@@ -149,40 +162,20 @@ function compile(folder, contracts) {
 		let file_name = name.split(":")[0].split(".")[0];
 		let contract_name = name.split(":")[1];
 		console.log(file_name, contract_name);
-		if (file_name == contract_name) {
-			console.log(file_name, " to compile");
-			let content = compiledContract.contracts[name];
-			content.sourcePath = spath.join(__dirname, "../" + folder, file_name + ".sol");
-			console.log(content.sourcePath);
-			write2File("./deployed_contract/" + file_name, file_name + ".abi", JSON.stringify(JSON.parse(content.interface)));
-			write2File("./deployed_contract/" + file_name, file_name + ".bin", content.bytecode);
-			write2File("./deployed_contract/" + file_name, file_name + ".artifact", JSON.stringify(content));
-			shell.cp("-f",content.sourcePath, spath.join(__dirname,"../deployed_contract/", file_name));
-			 console.log(spath.join(__dirname,"../deployed_contract/", file_name));
-			output[contract_name] = JSON.parse(content.interface);
-		}
-	}
-	if(Object.keys(output).length==0){
-		for (let contract of Object.keys(compiledContract.contracts)) {
-			let name = contract;
-			let file_name = name.split(":")[0].split(".")[0];
-			let contract_name = name.split(":")[1];
-			console.log(file_name, contract_name);
-			if (contract_name.indexOf(file_name)!=-1||file_name.indexOf(contract_name)!=-1) {
-				console.log(file_name, " to compile");
-				let content = compiledContract.contracts[name];
-				content.sourcePath = spath.join(__dirname, "../" + folder, file_name + ".sol");
-				console.log(content.sourcePath);
-				write2File("./deployed_contract/" + file_name, file_name + ".abi", JSON.stringify(JSON.parse(content.interface)));
-				write2File("./deployed_contract/" + file_name, file_name + ".bin", content.bytecode);
-				write2File("./deployed_contract/" + file_name, file_name + ".artifact", JSON.stringify(content));
-				shell.cp("-f",content.sourcePath, spath.join(__dirname,"../deployed_contract/", file_name));
-				console.log(spath.join(__dirname,"../deployed_contract/", file_name));
-				output[file_name] = JSON.parse(content.interface);
-			}
-		}
+	
+		console.log(file_name, " to compile");
+		let content = compiledContract.contracts[name];
+		content.sourcePath = spath.join(__dirname, "../" + folder, file_name + ".sol");
+		console.log(content.sourcePath);
+		write2File("./deployed_contract/" + contract_name, contract_name + ".abi", JSON.stringify(JSON.parse(content.interface)));
+		write2File("./deployed_contract/" + contract_name, contract_name + ".bin", content.bytecode);
+		write2File("./deployed_contract/" + contract_name, contract_name + ".artifact", JSON.stringify(content));
+		shell.cp("-f",content.sourcePath, spath.join(__dirname,"../deployed_contract/", contract_name));
+		console.log(spath.join(__dirname,"../deployed_contract/", contract_name));
+		output[contract_name] = JSON.parse(content.interface);
 	
 	}
+	
 	console.log(output);
 	return output;
 }
