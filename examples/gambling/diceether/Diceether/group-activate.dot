@@ -1,0 +1,13 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s0 -> s0 [label="addHouseStake"];
+	s0 -> s0 [label="unpause"];
+	s0 -> s0 [label="activateConflictResolution"];
+	s0 -> s0 [label="updateConflictResolution"];
+	s0 -> s0 [label="activate"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

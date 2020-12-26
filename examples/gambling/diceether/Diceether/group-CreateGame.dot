@@ -1,0 +1,32 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s1 [shape="circle" label="1"];
+	s2 [shape="doublecircle" label="2"];
+	s3 [shape="doublecircle" label="3"];
+	s4 [shape="doublecircle" label="4"];
+	s5 [shape="circle" label="5"];
+	s6 [shape="doublecircle" label="6"];
+	s7 [shape="doublecircle" label="7"];
+	s8 [shape="doublecircle" label="8"];
+	s9 [shape="doublecircle" label="9"];
+	s0 -> s0 [label="createGame"];
+	s0 -> s9 [label="userCancelActiveGame"];
+	s0 -> s9 [label="userEndGameConflict"];
+	s1 -> s9 [label="createGame"];
+	s2 -> s5 [label="createGame"];
+	s3 -> s4 [label="createGame"];
+	s3 -> s2 [label="userCancelActiveGame"];
+	s4 -> s2 [label="createGame"];
+	s4 -> s3 [label="userEndGameConflict"];
+	s5 -> s7 [label="createGame"];
+	s6 -> s3 [label="createGame"];
+	s7 -> s1 [label="createGame"];
+	s8 -> s6 [label="createGame"];
+	s8 -> s0 [label="userEndGameConflict"];
+	s9 -> s8 [label="createGame"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

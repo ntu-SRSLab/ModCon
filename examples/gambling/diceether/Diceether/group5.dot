@@ -1,0 +1,12 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s0 -> s0 [label="serverEndGame"];
+	s0 -> s0 [label="serverCancelActiveGame"];
+	s0 -> s0 [label="serverEndGameConflict"];
+	s0 -> s0 [label="serverForceGameEnd"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}
