@@ -7,6 +7,7 @@ const fs = require("fs");
 var assert = require("assert");
 var membershipQueryServer = require("./connection/protos/Server");
 var compiler = require("./utils/compile");
+console.log(compiler);
 var FiscoContractKit = require("./connection/fisco/fuzzer").FiscoDeployer;
 var FiscoFuzzer = require("./connection/fisco/fuzzer").FiscoFuzzer;
 

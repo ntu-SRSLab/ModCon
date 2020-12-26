@@ -116,5 +116,5 @@ function compile(folder, contracts) {
 	console.log(output);
 	return output;
 }
+
 module.exports.compile = compile;
-module.exports.compileWecredit = compileWecredit;

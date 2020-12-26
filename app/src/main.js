@@ -24,7 +24,7 @@ global.vm = vm; //Define you app variable globally
 //   reconnectionDelay: 3000
 //   });
 //"http://155.69.148.241/modcon_server", {
-var SocketInstance = SocketIO( "http://155.69.148.241/", { //"http://155.69.148.241:3000/",{  
+var SocketInstance = SocketIO("http://localhost:3000/", { 
     reconnection: true,
     reconnectionDelay: 1000
     });
