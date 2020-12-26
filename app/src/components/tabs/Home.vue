@@ -48,6 +48,9 @@
         </div>
         <b-button v-if="status_compile"  :disabled="!selected_abi" block variant="outline-primary" @click="OnDeploy" class="mt-2">  {{selected_abi?selected_abi.name==selected_contract.split(".sol")[0]?"Deploy":"SendTx":"Deploy Or SendTransaction"}}</b-button>
         <!-- <b-table striped hover :items="deployed"></b-table> -->
+        <!-- <b-button  class="mt-2" block variant="outline-primary"  @click="OnLearn">
+                    <span>Learn</span> 
+        </b-button> -->
         <b-card class="mt-3" header="Result">
           <span v-html="log"></span>
         </b-card>
@@ -121,6 +124,14 @@
         obj.server_data[event_Compile] = data;
         obj.status_compile= true;
         obj.status_compile_start = false;
+
+        for (var contract in data) {
+          obj.contracts.push({
+            value: contract,
+            text: contract
+          });
+        }
+
       });
       this.$socket.on(event_Upload, function (data) {
         if (!obj.server_data)
@@ -198,16 +209,10 @@
         this.status_compile_start = false;
       },
       OnUpload() {
-
-        console.log(this.files, this.$socket, this.$socket.connected);
-        this.$socket.open();
-        console.log(this.files, this.$socket, this.$socket.connected);
-
         // this.log += "<br> uploaded contracts to server:" + JSON.stringify(this.selected);
-        
         this.$socket.emit("client", {
           type: client_Upload,
-          data: this.selected
+          data: this.selected 
         });
         this.$uploader.submitFiles(this.files);
         this.status_upload_start = true;
@@ -218,13 +223,14 @@
           data: this.selected
         });
         this.status_compile_start = true;
-        // this.log += "<br> server compiled " + JSON.stringify(this.selected);
-        for (var instance of this.selected) {
-          this.contracts.push({
-            value: instance.contract,
-            text: instance.contract
-          });
-        }
+        
+        // @deprecated
+        // for (var instance of this.selected) {
+        //   this.contracts.push({
+        //     value: instance.contract,
+        //     text: instance.contract
+        //   });
+        // }
       },
       OnDeploy() {
         console.log(client_Call);
@@ -259,7 +265,17 @@
           // this.log += `<br> server will handle transaction from ${this.selected_contract}`;
         }
       },
-
+      OnLearn(){
+        const client_Learn = "Learn_client";
+        console.log(client_Learn);
+        this.$socket.emit("client",{type: client_Learn,
+                  data: {
+                        target_contract: this.selected_contract.split(".sol")[0],                     
+                        network: this.$fsmservice.network
+                    }
+                  });
+      
+      },
       OnSelectContract(e) {
         console.log(e);
         console.log(`address of ${this.selected_contract}:`);

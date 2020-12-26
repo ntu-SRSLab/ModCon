@@ -78,8 +78,7 @@ function compile(folder, contracts) {
 				// console.log(source, compiledContract.contracts[source]);
 				let file_name = source.split(".")[0];
 				console.log(source, " compiled");
-				for(let contract_name of Object.keys(compiledContract.contracts[source])){
-						if(file_name == contract_name){
+				for(let contract_name of Object.keys(compiledContract.contracts[source])){	
 							let content = compiledContract.contracts[source][contract_name];
 							content.sourcePath = spath.join(__dirname, "../" + folder, file_name + ".sol");
 							console.log(content.sourcePath);
@@ -88,11 +87,11 @@ function compile(folder, contracts) {
 							write2File("./deployed_contract/" + contract_name, contract_name + ".bin", JSON.stringify(content.evm.bytecode));
 							write2File("./deployed_contract/" + contract_name, contract_name + ".artifact", JSON.stringify(content));
 							shell.cp("-f",content.sourcePath, spath.join(__dirname,"../deployed_contract/", contract_name));
-							output[source] = content.abi;
-						}
+							output[file_name] = content.abi;
 				
 				}
 	}
+	console.log(output);
 	return output;	
 	
 }
