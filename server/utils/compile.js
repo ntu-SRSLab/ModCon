@@ -70,14 +70,16 @@ function compile(folder, contracts) {
 					content: input[contract]
 				}
 			}
+			
 			compiledContract =JSON.parse(solc.compile(JSON.stringify(standardInput)));
-			console.log(compiledContract);
-			for (let source  of Object.keys(compiledContract.contracts)){
+		}
+	console.log(compiledContract);
+	for (let source  of Object.keys(compiledContract.contracts)){
 				// console.log(source, compiledContract.contracts[source]);
 				let file_name = source.split(".")[0];
 				console.log(source, " compiled");
 				for(let contract_name of Object.keys(compiledContract.contracts[source])){
-					
+						if(file_name == contract_name){
 							let content = compiledContract.contracts[source][contract_name];
 							content.sourcePath = spath.join(__dirname, "../" + folder, file_name + ".sol");
 							console.log(content.sourcePath);
@@ -86,35 +88,13 @@ function compile(folder, contracts) {
 							write2File("./deployed_contract/" + contract_name, contract_name + ".bin", JSON.stringify(content.evm.bytecode));
 							write2File("./deployed_contract/" + contract_name, contract_name + ".artifact", JSON.stringify(content));
 							shell.cp("-f",content.sourcePath, spath.join(__dirname,"../deployed_contract/", contract_name));
-							output[contract_name] = content.abi;
+							output[source] = content.abi;
+						}
 				
 				}
-			}
-			return output;
-		
 	}
-	// console.log(compiledContract);
-	for (let contract of Object.keys(compiledContract.contracts)) {
-		let name = contract;
-		let file_name = name.split(":")[0].split(".")[0];
-		let contract_name = name.split(":")[1];
-		console.log(file_name, contract_name);
+	return output;	
 	
-		console.log(file_name, " to compile");
-		let content = compiledContract.contracts[name];
-		content.sourcePath = spath.join(__dirname, "../" + folder, file_name + ".sol");
-		console.log(content.sourcePath);
-		write2File("./deployed_contract/" + contract_name, contract_name + ".abi", JSON.stringify(JSON.parse(content.interface)));
-		write2File("./deployed_contract/" + contract_name, contract_name + ".bin", content.bytecode);
-		write2File("./deployed_contract/" + contract_name, contract_name + ".artifact", JSON.stringify(content));
-		shell.cp("-f",content.sourcePath, spath.join(__dirname,"../deployed_contract/", contract_name));
-		console.log(spath.join(__dirname,"../deployed_contract/", contract_name));
-		output[contract_name] = JSON.parse(content.interface);
-	
-	}
-	
-	console.log(output);
-	return output;
 }
 
 module.exports.compile = compile;
