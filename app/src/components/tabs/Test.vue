@@ -83,9 +83,9 @@
                              <!-- <span>disableTest</span> -->
                               <b-spinner small v-if = "status_stop_start&&isTestStart"></b-spinner>
                     </b-button>
-                    <!-- <b-button class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantTest" @click="OnLearn">
+                    <b-button class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantTest" @click="OnLearn">
                              <span>Learn</span> 
-                    </b-button> -->
+                    </b-button>
 <!--                      
                     <b-button :disabled ="disableRandomTest"  class="ml-2   mb-2 col-sm-2"   size="md" :variant="variantRandomTest" @click="OnRandomTest()">
                        <span>{{textRandomTestButton}}</span>
@@ -174,6 +174,7 @@
   import stateMachine from '../../assets/stateMachine.json'
   import betting  from '../../assets/betting-simple.json'
   import assetTransfer  from '../../assets/assetTransfer.json'
+  import refrigeratedTransportation  from '../../assets/refrigeratedTransportation.json'
 
   const RandomTestLimit = 50;
   var counter = 0;
@@ -223,8 +224,9 @@
           { value:  credit, text: 'credit' },
           { value:  betting, text: 'betting' },
           { value: blindAction, text: 'blindAction' },
-           { value: assetTransfer, text: 'assetTransfer' },
+          { value: assetTransfer, text: 'assetTransfer' },
           { value:  stateMachine, text: 'stateMachine' },
+          { value:  refrigeratedTransportation, text: 'refrigeratedTransportation' },
           { value:  "Write your specication here", text: 'empty' }
         ],
        cmOptions_json: {
@@ -362,7 +364,7 @@
         }
       },
       OnStateMachineChange() {
-        if(this.fsm!=null){
+        if(this.fsm){
             console.log("OnStateMachineChange");
             try {
               this.GenerateSVGXMLString( this.$fsmservice.add_fsm(this.fsm).get_sm_cat());
@@ -372,7 +374,6 @@
               this.status_test = false;
             } catch (pError) {
                  console.error(pError);
-                 alert(pError);
                   if(pError.toString().indexOf("abi")!=-1){
                         alert( "The application has not been deployed before." );
                   }
@@ -385,154 +386,4 @@
         console.log(client_Learn);
         this.$socket.emit("client",{type: client_Learn,
                   data: {
-                        target_contract:this.$fsmservice.get_fsm().target_contract,                     
-                        network: this.$fsmservice.network
-                    }
-                  });
-      },
-      OnTest(){
-        if (this.chooseRandom){
-            this.OnRandomTest();
-        }
-        else{
-              if(!this.isTestStart){
-                  const client_Test = "Test_client";
-                  console.log(client_Test);
-                  this.$fsmservice.disable_randomTest();
-                  this.$socket.emit("client",{type: client_Test,
-                  data: {
-                        covering_strategy: this.covering_strategy,
-                        test_priority: {state: this.selected_state, transition:this.selected_transition}, 
-                        target_contract:this.$fsmservice.get_fsm().target_contract, 
-                        file_name: "statemachine.js", 
-                        model_script: this.model,
-                        network: this.$fsmservice.network
-                    }
-                  });
-                  this.isTestStart = true;
-              }else{
-                  this.status_stop_start = true;
-                  this.$socket.emit("client-stop",{command: "stop testing!"});
-              }
-       }
-      },
-      OnRandomTest(){
-        if(this.chooseRandom){
-            if(!this.isTestStart){
-                  const client_Test = "Test_client";
-                  console.log(client_Test);
-                  this.$fsmservice.enable_randomTest();
-                  this.$socket.emit("client",{type: client_Test,
-                  data: {
-                        random_test: true, 
-                        covering_strategy: this.covering_strategy,
-                        test_priority: {state: this.selected_state, transition:this.selected_transition}, 
-                        target_contract:this.$fsmservice.get_fsm().target_contract, 
-                        file_name: "statemachine.js", 
-                        model_script: this.model,
-                        network: this.$fsmservice.network
-                    }
-                  });
-                  this.isTestStart = true;
-                  // loop call; 
-                  setTimeout(this.OnTest, 30*60*1000);
-            }else{
-                  this.status_stop_start = true;
-                  this.$socket.emit("client-stop",{command: "stop testing!"});
-            }
-        }
-    },
-    OnClearTable(){
-      this.test_results = [];
-    },
-    OnMouseOverFSM(){
-          console.log("MouseOverFSM");
-          this.mouseOverFSM = true;
-    },
-    OnMouseOutFSM(){
-         console.log("MouseLeaveFSM");
-         this.mouseOverFSM = false;
-         if(!this.isTestStart)
-            this.OnStateMachineChange();
-    },
-    OnCoverStrategy(){
-        console.log(`current strategy ${this.covering_strategy}`)
-         this.model = this.$fsmservice.add_covering_strategy(this.covering_strategy).get_model_script();
-         this.GenerateSVGXMLString( this.$fsmservice.get_sm_cat());
-      },
-    OnTransitions(){
-        console.log(this.selected_transition_startstate);
-        this.transitions = this.$fsmservice.get_possible_transitions(this.selected_transition_startstate);
-      },
-    OnChooseRandomTest(){
-         console.log(this.chooseRandom);
-         console.log(`current testing is ${this.chooseRandom?"Random Testing":"Model Based Testing"}`)
-         if (this.chooseRandom)
-            this.model = this.$fsmservice.enable_randomTest().get_model_script();
-         else
-            this.model = this.$fsmservice.disable_randomTest().get_model_script();
-         this.GenerateSVGXMLString(this.$fsmservice.get_sm_cat());
-      }
-
-    },
-    computed: {
-      disable_model_script(){
-        return this.status_fsm==false;
-      },
-      zoom(){
-        console.log( this.mouseOverFSM?"large stack-top": "normal stack-top");
-        return this.mouseOverFSM?"large stack-top": "normal stack-top";
-      },
-      disableTest(){
-        console.log(this.fsm_status, this.model_status);
-        return !(this. fsm_status == "confirmed" && this.model_status == "confirmed");
-      },
-      variantTest(){
-        return (this. fsm_status == "confirmed" && this.model_status == "confirmed")?this.status_test?"success":"primary": "secondary";
-      },
-      variantRandomTest(){
-        return (this. fsm_status == "confirmed" && this.model_status == "confirmed")?this.status_randomtest?"success":"primary": "secondary";
-      }
-    },
-    props: {
-      msg: String
-    }
-  };
-</script>
-
-<style  lang="scss">
-  .container /deep/ {
-    @import "~bootstrap-vue/dist/bootstrap-vue";
-    @import "~bootstrap/dist/css/bootstrap";
-  }
-  .ModelCodeMirror {
-           text-align: left!important;
-           height: 820px !important;
-           width: 100%;
-  }
-  .MyCodeMirror {
-           text-align: left!important;
-           height: 98%;
-           width: 100%;
-  }
-  .CodeMirror {
-      width: 100%;
-      height: 100%;
-      border: 1px solid #eee;
-     }
-     .normal{
-             width:98%   !important; 
-             height: 800px; border:thin
-     }
-     .large{
-              width:300%  !important; 
-              height: 800px; border:thin
-     }
-      .stack-top{
-        z-index: 9;
-        margin: 20px; /* for demo purpose  */
-    }
-    div {
-        z-index: 1; /* integer */
-    }
-</style>
+                        target_contract:t

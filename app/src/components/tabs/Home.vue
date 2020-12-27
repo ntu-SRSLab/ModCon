@@ -48,9 +48,9 @@
         </div>
         <b-button v-if="status_compile"  :disabled="!selected_abi" block variant="outline-primary" @click="OnDeploy" class="mt-2">  {{selected_abi?selected_abi.name==selected_contract.split(".sol")[0]?"Deploy":"SendTx":"Deploy Or SendTransaction"}}</b-button>
         <!-- <b-table striped hover :items="deployed"></b-table> -->
-        <!-- <b-button  class="mt-2" block variant="outline-primary"  @click="OnLearn">
+        <b-button  class="mt-2" block variant="outline-primary"  @click="OnLearn">
                     <span>Learn</span> 
-        </b-button> -->
+        </b-button>
         <b-card class="mt-3" header="Result">
           <span v-html="log"></span>
         </b-card>
@@ -319,87 +319,4 @@
         return this.status_upload == false ? "primary" : "success";
       },
       variant_compile: function () {
-        return this.status_upload == false ? "secondary" : this.status_compile == false ? "primary" : "success";
-      },
-      disable_upload: function () {
-        return this.selected.length == 0;
-      },
-      disable_compile: function () {
-        return this.status_upload == false;
-      },
-      // contract_addresses: function () {
-      //   console.log(`address of ${this.selected_contract}:`);
-      //   console.log(this.addresses);
-      //   if (undefined == this.addresses[this.selected_contract.split(".sol")[0]])
-      //     return [{
-      //       value: "0x",
-      //       text: "0x"
-      //     }];
-      //   else {
-      //     let ret = [];
-      //     for (let address of this.addresses[this.selected_contract.split(".sol")[0]]) {
-      //       ret.push({
-      //         value: address,
-      //         text: address
-      //       });
-      //     }
-      //     return ret;
-      //   }
-      // },
-      
-      abis: function () {
-        var existConstructorFunction = false;
-        var abis = [];
-        console.log(this.server_data[event_Compile]);
-        console.log(this.server_data[event_Compile][this.selected_contract.split(".sol")[0]]);
-        for (var fun of JSON.parse(JSON.stringify(this.server_data[event_Compile][this.selected_contract.split(".sol")[0]]))) {
-              if (fun.type == "function" || fun.type == "constructor") {
-                  if(fun.type == "constructor"){
-                        existConstructorFunction = true;
-                  }
-                    fun.inputs = this.types(fun.inputs);
-                    fun.outputs = this.types(fun.outputs);
-                    console.log(fun);
-                    if (fun.name == undefined || fun.name == null || fun.name == "") {
-                          fun.name = this.selected_contract.split(".sol")[0];
-                          abis.push({
-                            value: fun,
-                            text: this.selected_contract.split(".sol")[0]
-                          })
-                    } else {
-                          abis.push({
-                            value: fun,
-                            text: fun.name
-                          })
-                    }
-              }
-        }
-        if(existConstructorFunction==false){
-              abis.push({
-                value:{
-                  name: this.selected_contract.split(".sol")[0], 
-                  inputs: "", 
-                  type: "constructor"
-                  },
-                text: this.selected_contract.split(".sol")[0]
-            });
-        }
-
-        let obj = this;
-        return abis.filter(e =>{
-          return obj.selected_address=="0x"?e.value.type=="constructor":e.value.type!="constructor";
-        });
-      }
-    },
-    props: {
-      msg: String
-    }
-  };
-</script>
-
-<style scoped lang="scss">
-  .container /deep/ {
-    @import "~bootstrap-vue/dist/bootstrap-vue";
-    @import "~bootstrap/dist/css/bootstrap";
-  }
-</style>
+        return this.

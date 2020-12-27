@@ -9,6 +9,7 @@ import FSMService from "./service/service.js"
 import VueCodemirror from 'vue-codemirror'
 import JsonCSV from 'vue-json-csv'
  
+import assert from "assert"
 
 
 // import base style
@@ -18,25 +19,21 @@ Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false
 global.Popper = Popper;
 global.vm = vm; //Define you app variable globally
 
-
-// var SocketInstance = SocketIO( "http://155.69.202.66/modcon_server", {
-//   reconnection: true,
-//   reconnectionDelay: 3000
-//   });
-//"http://155.69.148.241/modcon_server", {
-var SocketInstance = SocketIO("http://localhost:3000/", { 
+var myArgs = process.argv.slice(2);
+var SocketInstance = SocketIO('http://localhost:3000', {
+  reconnection: true,
+  reconnectionDelay: 3000
+});
+if (myArgs.length>0){
+  assert(myArgs.length==1);
+  var server = myArgs[0];
+  SocketInstance = SocketIO(server, {
     reconnection: true,
-    reconnectionDelay: 1000
-    });
-SocketInstance.on('disconnect', () => {
-  console.log("disconnected");
-  SocketInstance.open();
-});
-SocketInstance.on('connect', () => {
-   console.log(SocketInstance.id);
-});
+    reconnectionDelay: 3000
+  });
+}
 var uploader = new SocketIOFileUpload(SocketInstance);
-console.log(SocketInstance);
+
 Vue.prototype.$fsmservice = fsmservice;
 Vue.prototype.$uploader = uploader;
 Vue.prototype.$socket = SocketInstance;
@@ -53,4 +50,3 @@ Vue.config.productionTip = false;
 var vm =new Vue({   
   render: h => h(App)
 }).$mount("#app");
-
