@@ -1,0 +1,12 @@
+alphabet
+approve
+setApprovalForAll
+---------------------
+positive examples
+setApprovalForAll setApprovalForAll setApprovalForAll setApprovalForAll setApprovalForAll setApprovalForAll setApprovalForAll approve approve
+setApprovalForAll setApprovalForAll setApprovalForAll approve approve approve approve approve approve approve approve approve approve
+approve setApprovalForAll
+setApprovalForAll approve setApprovalForAll
+approve setApprovalForAll approve
+setApprovalForAll setApprovalForAll approve
+setApprovalForAll approve

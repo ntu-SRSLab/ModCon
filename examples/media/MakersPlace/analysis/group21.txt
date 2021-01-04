@@ -1,0 +1,15 @@
+alphabet
+safeTransferFrom
+setApprovalForAll
+---------------------
+positive examples
+safeTransferFrom setApprovalForAll safeTransferFrom
+setApprovalForAll safeTransferFrom setApprovalForAll safeTransferFrom
+setApprovalForAll safeTransferFrom
+setApprovalForAll safeTransferFrom setApprovalForAll
+setApprovalForAll safeTransferFrom safeTransferFrom
+setApprovalForAll setApprovalForAll safeTransferFrom
+safeTransferFrom safeTransferFrom setApprovalForAll safeTransferFrom safeTransferFrom
+safeTransferFrom setApprovalForAll
+safeTransferFrom safeTransferFrom setApprovalForAll
+setApprovalForAll safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom

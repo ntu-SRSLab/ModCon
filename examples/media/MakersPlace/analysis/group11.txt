@@ -1,0 +1,6 @@
+alphabet
+approve
+transferFrom
+---------------------
+positive examples
+transferFrom transferFrom transferFrom transferFrom transferFrom transferFrom transferFrom transferFrom transferFrom approve

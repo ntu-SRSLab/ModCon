@@ -1,0 +1,16 @@
+alphabet
+approve
+safeTransferFrom
+setApprovalForAll
+---------------------
+positive examples
+approve approve setApprovalForAll approve safeTransferFrom safeTransferFrom approve approve approve approve approve approve approve approve approve safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom approve approve approve approve approve approve approve approve approve approve approve approve
+safeTransferFrom safeTransferFrom setApprovalForAll safeTransferFrom approve approve approve approve approve safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom approve approve
+safeTransferFrom safeTransferFrom setApprovalForAll setApprovalForAll approve approve approve setApprovalForAll safeTransferFrom safeTransferFrom
+safeTransferFrom safeTransferFrom approve approve approve approve approve approve approve safeTransferFrom approve setApprovalForAll approve safeTransferFrom
+safeTransferFrom safeTransferFrom safeTransferFrom setApprovalForAll safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom approve safeTransferFrom setApprovalForAll approve safeTransferFrom safeTransferFrom safeTransferFrom
+safeTransferFrom setApprovalForAll approve approve approve approve approve approve approve approve
+safeTransferFrom approve approve approve approve approve approve approve setApprovalForAll approve approve approve approve safeTransferFrom approve safeTransferFrom
+setApprovalForAll approve safeTransferFrom setApprovalForAll approve approve approve approve approve approve
+setApprovalForAll safeTransferFrom safeTransferFrom approve approve approve approve approve approve approve approve safeTransferFrom approve safeTransferFrom approve approve safeTransferFrom
+setApprovalForAll safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom approve approve safeTransferFrom approve safeTransferFrom safeTransferFrom safeTransferFrom

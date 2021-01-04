@@ -1,0 +1,6 @@
+alphabet
+burn
+---------------------
+positive examples
+burn burn burn burn burn burn burn burn burn burn burn burn burn burn
+burn

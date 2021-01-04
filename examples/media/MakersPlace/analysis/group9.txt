@@ -1,0 +1,22 @@
+alphabet
+approve
+safeTransferFrom
+---------------------
+positive examples
+approve safeTransferFrom
+approve approve safeTransferFrom
+approve safeTransferFrom approve approve safeTransferFrom
+approve safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom approve approve approve
+safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom approve approve approve approve approve
+approve safeTransferFrom safeTransferFrom safeTransferFrom
+safeTransferFrom safeTransferFrom approve safeTransferFrom
+safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom approve approve approve approve approve approve approve approve safeTransferFrom safeTransferFrom safeTransferFrom
+approve approve approve approve safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom approve approve safeTransferFrom approve approve approve
+safeTransferFrom approve approve approve approve approve approve approve approve approve approve approve approve approve approve approve approve approve approve approve approve approve approve approve approve
+approve approve approve safeTransferFrom safeTransferFrom
+approve approve safeTransferFrom approve approve approve approve approve safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom approve safeTransferFrom
+safeTransferFrom approve
+approve approve approve approve approve approve safeTransferFrom approve
+safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom approve
+approve approve approve safeTransferFrom
+approve approve approve approve approve approve approve approve approve approve safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom

@@ -1,0 +1,8 @@
+alphabet
+approve
+safeTransferFrom
+setApprovalForAll
+burn
+---------------------
+positive examples
+setApprovalForAll approve approve burn safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom

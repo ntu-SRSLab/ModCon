@@ -1,0 +1,7 @@
+alphabet
+approve
+safeTransferFrom
+burn
+---------------------
+positive examples
+approve burn approve approve safeTransferFrom
