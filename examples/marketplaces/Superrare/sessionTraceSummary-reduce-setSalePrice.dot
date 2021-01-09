@@ -1,0 +1,32 @@
+digraph g {
+
+	s0 [shape="circle" label="0"];
+	s1 [shape="doublecircle" label="1"];
+	s2 [shape="doublecircle" label="2"];
+	s3 [shape="doublecircle" label="3"];
+	s4 [shape="doublecircle" label="4"];
+	s5 [shape="doublecircle" label="5"];
+	s0 -> s5 [label="setSalePrice"];
+	s1 -> s3 [label="setSalePrice"];
+	s1 -> s4 [label="bid"];
+	s2 -> s3 [label="setSalePrice"];
+	s2 -> s4 [label="bid"];
+	s2 -> s1 [label="transfer"];
+	s3 -> s5 [label="bid"];
+	s3 -> s2 [label="buy"];
+	s3 -> s2 [label="transfer"];
+	s4 -> s5 [label="setSalePrice"];
+	s4 -> s2 [label="acceptBid"];
+	s4 -> s2 [label="cancelBid"];
+	s4 -> s4 [label="transfer"];
+	s5 -> s5 [label="setSalePrice"];
+	s5 -> s5 [label="bid"];
+	s5 -> s2 [label="acceptBid"];
+	s5 -> s5 [label="cancelBid"];
+	s5 -> s2 [label="buy"];
+	s5 -> s5 [label="transfer"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

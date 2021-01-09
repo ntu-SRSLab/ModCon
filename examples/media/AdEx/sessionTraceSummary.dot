@@ -1,0 +1,17 @@
+digraph g {
+
+	s0 [shape="circle" label="0"];
+	s1 [shape="doublecircle" label="1"];
+	s2 [shape="doublecircle" label="2"];
+	s3 [shape="doublecircle" label="3"];
+	s0 -> s1 [label="cancelBid"];
+	s0 -> s3 [label="acceptBid"];
+	s2 -> s1 [label="verifyBid"];
+	s3 -> s1 [label="giveupBid"];
+	s3 -> s2 [label="verifyBid"];
+	s3 -> s1 [label="refundBid"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

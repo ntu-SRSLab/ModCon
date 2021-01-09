@@ -1,0 +1,22 @@
+alphabet
+airDrop
+purchase
+purchaseByEMONT
+addSales
+---------------------
+positive examples
+addSales purchaseByEMONT
+addSales purchase
+addSales purchase
+addSales purchase
+addSales airDrop
+addSales purchase
+addSales purchase
+addSales airDrop
+addSales purchaseByEMONT
+addSales airDrop
+addSales purchase
+addSales purchase
+addSales airDrop
+addSales purchase
+addSales purchaseByEMONT

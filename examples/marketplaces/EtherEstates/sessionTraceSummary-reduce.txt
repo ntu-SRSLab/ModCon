@@ -1,0 +1,19 @@
+alphabet
+createListing
+purchaseEstate
+---------------------
+positive examples
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate
+createListing purchaseEstate

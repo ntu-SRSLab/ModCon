@@ -1,7 +1,3 @@
-/**
- *Submitted for verification at Etherscan.io on 2017-07-19
-*/
-
 pragma solidity ^0.4.8;
 contract CryptoPunksMarket {
 

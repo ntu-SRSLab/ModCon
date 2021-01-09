@@ -1,0 +1,17 @@
+digraph g {
+
+	s0 [shape="circle" label="0"];
+	s1 [shape="doublecircle" label="1"];
+	s2 [shape="doublecircle" label="2"];
+	s3 [shape="doublecircle" label="3"];
+	s4 [shape="doublecircle" label="4"];
+	s0 -> s4 [label="depositHeroToGateway"];
+	s0 -> s4 [label="mintHero"];
+	s2 -> s1 [label="withdrawHeroToAssetOwnerByAdmin"];
+	s3 -> s2 [label="depositHeroToGateway"];
+	s4 -> s3 [label="withdrawHeroToAssetOwnerByAdmin"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

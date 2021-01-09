@@ -1,0 +1,2415 @@
+2395  transactions
+creator transferOwnership  success
+user1 createListing 1 success
+user1 createListing 2 fail
+user1 createListing 3 success
+user1 createListing 2 success
+user1 createListing 4 success
+user1 createListing 5 success
+user1 createListing 6 success
+user1 createListing 7 success
+user1 createListing 8 success
+user1 createListing 9 success
+user1 createListing 10 success
+user1 createListing 11 success
+user1 createListing 12 success
+user1 createListing 13 success
+user1 createListing 14 success
+user1 createListing 15 success
+user1 createListing 16 success
+user1 createListing 17 success
+user1 createListing 18 success
+user1 createListing 19 success
+user1 createListing 20 success
+user1 createListing 21 success
+user1 createListing 22 success
+user1 createListing 23 success
+user1 createListing 24 success
+user1 createListing 25 success
+user1 createListing 26 success
+user1 createListing 27 success
+user1 createListing 28 success
+user1 createListing 29 success
+user1 createListing 30 success
+user1 createListing 31 success
+user1 createListing 32 success
+user1 createListing 33 success
+user1 createListing 34 success
+user1 createListing 35 success
+user1 createListing 36 success
+user1 createListing 37 success
+user1 createListing 38 success
+user1 createListing 39 success
+user1 createListing 40 success
+user1 createListing 41 success
+user1 createListing 42 success
+user1 createListing 43 success
+user1 createListing 44 success
+user1 createListing 45 success
+user1 createListing 46 success
+user1 createListing 47 success
+user1 createListing 48 success
+user1 createListing 49 success
+user1 createListing 50 success
+user1 createListing 51 success
+user1 createListing 52 success
+user1 createListing 53 success
+user1 createListing 54 success
+user1 createListing 55 success
+user1 createListing 56 success
+user1 createListing 57 success
+user1 createListing 58 success
+user1 createListing 59 success
+user1 createListing 60 success
+user1 createListing 61 success
+user1 createListing 62 success
+user1 createListing 63 success
+user1 createListing 64 success
+user1 createListing 65 success
+user1 createListing 66 success
+user1 createListing 67 success
+user1 createListing 68 success
+user1 createListing 69 success
+user1 createListing 70 success
+creator purchaseEstate 57 success
+creator purchaseEstate 1 success
+creator purchaseEstate 59 success
+creator purchaseEstate 63 success
+creator purchaseEstate 3 success
+user1 createListing 71 success
+user1 createListing 72 success
+user1 createListing 73 success
+user1 createListing 74 success
+user1 createListing 75 success
+user1 createListing 76 success
+user1 createListing 77 success
+user1 createListing 78 success
+user1 createListing 79 success
+user1 createListing 80 success
+user1 createListing 81 success
+user1 createListing 82 success
+user1 createListing 83 success
+user1 createListing 84 success
+user1 createListing 85 success
+user1 createListing 86 success
+user1 createListing 87 success
+user1 createListing 88 success
+user1 createListing 89 success
+user1 createListing 90 success
+user1 createListing 91 success
+user1 createListing 92 success
+user1 createListing 93 success
+user1 createListing 94 success
+user1 createListing 95 success
+user1 createListing 96 success
+user1 createListing 97 success
+user1 createListing 98 success
+user1 createListing 99 success
+user1 createListing 100 success
+user1 createListing 101 success
+user1 createListing 102 success
+user1 createListing 103 success
+user1 createListing 104 success
+user1 createListing 105 success
+user1 createListing 106 success
+user1 createListing 107 success
+user1 createListing 108 success
+user1 createListing 109 success
+user1 createListing 110 success
+user1 createListing 111 success
+user1 createListing 112 success
+user1 createListing 113 success
+user1 createListing 114 success
+user1 createListing 115 success
+user1 createListing 116 success
+user1 createListing 117 success
+user1 createListing 118 success
+user1 createListing 119 success
+user1 createListing 120 success
+user1 createListing 121 success
+user1 createListing 122 success
+user1 createListing 123 success
+user1 createListing 124 success
+user1 createListing 125 success
+user1 createListing 126 success
+user1 createListing 127 success
+user1 createListing 128 success
+user1 createListing 129 success
+user1 createListing 130 success
+user1 createListing 131 success
+user1 createListing 132 success
+user1 createListing 133 success
+user1 createListing 134 success
+user1 createListing 135 success
+user1 createListing 136 success
+user1 createListing 137 success
+user1 createListing 138 success
+user1 createListing 139 success
+user1 createListing 140 success
+user1 createListing 141 success
+user1 createListing 142 success
+user1 createListing 143 success
+user1 createListing 144 success
+user1 createListing 145 success
+user1 createListing 146 success
+user1 createListing 147 success
+user1 createListing 148 success
+user1 createListing 149 success
+user1 createListing 150 success
+creator purchaseEstate 141 success
+creator purchaseEstate 139 success
+user2 purchaseEstate 51 success
+user3 purchaseEstate 2 success
+user4 purchaseEstate 92 success
+user5 purchaseEstate 51 success
+user5 purchaseEstate 55 success
+user2 purchaseEstate 141 success
+user2 purchaseEstate 129 success
+user5 withdrawRent  success
+user5 purchaseEstate 62 success
+user2 purchaseEstate 3 success
+user5 withdrawRent  success
+user2 purchaseEstate 10 success
+user2 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 purchaseEstate 61 success
+user5 withdrawRent  success
+user2 purchaseEstate 118 success
+user6 purchaseEstate 2 success
+user6 purchaseEstate 49 success
+creator purchaseEstate 97 success
+creator purchaseEstate 98 success
+user7 purchaseEstate 53 success
+user6 purchaseEstate 123 success
+creator purchaseEstate 149 success
+creator purchaseEstate 72 success
+user8 purchaseEstate 2 success
+user9 purchaseEstate 32 success
+user9 purchaseEstate 2 success
+user8 purchaseEstate 129 success
+user8 purchaseEstate 94 success
+user8 purchaseEstate 48 success
+user6 purchaseEstate 112 success
+user9 purchaseEstate 4 success
+user6 purchaseEstate 48 fail
+user9 purchaseEstate 61 success
+user7 purchaseEstate 2 fail
+user9 purchaseEstate 65 success
+user9 purchaseEstate 107 success
+user10 purchaseEstate 55 success
+user11 purchaseEstate 125 success
+user12 purchaseEstate 125 fail
+user9 purchaseEstate 129 success
+user13 purchaseEstate 51 success
+user9 purchaseEstate 88 success
+user14 purchaseEstate 88 fail
+user15 purchaseEstate 83 success
+user16 purchaseEstate 2 success
+user13 purchaseEstate 62 success
+user9 purchaseEstate 100 success
+user13 purchaseEstate 55 success
+user12 purchaseEstate 34 success
+user17 purchaseEstate 127 success
+user10 purchaseEstate 62 success
+user13 purchaseEstate 139 success
+user9 purchaseEstate 96 success
+user6 purchaseEstate 127 fail
+user13 purchaseEstate 49 success
+user16 purchaseEstate 29 success
+user8 purchaseEstate 92 success
+user15 purchaseEstate 81 success
+user10 purchaseEstate 139 fail
+user13 purchaseEstate 62 success
+user6 purchaseEstate 91 success
+user13 purchaseEstate 10 success
+user16 purchaseEstate 89 success
+user8 purchaseEstate 57 success
+user14 purchaseEstate 91 fail
+user10 purchaseEstate 10 fail
+user17 purchaseEstate 52 success
+user10 purchaseEstate 55 success
+user16 purchaseEstate 69 success
+user13 purchaseEstate 97 success
+user13 purchaseEstate 141 success
+user9 purchaseEstate 2 success
+user18 purchaseEstate 61 success
+user8 purchaseEstate 67 success
+user14 purchaseEstate 39 success
+user12 purchaseEstate 122 success
+user16 purchaseEstate 88 success
+user14 purchaseEstate 4 success
+user19 purchaseEstate 92 success
+user10 purchaseEstate 139 success
+user6 purchaseEstate 77 success
+user15 purchaseEstate 67 fail
+user16 purchaseEstate 150 success
+user12 purchaseEstate 106 success
+user14 purchaseEstate 56 success
+user10 purchaseEstate 10 success
+user13 purchaseEstate 97 fail
+user13 purchaseEstate 55 success
+user13 purchaseEstate 139 success
+user20 purchaseEstate 98 success
+user21 purchaseEstate 76 success
+user6 purchaseEstate 58 success
+user9 purchaseEstate 47 success
+user13 purchaseEstate 3 success
+user22 purchaseEstate 98 fail
+user19 purchaseEstate 112 success
+user21 purchaseEstate 54 success
+user19 purchaseEstate 51 success
+user20 purchaseEstate 51 fail
+user13 purchaseEstate 10 success
+user9 purchaseEstate 72 success
+user12 purchaseEstate 13 success
+user17 purchaseEstate 117 success
+user22 purchaseEstate 72 fail
+user17 purchaseEstate 119 success
+user9 purchaseEstate 4 success
+user12 purchaseEstate 21 success
+user22 purchaseEstate 112 fail
+user22 purchaseEstate 127 success
+user9 purchaseEstate 61 success
+user9 purchaseEstate 6 success
+user9 purchaseEstate 124 success
+user10 purchaseEstate 139 success
+user10 purchaseEstate 97 success
+user22 purchaseEstate 63 success
+user10 purchaseEstate 98 success
+user23 purchaseEstate 3 success
+user21 purchaseEstate 63 fail
+user13 purchaseEstate 51 success
+user9 purchaseEstate 104 success
+user24 purchaseEstate 139 fail
+user15 purchaseEstate 106 fail
+user20 purchaseEstate 51 fail
+user16 purchaseEstate 2 success
+user22 purchaseEstate 49 success
+user14 purchaseEstate 99 success
+creator withdrawRent  success
+user8 purchaseEstate 63 fail
+user22 purchaseEstate 112 success
+user17 purchaseEstate 121 success
+user25 purchaseEstate 3 success
+user9 purchaseEstate 86 success
+user18 purchaseEstate 111 success
+user15 purchaseEstate 85 success
+user16 purchaseEstate 41 success
+user8 purchaseEstate 126 success
+user10 purchaseEstate 49 success
+user8 purchaseEstate 46 success
+user10 purchaseEstate 112 success
+user15 purchaseEstate 150 success
+user8 purchaseEstate 58 success
+user9 purchaseEstate 16 success
+user15 purchaseEstate 118 success
+user15 purchaseEstate 2 fail
+user15 purchaseEstate 67 success
+user22 purchaseEstate 72 success
+user17 purchaseEstate 95 success
+user10 purchaseEstate 4 success
+user20 purchaseEstate 112 success
+user26 purchaseEstate 97 success
+user13 purchaseEstate 97 fail
+user9 purchaseEstate 29 success
+user23 withdrawRent  success
+user12 purchaseEstate 95 fail
+user27 purchaseEstate 62 success
+user22 purchaseEstate 97 fail
+user17 purchaseEstate 128 success
+user16 purchaseEstate 64 success
+user18 purchaseEstate 103 success
+user24 purchaseEstate 10 success
+user28 purchaseEstate 98 success
+user8 purchaseEstate 12 success
+user9 purchaseEstate 38 success
+user20 purchaseEstate 1 success
+user9 purchaseEstate 144 success
+user22 purchaseEstate 77 success
+user26 purchaseEstate 127 success
+user21 purchaseEstate 111 success
+user14 purchaseEstate 77 fail
+user17 purchaseEstate 137 success
+user9 purchaseEstate 30 success
+user22 purchaseEstate 129 success
+user20 purchaseEstate 127 fail
+user14 purchaseEstate 114 success
+user26 purchaseEstate 149 success
+user13 purchaseEstate 72 fail
+user12 purchaseEstate 128 fail
+user10 purchaseEstate 72 success
+user26 purchaseEstate 1 success
+user29 purchaseEstate 97 fail
+user23 purchaseEstate 72 fail
+user10 purchaseEstate 127 fail
+user26 purchaseEstate 77 fail
+user16 purchaseEstate 93 success
+user27 purchaseEstate 57 success
+user25 withdrawRent  success
+user8 purchaseEstate 109 success
+user22 purchaseEstate 114 success
+user28 purchaseEstate 127 success
+user10 purchaseEstate 10 success
+user20 purchaseEstate 128 success
+user14 purchaseEstate 48 success
+user17 purchaseEstate 17 success
+user13 purchaseEstate 62 success
+user9 purchaseEstate 127 fail
+user15 purchaseEstate 110 success
+user13 purchaseEstate 139 success
+user8 purchaseEstate 78 success
+user16 purchaseEstate 87 success
+user21 purchaseEstate 130 success
+user15 purchaseEstate 129 success
+user22 withdrawRent  success
+user22 purchaseEstate 48 success
+user26 purchaseEstate 126 success
+user26 purchaseEstate 121 success
+user14 purchaseEstate 63 success
+user12 purchaseEstate 120 success
+user17 purchaseEstate 79 success
+user13 purchaseEstate 10 success
+user9 purchaseEstate 110 fail
+user29 purchaseEstate 97 fail
+user19 purchaseEstate 97 success
+user22 purchaseEstate 39 success
+user10 purchaseEstate 63 fail
+user20 purchaseEstate 57 success
+user30 purchaseEstate 50 success
+user23 purchaseEstate 97 fail
+user1 transferOwnership  success
+user22 purchaseEstate 76 success
+user10 purchaseEstate 57 fail
+user20 purchaseEstate 100 success
+user15 purchaseEstate 50 fail
+user26 purchaseEstate 114 success
+user22 purchaseEstate 95 success
+user22 purchaseEstate 119 success
+user22 purchaseEstate 91 success
+user22 purchaseEstate 123 success
+user22 purchaseEstate 126 fail
+user22 purchaseEstate 121 fail
+user10 purchaseEstate 123 fail
+user20 purchaseEstate 63 success
+user26 purchaseEstate 39 fail
+user26 purchaseEstate 123 fail
+user26 purchaseEstate 95 fail
+user26 purchaseEstate 76 fail
+user22 purchaseEstate 49 success
+user20 purchaseEstate 118 success
+user14 purchaseEstate 76 fail
+user19 purchaseEstate 55 success
+user31 purchaseEstate 55 fail
+user21 purchaseEstate 50 fail
+user12 purchaseEstate 5 success
+user17 purchaseEstate 116 success
+user24 purchaseEstate 139 success
+user28 purchaseEstate 63 fail
+user9 purchaseEstate 84 success
+user13 purchaseEstate 97 fail
+user20 purchaseEstate 52 success
+user32 purchaseEstate 53 success
+user14 purchaseEstate 119 fail
+user17 purchaseEstate 101 success
+user12 purchaseEstate 5 fail
+user9 purchaseEstate 9 success
+user10 purchaseEstate 10 success
+user14 purchaseEstate 77 success
+user26 purchaseEstate 71 success
+user29 purchaseEstate 49 fail
+user33 purchaseEstate 88 success
+user21 purchaseEstate 73 success
+user32 purchaseEstate 52 fail
+user15 purchaseEstate 133 success
+user26 purchaseEstate 120 success
+user16 purchaseEstate 33 success
+user8 withdrawRent  success
+user20 purchaseEstate 16 success
+user32 purchaseEstate 17 fail
+user17 purchaseEstate 73 fail
+user13 purchaseEstate 63 success
+user26 purchaseEstate 124 success
+user15 purchaseEstate 28 success
+user27 purchaseEstate 97 fail
+user34 purchaseEstate 120 fail
+user26 purchaseEstate 111 success
+user34 purchaseEstate 50 fail
+user26 purchaseEstate 26 success
+user22 purchaseEstate 51 success
+user10 purchaseEstate 57 success
+user21 purchaseEstate 18 success
+user12 purchaseEstate 75 success
+user35 purchaseEstate 132 success
+user20 purchaseEstate 120 success
+user10 purchaseEstate 141 success
+user14 purchaseEstate 39 success
+user28 purchaseEstate 123 success
+user17 purchaseEstate 115 success
+user31 purchaseEstate 62 success
+user10 purchaseEstate 48 success
+user14 purchaseEstate 76 success
+user17 purchaseEstate 44 success
+user36 purchaseEstate 51 success
+user19 purchaseEstate 123 fail
+user10 purchaseEstate 121 success
+user18 purchaseEstate 52 success
+user13 purchaseEstate 55 success
+user25 purchaseEstate 49 success
+user29 purchaseEstate 51 fail
+user35 purchaseEstate 52 fail
+user22 purchaseEstate 58 success
+user32 purchaseEstate 96 success
+user20 purchaseEstate 96 fail
+user37 purchaseEstate 128 success
+user33 purchaseEstate 52 fail
+user21 purchaseEstate 71 success
+user17 purchaseEstate 90 success
+user28 purchaseEstate 91 success
+user12 purchaseEstate 56 success
+user13 purchaseEstate 51 fail
+user29 purchaseEstate 55 fail
+user31 purchaseEstate 55 success
+user22 purchaseEstate 128 fail
+user20 purchaseEstate 57 success
+user21 purchaseEstate 58 fail
+user14 purchaseEstate 119 success
+user38 purchaseEstate 82 success
+user26 purchaseEstate 75 fail
+user26 purchaseEstate 141 fail
+user25 purchaseEstate 97 success
+user35 purchaseEstate 52 success
+user22 purchaseEstate 126 success
+user22 purchaseEstate 121 fail
+user10 purchaseEstate 77 success
+user10 purchaseEstate 58 success
+user20 purchaseEstate 111 success
+user26 purchaseEstate 95 success
+user26 purchaseEstate 55 fail
+user26 purchaseEstate 58 fail
+user23 purchaseEstate 97 fail
+user37 purchaseEstate 95 fail
+user36 purchaseEstate 62 success
+user36 purchaseEstate 55 fail
+user36 purchaseEstate 139 success
+user36 purchaseEstate 49 success
+user36 purchaseEstate 10 success
+user33 purchaseEstate 17 success
+user26 purchaseEstate 119 fail
+user21 purchaseEstate 45 success
+user17 purchaseEstate 70 success
+user17 purchaseEstate 11 success
+user22 purchaseEstate 49 fail
+user39 purchaseEstate 55 success
+user36 purchaseEstate 97 fail
+user40 purchaseEstate 88 success
+user20 purchaseEstate 115 success
+user22 purchaseEstate 97 success
+user29 purchaseEstate 97 fail
+user10 purchaseEstate 91 success
+user26 purchaseEstate 56 success
+user10 purchaseEstate 128 success
+user12 purchaseEstate 44 success
+user13 purchaseEstate 49 fail
+user38 purchaseEstate 143 success
+user41 purchaseEstate 80 success
+user42 purchaseEstate 90 success
+user43 purchaseEstate 139 fail
+user26 purchaseEstate 23 success
+user25 withdrawRent  success
+user10 purchaseEstate 49 success
+user35 purchaseEstate 54 fail
+user29 purchaseEstate 51 fail
+user10 purchaseEstate 114 success
+user19 purchaseEstate 53 success
+user13 purchaseEstate 51 success
+user13 purchaseEstate 62 fail
+user44 purchaseEstate 52 success
+user18 purchaseEstate 67 success
+user10 purchaseEstate 76 success
+user10 purchaseEstate 95 success
+user14 purchaseEstate 53 fail
+user22 purchaseEstate 92 success
+user22 purchaseEstate 114 fail
+user22 purchaseEstate 76 fail
+user22 purchaseEstate 128 success
+user22 purchaseEstate 95 fail
+user37 purchaseEstate 67 fail
+user40 purchaseEstate 2 success
+user17 purchaseEstate 67 fail
+user44 purchaseEstate 1 success
+user17 purchaseEstate 15 success
+user21 purchaseEstate 50 success
+user35 purchaseEstate 36 fail
+user13 purchaseEstate 55 fail
+user38 purchaseEstate 68 success
+user26 purchaseEstate 116 success
+user42 purchaseEstate 70 fail
+user12 withdrawRent  success
+user45 purchaseEstate 31 success
+user31 withdrawRent  success
+user46 purchaseEstate 60 success
+user24 withdrawRent  success
+user26 purchaseEstate 12 success
+user12 purchaseEstate 113 success
+user42 purchaseEstate 113 fail
+user47 purchaseEstate 80 success
+user34 purchaseEstate 5 fail
+user8 purchaseEstate 76 fail
+user19 purchaseEstate 49 fail
+user10 purchaseEstate 124 success
+user26 purchaseEstate 96 success
+user7 purchaseEstate 45 fail
+user34 purchaseEstate 75 fail
+user42 purchaseEstate 73 success
+user16 purchaseEstate 84 fail
+user8 purchaseEstate 123 fail
+user27 purchaseEstate 48 fail
+user26 purchaseEstate 51 success
+user22 purchaseEstate 119 success
+user13 purchaseEstate 55 success
+user8 purchaseEstate 54 success
+user34 purchaseEstate 148 success
+user7 withdrawRent  success
+user16 purchaseEstate 60 fail
+user27 purchaseEstate 55 fail
+user37 purchaseEstate 121 success
+user20 purchaseEstate 80 fail
+user14 purchaseEstate 114 success
+user42 purchaseEstate 66 success
+user35 purchaseEstate 52 success
+user22 purchaseEstate 123 success
+user10 purchaseEstate 126 success
+user33 purchaseEstate 88 success
+user28 purchaseEstate 39 success
+user44 purchaseEstate 92 fail
+user17 purchaseEstate 93 success
+user22 purchaseEstate 1 fail
+user29 purchaseEstate 97 fail
+user25 purchaseEstate 97 success
+user41 purchaseEstate 38 success
+user13 purchaseEstate 10 success
+user12 purchaseEstate 47 success
+user22 purchaseEstate 121 fail
+user22 purchaseEstate 72 success
+user22 purchaseEstate 4 success
+user22 purchaseEstate 63 success
+user19 purchaseEstate 97 fail
+user25 purchaseEstate 4 fail
+user37 purchaseEstate 5 success
+user25 purchaseEstate 127 success
+user20 purchaseEstate 109 success
+user13 purchaseEstate 139 success
+user17 purchaseEstate 99 success
+user38 purchaseEstate 7 success
+user8 purchaseEstate 119 fail
+user34 purchaseEstate 134 success
+user26 purchaseEstate 108 success
+user26 purchaseEstate 46 success
+user34 purchaseEstate 108 fail
+user8 purchaseEstate 116 fail
+user24 purchaseEstate 98 success
+user27 purchaseEstate 51 fail
+user16 purchaseEstate 132 fail
+user23 purchaseEstate 98 fail
+user27 purchaseEstate 51 fail
+user27 purchaseEstate 62 fail
+user27 purchaseEstate 139 fail
+user27 purchaseEstate 97 fail
+user33 purchaseEstate 107 success
+user48 purchaseEstate 70 success
+user12 purchaseEstate 54 success
+user34 purchaseEstate 7 fail
+user8 purchaseEstate 52 fail
+user26 purchaseEstate 13 success
+user7 purchaseEstate 136 success
+user42 purchaseEstate 143 success
+user26 purchaseEstate 123 success
+user35 purchaseEstate 16 fail
+user43 purchaseEstate 97 fail
+user25 purchaseEstate 98 success
+user10 purchaseEstate 67 success
+user41 purchaseEstate 65 success
+user14 purchaseEstate 123 fail
+user20 withdrawRent  success
+user9 purchaseEstate 129 success
+user17 purchaseEstate 103 success
+user26 purchaseEstate 32 success
+user10 purchaseEstate 53 success
+user10 purchaseEstate 120 success
+user10 purchaseEstate 129 fail
+user10 purchaseEstate 92 success
+user19 purchaseEstate 97 success
+user21 purchaseEstate 115 success
+user49 purchaseEstate 96 success
+user14 purchaseEstate 56 success
+user38 purchaseEstate 74 success
+user17 purchaseEstate 130 success
+user26 purchaseEstate 17 success
+user18 purchaseEstate 137 success
+user37 purchaseEstate 67 success
+user10 purchaseEstate 119 success
+user21 purchaseEstate 66 success
+user25 purchaseEstate 62 success
+user17 purchaseEstate 78 success
+user34 purchaseEstate 145 success
+user8 purchaseEstate 18 success
+user31 purchaseEstate 62 fail
+user10 purchaseEstate 115 fail
+user21 purchaseEstate 11 success
+user49 purchaseEstate 145 fail
+user26 purchaseEstate 71 success
+user27 purchaseEstate 62 fail
+user12 purchaseEstate 94 success
+user9 purchaseEstate 145 fail
+user35 purchaseEstate 11 fail
+user19 purchaseEstate 123 success
+user28 purchaseEstate 4 success
+user13 purchaseEstate 51 success
+user38 purchaseEstate 25 success
+user14 purchaseEstate 99 success
+user17 purchaseEstate 74 success
+user20 purchaseEstate 101 success
+user31 purchaseEstate 51 success
+user10 purchaseEstate 111 success
+user49 purchaseEstate 46 success
+user29 purchaseEstate 62 fail
+user48 purchaseEstate 94 success
+user28 purchaseEstate 91 success
+user22 purchaseEstate 7 success
+user17 purchaseEstate 149 success
+user36 purchaseEstate 62 success
+user41 purchaseEstate 64 success
+user20 purchaseEstate 45 success
+user10 purchaseEstate 56 success
+user36 purchaseEstate 51 fail
+user21 purchaseEstate 94 fail
+user22 purchaseEstate 82 success
+user49 purchaseEstate 74 success
+user46 purchaseEstate 147 success
+user27 purchaseEstate 49 success
+user10 purchaseEstate 32 success
+user10 purchaseEstate 39 success
+user10 purchaseEstate 41 success
+user27 purchaseEstate 5 success
+user44 purchaseEstate 107 success
+user34 purchaseEstate 105 success
+user9 purchaseEstate 147 fail
+user18 purchaseEstate 99 success
+user32 withdrawRent  success
+user41 purchaseEstate 45 success
+user22 purchaseEstate 131 success
+user22 purchaseEstate 75 success
+user22 purchaseEstate 110 success
+user22 purchaseEstate 87 success
+user22 purchaseEstate 138 success
+user22 purchaseEstate 138 fail
+user22 purchaseEstate 134 success
+user22 purchaseEstate 23 success
+user22 purchaseEstate 105 fail
+user22 purchaseEstate 142 success
+user22 purchaseEstate 108 success
+user22 purchaseEstate 9 success
+user22 purchaseEstate 122 success
+user22 purchaseEstate 41 fail
+user22 purchaseEstate 65 success
+user22 purchaseEstate 102 success
+user22 purchaseEstate 127 success
+user31 purchaseEstate 62 fail
+user38 purchaseEstate 117 success
+user14 purchaseEstate 45 fail
+user46 purchaseEstate 36 success
+user44 purchaseEstate 117 fail
+user9 purchaseEstate 146 success
+user9 purchaseEstate 101 success
+user34 purchaseEstate 138 fail
+user23 purchaseEstate 3 success
+user10 purchaseEstate 99 fail
+user48 purchaseEstate 79 success
+user44 purchaseEstate 95 fail
+user27 purchaseEstate 62 fail
+user8 purchaseEstate 130 fail
+user42 purchaseEstate 122 fail
+user45 purchaseEstate 66 fail
+user22 purchaseEstate 112 success
+user22 purchaseEstate 3 fail
+user10 purchaseEstate 96 success
+user10 purchaseEstate 116 success
+user10 purchaseEstate 139 success
+user14 purchaseEstate 1 success
+user27 purchaseEstate 55 success
+user29 purchaseEstate 3 fail
+user36 purchaseEstate 14 success
+user20 purchaseEstate 117 success
+user21 purchaseEstate 113 success
+user46 purchaseEstate 20 success
+user9 purchaseEstate 16 success
+user18 purchaseEstate 45 fail
+user26 purchaseEstate 136 success
+user36 purchaseEstate 22 success
+user36 purchaseEstate 24 success
+user36 purchaseEstate 135 success
+user21 purchaseEstate 26 success
+user49 purchaseEstate 16 fail
+user17 purchaseEstate 101 fail
+user46 purchaseEstate 140 success
+user50 purchaseEstate 102 fail
+user24 purchaseEstate 4 success
+user34 purchaseEstate 142 fail
+user31 purchaseEstate 10 success
+user29 purchaseEstate 72 success
+user39 purchaseEstate 51 success
+user10 purchaseEstate 137 success
+user28 purchaseEstate 48 success
+user21 purchaseEstate 146 success
+user20 purchaseEstate 79 success
+user38 purchaseEstate 15 success
+user17 purchaseEstate 113 fail
+user27 purchaseEstate 41 success
+user18 purchaseEstate 15 fail
+user9 purchaseEstate 150 success
+user47 purchaseEstate 131 fail
+user29 purchaseEstate 72 fail
+user10 purchaseEstate 18 success
+user7 purchaseEstate 19 success
+user12 withdrawRent  success
+user13 purchaseEstate 51 fail
+user25 withdrawRent  success
+user42 purchaseEstate 87 fail
+user51 purchaseEstate 6 success
+user17 withdrawRent  success
+user25 purchaseEstate 77 success
+user44 purchaseEstate 77 fail
+user38 purchaseEstate 5 success
+user17 purchaseEstate 66 success
+user49 purchaseEstate 50 success
+user27 purchaseEstate 77 fail
+user19 purchaseEstate 15 success
+user49 purchaseEstate 66 fail
+user14 purchaseEstate 137 success
+user12 purchaseEstate 79 fail
+user52 purchaseEstate 81 success
+user7 purchaseEstate 27 success
+user8 purchaseEstate 44 fail
+user13 purchaseEstate 62 fail
+user26 purchaseEstate 86 success
+user34 purchaseEstate 138 fail
+user42 purchaseEstate 117 fail
+user18 purchaseEstate 144 success
+user13 purchaseEstate 51 fail
+user8 purchaseEstate 67 fail
+user12 purchaseEstate 45 fail
+user26 purchaseEstate 34 success
+user22 purchaseEstate 98 success
+user22 purchaseEstate 4 success
+user29 purchaseEstate 62 success
+user20 purchaseEstate 72 success
+user41 purchaseEstate 15 success
+user21 purchaseEstate 80 success
+user13 purchaseEstate 62 fail
+user44 purchaseEstate 141 success
+user38 purchaseEstate 40 success
+user49 purchaseEstate 38 success
+user14 purchaseEstate 18 success
+user8 purchaseEstate 95 fail
+user32 purchaseEstate 8 success
+user10 purchaseEstate 16 success
+user10 purchaseEstate 90 success
+user20 purchaseEstate 103 success
+user25 purchaseEstate 49 success
+user28 purchaseEstate 95 success
+user28 purchaseEstate 129 success
+user53 purchaseEstate 124 success
+user32 purchaseEstate 37 success
+user26 withdrawRent  success
+user12 purchaseEstate 15 fail
+user8 purchaseEstate 126 fail
+user10 purchaseEstate 80 fail
+user19 purchaseEstate 94 success
+user46 purchaseEstate 42 success
+user27 purchaseEstate 17 success
+user18 purchaseEstate 80 fail
+user13 purchaseEstate 98 fail
+user29 purchaseEstate 127 fail
+user25 purchaseEstate 97 success
+user20 purchaseEstate 12 success
+user21 purchaseEstate 47 success
+user38 purchaseEstate 43 success
+user17 purchaseEstate 47 fail
+user22 purchaseEstate 31 success
+user31 purchaseEstate 97 fail
+user10 purchaseEstate 54 success
+user21 purchaseEstate 14 success
+user41 purchaseEstate 47 fail
+user17 purchaseEstate 90 success
+user22 purchaseEstate 59 success
+user31 purchaseEstate 3 success
+user35 purchaseEstate 147 fail
+user20 purchaseEstate 70 success
+user47 purchaseEstate 79 fail
+user38 purchaseEstate 115 success
+user14 purchaseEstate 115 fail
+user10 purchaseEstate 11 success
+user53 purchaseEstate 149 success
+user10 purchaseEstate 69 success
+user47 purchaseEstate 126 success
+user21 purchaseEstate 47 fail
+user17 purchaseEstate 12 fail
+user22 purchaseEstate 14 fail
+user12 purchaseEstate 35 success
+user46 purchaseEstate 42 fail
+user27 purchaseEstate 149 fail
+user9 purchaseEstate 37 fail
+user52 purchaseEstate 149 fail
+user13 purchaseEstate 1 success
+user10 purchaseEstate 47 fail
+user10 purchaseEstate 117 success
+user10 purchaseEstate 103 success
+user10 purchaseEstate 73 success
+user28 purchaseEstate 76 success
+user44 purchaseEstate 58 success
+user20 purchaseEstate 73 fail
+user29 purchaseEstate 127 fail
+user41 purchaseEstate 89 success
+user21 purchaseEstate 100 success
+user17 purchaseEstate 70 fail
+user13 purchaseEstate 51 success
+user22 purchaseEstate 68 success
+user49 purchaseEstate 80 success
+user12 purchaseEstate 100 fail
+user35 purchaseEstate 7 fail
+user6 purchaseEstate 121 success
+user10 purchaseEstate 100 fail
+user20 purchaseEstate 113 success
+user14 purchaseEstate 116 success
+user45 purchaseEstate 113 fail
+user9 purchaseEstate 42 fail
+user10 purchaseEstate 44 success
+user13 purchaseEstate 3 fail
+user13 purchaseEstate 55 success
+user6 purchaseEstate 95 fail
+user22 purchaseEstate 30 success
+user22 purchaseEstate 104 success
+user22 purchaseEstate 148 success
+user22 purchaseEstate 147 success
+user22 purchaseEstate 36 success
+user22 purchaseEstate 140 success
+user17 purchaseEstate 73 fail
+user38 purchaseEstate 78 success
+user49 purchaseEstate 45 success
+user10 purchaseEstate 3 success
+user13 purchaseEstate 129 success
+user13 purchaseEstate 4 success
+user49 purchaseEstate 47 success
+user49 purchaseEstate 36 fail
+user22 purchaseEstate 106 success
+user22 purchaseEstate 42 fail
+user22 purchaseEstate 43 fail
+user22 purchaseEstate 22 success
+user22 purchaseEstate 24 success
+user22 purchaseEstate 25 success
+user22 purchaseEstate 135 success
+user22 purchaseEstate 69 fail
+user22 purchaseEstate 27 success
+user22 purchaseEstate 35 fail
+user10 purchaseEstate 109 success
+user12 purchaseEstate 50 success
+user6 purchaseEstate 127 fail
+user46 purchaseEstate 43 fail
+user26 purchaseEstate 19 fail
+user41 purchaseEstate 50 fail
+user21 purchaseEstate 118 success
+user37 purchaseEstate 120 success
+user44 purchaseEstate 99 success
+user22 purchaseEstate 19 success
+user27 purchaseEstate 126 fail
+user52 purchaseEstate 54 fail
+user9 purchaseEstate 44 fail
+user17 purchaseEstate 50 fail
+user6 purchaseEstate 114 fail
+user26 purchaseEstate 143 success
+user23 withdrawRent  success
+user54 purchaseEstate 63 success
+user49 withdrawRent  success
+user8 purchaseEstate 79 fail
+user34 purchaseEstate 5 fail
+user51 purchaseEstate 83 success
+user7 purchaseEstate 40 fail
+user19 purchaseEstate 142 success
+creator withdrawRent  success
+user29 purchaseEstate 112 success
+user21 purchaseEstate 12 success
+user20 purchaseEstate 93 success
+user13 purchaseEstate 62 success
+user6 purchaseEstate 113 fail
+user6 purchaseEstate 95 fail
+user6 purchaseEstate 119 fail
+user6 purchaseEstate 56 fail
+user14 purchaseEstate 99 fail
+user42 purchaseEstate 68 success
+user22 purchaseEstate 84 success
+user22 purchaseEstate 40 success
+user22 purchaseEstate 33 success
+user22 purchaseEstate 20 success
+user22 purchaseEstate 85 success
+user22 purchaseEstate 8 success
+user22 purchaseEstate 132 success
+user22 purchaseEstate 60 success
+user22 purchaseEstate 89 fail
+user22 purchaseEstate 83 fail
+user22 purchaseEstate 37 success
+user22 purchaseEstate 28 success
+user22 purchaseEstate 21 success
+user22 purchaseEstate 125 success
+user9 purchaseEstate 121 fail
+user52 purchaseEstate 21 fail
+user26 purchaseEstate 137 fail
+user26 purchaseEstate 5 fail
+user52 purchaseEstate 41 success
+user51 purchaseEstate 83 fail
+user10 purchaseEstate 113 success
+user45 purchaseEstate 78 success
+user20 purchaseEstate 130 success
+user47 purchaseEstate 100 success
+user17 purchaseEstate 74 success
+user13 purchaseEstate 63 success
+user42 purchaseEstate 81 success
+user49 purchaseEstate 110 success
+user22 purchaseEstate 78 fail
+user14 purchaseEstate 109 success
+user38 purchaseEstate 8 fail
+user29 purchaseEstate 127 fail
+user35 purchaseEstate 105 success
+user10 purchaseEstate 46 success
+user10 purchaseEstate 100 fail
+user9 purchaseEstate 39 success
+user21 purchaseEstate 79 success
+user49 purchaseEstate 106 success
+user42 purchaseEstate 36 success
+user42 purchaseEstate 23 success
+user12 purchaseEstate 130 fail
+user6 purchaseEstate 52 fail
+user24 purchaseEstate 98 success
+user34 purchaseEstate 134 fail
+user31 purchaseEstate 62 success
+user36 purchaseEstate 105 fail
+user41 purchaseEstate 44 success
+user49 purchaseEstate 42 success
+user22 purchaseEstate 130 fail
+user22 purchaseEstate 66 success
+user6 purchaseEstate 99 fail
+user27 purchaseEstate 121 fail
+user27 purchaseEstate 53 success
+user27 purchaseEstate 99 fail
+user27 purchaseEstate 115 fail
+user27 purchaseEstate 49 success
+user21 purchaseEstate 109 fail
+user46 purchaseEstate 35 fail
+user52 purchaseEstate 35 fail
+user26 purchaseEstate 106 fail
+user23 withdrawRent  success
+user19 purchaseEstate 81 fail
+user18 purchaseEstate 21 fail
+user12 withdrawRent  success
+user55 purchaseEstate 53 fail
+user31 purchaseEstate 97 success
+user36 purchaseEstate 138 success
+user17 purchaseEstate 73 success
+user19 purchaseEstate 99 fail
+user13 purchaseEstate 139 success
+user26 purchaseEstate 117 fail
+user49 purchaseEstate 105 success
+user12 purchaseEstate 130 success
+user52 purchaseEstate 75 success
+user46 purchaseEstate 42 fail
+user27 purchaseEstate 115 fail
+user34 purchaseEstate 35 fail
+user18 purchaseEstate 37 success
+user36 purchaseEstate 131 success
+user36 purchaseEstate 145 success
+user36 purchaseEstate 65 fail
+user36 purchaseEstate 143 success
+user36 purchaseEstate 150 success
+user19 purchaseEstate 3 fail
+user10 purchaseEstate 70 success
+user26 purchaseEstate 137 fail
+user22 purchaseEstate 113 fail
+user42 purchaseEstate 38 success
+user19 purchaseEstate 127 success
+user10 purchaseEstate 71 success
+user41 purchaseEstate 6 success
+user21 purchaseEstate 71 fail
+user38 purchaseEstate 131 fail
+user17 purchaseEstate 108 success
+user13 purchaseEstate 53 fail
+user26 purchaseEstate 11 fail
+user22 purchaseEstate 74 fail
+user9 purchaseEstate 71 fail
+user49 purchaseEstate 138 fail
+user45 purchaseEstate 145 success
+user35 purchaseEstate 79 fail
+user31 purchaseEstate 49 fail
+user31 purchaseEstate 139 success
+user19 purchaseEstate 98 fail
+user19 purchaseEstate 127 fail
+user10 purchaseEstate 93 success
+user10 purchaseEstate 66 fail
+user10 purchaseEstate 101 success
+user10 purchaseEstate 127 fail
+user13 purchaseEstate 43 success
+user22 purchaseEstate 101 fail
+user22 purchaseEstate 44 fail
+user22 purchaseEstate 93 fail
+user49 purchaseEstate 102 success
+user37 purchaseEstate 101 fail
+user14 purchaseEstate 101 fail
+user10 purchaseEstate 58 success
+user54 purchaseEstate 127 fail
+user29 purchaseEstate 127 fail
+user20 purchaseEstate 11 success
+user47 purchaseEstate 81 success
+user17 purchaseEstate 133 success
+user14 purchaseEstate 11 fail
+user22 purchaseEstate 109 fail
+user22 purchaseEstate 11 fail
+user22 purchaseEstate 46 fail
+user22 purchaseEstate 101 fail
+user22 purchaseEstate 93 fail
+user22 purchaseEstate 71 fail
+user36 purchaseEstate 2 success
+user46 purchaseEstate 69 success
+user52 purchaseEstate 83 fail
+user9 purchaseEstate 142 success
+user34 purchaseEstate 145 fail
+user27 purchaseEstate 116 fail
+user18 purchaseEstate 30 success
+user25 withdrawRent  success
+user36 purchaseEstate 93 fail
+user36 purchaseEstate 93 fail
+user36 purchaseEstate 71 fail
+user10 purchaseEstate 144 success
+user36 purchaseEstate 73 fail
+user20 purchaseEstate 50 success
+user41 purchaseEstate 83 success
+user21 purchaseEstate 102 success
+user13 purchaseEstate 33 success
+user38 purchaseEstate 40 success
+user17 purchaseEstate 89 success
+user6 purchaseEstate 102 fail
+user49 purchaseEstate 102 fail
+user22 purchaseEstate 70 fail
+user42 purchaseEstate 59 success
+user45 purchaseEstate 35 success
+user27 purchaseEstate 113 fail
+user19 purchaseEstate 19 fail
+user12 purchaseEstate 148 success
+user52 purchaseEstate 46 fail
+user18 purchaseEstate 53 fail
+user51 purchaseEstate 125 success
+user28 withdrawRent  success
+user36 purchaseEstate 101 fail
+user21 purchaseEstate 29 success
+user20 purchaseEstate 5 success
+user47 purchaseEstate 5 success
+user51 purchaseEstate 125 fail
+user48 purchaseEstate 34 success
+user13 purchaseEstate 20 success
+user52 purchaseEstate 85 fail
+user9 purchaseEstate 107 success
+user38 purchaseEstate 24 success
+user22 purchaseEstate 11 fail
+user49 purchaseEstate 133 success
+user14 purchaseEstate 144 success
+user35 purchaseEstate 32 fail
+user37 purchaseEstate 102 success
+user10 purchaseEstate 110 success
+user52 purchaseEstate 84 fail
+user9 purchaseEstate 87 success
+user49 purchaseEstate 43 success
+user14 purchaseEstate 35 success
+user27 purchaseEstate 127 fail
+user34 purchaseEstate 142 fail
+user46 purchaseEstate 133 fail
+user12 purchaseEstate 83 fail
+user53 purchaseEstate 32 success
+user41 purchaseEstate 27 success
+user56 purchaseEstate 110 fail
+user6 purchaseEstate 131 success
+user10 purchaseEstate 45 success
+user10 purchaseEstate 41 success
+user41 purchaseEstate 104 success
+user20 purchaseEstate 115 success
+user20 purchaseEstate 78 success
+user52 purchaseEstate 26 success
+user48 purchaseEstate 86 success
+user56 purchaseEstate 23 success
+user9 purchaseEstate 68 success
+user52 purchaseEstate 134 success
+user52 purchaseEstate 42 success
+user52 purchaseEstate 106 success
+user52 purchaseEstate 107 fail
+user52 purchaseEstate 108 success
+user52 purchaseEstate 14 success
+user52 purchaseEstate 6 success
+user52 purchaseEstate 138 success
+user25 withdrawRent  success
+user38 purchaseEstate 60 success
+user51 purchaseEstate 104 fail
+user49 purchaseEstate 35 fail
+user14 purchaseEstate 146 success
+user49 purchaseEstate 89 success
+user27 purchaseEstate 55 success
+user22 purchaseEstate 26 fail
+user14 purchaseEstate 64 success
+user42 purchaseEstate 84 success
+user28 purchaseEstate 22 success
+user25 purchaseEstate 127 fail
+user10 purchaseEstate 116 success
+user10 purchaseEstate 124 success
+user20 purchaseEstate 124 fail
+user52 purchaseEstate 136 success
+user52 purchaseEstate 24 success
+user48 purchaseEstate 136 fail
+user52 purchaseEstate 133 success
+user49 purchaseEstate 60 fail
+user49 purchaseEstate 104 fail
+user22 purchaseEstate 13 success
+user22 purchaseEstate 64 fail
+user22 purchaseEstate 43 fail
+user22 purchaseEstate 14 fail
+user22 purchaseEstate 35 fail
+user22 purchaseEstate 86 fail
+user22 purchaseEstate 42 fail
+user22 purchaseEstate 146 fail
+user56 purchaseEstate 9 success
+user56 purchaseEstate 34 success
+user19 purchaseEstate 104 fail
+user20 purchaseEstate 117 success
+user56 purchaseEstate 23 fail
+user28 purchaseEstate 136 fail
+user27 purchaseEstate 127 success
+user12 purchaseEstate 84 fail
+user46 purchaseEstate 125 fail
+user32 withdrawRent  success
+user53 withdrawRent  success
+user36 purchaseEstate 147 success
+user35 purchaseEstate 108 success
+user10 purchaseEstate 137 success
+user47 purchaseEstate 17 success
+user56 purchaseEstate 59 success
+user48 purchaseEstate 28 success
+user19 purchaseEstate 136 success
+user9 purchaseEstate 30 success
+user13 purchaseEstate 102 success
+user21 purchaseEstate 60 success
+user22 purchaseEstate 131 fail
+user28 purchaseEstate 19 success
+user14 purchaseEstate 85 success
+user36 purchaseEstate 140 success
+user36 purchaseEstate 42 success
+user36 purchaseEstate 64 success
+user10 purchaseEstate 18 success
+user10 purchaseEstate 118 success
+user10 purchaseEstate 149 success
+user41 purchaseEstate 7 success
+user10 purchaseEstate 94 success
+user56 purchaseEstate 83 success
+user13 purchaseEstate 108 fail
+user9 purchaseEstate 138 success
+user48 purchaseEstate 7 fail
+user12 purchaseEstate 132 success
+user22 withdrawRent  success
+user28 purchaseEstate 132 fail
+user42 purchaseEstate 31 success
+user38 purchaseEstate 19 fail
+user14 purchaseEstate 28 fail
+user57 purchaseEstate 54 fail
+user46 purchaseEstate 33 fail
+user18 purchaseEstate 82 success
+user34 withdrawRent  success
+user54 purchaseEstate 26 fail
+user36 purchaseEstate 25 success
+user41 purchaseEstate 122 success
+user10 purchaseEstate 109 success
+user9 purchaseEstate 135 success
+user13 purchaseEstate 6 success
+user48 purchaseEstate 122 fail
+user49 purchaseEstate 31 success
+user36 purchaseEstate 25 fail
+user36 purchaseEstate 34 fail
+user36 purchaseEstate 104 success
+user35 purchaseEstate 107 fail
+user49 purchaseEstate 8 success
+user42 purchaseEstate 135 fail
+user38 purchaseEstate 147 fail
+user14 withdrawRent  success
+user56 purchaseEstate 7 fail
+user36 purchaseEstate 23 fail
+user10 purchaseEstate 130 success
+user52 purchaseEstate 125 success
+user14 purchaseEstate 8 fail
+user49 purchaseEstate 135 fail
+user56 purchaseEstate 82 fail
+user54 purchaseEstate 8 fail
+user36 purchaseEstate 106 fail
+user21 purchaseEstate 140 success
+user19 purchaseEstate 138 success
+user9 purchaseEstate 29 success
+user12 purchaseEstate 25 fail
+user49 purchaseEstate 125 fail
+user6 purchaseEstate 122 fail
+user28 purchaseEstate 21 success
+user56 purchaseEstate 28 success
+user54 purchaseEstate 122 fail
+user36 purchaseEstate 26 success
+user41 purchaseEstate 65 success
+user10 purchaseEstate 47 success
+user21 purchaseEstate 47 fail
+user52 purchaseEstate 68 success
+user13 purchaseEstate 61 success
+user57 purchaseEstate 62 success
+user34 purchaseEstate 133 fail
+user36 purchaseEstate 65 fail
+user35 purchaseEstate 134 success
+user6 purchaseEstate 25 success
+user38 purchaseEstate 65 fail
+user14 purchaseEstate 21 fail
+user46 purchaseEstate 37 fail
+user53 withdrawRent  success
+user36 purchaseEstate 148 success
+user10 purchaseEstate 100 success
+user52 purchaseEstate 64 success
+user19 purchaseEstate 21 success
+user49 purchaseEstate 21 fail
+user51 withdrawRent  success
+user18 purchaseEstate 138 fail
+user8 purchaseEstate 11 fail
+user25 purchaseEstate 10 success
+user36 purchaseEstate 24 fail
+user36 purchaseEstate 20 success
+user36 purchaseEstate 69 success
+user36 purchaseEstate 37 success
+user10 purchaseEstate 15 success
+user10 purchaseEstate 11 success
+user10 purchaseEstate 90 success
+user52 purchaseEstate 8 success
+user19 purchaseEstate 36 success
+user49 purchaseEstate 84 success
+user49 purchaseEstate 75 success
+user53 purchaseEstate 17 fail
+user53 purchaseEstate 54 success
+user34 purchaseEstate 134 fail
+user52 purchaseEstate 85 success
+user19 purchaseEstate 84 fail
+user13 purchaseEstate 61 fail
+user9 purchaseEstate 146 success
+user12 purchaseEstate 54 fail
+user38 purchaseEstate 86 success
+user46 purchaseEstate 69 fail
+user8 purchaseEstate 107 fail
+user18 purchaseEstate 134 fail
+user19 purchaseEstate 35 success
+user46 purchaseEstate 122 fail
+user8 purchaseEstate 15 fail
+user18 purchaseEstate 31 fail
+user57 purchaseEstate 62 fail
+user7 purchaseEstate 84 fail
+user33 withdrawRent  success
+user10 purchaseEstate 11 fail
+user20 purchaseEstate 47 fail
+user18 purchaseEstate 46 success
+user8 purchaseEstate 80 fail
+user8 purchaseEstate 56 fail
+user49 purchaseEstate 33 success
+user46 purchaseEstate 60 fail
+user46 purchaseEstate 65 fail
+user46 purchaseEstate 122 fail
+user52 purchaseEstate 40 success
+user49 purchaseEstate 84 fail
+user12 purchaseEstate 16 success
+user46 purchaseEstate 61 fail
+user45 purchaseEstate 71 success
+user57 purchaseEstate 111 success
+user7 purchaseEstate 131 fail
+user21 purchaseEstate 46 fail
+user13 purchaseEstate 29 success
+user49 purchaseEstate 22 success
+user46 purchaseEstate 33 fail
+user53 purchaseEstate 16 fail
+user58 purchaseEstate 147 success
+user22 purchaseEstate 146 fail
+user57 purchaseEstate 92 success
+user28 purchaseEstate 142 success
+user8 purchaseEstate 12 fail
+user7 purchaseEstate 102 fail
+user26 purchaseEstate 20 fail
+user35 purchaseEstate 145 success
+user10 purchaseEstate 66 success
+user51 purchaseEstate 69 fail
+user19 purchaseEstate 105 success
+user20 withdrawRent  success
+user59 purchaseEstate 33 fail
+user9 purchaseEstate 16 fail
+user38 purchaseEstate 19 success
+user46 purchaseEstate 9 fail
+user13 purchaseEstate 89 success
+user49 purchaseEstate 132 success
+user58 purchaseEstate 145 fail
+user22 purchaseEstate 14 success
+user26 purchaseEstate 122 fail
+user7 purchaseEstate 64 fail
+user8 purchaseEstate 90 fail
+user11 withdrawRent  success
+user36 purchaseEstate 120 success
+user36 purchaseEstate 124 success
+user17 purchaseEstate 14 fail
+user26 purchaseEstate 44 fail
+user46 purchaseEstate 64 fail
+user13 purchaseEstate 60 success
+user49 purchaseEstate 13 success
+user22 purchaseEstate 36 fail
+user21 purchaseEstate 131 success
+user9 purchaseEstate 12 success
+user12 purchaseEstate 44 success
+user49 purchaseEstate 82 success
+user38 purchaseEstate 122 success
+user22 purchaseEstate 22 fail
+user7 purchaseEstate 132 fail
+user60 purchaseEstate 81 success
+user61 purchaseEstate 65 success
+user17 purchaseEstate 27 success
+user27 purchaseEstate 72 success
+user26 purchaseEstate 109 fail
+user46 purchaseEstate 27 fail
+user10 purchaseEstate 12 fail
+user46 purchaseEstate 13 fail
+user49 purchaseEstate 9 success
+user22 purchaseEstate 147 fail
+user22 purchaseEstate 43 success
+user53 purchaseEstate 44 fail
+user57 purchaseEstate 51 success
+user16 purchaseEstate 142 fail
+user36 purchaseEstate 53 success
+user58 purchaseEstate 55 success
+user19 purchaseEstate 13 fail
+user10 purchaseEstate 80 success
+user46 purchaseEstate 142 fail
+user13 purchaseEstate 132 fail
+user14 purchaseEstate 9 fail
+user22 purchaseEstate 122 fail
+user49 purchaseEstate 145 fail
+user8 purchaseEstate 46 fail
+user10 purchaseEstate 12 fail
+user46 purchaseEstate 122 fail
+user48 purchaseEstate 79 success
+user22 purchaseEstate 135 success
+user16 purchaseEstate 88 fail
+user10 purchaseEstate 79 fail
+user46 purchaseEstate 19 fail
+user46 purchaseEstate 131 fail
+user46 purchaseEstate 135 fail
+user22 purchaseEstate 9 fail
+user22 purchaseEstate 145 fail
+user22 purchaseEstate 87 success
+user22 purchaseEstate 132 fail
+user22 purchaseEstate 75 fail
+user22 purchaseEstate 82 fail
+user51 purchaseEstate 131 fail
+user21 withdrawRent  success
+user8 purchaseEstate 32 success
+user26 purchaseEstate 132 fail
+user23 purchaseEstate 87 fail
+user46 purchaseEstate 69 success
+user12 purchaseEstate 70 success
+user26 purchaseEstate 100 fail
+user26 purchaseEstate 32 fail
+user22 purchaseEstate 105 fail
+user22 purchaseEstate 142 fail
+user22 purchaseEstate 131 fail
+user22 purchaseEstate 7 success
+user22 purchaseEstate 40 fail
+user22 purchaseEstate 19 fail
+user22 purchaseEstate 27 fail
+user26 purchaseEstate 93 fail
+user49 purchaseEstate 87 fail
+user28 purchaseEstate 7 fail
+user16 withdrawRent  success
+user36 purchaseEstate 96 success
+user19 purchaseEstate 7 fail
+user38 purchaseEstate 7 fail
+user14 purchaseEstate 87 fail
+user26 purchaseEstate 148 fail
+user36 purchaseEstate 75 success
+user36 purchaseEstate 41 success
+user36 purchaseEstate 88 success
+user36 purchaseEstate 107 success
+user26 purchaseEstate 149 fail
+user10 purchaseEstate 74 success
+user46 purchaseEstate 150 success
+user9 purchaseEstate 47 success
+user49 purchaseEstate 7 fail
+user49 purchaseEstate 125 success
+user45 purchaseEstate 7 fail
+user41 purchaseEstate 13 fail
+user21 purchaseEstate 73 success
+user36 purchaseEstate 34 success
+user10 purchaseEstate 144 success
+user49 purchaseEstate 38 success
+user27 purchaseEstate 62 success
+user25 withdrawRent  success
+user26 purchaseEstate 134 fail
+user62 purchaseEstate 87 fail
+user36 purchaseEstate 81 success
+user26 purchaseEstate 54 fail
+user46 purchaseEstate 107 fail
+user60 purchaseEstate 45 success
+user10 purchaseEstate 38 fail
+user21 purchaseEstate 83 success
+user29 purchaseEstate 70 success
+user53 purchaseEstate 93 success
+user13 purchaseEstate 37 success
+user7 withdrawRent  success
+user59 purchaseEstate 87 fail
+user36 purchaseEstate 21 success
+user10 purchaseEstate 142 success
+user13 purchaseEstate 132 success
+user26 purchaseEstate 132 fail
+user57 purchaseEstate 112 success
+user8 purchaseEstate 80 fail
+user16 purchaseEstate 148 fail
+user29 purchaseEstate 73 fail
+user8 purchaseEstate 53 fail
+user8 purchaseEstate 78 fail
+user8 purchaseEstate 80 fail
+user8 purchaseEstate 115 fail
+user26 purchaseEstate 83 fail
+user26 purchaseEstate 14 fail
+user26 purchaseEstate 106 fail
+user26 purchaseEstate 5 fail
+user26 purchaseEstate 148 fail
+user26 purchaseEstate 130 fail
+user26 purchaseEstate 24 fail
+user26 purchaseEstate 81 fail
+user26 purchaseEstate 23 fail
+user26 purchaseEstate 48 success
+user26 purchaseEstate 23 fail
+user36 purchaseEstate 23 success
+user10 purchaseEstate 33 success
+user22 purchaseEstate 113 success
+user49 withdrawRent  success
+user16 purchaseEstate 37 fail
+user36 purchaseEstate 82 fail
+user10 purchaseEstate 84 success
+user63 purchaseEstate 112 fail
+user8 purchaseEstate 87 fail
+user49 withdrawRent  success
+user16 purchaseEstate 105 fail
+user54 purchaseEstate 112 fail
+user25 purchaseEstate 49 success
+user8 purchaseEstate 66 fail
+user62 purchaseEstate 71 success
+user10 purchaseEstate 35 success
+user19 purchaseEstate 102 success
+user6 purchaseEstate 74 success
+user45 purchaseEstate 93 fail
+user14 purchaseEstate 70 fail
+user8 purchaseEstate 18 fail
+user19 purchaseEstate 81 fail
+user10 purchaseEstate 27 success
+user17 purchaseEstate 103 success
+user19 purchaseEstate 73 success
+user10 purchaseEstate 132 fail
+user10 purchaseEstate 43 success
+user37 purchaseEstate 43 fail
+user13 purchaseEstate 51 success
+user13 purchaseEstate 136 success
+user22 purchaseEstate 101 success
+user22 purchaseEstate 74 fail
+user64 purchaseEstate 125 fail
+user10 purchaseEstate 134 success
+user44 purchaseEstate 73 fail
+user14 purchaseEstate 134 fail
+user19 purchaseEstate 37 fail
+user33 purchaseEstate 82 success
+user45 purchaseEstate 103 success
+user28 purchaseEstate 46 success
+user22 purchaseEstate 93 fail
+user22 purchaseEstate 103 fail
+user22 purchaseEstate 70 fail
+user57 purchaseEstate 55 success
+user25 purchaseEstate 97 success
+user41 purchaseEstate 73 fail
+user12 withdrawRent  success
+user8 purchaseEstate 75 fail
+user16 purchaseEstate 134 fail
+user41 purchaseEstate 101 fail
+user12 purchaseEstate 101 fail
+user49 purchaseEstate 24 success
+user18 purchaseEstate 12 fail
+user8 purchaseEstate 22 success
+user16 purchaseEstate 108 fail
+user18 purchaseEstate 21 fail
+user16 purchaseEstate 7 fail
+user18 purchaseEstate 12 fail
+user16 purchaseEstate 14 fail
+user16 purchaseEstate 22 fail
+user35 purchaseEstate 59 success
+user31 purchaseEstate 72 success
+user41 purchaseEstate 73 fail
+user10 purchaseEstate 148 success
+user49 purchaseEstate 104 success
+user42 purchaseEstate 122 success
+user16 purchaseEstate 22 fail
+user10 purchaseEstate 135 success
+user49 purchaseEstate 133 success
+user16 purchaseEstate 102 fail
+user65 purchaseEstate 104 fail
+user31 purchaseEstate 98 success
+user21 purchaseEstate 12 success
+user63 purchaseEstate 3 success
+user10 purchaseEstate 8 success
+user10 purchaseEstate 104 fail
+user10 purchaseEstate 25 success
+user19 purchaseEstate 135 fail
+user19 purchaseEstate 40 success
+user58 purchaseEstate 139 success
+user49 purchaseEstate 106 success
+user13 purchaseEstate 131 success
+user49 purchaseEstate 87 success
+user16 purchaseEstate 136 fail
+user10 purchaseEstate 9 success
+user37 purchaseEstate 26 success
+user13 purchaseEstate 28 success
+user66 purchaseEstate 139 fail
+user58 purchaseEstate 10 success
+user17 purchaseEstate 50 success
+user54 purchaseEstate 97 fail
+user13 purchaseEstate 19 success
+user14 purchaseEstate 56 success
+user10 purchaseEstate 86 success
+user22 purchaseEstate 106 success
+user49 purchaseEstate 40 fail
+user49 purchaseEstate 28 fail
+user31 purchaseEstate 3 fail
+user66 purchaseEstate 139 success
+user49 purchaseEstate 42 success
+user16 purchaseEstate 135 fail
+user31 purchaseEstate 112 success
+user65 purchaseEstate 9 fail
+user31 purchaseEstate 127 success
+user10 purchaseEstate 30 success
+user19 purchaseEstate 20 success
+user41 purchaseEstate 143 success
+user60 purchaseEstate 85 success
+user29 purchaseEstate 127 fail
+user22 purchaseEstate 42 fail
+user12 purchaseEstate 104 success
+user27 purchaseEstate 112 fail
+user29 purchaseEstate 127 fail
+user16 purchaseEstate 145 fail
+user54 purchaseEstate 112 fail
+user10 purchaseEstate 28 fail
+user22 purchaseEstate 146 success
+user16 purchaseEstate 138 fail
+user10 purchaseEstate 67 success
+user22 purchaseEstate 86 fail
+user16 purchaseEstate 20 fail
+user10 purchaseEstate 3 success
+user10 purchaseEstate 112 success
+user62 purchaseEstate 129 success
+user35 purchaseEstate 13 success
+user19 purchaseEstate 85 success
+user19 purchaseEstate 30 success
+user22 purchaseEstate 140 success
+user22 purchaseEstate 148 success
+user22 purchaseEstate 36 success
+user22 purchaseEstate 30 fail
+user22 purchaseEstate 147 success
+user22 purchaseEstate 133 success
+user22 purchaseEstate 122 success
+user22 purchaseEstate 105 success
+user22 purchaseEstate 110 success
+user22 purchaseEstate 131 fail
+user22 purchaseEstate 145 success
+user22 purchaseEstate 9 fail
+user22 purchaseEstate 13 fail
+user61 purchaseEstate 110 fail
+user19 purchaseEstate 20 fail
+user66 purchaseEstate 123 success
+user22 purchaseEstate 26 fail
+user60 purchaseEstate 61 success
+user13 purchaseEstate 20 fail
+user12 purchaseEstate 140 fail
+user49 purchaseEstate 105 fail
+user36 purchaseEstate 32 success
+user10 purchaseEstate 13 fail
+user58 purchaseEstate 48 success
+user67 purchaseEstate 17 success
+user22 purchaseEstate 31 success
+user19 purchaseEstate 7 success
+user49 purchaseEstate 30 fail
+user13 purchaseEstate 31 fail
+user28 purchaseEstate 115 success
+user27 purchaseEstate 91 success
+user36 purchaseEstate 104 success
+user10 purchaseEstate 36 fail
+user22 purchaseEstate 143 fail
+user49 purchaseEstate 147 fail
+user38 purchaseEstate 31 fail
+user27 purchaseEstate 67 success
+user54 purchaseEstate 4 success
+user63 purchaseEstate 63 success
+user36 purchaseEstate 82 success
+user58 purchaseEstate 123 success
+user10 purchaseEstate 147 fail
+user41 purchaseEstate 31 fail
+user35 purchaseEstate 33 success
+user67 purchaseEstate 82 fail
+user49 purchaseEstate 143 success
+user45 purchaseEstate 14 success
+user29 purchaseEstate 55 success
+user58 purchaseEstate 92 success
+user58 purchaseEstate 1 success
+user66 purchaseEstate 4 fail
+user10 purchaseEstate 14 fail
+user10 purchaseEstate 7 fail
+user49 purchaseEstate 14 fail
+user49 purchaseEstate 14 fail
+user23 purchaseEstate 4 fail
+user65 purchaseEstate 84 success
+user19 purchaseEstate 63 success
+user58 purchaseEstate 39 success
+user52 purchaseEstate 24 success
+user13 purchaseEstate 14 fail
+user28 purchaseEstate 90 success
+user27 purchaseEstate 51 success
+user27 purchaseEstate 98 success
+user23 purchaseEstate 98 fail
+user58 purchaseEstate 58 success
+user28 purchaseEstate 141 success
+user27 purchaseEstate 127 success
+user65 purchaseEstate 89 success
+user33 purchaseEstate 75 success
+user29 purchaseEstate 72 success
+user49 purchaseEstate 29 success
+user27 purchaseEstate 141 fail
+user27 purchaseEstate 77 success
+user18 purchaseEstate 23 fail
+user6 purchaseEstate 14 success
+user38 withdrawRent  success
+user8 purchaseEstate 93 fail
+user66 purchaseEstate 123 success
+user49 purchaseEstate 89 fail
+user24 purchaseEstate 141 fail
+user16 purchaseEstate 135 fail
+user59 purchaseEstate 105 success
+user19 purchaseEstate 125 fail
+user63 purchaseEstate 129 success
+user35 purchaseEstate 9 success
+user67 purchaseEstate 65 success
+user66 purchaseEstate 3 success
+user8 purchaseEstate 75 fail
+user16 purchaseEstate 24 fail
+user61 purchaseEstate 69 success
+user31 withdrawRent  success
+user23 purchaseEstate 72 fail
+user59 purchaseEstate 29 fail
+user45 purchaseEstate 119 success
+user13 purchaseEstate 62 success
+user16 purchaseEstate 84 fail
+user8 purchaseEstate 131 fail
+user24 purchaseEstate 77 fail
+user16 purchaseEstate 35 fail
+user44 withdrawRent  success
+user12 withdrawRent  success
+user68 purchaseEstate 30 fail
+user53 withdrawRent  success
+user47 withdrawRent  success
+user16 purchaseEstate 133 fail
+user54 purchaseEstate 67 success
+user23 purchaseEstate 129 success
+user41 withdrawRent  success
+user16 purchaseEstate 21 fail
+user18 purchaseEstate 133 fail
+user56 withdrawRent  success
+user42 withdrawRent  success
+user20 purchaseEstate 99 success
+user18 purchaseEstate 99 fail
+user16 purchaseEstate 89 fail
+user49 purchaseEstate 23 success
+user27 purchaseEstate 141 success
+user26 withdrawRent  success
+user20 purchaseEstate 141 fail
+user16 purchaseEstate 107 fail
+user16 purchaseEstate 103 fail
+user16 purchaseEstate 150 success
+user27 purchaseEstate 57 success
+user27 purchaseEstate 114 success
+user27 purchaseEstate 76 success
+user50 purchaseEstate 142 fail
+user36 purchaseEstate 125 success
+user18 purchaseEstate 101 success
+user69 purchaseEstate 114 fail
+user41 purchaseEstate 80 success
+user20 purchaseEstate 95 success
+user50 purchaseEstate 147 fail
+user63 withdrawRent  success
+user50 purchaseEstate 37 fail
+user50 purchaseEstate 43 fail
+user37 purchaseEstate 126 success
+user36 purchaseEstate 86 success
+user50 purchaseEstate 40 fail
+user20 purchaseEstate 126 fail
+user28 purchaseEstate 126 fail
+user27 purchaseEstate 58 success
+user28 purchaseEstate 128 success
+user20 purchaseEstate 121 success
+user46 withdrawRent  success
+user16 purchaseEstate 145 success
+user57 purchaseEstate 51 fail
+user27 purchaseEstate 121 fail
+user57 purchaseEstate 62 success
+user57 purchaseEstate 51 success
+user57 purchaseEstate 49 success
+user57 purchaseEstate 10 success
+user57 purchaseEstate 141 success
+user50 purchaseEstate 89 fail
+user50 purchaseEstate 28 fail
+user70 purchaseEstate 54 success
+user50 purchaseEstate 102 fail
+user70 purchaseEstate 61 success
+user68 purchaseEstate 85 fail
+user8 purchaseEstate 40 fail
+user24 purchaseEstate 114 fail
+user44 purchaseEstate 94 fail
+user71 purchaseEstate 83 success
+user50 purchaseEstate 131 fail
+user71 purchaseEstate 38 success
+user68 purchaseEstate 2 success
+user8 purchaseEstate 69 fail
+user24 purchaseEstate 76 fail
+user6 withdrawRent  success
+user50 purchaseEstate 35 fail
+user8 purchaseEstate 35 success
+user68 purchaseEstate 2 fail
+user50 purchaseEstate 133 fail
+user50 purchaseEstate 29 fail
+user68 purchaseEstate 2 fail
+user57 purchaseEstate 4 success
+user50 purchaseEstate 104 fail
+user50 purchaseEstate 122 fail
+user50 purchaseEstate 7 fail
+user50 purchaseEstate 82 fail
+user68 purchaseEstate 2 fail
+user16 purchaseEstate 43 success
+user31 purchaseEstate 119 success
+user71 purchaseEstate 11 success
+user28 purchaseEstate 93 success
+user70 purchaseEstate 117 fail
+user70 purchaseEstate 1 fail
+user20 purchaseEstate 77 success
+user70 purchaseEstate 94 fail
+user27 purchaseEstate 95 success
+user31 purchaseEstate 91 success
+user31 purchaseEstate 95 fail
+user20 purchaseEstate 18 success
+user71 purchaseEstate 107 success
+user27 purchaseEstate 119 success
+user27 purchaseEstate 111 success
+user71 purchaseEstate 149 success
+user27 purchaseEstate 126 success
+user13 purchaseEstate 76 success
+user13 purchaseEstate 137 success
+user24 purchaseEstate 119 fail
+user44 purchaseEstate 94 success
+user65 withdrawRent  success
+user57 purchaseEstate 15 success
+user37 withdrawRent  success
+user36 purchaseEstate 26 success
+user70 purchaseEstate 1 success
+user50 purchaseEstate 125 fail
+user36 purchaseEstate 59 success
+user65 withdrawRent  success
+user24 purchaseEstate 114 success
+user12 withdrawRent  success
+user57 purchaseEstate 28 success
+user36 purchaseEstate 136 success
+user24 purchaseEstate 76 fail
+user57 purchaseEstate 28 fail
+user36 purchaseEstate 28 fail
+user50 purchaseEstate 64 success
+user20 purchaseEstate 116 success
+user20 purchaseEstate 100 success
+user24 purchaseEstate 95 success
+user57 purchaseEstate 136 fail
+user57 purchaseEstate 117 success
+user57 purchaseEstate 76 fail
+user57 purchaseEstate 114 fail
+user36 purchaseEstate 134 success
+user36 purchaseEstate 108 success
+user70 purchaseEstate 144 success
+user36 purchaseEstate 110 success
+user20 purchaseEstate 16 success
+user28 withdrawRent  success
+user53 withdrawRent  success
+user57 purchaseEstate 97 success
+user70 purchaseEstate 69 success
+user36 purchaseEstate 7 success
+user37 purchaseEstate 7 fail
+user36 purchaseEstate 13 success
+user70 purchaseEstate 88 success
+user36 purchaseEstate 31 success
+user20 purchaseEstate 113 success
+user22 purchaseEstate 128 success
+user36 purchaseEstate 22 success
+user25 withdrawRent  success
+user29 withdrawRent  success
+user49 withdrawRent  success
+user8 purchaseEstate 8 success
+user35 withdrawRent  success
+user70 withdrawRent  success
+user36 withdrawRent  success
+user27 withdrawRent  success
+user72 purchaseEstate 66 success
+user22 purchaseEstate 118 success
+user22 purchaseEstate 66 fail
+user22 purchaseEstate 44 success
+user22 purchaseEstate 130 success
+user22 purchaseEstate 130 fail
+user22 purchaseEstate 79 success
+user29 purchaseEstate 66 fail
+user22 purchaseEstate 109 success
+user73 purchaseEstate 107 success
+user71 purchaseEstate 34 success
+user71 purchaseEstate 135 success
+user23 withdrawRent  success
+user12 withdrawRent  success
+user71 purchaseEstate 40 success
+user44 purchaseEstate 78 success
+user72 purchaseEstate 121 success
+user73 purchaseEstate 131 success
+user71 purchaseEstate 27 success
+user45 purchaseEstate 78 fail
+user72 purchaseEstate 131 success
+user66 purchaseEstate 132 success
+user73 purchaseEstate 36 success
+user22 withdrawRent  success
+user66 purchaseEstate 68 success
+user8 purchaseEstate 87 success
+user72 purchaseEstate 126 success
+user8 purchaseEstate 132 fail
+user72 purchaseEstate 111 success
+user31 purchaseEstate 36 success
+user20 purchaseEstate 91 success
+user45 purchaseEstate 147 success
+user14 purchaseEstate 21 success
+user14 purchaseEstate 146 success
+user17 withdrawRent  success
+user50 withdrawRent  success
+user73 purchaseEstate 42 success
+user10 withdrawRent  success
+user73 purchaseEstate 60 success
+user73 purchaseEstate 142 success
+user54 withdrawRent  success
+user60 withdrawRent  success
+user8 purchaseEstate 60 fail
+user9 withdrawRent  success
+user8 purchaseEstate 140 success
+user39 withdrawRent  success
+user13 withdrawRent  success
+user8 purchaseEstate 42 fail
+user8 purchaseEstate 37 success
+user45 purchaseEstate 19 success
+user74 purchaseEstate 94 success
+user57 purchaseEstate 78 success
+user75 purchaseEstate 51 success
+user75 purchaseEstate 62 success
+user75 purchaseEstate 55 success
+user75 purchaseEstate 10 success
+user75 purchaseEstate 139 success
+user13 purchaseEstate 55 fail
+user75 purchaseEstate 97 success
+user75 purchaseEstate 49 success
+user13 purchaseEstate 51 success
+user75 purchaseEstate 4 success
+user75 purchaseEstate 3 success
+user66 purchaseEstate 97 fail
+user75 purchaseEstate 98 success
+user44 purchaseEstate 6 success
+user75 purchaseEstate 72 success
+user76 purchaseEstate 3 fail
+user75 purchaseEstate 112 success
+user75 purchaseEstate 127 success
+user77 purchaseEstate 112 fail
+user50 withdrawRent  success
+user44 purchaseEstate 25 success
+user76 purchaseEstate 3 success
+user53 purchaseEstate 6 fail
+user44 purchaseEstate 138 success
+user77 purchaseEstate 121 success
+user66 withdrawRent  success
+user44 purchaseEstate 20 success
+user30 withdrawRent  success
+user77 purchaseEstate 57 success
+user66 purchaseEstate 55 success
+user10 withdrawRent  success
+user77 purchaseEstate 92 success
+user22 withdrawRent  success
+user75 purchaseEstate 29 success
+user75 purchaseEstate 37 success
+user20 withdrawRent  success
+user75 purchaseEstate 136 success
+user75 purchaseEstate 83 success
+user75 purchaseEstate 61 success
+user75 purchaseEstate 2 success
+user75 purchaseEstate 125 success
+user75 purchaseEstate 6 success
+user75 purchaseEstate 21 success
+user75 purchaseEstate 28 success
+user75 purchaseEstate 33 success
+user8 purchaseEstate 6 fail
+user52 withdrawRent  success
+user75 purchaseEstate 84 success
+user23 withdrawRent  success
+user75 purchaseEstate 35 success
+user75 purchaseEstate 69 success
+user75 purchaseEstate 27 success
+user8 purchaseEstate 19 success
+user68 purchaseEstate 125 fail
+user8 purchaseEstate 59 success
+user78 purchaseEstate 39 success
+user67 withdrawRent  success
+user18 withdrawRent  success
+user24 withdrawRent  success
+user50 withdrawRent  success
+user73 withdrawRent  success
+user79 withdraw  success
+user76 withdrawRent  success
+user57 withdrawRent  success
+user71 withdrawRent  success
+user8 withdrawRent  success
+user9 withdrawRent  success
+user60 withdrawRent  success
+user36 withdrawRent  success
+user28 withdrawRent  success
+user77 withdrawRent  success
+user33 withdrawRent  success
+user16 withdrawRent  success
+user80 purchaseEstate 32 success
+user72 withdrawRent  success
+user80 purchaseEstate 41 success
+user49 withdrawRent  success
+user70 purchaseEstate 61 success
+user45 withdrawRent  success
+user70 withdrawRent  success
+user62 withdrawRent  success
+user80 purchaseEstate 143 success
+user80 purchaseEstate 144 success
+user80 purchaseEstate 30 success
+user80 purchaseEstate 31 success
+user35 withdrawRent  success
+user80 purchaseEstate 133 success
+user29 withdrawRent  success
+user80 purchaseEstate 68 success
+user80 purchaseEstate 150 success
+user23 withdrawRent  success
+user23 withdrawRent  success
+user23 withdrawRent  success
+user23 withdrawRent  success
+user80 purchaseEstate 9 success
+user67 withdrawRent  success
+user15 withdrawRent  success
+user65 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user31 withdrawRent  success
+user31 withdrawRent  success
+user6 withdrawRent  success
+user17 withdrawRent  success
+user19 withdrawRent  success
+user22 withdrawRent  success
+user40 purchaseEstate 67 fail
+user40 purchaseEstate 61 fail
+user40 purchaseEstate 61 fail
+user40 purchaseEstate 69 fail
+user40 purchaseEstate 61 fail
+user40 purchaseEstate 125 fail
+user40 purchaseEstate 6 fail
+user40 purchaseEstate 21 fail
+user40 purchaseEstate 61 fail
+user40 purchaseEstate 38 fail
+user40 purchaseEstate 41 fail
+user40 purchaseEstate 68 fail
+user40 purchaseEstate 101 fail
+user14 withdrawRent  success
+user27 withdrawRent  success
+user40 withdrawRent  success
+user40 purchaseEstate 64 fail
+user40 withdrawRent  success
+user40 purchaseEstate 7 fail
+user66 withdrawRent  success
+user44 withdrawRent  fail
+user44 withdrawRent  success
+user21 withdrawRent  success
+user5 purchaseEstate 51 success
+user5 purchaseEstate 62 success
+user5 purchaseEstate 55 success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 purchaseEstate 48 success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user67 withdrawRent  success
+user27 purchaseEstate 128 success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user13 withdrawRent  success
+user22 withdrawRent  success
+user48 withdrawRent  success
+user24 withdrawRent  success
+user81 purchaseEstate 89 success
+user5 withdrawRent  success
+user29 withdrawRent  success
+user82 purchaseEstate 64 success
+user5 withdrawRent  success
+user82 purchaseEstate 40 success
+user82 purchaseEstate 40 fail
+user82 purchaseEstate 38 success
+user5 withdrawRent  success
+user82 purchaseEstate 98 success
+user5 withdrawRent  success
+user28 withdrawRent  success
+user24 withdrawRent  success
+user77 withdrawRent  success
+user50 withdrawRent  success
+user20 withdrawRent  success
+user83 purchaseEstate 87 success
+user65 withdrawRent  success
+user84 purchaseEstate 97 success
+user76 withdrawRent  success
+user85 purchaseEstate 65 success
+user85 purchaseEstate 81 success
+user58 withdrawRent  success
+user67 withdrawRent  success
+user41 withdrawRent  success
+user47 withdrawRent  success
+user2 withdrawRent  success
+user80 withdrawRent  success
+user5 withdrawRent  success
+user24 withdrawRent  success
+user86 purchaseEstate 54 success
+user16 withdrawRent  success
+user5 withdrawRent  success
+user5 withdrawRent  success
+user44 withdrawRent  success
+user45 withdrawRent  success
+user54 withdrawRent  success
+user24 withdrawRent  success
+user8 withdrawRent  success
+user77 withdrawRent  success
+user23 withdrawRent  success
+user67 withdrawRent  success
+user36 withdrawRent  success
+user71 withdrawRent  success
+user87 purchaseEstate 85 success
+user22 withdrawRent  success
+user21 withdrawRent  success
+user49 withdrawRent  success
+user35 withdrawRent  success
+user75 withdrawRent  success
+user29 withdrawRent  success
+user27 withdrawRent  success
+user88 purchaseEstate 60 success
+user88 purchaseEstate 148 success
+user89 purchaseEstate 13 success
+user20 withdrawRent  success
+user89 purchaseEstate 110 success
+user89 purchaseEstate 138 success
+user89 purchaseEstate 106 success
+user5 withdrawRent  success
+user90 purchaseEstate 115 success
+user5 withdrawRent  success
+user80 withdrawRent  success
+user79 createListing 151 success
+user6 withdrawRent  success
+user79 createListing 152 success
+user79 createListing 153 success
+user79 createListing 154 success
+user79 createListing 155 success
+user79 createListing 156 success
+user79 createListing 157 success
+user79 createListing 158 success
+user79 createListing 159 success
+user79 createListing 160 success
+user79 createListing 161 success
+user79 createListing 162 success
+user79 createListing 173 success
+user79 createListing 174 success
+user79 createListing 175 success
+user79 createListing 176 success
+user79 createListing 177 success
+user79 createListing 163 success
+user79 createListing 164 success
+user79 createListing 165 success
+user79 createListing 166 success
+user79 createListing 167 success
+user79 createListing 168 success
+user79 createListing 169 success
+user79 createListing 170 success
+user79 createListing 171 success
+user79 createListing 172 success
+user91 purchaseEstate 151 success
+user92 fallback fail
+user93 purchaseEstate 171 success
+user93 purchaseEstate 161 success
+creator purchaseEstate 152 success
+user94 purchaseEstate 173 success
+user35 purchaseEstate 153 fail
+creator purchaseEstate 154 success
+user94 purchaseEstate 164 success
+creator purchaseEstate 157 success
+creator purchaseEstate 168 success
+user93 purchaseEstate 177 success
+user95 purchaseEstate 161 success
+user94 purchaseEstate 153 success
+user96 purchaseEstate 161 fail
+user95 purchaseEstate 177 success
+user94 purchaseEstate 175 success
+user97 purchaseEstate 177 success
+user93 purchaseEstate 175 fail
+user95 purchaseEstate 168 success
+user96 purchaseEstate 151 success
+user96 purchaseEstate 171 success
+user94 purchaseEstate 166 success
+user96 purchaseEstate 177 fail
+user15 purchaseEstate 159 success
+user97 purchaseEstate 164 success
+user96 purchaseEstate 173 success
+user96 purchaseEstate 164 fail
+user96 purchaseEstate 161 success
+user96 purchaseEstate 177 fail
+user97 purchaseEstate 153 fail
+user71 purchaseEstate 177 success
+user97 purchaseEstate 151 success
+user94 purchaseEstate 165 success
+user95 purchaseEstate 151 fail
+user71 purchaseEstate 171 success
+user97 purchaseEstate 168 success
+user35 purchaseEstate 175 success
+user95 purchaseEstate 173 success
+user95 purchaseEstate 151 success
+user95 purchaseEstate 161 success
+user93 purchaseEstate 177 success
+user94 purchaseEstate 156 success
+user94 purchaseEstate 158 success
+user96 purchaseEstate 164 success
+user96 purchaseEstate 168 fail
+user71 purchaseEstate 168 fail
+user71 purchaseEstate 164 fail
+user71 purchaseEstate 164 fail
+user59 purchaseEstate 165 fail
+user94 purchaseEstate 167 success
+user71 purchaseEstate 161 success
+user96 purchaseEstate 175 success
+user97 purchaseEstate 169 success
+user95 purchaseEstate 171 success
+user97 purchaseEstate 166 success
+user97 purchaseEstate 165 success
+user95 purchaseEstate 164 success
+user59 purchaseEstate 167 fail
+user71 purchaseEstate 164 fail
+user97 purchaseEstate 152 success
+user71 purchaseEstate 173 success
+user71 purchaseEstate 168 success
+user94 purchaseEstate 174 success
+user71 purchaseEstate 175 fail
+user71 purchaseEstate 170 success
+user97 purchaseEstate 173 fail
+user71 purchaseEstate 162 success
+user94 purchaseEstate 172 success
+user96 purchaseEstate 168 fail
+user71 purchaseEstate 172 success
+user96 purchaseEstate 173 fail
+user94 purchaseEstate 160 success
+user71 purchaseEstate 160 success
+user71 purchaseEstate 163 success
+user71 purchaseEstate 176 success
+user71 purchaseEstate 155 success
+user71 purchaseEstate 174 success
+user71 purchaseEstate 159 success
+user71 purchaseEstate 157 success
+user71 purchaseEstate 152 success
+user71 purchaseEstate 167 success
+user96 purchaseEstate 171 fail
+user96 purchaseEstate 165 success
+user94 purchaseEstate 155 success
+user96 purchaseEstate 152 fail
+user94 purchaseEstate 154 success
+user96 purchaseEstate 166 success
+user94 purchaseEstate 162 success
+user98 purchaseEstate 155 success
+user94 purchaseEstate 169 success
+user94 purchaseEstate 170 success
+user94 purchaseEstate 163 success
+creator purchaseEstate 169 success
+creator purchaseEstate 158 success
+user66 withdrawRent  success
+user99 purchaseEstate 171 success
+creator purchaseEstate 156 success
+user94 purchaseEstate 176 success
+creator purchaseEstate 170 fail
+user93 purchaseEstate 159 success
+user10 purchaseEstate 170 success
+user97 purchaseEstate 154 success
+user96 purchaseEstate 163 success
+user23 withdrawRent  success
+user97 purchaseEstate 167 success
+user96 purchaseEstate 167 fail
+user96 purchaseEstate 172 success
+user96 purchaseEstate 157 success
+user100 purchaseEstate 153 success
+user97 purchaseEstate 158 success
+user97 purchaseEstate 160 success
+user97 purchaseEstate 162 success
+user10 purchaseEstate 158 fail
+user10 purchaseEstate 162 fail
+user10 purchaseEstate 170 fail
+user10 purchaseEstate 172 fail
+user10 purchaseEstate 154 fail
+user10 purchaseEstate 167 fail
+user10 purchaseEstate 174 success
+user10 purchaseEstate 160 fail
+user10 purchaseEstate 157 fail
+user65 purchaseEstate 153 fail
+user94 purchaseEstate 156 success
+user95 purchaseEstate 176 success
+user94 purchaseEstate 153 success
+user95 purchaseEstate 156 fail
+user94 purchaseEstate 153 fail
+user95 purchaseEstate 153 fail
+user65 purchaseEstate 176 fail
+user67 withdrawRent  success
+user87 purchaseEstate 156 fail
+user87 purchaseEstate 167 fail
+user87 purchaseEstate 155 success
+user59 purchaseEstate 155 fail
+user87 purchaseEstate 170 success
+user98 purchaseEstate 152 fail
+user98 purchaseEstate 152 success
+user83 purchaseEstate 169 success
+user101 purchaseEstate 175 success
+user83 purchaseEstate 159 success
+user8 purchaseEstate 158 success
+user8 purchaseEstate 154 success
+user8 purchaseEstate 165 success
+user5 withdrawRent  success
+user102 purchaseEstate 86 success
+user103 purchaseEstate 153 success
+user102 purchaseEstate 86 fail
+user102 purchaseEstate 86 fail
+user102 purchaseEstate 24 success
+user19 withdrawRent  success
+user5 withdrawRent  success
+user73 withdrawRent  success
+user104 purchaseEstate 115 success
+user105 purchaseEstate 76 success
+user13 withdrawRent  success
+user104 withdrawRent  success
+user72 withdrawRent  success
+user5 withdrawRent  success
+user24 withdrawRent  success
+user52 withdrawRent  success
+user28 withdrawRent  success
+user23 withdrawRent  success
+user22 withdrawRent  success
+user106 purchaseEstate 175 success
+user106 purchaseEstate 156 success
+user20 withdrawRent  success
+user106 purchaseEstate 163 success
+user106 purchaseEstate 169 success
+user107 purchaseEstate 42 success
+user5 withdrawRent  success
+user108 purchaseEstate 162 success
+user104 withdrawRent  success
+user54 withdrawRent  success
+user80 withdrawRent  success
+user109 purchaseEstate 22 success
+user105 purchaseEstate 77 success
+user5 withdrawRent  success
+user78 withdrawRent  success
+user109 purchaseEstate 34 success
+user24 withdrawRent  success
+user33 withdrawRent  success
+user23 withdrawRent  success
+user101 purchaseEstate 172 success
+user101 purchaseEstate 166 success
+user5 withdrawRent  success
+user35 withdrawRent  success
+user8 withdrawRent  success
+user17 withdrawRent  success
+user104 withdrawRent  success
+user77 withdrawRent  success
+user57 withdrawRent  success
+user81 withdrawRent  success
+user23 withdrawRent  success
+user73 withdrawRent  success
+user16 withdrawRent  success
+user80 withdrawRent  success
+user86 withdrawRent  success
+user21 withdrawRent  success
+user66 withdrawRent  success
+user89 withdrawRent  success
+user71 withdrawRent  success
+user110 purchaseEstate 160 success
+user110 purchaseEstate 176 success
+user110 purchaseEstate 174 success
+user110 purchaseEstate 157 success
+user5 withdrawRent  success
+user104 withdrawRent  success
+user111 purchaseEstate 166 success
+user74 withdrawRent  success
+user104 withdrawRent  success
+user112 purchaseEstate 167 success
+user112 purchaseEstate 168 success
+user59 withdrawRent  success
+user5 withdrawRent  success
+user113 purchaseEstate 156 success
+user113 purchaseEstate 176 success
+user22 withdrawRent  success
+user5 withdrawRent  success
+user85 withdrawRent  success
+user27 withdrawRent  success
+user36 withdrawRent  success
+user6 withdrawRent  success
+user104 withdrawRent  success
+user107 withdrawRent  success
+user76 withdrawRent  success
+user109 purchaseEstate 170 success
+user104 withdrawRent  success
+user114 purchaseEstate 173 success
+user79 withdraw  success
+user115 purchaseEstate 172 success
+user116 purchaseEstate 157 success
+user5 withdrawRent  success
+user107 withdrawRent  success
+user70 withdrawRent  success
+user83 withdrawRent  success
+user41 withdrawRent  success
+user85 withdrawRent  success
+user104 withdrawRent  success
+user104 withdraw  fail
+user104 updatePayout  success
+user104 withdrawRent  success

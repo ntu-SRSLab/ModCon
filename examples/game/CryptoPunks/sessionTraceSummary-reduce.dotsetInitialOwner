@@ -1,0 +1,50 @@
+digraph g {
+
+	s0 [shape="circle" label="0"];
+	s1 [shape="doublecircle" label="1"];
+	s2 [shape="doublecircle" label="2"];
+	s3 [shape="doublecircle" label="3"];
+	s4 [shape="doublecircle" label="4"];
+	s5 [shape="doublecircle" label="5"];
+	s6 [shape="doublecircle" label="6"];
+	s7 [shape="doublecircle" label="7"];
+	s8 [shape="doublecircle" label="8"];
+	s0 -> s5 [label="setInitialOwner"];
+	s1 -> s3 [label="enterBidForPunk"];
+	s2 -> s1 [label="withdrawBidForPunk"];
+	s3 -> s6 [label="offerPunkForSale"];
+	s3 -> s8 [label="enterBidForPunk"];
+	s4 -> s7 [label="buyPunk"];
+	s4 -> s8 [label="offerPunkForSale"];
+	s4 -> s2 [label="enterBidForPunk"];
+	s4 -> s7 [label="transferPunk"];
+	s5 -> s7 [label="getPunk"];
+	s5 -> s5 [label="offerPunkForSaleToAddress"];
+	s5 -> s7 [label="offerPunkForSale"];
+	s5 -> s8 [label="enterBidForPunk"];
+	s5 -> s5 [label="transferPunk"];
+	s6 -> s1 [label="getPunk"];
+	s6 -> s4 [label="buyPunk"];
+	s6 -> s8 [label="offerPunkForSale"];
+	s6 -> s3 [label="punkNoLongerForSale"];
+	s6 -> s8 [label="enterBidForPunk"];
+	s6 -> s3 [label="transferPunk"];
+	s7 -> s7 [label="offerPunkForSaleToAddress"];
+	s7 -> s7 [label="buyPunk"];
+	s7 -> s7 [label="offerPunkForSale"];
+	s7 -> s5 [label="punkNoLongerForSale"];
+	s7 -> s8 [label="enterBidForPunk"];
+	s7 -> s7 [label="transferPunk"];
+	s8 -> s4 [label="acceptBidForPunk"];
+	s8 -> s8 [label="offerPunkForSaleToAddress"];
+	s8 -> s8 [label="buyPunk"];
+	s8 -> s8 [label="offerPunkForSale"];
+	s8 -> s8 [label="punkNoLongerForSale"];
+	s8 -> s6 [label="withdrawBidForPunk"];
+	s8 -> s8 [label="enterBidForPunk"];
+	s8 -> s8 [label="transferPunk"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

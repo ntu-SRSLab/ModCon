@@ -1,0 +1,14 @@
+alphabet
+giveupBid
+verifyBid
+cancelBid
+refundBid
+acceptBid
+---------------------
+positive examples
+acceptBid verifyBid
+cancelBid
+acceptBid verifyBid
+acceptBid giveupBid
+acceptBid
+acceptBid refundBid
