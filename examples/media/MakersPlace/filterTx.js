@@ -164,24 +164,38 @@ async function filter(){
             else 
                 Methods[HashMethodMap[tx.input.substring(0,10)].name]+=1;
             if(option.all || option.printTx){
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
-                HashMethodMap[tx.input.substring(0,10)].name + " " +(
-                tx.isError=="0"?
-                HashMethodMap[tx.input.substring(0,10)].name == "approve"? web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._tokenId:
-                HashMethodMap[tx.input.substring(0,10)].name.toLowerCase().indexOf("transferfrom")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._tokenId:
-                HashMethodMap[tx.input.substring(0,10)].name=="oboCreateDigitalMediaReleases"?tokenIdCounter+"+"+web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._numReleases+";"+web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._digitalMediaId:
-                HashMethodMap[tx.input.substring(0,10)].name=="oboCreateDigitalMediaAndReleases"?tokenIdCounter+"+"+web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._numReleases+";"+(await getLogByTransactionHash(tx.hash)):
-                HashMethodMap[tx.input.substring(0,10)].name=="burnDigitalMedia"?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._digitalMediaId:
-                HashMethodMap[tx.input.substring(0,10)].name.indexOf("burnToken")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._tokenId:
-                HashMethodMap[tx.input.substring(0,10)].name.indexOf("burn")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10)).tokenId:
-                ""
-                :"")
-                , 
-                tx.isError=="0"?"success":"fail");
-                if (tx.isError=="0")
-                if(HashMethodMap[tx.input.substring(0,10)].name=="oboCreateDigitalMediaReleases" || HashMethodMap[tx.input.substring(0,10)].name=="oboCreateDigitalMediaAndReleases"){
-                    tokenIdCounter += parseInt(web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._numReleases);
+                if (tx.isError=="0" && (HashMethodMap[tx.input.substring(0,10)].name=="oboCreateDigitalMediaReleases"
+                || HashMethodMap[tx.input.substring(0,10)].name=="oboCreateDigitalMediaAndReleases")
+                ){
+                    let numReleases = parseInt(web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._numReleases);
+                    for (let i=1;i<=numReleases;i++){
+                        console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
+                        HashMethodMap[tx.input.substring(0,10)].name + " " +(
+                        tx.isError=="0"? HashMethodMap[tx.input.substring(0,10)].name=="oboCreateDigitalMediaReleases"?(tokenIdCounter+i)+";"+web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._digitalMediaId:
+                        HashMethodMap[tx.input.substring(0,10)].name=="oboCreateDigitalMediaAndReleases"?(tokenIdCounter+i)+";"+(await getLogByTransactionHash(tx.hash)):
+                        ""
+                        :"")
+                        , 
+                        tx.isError=="0"?"success":"fail");
+                    }
+                }else {
+                    console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
+                    HashMethodMap[tx.input.substring(0,10)].name + " " +(
+                    tx.isError=="0"?
+                    HashMethodMap[tx.input.substring(0,10)].name == "approve"? web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._tokenId:
+                    HashMethodMap[tx.input.substring(0,10)].name.toLowerCase().indexOf("transferfrom")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._tokenId:
+                    HashMethodMap[tx.input.substring(0,10)].name=="burnDigitalMedia"?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._digitalMediaId:
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("burnToken")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._tokenId:
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("burn")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10)).tokenId:
+                    ""
+                    :"")
+                    , 
+                    tx.isError=="0"?"success":"fail");
                 }
+                if (tx.isError=="0")
+                    if(HashMethodMap[tx.input.substring(0,10)].name=="oboCreateDigitalMediaReleases" || HashMethodMap[tx.input.substring(0,10)].name=="oboCreateDigitalMediaAndReleases"){
+                        tokenIdCounter += parseInt(web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._numReleases);
+                    }
             }
             if(option.all || option.printBlockNumber){
                     console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], HashMethodMap[tx.input.substring(0,10)].name, tx.blockNumber);

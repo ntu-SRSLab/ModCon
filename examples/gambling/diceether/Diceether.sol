@@ -1269,7 +1269,7 @@ contract GameChannel is GameChannelConflict {
         bytes memory _userSig
     )
         public
-        onlyServer
+     //   onlyServer
     {
         // verifySig(
         //         _roundId,

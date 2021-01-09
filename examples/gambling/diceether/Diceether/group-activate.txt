@@ -1,9 +1,0 @@
-alphabet
-addHouseStake
-unpause
-activateConflictResolution
-updateConflictResolution
-activate
----------------------
-positive examples
-activate addHouseStake addHouseStake unpause updateConflictResolution activateConflictResolution updateConflictResolution activateConflictResolution

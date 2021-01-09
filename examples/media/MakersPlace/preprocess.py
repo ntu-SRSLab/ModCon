@@ -78,6 +78,36 @@ def tuplize_bn(line):
     arr = line.strip().split(" ")
     return arr[0], arr[1], arr[-1]
 
+def tuplize_session(line):
+    arr = line.strip().split(" ")
+    return arr[0], arr[1], arr[-2],1 if arr[-1]=="success" else 0
+
+
+def test_kmeans(input_matrix_file):
+    import pandas as pd 
+    from sklearn.cluster import KMeans
+    csvdata = pd.read_csv(input_matrix_file, sep=" ")
+    # print(csvdata)
+    X = csvdata.to_numpy()[:,1:]
+    print(X)
+    SIZE = 4
+    kmeans = KMeans(n_clusters=SIZE, random_state=10).fit(X)
+    users = csvdata.to_numpy()[:,0]
+    labels = kmeans.labels_
+    
+    result = np.transpose([users, labels])
+    clusters = dict()
+    for size in range(SIZE):
+        if size not in clusters:
+            clusters[size] = set()
+        for row in result:
+            if  row[1] == size:
+                clusters[size].add(row[0])
+        print("cluster: %d, size: %s" % (size, str(len(clusters[size])) if len(clusters[size])>5 else clusters[size]))
+
+    df = pd.DataFrame(np.transpose([users, labels]),   columns=['user', 'cluster_id'])
+    return df 
+
 # get trace from result.txt 
 def get_trace_from_result(input_file):
     with open(input_file) as f: 
@@ -91,6 +121,82 @@ def get_trace_from_result(input_file):
                 userTraces[user].append(function)
         return userTraces
         
+def get_session_statistics(input_file):
+    with open(input_file) as f:
+        sessions = f.readlines()[1:]
+        used_methods = set()
+        for session in sessions:
+            pairs = session.strip("\n").split(" ")[1:]
+            for pair in pairs:
+                used_methods.add(pair.split("-")[1])
+        print(len(used_methods), used_methods)
+        methodId = dict()
+        no = 0
+        for method in used_methods:
+            methodId[method] = no 
+            no += 1
+        userVectors = dict()
+        userSessions = dict()
+        for session in sessions:
+            sessionId = session.strip("\n").split(" ")[0]
+            pairs = session.strip("\n").split(" ")[1:]
+            for pair in pairs:
+                user, function = tuple(pair.split("-"))
+                if user not in userVectors:
+                    userVectors[user] = np.zeros(len(used_methods))
+                userVectors[user][methodId[function]] = 1
+
+                if user not in userSessions:
+                    userSessions[user] = set()
+                userSessions[user].add(sessionId)    
+        
+        traces = set()
+        for session in sessions:
+            pairs = session.strip("\n").split(" ")[1:]
+            trace = list()
+            for pair in pairs:
+                user, function = tuple(pair.split("-"))
+                trace.append(function)
+            traces.add(" ".join(trace))
+
+        return used_methods, userVectors, traces, userSessions
+
+def get_trace_from_result_bySessionId(input_file):
+    with open(input_file) as f: 
+            lines = f.readlines()[1:]
+            digitalIdMap = dict()
+            digitalIdTraceMap = dict()
+            for line in lines:
+                user, function, session, status = tuplize_session(line)
+                if status == 1 and session!="" :
+                    # print(user, function ,session)
+                    if session.find(";")!=-1:
+                        tokenId, digitalId = tuple(session.split(";"))
+                        digitalIdMap[tokenId] = digitalId
+                        # print(user, function, tokenId, digitalId)
+                        if tokenId not in digitalIdTraceMap:
+                            digitalIdTraceMap[tokenId] = list()
+                        digitalIdTraceMap[tokenId].append([user, function])
+                    elif function=="approve" or function == "safeTransferFrom" or function == "transferFrom" or function=="burn" or function == "burnToken":
+                        tokenId = session
+                        try:
+                            assert tokenId in digitalIdMap
+                            # print(user, function, tokenId, digitalIdMap[tokenId])
+                            digitalIdTraceMap[tokenId].append([user, function])
+                        except AssertionError as e:
+                            print("unhandled", user, function, session, status)
+                            # print(digitalIdMap[tokenId])
+                            # raise e
+                    else:
+                        digitalId = session
+                        # print(user, function, None, digitalId)
+                        tokenIds = filter(lambda  key: digitalIdMap[key] == digitalId , digitalIdMap.keys())
+                        for tokenId in tokenIds:
+                            digitalIdTraceMap[tokenId].append([user, function])
+                    # if user not in userTraces:
+                    #     userTraces[user] = list()
+                    # userTraces[user].append(function)
+            return digitalIdTraceMap
 
 def get_duration_from_tracebn(input_file):
     with open(input_file) as f: 
@@ -115,9 +221,10 @@ def get_duration_from_tracebn(input_file):
             else:
                 durations[user].extend(["0", "0", "0"])
 
-        return durations
-    
+        return durations    
     pass 
+
+
 
 
 cmdOpt = '''--------------------------------------------------------------
@@ -127,6 +234,7 @@ cmdOpt = '''--------------------------------------------------------------
     --input     input file
     --output    output file
     --trace     extract trace from transaction results
+    --session   extract trace by session from transaction result
     --duration  extract duration from transaction blocknumber results
         '''
 
@@ -134,6 +242,7 @@ if __name__ == "__main__":
     # reduce_trace()
     i = 0
     args = sys.argv[1:]
+    print(args)
     options = dict()
     if len(args) == 0:
         print(cmdOpt)
@@ -154,6 +263,18 @@ if __name__ == "__main__":
                 i += 1
             elif args[i] == "--duration":
                 options["duration"] = True 
+                i += 1
+            elif args[i] == "--session":
+                options["session"] = True 
+                i += 1
+            elif args[i] == "--session_statistics":
+                options["session_statistics"] = True 
+                i += 1
+            elif args[i] == "--session_statistics_traces":
+                options["session_statistics_traces"] = True 
+                i += 1
+            elif args[i] == "--cluster":
+                options["cluster"] = True 
                 i += 1
             else:
                 print("wrong program input; program input should be: ")
@@ -183,5 +304,37 @@ if __name__ == "__main__":
                 f.write("user  totalDuration  totalTxs  minDurationPerTx   meanDurationPerTx  maxDurationPerTx\n")
                 for user in userDurations:
                     f.write("%s %s\n" %(user, " ".join(userDurations[user])))
-
-        
+    if "session" in options:
+        digitalIdTraceMap = get_trace_from_result_bySessionId(options["input"])
+        if "output" in options:
+            # print all user traces
+            with open(options["output"], "w") as f:
+                f.write("session  user-function user-function  user-function ...\n")
+                for digitalId in digitalIdTraceMap:
+                    f.write("%s %s\n" %(digitalId, " ".join([ pair[0]+"-"+pair[1] for pair in digitalIdTraceMap[digitalId]])))
+    
+    if "session_statistics" in options:
+        used_methods,  userVectors, traces, userSessions = get_session_statistics(options["input"])
+        if "output" in options:
+            # print all user traces
+            with open(options["output"], "w") as f:
+                f.write("user "+" ".join(used_methods)+" session_count\n")
+                for user in userVectors:
+                    f.write("%s %s %s\n" %(user, " ".join(map(lambda val: str(val), userVectors[user])), str(len(userSessions[user]))))
+    
+    if "session_statistics_traces" in options:
+        used_methods,  userVectors, traces, userSessions = get_session_statistics(options["input"])
+        if "output" in options:
+            # print all user traces
+            with open(options["output"], "w") as f:
+                f.write("alphabet\n")
+                f.write("\n".join(used_methods))
+                f.write("\n---------------------\n")
+                f.write("positive examples\n")
+                f.write("\n".join(traces))    
+    
+    if "cluster" in options:
+        df = test_kmeans(options["input"])
+        if "output" in options:
+            # print all user traces
+            df.to_csv(options["output"], index=False) 

@@ -1,0 +1,19 @@
+alphabet
+serverForceGameEnd
+serverCancelActiveGame
+userEndGameConflict
+createGame
+userCancelActiveGame
+serverEndGameConflict
+serverEndGame
+---------------------
+positive examples
+createGame serverEndGameConflict serverForceGameEnd
+createGame userCancelActiveGame serverEndGameConflict serverForceGameEnd
+createGame serverEndGameConflict userEndGameConflict
+createGame userCancelActiveGame serverCancelActiveGame
+createGame userEndGameConflict serverEndGameConflict
+createGame serverEndGame
+createGame serverCancelActiveGame serverForceGameEnd
+createGame userEndGameConflict serverEndGameConflict serverForceGameEnd
+createGame serverCancelActiveGame userCancelActiveGame

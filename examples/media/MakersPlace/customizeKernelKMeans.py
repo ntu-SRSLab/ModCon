@@ -391,7 +391,67 @@ def naive_kernel(x, y):
         print("***********")
         print_no += 1
     return sim
+def drawPie(group_stat, pie_title):
+    import matplotlib.pyplot as plt
 
+    # print(group_stat)
+    fig, ax = plt.subplots(
+    # figsize=(6, 3), 
+    subplot_kw=dict(aspect="equal"))
+
+    data = [float(x.split("|")[1]) for x in group_stat]
+    print(data)
+    explode = tuple([0.0 if data[i]/np.max(np.array(data)) > 0.01 else 0.4  for i in range(len(data))])
+
+    groups = [x.split("|")[-1] for x in group_stat]
+
+
+    def func(pct, allvals):
+        absolute = (pct/100.*np.sum(allvals))
+        # print("{:.1f}%\n({:d} )".format(pct, math.ceil(absolute)))
+        return "{:.1f}%\n({:d} )".format(pct, math.ceil(absolute))
+
+
+    wedges, texts, autotexts = ax.pie(data, explode=None, autopct=lambda pct: func(pct, data),
+                                    textprops=dict(color="w"))
+
+    ax.legend(wedges, groups,
+            title="Groups",
+            loc="center"
+            ,
+            bbox_to_anchor=(0.5, 0.5, 1, 0.5)
+            )
+
+    plt.setp(autotexts, size=8, weight="bold")
+
+    ax.set_title(pie_title)
+
+    plt.show()
+
+def drawKMEANS(size, kmeans, userList):
+    global userarrMap
+    labels = kmeans.labels_
+    # print(labels)
+    # print(len(userList), len(labels))
+    groupList = []
+    def getTrace(cluster):
+        trace = set()
+        for user in cluster:
+            # print(userarrMap[userList[user]], kmeans.predict([X[user]]))
+            trace.update(filter(lambda key: userarrMap[userList[user]][key]>0,userarrMap[userList[user]].keys()))    
+        return trace
+        
+    for cluster in range(size):
+        groupList.append(list(filter(lambda  index: labels[index]==cluster, range(len(labels)))))
+    group_stat = []
+    no = 0
+    for group in groupList:
+        representive = userList[group[0]]
+        print("Group No.", no, ",",  len(group), "users", ": representative ",representive, userarrMap[representive])
+        group_stat.append("group%d|%d|%s" % (no, len(group), " ".join(getTrace(group))))
+        no += 1
+    drawPie(group_stat, "MakersPlace User Groups")
+    
 def kernel_cluster(X, userList, userarrMap, SIZE = 3, kernel = None):
     from tslearn.clustering import KernelKMeans
     from tslearn.clustering import TimeSeriesKMeans 
@@ -545,8 +605,10 @@ def  testTotalDurationsTotalTransactionsUsingKernel():
             Probs = probs
             print("Probability: ",Probs)
             for size in [3, 4, 5]:
-                kernel_cluster(to_kernel_dataset(gak_arr2D), userList, userarrMap, SIZE = size, kernel=naive_kernel)
+                kmeans  = kernel_cluster(to_kernel_dataset(gak_arr2D), userList, userarrMap, SIZE = size, kernel=naive_kernel)
+                drawKMEANS(size, kmeans, userList)
     pass 
+
 
 def  testFullDurations():
  
@@ -614,6 +676,7 @@ def  testFullDurations():
         for size in [2, 3, 4, 5, 6, 7, 8]:
                 kernel_cluster(nArr2D, userList, userarrMap, SIZE = size)
     pass 
+
 
 if __name__ == "__main__":
     # testFullDurations()

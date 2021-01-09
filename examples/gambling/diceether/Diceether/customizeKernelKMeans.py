@@ -1,14 +1,25 @@
 import os 
 import numpy as  np
-
-
+from tslearn.utils import to_time_series_dataset
+from sklearn.datasets import make_blobs
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_samples, silhouette_score
+import matplotlib.pyplot as plt
+import matplotlib.cm as cm
+from scipy import spatial
+import math 
+    
+if not os.path.exists("./analysis"):
+    os.mkdir("./analysis")
 
 def tuplize(line):
     arr = line.strip().split(" ")
     # print(arr)
+    # return
+    # print(arr)
     # exit(0)
     #  user   function   status
-    return arr[0], arr[1], 1 if arr[3]=="success" else 0
+    return arr[0], arr[1], 1 if arr[-1]=="success" else 0
 
 Groups = 0
 groupList = list()
@@ -120,7 +131,7 @@ def getUserTrace(USER, datalines):
     return ls
 
 headTraces = dict()
-
+headUsers = dict()
 def drawDFA(groupNo, group, userList, datalines):
     global headTraces
     alphabet = set()
@@ -134,10 +145,12 @@ def drawDFA(groupNo, group, userList, datalines):
             # merge user group by first same function calling
             if trace[0] not in headTraces:
                 headTraces[trace[0]] = list()
+                headUsers[trace[0]] = set()
             headTraces[trace[0]].append(trace)
+            headUsers[trace[0]].add(user)
 
     if len(alphabet)>0:
-        with open("./group"+str(groupNo)+".txt","w") as f:
+        with open("./analysis/group"+str(groupNo)+".txt","w") as f:
             f.write("alphabet\n")
             f.write("\n".join(alphabet))
             f.write("\n---------------------\n")
@@ -152,7 +165,7 @@ def drawHeadMergeDFA():
         for trace in headTraces[head]:
             traces.add(" ".join(trace))
             alphabet = alphabet.union(set(trace))
-        with open("./group-"+head+".txt","w") as f:
+        with open("./analysis/group-"+head+".txt","w") as f:
             f.write("alphabet\n")
             f.write("\n".join(alphabet))
             f.write("\n---------------------\n")
@@ -160,13 +173,7 @@ def drawHeadMergeDFA():
             f.write("\n".join(traces))
 
 def cluster_analysis(X, userList, userarrMap):
-    from sklearn.datasets import make_blobs
-    from sklearn.cluster import KMeans
-    from sklearn.metrics import silhouette_samples, silhouette_score
-
-    import matplotlib.pyplot as plt
-    import matplotlib.cm as cm
-    range_n_clusters = [2, 3, 4, 5, 6]
+    range_n_clusters = range(2, 10)
 
     for n_clusters in range_n_clusters:
         # Create a subplot with 1 row and 2 columns
@@ -235,151 +242,454 @@ def cluster_analysis(X, userList, userarrMap):
 
         plt.show()
 
-def kernel_cluster(X, userList, userarrMap, SIZE = 3):
-    from tslearn.clustering import KernelKMeans 
+def to_kernel_dataset(X):
+    d2 = np.max([ len(ls) for ls in X])
+    for ls in X:
+        if len(ls) < d2:
+            length = len(ls)
+            ls.extend([ -1 for i in range(length, d2)])
+    return X
 
-    # SIZE = 3
-    for kernel in ['gak','additive_chi2', 'chi2', 'linear', 'poly', 'polynomial', 'rbf', 'laplacian', 'sigmoid', 'cosine']:
-        print("****************************************")
-        print("current kernel: ",kernel)
-        kmeans = KernelKMeans(n_clusters=SIZE, kernel=kernel ,random_state=0).fit(X)
+def print_trace(x):
+    global methodList
+    # global methodId
+    x = x[1:]
+    x = list(filter(lambda item: item!=-1,x))
+    trace = [ methodList[int(item)] for item in x]
+    print(" ".join(trace))
+
+def duration_similarity(x, y):
+    global userId
+    global userDurations
+    global variance
+  
+    user1 = userId[int(x[0])]
+    user2 = userId[int(y[0])]
+    duration1 = userDurations[user1]
+    duration2 = userDurations[user2]
+   
+    # return 1- spatial.distance.cosine(duration1, duration2)
+    return math.exp(-(spatial.distance.euclidean(duration1, duration2))**2/variance)
+
+def frequence_similarity(x, y):
+    global methodFrequence
+
+    pass 
+
+def featureSet_commonstring_similarity(x, y):
+    global LIMIT
+    global print_no
+    x = set(x)
+    y = set(y)
+    commons = x.intersection(y)
+    sim1 = len(list(filter(lambda  item: item in commons, x)))/len(x)
+    sim2 = len(list(filter(lambda  item: item in commons, y)))/len(y)
+    return max(sim1, sim2)
+
+def featureSet_euclid(x ,y):
+    x = set(x)
+    y = set(y)
+    overall_features = x.union(y)
+
+    v1 = [0 for feature in overall_features]
+    v2 = [0 for feature in overall_features]
+    no = 0
+    for feature in overall_features:
+        if feature in x:
+            v1[no] = 1
+        if feature in y:
+            v2[no] = 1
+        no += 1
+    return spatial.distance.euclidean(v1, v2)
+
+def feature_similarity(x, y):
+    x = x[1:]
+    y = y[1:]
+    x1 = list(filter(lambda item: int(item)!=-1,x))
+    y1 = list(filter(lambda item: int(item)!=-1,y))
+    
+    return 1/4*1/(1+featureSet_euclid(x1,y1))+3/4*featureSet_commonstring_similarity(x1, y1)
+
+def synonym_similarity(x, y):
+    global methodList
+    global methodId
+    x = x[1:]
+    y = y[1:]
+    x1 = list(filter(lambda item: int(item)!=-1,x))
+    y1 = list(filter(lambda item: int(item)!=-1,y))
+    try:
+        x1 = list(map( lambda item: 
+        float(methodId["serverEndGame"]) if methodList[int(item)] == "serverForceGameEnd" else 
+        float(methodId["serverEndGame"]) if methodList[int(item)] == "serverCancelActiveGame" else
+        float(methodId["userCancelActiveGame"]) if methodList[int(item)] == "userEndGameConflict" else
+        item, x1
+        ))
+        
+        y1 = list(map( lambda item: 
+        float(methodId["serverEndGame"]) if methodList[int(item)] == "serverForceGameEnd" else 
+        float(methodId["serverEndGame"]) if methodList[int(item)] == "serverCancelActiveGame" else
+        float(methodId["userCancelActiveGame"]) if methodList[int(item)] == "userEndGameConflict" else
+        item, y1
+        ))
+    except IndexError as e:
+        print(x1)
+        print(y1)
+        print(methodList)
+        print(e)
+        raise e
+
+    return 1/4*1/(1+featureSet_euclid(x1,y1))+3/4*featureSet_commonstring_similarity(x1, y1)
+
+def order_similarity(x, y):
+   
+
+    pass 
+
+def contex_similarity(x,y):
+    pass 
+
+def prerequisites_similarity(x, y):
+    pass 
+
+LIMIT = 30
+print_no = 0
+
+# Probs_set = [
+#     [1/16, 7/16, 8/16],
+#     [2/16, 6/16, 8/16],
+    
+#     [1/16, 8/16, 7/16],
+#     [2/16, 7/16, 7/16],
+#     [3/16, 6/16, 7/16],
+    
+#     [1/16, 9/16, 6/16],
+#     [2/16, 8/16, 6/16],
+#     [3/16, 7/16, 6/16],
+    
+#     [1/16, 10/16, 5/16],
+#     [2/16, 9/16, 5/16],
+#     [3/16, 8/16, 5/16],
+    
+#     [1/16, 12/16,  3/16],
+#     [2/16, 11/16,  3/16],
+#     [3/16, 10/16,  3/16],
+#     ]
+Probs_set = [[0.1875, 0.625, 0.1875]]
+Probs = list()
+def naive_kernel(x, y):
+    global Probs
+    global LIMIT
+    global print_no
+    f_sim = feature_similarity(x,y)
+    syn_sim = synonym_similarity(x,y)
+    dur_sim = duration_similarity(x, y)
+    # sim = 2/16*f_sim + 8/16* syn_sim + 6/16* dur_sim
+    sim = Probs[0]*f_sim + Probs[1]* syn_sim + Probs[2]* dur_sim
+    if sim > 0  and print_no < LIMIT:
+        print_trace(x)
+        print_trace(y)
+        print("simlarity: ", sim,  f_sim, syn_sim, dur_sim)
+        print("***********")
+        print_no += 1
+    return sim
+
+def kernel_cluster(X, userList, userarrMap, SIZE = 3, kernel = None):
+    from tslearn.clustering import KernelKMeans
+    from tslearn.clustering import TimeSeriesKMeans 
+    
+    if kernel==None:
+        from sklearn.cluster import KMeans
+        kmeans = KMeans(n_clusters=SIZE, algorithm="elkan"  ,random_state=0).fit(X)
         # print(kmeans.labels_)
+        print("****************************************")
+        print("K-Means.")
         for  cluster_id in range(SIZE):
                     cluster = list(filter(lambda key: kmeans.labels_[key] == cluster_id, range(len(kmeans.labels_))))
                     no = 0
                     trace = set()
                     for user in cluster:
                         # print(userarrMap[userList[user]], kmeans.predict([X[user]]))
-                        trace.update(userarrMap[userList[user]].keys())    
-                        # no += 1
-                        # if no>15:
-                        #     break
+                        trace.update(filter(lambda key: userarrMap[userList[user]][key]>0,userarrMap[userList[user]].keys()))    
+                    
                     print("cluster: ", cluster_id, " size: ", len(cluster), "function set:", trace)
-    from sklearn.cluster import KMeans
-    kmeans = KMeans(n_clusters=SIZE, algorithm="elkan"  ,random_state=0).fit(X)
-    # print(kmeans.labels_)
-    print("****************************************")
-    print("K-Means.")
-    for  cluster_id in range(SIZE):
-                cluster = list(filter(lambda key: kmeans.labels_[key] == cluster_id, range(len(kmeans.labels_))))
-                no = 0
-                trace = set()
-                for user in cluster:
-                    # print(userarrMap[userList[user]], kmeans.predict([X[user]]))
-                    trace.update(userarrMap[userList[user]].keys())    
-                    # no += 1
-                    # if no>15:
-                    #     break
-                print("cluster: ", cluster_id, " size: ", len(cluster), "function set:", trace)
-    # exit(0)
+        return kmeans
+    elif kernel=="time series":
+            print("****************************************")
+            print("current kernel: ",kernel)
+            kmeans = TimeSeriesKMeans(n_clusters=SIZE, metric="dtw", random_state=0).fit(X)
+            # print(kmeans.labels_)
+            for  cluster_id in range(SIZE):
+                        cluster = list(filter(lambda key: kmeans.labels_[key] == cluster_id, range(len(kmeans.labels_))))
+                        no = 0
+                        trace = set()
+                        for user in cluster:
+                            # print(userarrMap[userList[user]], kmeans.predict([X[user]]))
+                            trace.update(filter(lambda key: userarrMap[userList[user]][key]>0,userarrMap[userList[user]].keys()))    
+                        
+                        print("cluster: ", cluster_id, " size: ", len(cluster), "function set:", trace)
+            return kmeans
+    else:
+            print("****************************************")
+            print("current kernel: ",kernel)
+            kmeans =  KernelKMeans(n_clusters=SIZE, kernel=kernel ,random_state=0).fit(X)
+            # print(kmeans.labels_)
+            for  cluster_id in range(SIZE):
+                        cluster = list(filter(lambda key: kmeans.labels_[key] == cluster_id, range(len(kmeans.labels_))))
+                        no = 0
+                        trace = set()
+                        for user in cluster:
+                            # print(userarrMap[userList[user]], kmeans.predict([X[user]]))
+                            trace.update(filter(lambda key: userarrMap[userList[user]][key]>0,userarrMap[userList[user]].keys()))    
+                        
+                        print("cluster: ", cluster_id, " size: ", len(cluster), "function set:", trace)
+            return kmeans
 
-def cluster(X, userList, userarrMap):
-    cluster_analysis(X, userList, userarrMap)
-    from sklearn.cluster import KMeans
+def drawPie(group_stat, pie_title):
     import matplotlib.pyplot as plt
-    kmeans = KMeans(n_clusters=4, algorithm="elkan", random_state=0).fit(X)
-    print("labels:", kmeans.labels_)
-    sse = []
-    list_k = list(range(1, 10))
 
-    for k in list_k:
-        kmeans = KMeans(n_clusters=k).fit(X)
-        sse.append(kmeans.inertia_)
-        for  cluster_id in range(k):
-                cluster = list(filter(lambda key: kmeans.labels_[key] == cluster_id, range(len(kmeans.labels_))))
-                no = 0
-                for user in cluster:
-                    print(userarrMap[userList[user]], kmeans.predict([X[user]]))
-                    no += 1
-                    if no>15:
-                        break
-                print("cluster: ", cluster_id, " size: ", len(cluster))
+    # print(group_stat)
+    fig, ax = plt.subplots(
+    # figsize=(6, 3), 
+    subplot_kw=dict(aspect="equal"))
 
-    plt.figure(figsize=(6, 6))
-    plt.plot(list_k, sse, '-o')
-    plt.xlabel(r'Number of clusters *k*')
-    plt.ylabel('Sum of squared distance')
+    data = [float(x.split("|")[1]) for x in group_stat]
+    print(data)
+    explode = tuple([0.0 if data[i]/np.max(np.array(data)) > 0.01 else 0.4  for i in range(len(data))])
+
+    groups = [x.split("|")[-1] for x in group_stat]
+
+
+    def func(pct, allvals):
+        absolute = (pct/100.*np.sum(allvals))
+        # print("{:.1f}%\n({:d} )".format(pct, math.ceil(absolute)))
+        return "{:.1f}%\n({:d} )".format(pct, math.ceil(absolute))
+
+
+    wedges, texts, autotexts = ax.pie(data, explode=None, autopct=lambda pct: func(pct, data),
+                                    textprops=dict(color="w"))
+
+    ax.legend(wedges, groups,
+            title="Groups",
+            loc="center"
+            ,
+            bbox_to_anchor=(0.5, 0.5, 1, 0.5)
+            )
+
+    plt.setp(autotexts, size=8, weight="bold")
+
+    ax.set_title(pie_title)
+
     plt.show()
-    exit(0)
 
-with open("./result.txt") as f:
-    methodSet = set()
-    userList = list()
-    userarrMap = dict()
-    userFrequences = dict()
-    # record usage trace for each user
-    userTraces  = dict()
+def drawKMEANS(size, kmeans, userList):
+    global userarrMap
+    labels = kmeans.labels_
+    # print(labels)
+    # print(len(userList), len(labels))
+    groupList = []
+    def getTrace(cluster):
+        trace = set()
+        for user in cluster:
+            # print(userarrMap[userList[user]], kmeans.predict([X[user]]))
+            trace.update(filter(lambda key: userarrMap[userList[user]][key]>0,userarrMap[userList[user]].keys()))    
+        return trace
+        
+    for cluster in range(size):
+        groupList.append(list(filter(lambda  index: labels[index]==cluster, range(len(labels)))))
+    group_stat = []
+    no = 0
+    for group in groupList:
+        representive = userList[group[0]]
+        print("Group No.", no, ",",  len(group), "users", ": representative ",representive, userarrMap[representive])
+        group_stat.append("group%d|%d|%s" % (no, len(group), " ".join(getTrace(group))))
+        no += 1
+    drawPie(group_stat, "Diceether User Groups")
 
-    userMethodFrequence = dict()
-    methodFrequence = dict()
-
-    lines = f.readlines()
-    for line in lines:
-        user, function, status = tuplize(line)
-        if status==1 :
-            if user not in userFrequences:
-                userFrequences[user] = 1
-                userTraces[user] = list()
-                userMethodFrequence[user] = dict()
-            else:
-                userFrequences[user] += 1
-            userTraces[user].append(function)
-
-            if function not in userMethodFrequence[user]:
-                userMethodFrequence[user][function] = 1
-                methodFrequence[function] = 1
-            else: 
-                methodFrequence[function] += 1
-                userMethodFrequence[user][function] += 1
-
-            if function not in methodSet:
-                methodSet.add(function)
-            if user not in userarrMap:
-                userarrMap[user] = dict()
-            if function not in userarrMap[user]:
-                userarrMap[user][function] = status
-            else: 
-                userarrMap[user][function] = status
-
-    # print all user traces
-    with open("usertrace.txt", "w") as f:
-        for user in userTraces:
-            f.write("%s %s\n" %(user, " ".join(userTraces[user])))
-
-    # normalize method frequence to [0,1]
-    prob_arr2D = list()
-    for user in userMethodFrequence:
-        userList.append(user)
-        arr1D = list()
-        for method in sorted(list(methodSet)):
-            if method in userMethodFrequence[user]:
-                arr1D.append((userMethodFrequence[user][method]/methodFrequence[method])*np.sum([ 1 if  method in userMethodFrequence[user] else 0 for user in userMethodFrequence]))
-            else:
-                arr1D.append(0)
-        prob_arr2D.append(arr1D)
-    # print(prob_arr2D)
-    kernel_cluster(np.array(prob_arr2D), userList, userarrMap, SIZE = 3)
-    print("************************************")
-    print("************************************")
-    print("************************************")
-    ### generate global array
-    arr2D = list()
-    for user in userarrMap:
-        userList.append(user)
-        arr1D = list()
-        for method in sorted(list(methodSet)):
-            if method in userarrMap[user]:
-                arr1D.append(userarrMap[user][method])
-            else:
-                arr1D.append(0)
-        arr2D.append(arr1D)
     
-    nArr2D = np.array(arr2D)
-    print(sorted(list(methodSet)))
-    print(nArr2D.shape[0], nArr2D.shape[1])
-    print(np.var(nArr2D[:,0]))
-    print(nArr2D[0])
-    # cluster(nArr2D, userList, userarrMap)
-    kernel_cluster(nArr2D, userList, userarrMap)
+
+methodSet = set()
+methodList = list()
+userList = list()
+userarrMap = dict()
+userFrequences = dict()
+# record usage trace for each user
+userTraces  = dict()
+userMethodFrequence = dict()
+methodFrequence = dict()
+userDurations = dict()
+methodId = dict()
+userId = dict()
+variance = 0
+def  testTotalDurationsTotalTransactionsUsingKernel():
+    global Probs_set
+    global Probs
+    global methodList
+    global methodSet
+    global userId
+    global methodId
+    global userDurations
+    global variance
+    global userTraces
+    global userarrMap
+    global userFrequences
+    global userMethodFrequence
+    with open("./txResult.txt") as f:
+        lines = f.readlines()[1:]
+        for line in lines:
+            user, function, status = tuplize(line)
+            if status==1 :
+                if user not in userFrequences:
+                    userFrequences[user] = 1
+                    userMethodFrequence[user] = dict()
+                else:
+                    userFrequences[user] += 1
+                
+                if function not in userMethodFrequence[user]:
+                    userMethodFrequence[user][function] = 1
+                    methodFrequence[function] = 1
+                else: 
+                    methodFrequence[function] += 1
+                    userMethodFrequence[user][function] += 1
+
+                if function not in methodSet:
+                    methodSet.add(function)
+                if user not in userarrMap:
+                    userarrMap[user] = dict()
+                if function not in userarrMap[user]:
+                    userarrMap[user][function] = status
+                else: 
+                    userarrMap[user][function] = status
+        methodList =list(methodSet)
+      
+        # fetch all user reduced traces
+        # with open("usertrace_reduced.txt") as f:
+        with open("userTrace.txt") as f:
+            userTraces = dict()
+            lines = f.readlines()
+            for line in lines:
+                user = line.strip().split(" ")[0]
+                trace = line.strip().split(" ")[1:]
+                if len(trace)>20:
+                    trace = trace[:20]
+                userTraces[user] = trace
+    
+
+        # fetch total durations, total transactions
+        with open("userDuration.txt") as f:
+            lines = f.readlines()[1:]
+            durations = []
+            for line in lines:
+                user = line.strip().split(" ")[0]
+                userDurations[user] = list(map(lambda v: float(v), line.strip().split(" ")[1:]))
+                durations.append(userDurations[user])
+            duration_avg = np.zeros(len(durations[0]))
+            for duration in durations:
+                duration_avg = np.add(duration_avg, duration)
+            duration_avg =  duration_avg / len(durations)
+            # print("average: ", duration_avg)
+            variance = np.sum([ spatial.distance.euclidean(duration_avg, duration)**2 for duration in durations])/(len(durations)-1)
+            print("variance: ", variance)
+         
+        # normalize method frequence to [0,1]
+        gak_arr2D = list()
+        no = 0
+        for method in methodList:
+            methodId[method] = no
+            no += 1 
+        print(methodId, methodList)
+
+        no = 0
+        # encode each method using integer id
+        for user in userTraces:
+            userList.append(user)
+            userId[no] = user
+            arr = [no]
+            arr.extend([ methodId[method] for method in userTraces[user]])
+            gak_arr2D.append(arr)
+            no += 1
+        for probs in Probs_set:
+            Probs = probs
+            print("Probability: ",Probs)
+            for size in [3, 4, 5]:
+                kmeans = kernel_cluster(to_kernel_dataset(gak_arr2D), userList, userarrMap, SIZE = size, kernel=naive_kernel)
+                drawKMEANS(size,kmeans, userList)
+    
+            
+    pass 
+
+def  testFullDurations():
+ 
+    global methodList
+    global methodSet
+    global userId
+    global methodId
+    global userDurations
+    global variance
+    global userTraces
+    global userarrMap
+    global userFrequences
+    global userMethodFrequence
+    with open("./txResult.txt") as f:
+        lines = f.readlines()[1:]
+        for line in lines:
+            user, function, status = tuplize(line)
+            if status==1 :
+                if user not in userFrequences:
+                    userFrequences[user] = 1
+                    userMethodFrequence[user] = dict()
+                else:
+                    userFrequences[user] += 1
+                
+                if function not in userMethodFrequence[user]:
+                    userMethodFrequence[user][function] = 1
+                    methodFrequence[function] = 1
+                else: 
+                    methodFrequence[function] += 1
+                    userMethodFrequence[user][function] += 1
+
+                if function not in methodSet:
+                    methodSet.add(function)
+                if user not in userarrMap:
+                    userarrMap[user] = dict()
+                if function not in userarrMap[user]:
+                    userarrMap[user][function] = status
+                else: 
+                    userarrMap[user][function] = status
+        methodList = list(methodSet)
+        with open("userDuration.txt") as f:
+            lines = f.readlines()[1:]
+            full_durations = dict()
+            for line in lines:
+                user = line.strip().split(" ")[0]
+                full_durations[user] = list(map(lambda v: float(v), line.strip().split(" ")[1:]))
+        ### generate global array
+        arr2D = list()
+        for user in userarrMap:
+            userList.append(user)
+            arr1D = list()
+            for method in sorted(list(methodSet)):
+                if method in userarrMap[user]:
+                    arr1D.append(userarrMap[user][method])
+                else:
+                    arr1D.append(0)
+            arr1D.extend(full_durations[user])
+            arr2D.append(arr1D)
+        
+        Arr2D = np.array(arr2D)
+        
+        nArr2D = Arr2D / Arr2D.max(axis=0)
+        print(Arr2D[1], nArr2D[1])
+       
+        for size in [2, 3, 4, 5, 6, 7, 8]:
+                kernel_cluster(nArr2D, userList, userarrMap, SIZE = size)
+    pass 
+
+if __name__ == "__main__":
+    # testFullDurations()
+    testTotalDurationsTotalTransactionsUsingKernel()
+    
+     
+
+
 
     

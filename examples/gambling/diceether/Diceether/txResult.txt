@@ -8,7 +8,7 @@ user2 serverEndGameConflict 1 success
 user3 createGame 2 success
 user2 serverEndGame 2 success
 user4 createGame 3 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1 success
 user2 serverEndGame 3 success
 user5 createGame 4 success
 user6 createGame 5 success
@@ -23,13 +23,13 @@ user9 createGame 9 success
 user2 serverEndGame 9 success
 user10 createGame 10 success
 user2 serverEndGame 10 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 4 success
 user11 createGame 11 success
 user2 serverEndGame 11 success
 user12 createGame 12 success
 user2 serverEndGame 12 success
 user12 createGame 13 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4 success
 user2 serverEndGameConflict 13 success
 user13 createGame 14 success
 user2 serverEndGame 14 success
@@ -39,19 +39,19 @@ user3 createGame 17 success
 user2 serverEndGame 17 success
 user8 createGame 18 success
 user2 serverEndGame 18 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 13 success
 user5 createGame 19 success
 user2 serverEndGame 19 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 15 success
 user6 createGame 20 success
 user2 serverEndGame 20 success
 user9 createGame 21 success
 user2 serverEndGame 21 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 16 success
 user11 createGame 22 success
 user2 serverEndGame 22 success
-user7 userCancelActiveGame  success
-user14 userCancelActiveGame  success
+user7 userCancelActiveGame 16 success
+user14 userCancelActiveGame 15 success
 user15 createGame 23 success
 user2 serverEndGame 23 success
 user16 createGame 24 success
@@ -71,17 +71,17 @@ user11 createGame 31 success
 user9 createGame 32 success
 user2 serverEndGame 31 success
 user13 createGame 33 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 28 success
 user2 serverEndGame 33 success
 user14 createGame 34 success
 user2 serverEndGame 34 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 32 success
 user18 createGame 35 success
 user2 serverEndGame 35 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 28 success
 user15 createGame 36 success
 user2 serverEndGame 36 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 32 success
 user16 createGame 37 success
 user2 serverEndGame 37 success
 user17 createGame 38 success
@@ -133,15 +133,15 @@ user17 createGame 61 success
 user9 createGame 62 success
 user2 serverEndGame 62 success
 user2 serverEndGame 61 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 59 success
 user7 createGame 63 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 59 success
 user2 serverEndGame 63 success
 user8 createGame 64 success
 user11 createGame 65 success
 user2 serverEndGame 65 success
 user13 createGame 66 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 64 success
 user2 serverEndGame 66 success
 user14 createGame 67 success
 user2 serverEndGame 67 success
@@ -157,7 +157,7 @@ user16 createGame 72 success
 user2 serverEndGame 72 success
 user17 createGame 73 success
 user2 serverEndGame 73 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 64 success
 user7 createGame 74 success
 user2 serverEndGame 74 success
 user8 createGame 75 success
@@ -183,398 +183,398 @@ user2 serverEndGame 84 success
 user2 serverEndGame 85 success
 user2 serverEndGame 86 success
 user13 createGame 87 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 87 success
 user14 createGame 88 success
 user2 serverEndGame 88 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user15 createGame 89 success
 user2 serverEndGame 89 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user16 createGame 90 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 90 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user7 createGame 91 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 91 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user13 createGame 92 success
 user2 serverEndGame 92 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user17 createGame failure fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user14 createGame 93 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 93 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user3 createGame 94 success
 user2 serverEndGame 94 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user4 createGame 95 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user16 createGame 96 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 96 success
 user17 createGame 97 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 97 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverCancelActiveGame 95 success
+user2 serverForceGameEnd 76 fail
 user5 createGame 98 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 98 success
 user7 createGame 99 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 95 success
 user2 serverEndGameConflict 99 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user13 createGame 100 success
 user2 serverEndGame 100 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 99 success
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user14 createGame 101 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 101 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user15 createGame 102 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user3 createGame 103 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 103 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user4 createGame 104 success
 user2 serverEndGame 104 success
 user5 createGame 105 success
 user2 serverEndGame 105 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user16 createGame 106 success
 user2 serverEndGame 106 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user17 createGame 107 success
 user2 serverEndGame 107 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGameConflict 102 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 102 success
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user7 createGame 108 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 108 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user13 createGame 109 success
 user2 serverEndGame 109 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user14 createGame 110 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 110 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user3 createGame 111 success
 user2 serverEndGame 111 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user15 createGame 112 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 112 success
 user16 createGame 113 success
 user2 serverEndGame 113 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user4 createGame 114 success
 user2 serverEndGame 114 success
 user5 createGame 115 success
 user2 serverEndGame 115 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user17 createGame 116 success
 user2 serverEndGame 116 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user7 createGame 117 success
 user2 serverEndGame 117 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user13 createGame 118 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 118 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user14 createGame 119 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user16 createGame 120 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 120 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user3 createGame 121 success
 user2 serverEndGame 121 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user20 createGame 122 success
 user2 serverEndGame 122 success
 user17 createGame 123 success
 user2 serverEndGameConflict 119 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 123 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user4 createGame 124 success
 user2 serverEndGame 124 success
 user5 createGame 125 success
 user2 serverEndGame 125 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user15 createGame failure fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 119 success
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user7 createGame 126 success
 user2 serverEndGame 126 success
 user13 createGame 127 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 127 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user14 createGame 128 success
 user2 serverEndGame 128 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user15 createGame 129 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 129 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user16 createGame 130 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 130 success
 user3 createGame 131 success
 user2 serverEndGame 131 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user17 createGame 132 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user2 serverEndGame 132 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 75 fail
+user2 serverForceGameEnd 76 fail
 user1 createGame 133 success
 user2 serverEndGame 133 success
 user2 serverEndGameConflict 76 success
 user2 serverEndGameConflict 75 success
 user5 createGame 134 success
 user2 serverEndGame 134 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 75 success
+user2 serverForceGameEnd 76 success
 user7 createGame 135 success
 user2 serverEndGame 135 success
 user13 createGame 136 success
@@ -719,7 +719,7 @@ user34 createGame 205 success
 user2 serverEndGame 205 success
 user22 createGame 206 success
 user2 serverEndGame 206 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 189 success
 user21 createGame 207 success
 user2 serverEndGame 207 success
 user29 createGame 208 success
@@ -784,7 +784,7 @@ user8 createGame 237 success
 user2 serverEndGame 237 success
 user34 createGame 238 success
 user2 serverEndGame 238 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 232 success
 user35 createGame 239 success
 user7 createGame 240 success
 user2 serverEndGame 240 success
@@ -857,11 +857,11 @@ user21 createGame 274 success
 user2 serverEndGame 274 success
 user2 serverEndGame 273 success
 user13 createGame 275 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 270 success
 user22 createGame 276 success
 user2 serverEndGame 276 success
 user31 createGame 277 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 275 success
 user2 serverEndGame 277 success
 user24 createGame 278 success
 user2 serverEndGame 278 success
@@ -869,13 +869,13 @@ user30 createGame 279 success
 user2 serverEndGame 279 success
 user34 createGame 280 success
 user2 serverEndGame 280 success
-user13 userCancelActiveGame  success
+user13 userCancelActiveGame 275 success
 user8 createGame 281 success
 user28 createGame 282 success
 user2 serverEndGame 281 success
 user2 serverEndGame 282 success
 user7 createGame 283 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 270 success
 user36 createGame 284 success
 user2 serverEndGame 283 success
 user17 createGame 285 success
@@ -917,7 +917,7 @@ user2 serverEndGame 302 success
 user15 createGame 303 success
 user2 serverEndGame 303 success
 user14 createGame 304 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 299 success
 user2 serverEndGame 304 success
 user22 createGame 305 success
 user2 serverEndGame 305 success
@@ -927,7 +927,7 @@ user13 createGame 307 success
 user2 serverEndGame 307 success
 user34 createGame 308 success
 user2 serverEndGame 308 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 299 success
 user35 createGame 309 success
 user2 serverEndGame 309 success
 user27 createGame 310 success
@@ -1036,7 +1036,7 @@ user36 createGame 361 success
 user34 createGame 362 success
 user2 serverEndGame 361 success
 user2 serverEndGame 362 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 345 success
 user35 createGame 363 success
 user17 createGame 364 success
 user2 serverEndGame 363 success
@@ -1058,7 +1058,7 @@ user2 serverEndGame 372 success
 user13 createGame 373 success
 user36 createGame 374 success
 user2 serverEndGame 374 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 367 success
 user2 serverEndGame 373 success
 user8 createGame 375 success
 user26 createGame 376 success
@@ -1074,10 +1074,10 @@ user2 serverEndGame 378 success
 user29 createGame 381 success
 user2 serverEndGameConflict 369 success
 user2 serverEndGame 381 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 364 success
 user33 createGame 382 success
 user2 serverEndGame 382 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 367 success
 user22 createGame 383 success
 user2 serverEndGame 383 success
 user30 createGame 384 success
@@ -1085,10 +1085,10 @@ user2 serverEndGame 384 success
 user24 createGame 385 success
 user2 serverEndGame 385 success
 user2 serverEndGameConflict 379 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 369 success
 user43 createGame 386 success
 user2 serverEndGame 386 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 379 success
 user27 createGame 387 success
 user2 serverEndGame 387 success
 user17 createGame 388 success
@@ -1107,7 +1107,7 @@ user29 createGame 395 success
 user2 serverEndGame 394 success
 user2 serverEndGame 395 success
 user8 createGame 396 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 388 success
 user2 serverEndGame 396 success
 user28 createGame 397 success
 user2 serverEndGame 397 success
@@ -1120,7 +1120,7 @@ user2 serverEndGame 400 success
 user35 createGame 401 success
 user2 serverEndGame 401 success
 user24 createGame 402 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 388 success
 user2 serverEndGame 402 success
 user21 createGame 403 success
 user40 createGame 404 success
@@ -1201,7 +1201,7 @@ user2 serverEndGame 440 success
 user2 serverEndGame 441 success
 user15 createGame 442 success
 user2 serverEndGame 442 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 435 success
 user14 createGame 443 success
 user21 createGame 444 success
 user2 serverEndGame 443 success
@@ -1211,7 +1211,7 @@ user2 serverEndGame 445 success
 user22 createGame 446 success
 user2 serverEndGame 446 success
 user7 createGame 447 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 435 success
 user2 serverEndGame 447 success
 user37 createGame 448 success
 user40 createGame 449 success
@@ -1222,7 +1222,7 @@ user27 createGame 451 success
 user2 serverEndGame 451 success
 user36 createGame 452 success
 user2 serverEndGame 452 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 450 success
 user34 createGame 453 success
 user2 serverEndGame 453 success
 user44 createGame 454 success
@@ -1235,7 +1235,7 @@ user16 createGame 457 success
 user24 createGame 458 success
 user2 serverEndGame 458 success
 user31 createGame 459 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 450 success
 user2 serverEndGame 459 success
 user2 serverEndGame 457 success
 user15 createGame 460 success
@@ -1265,26 +1265,26 @@ user8 createGame 472 success
 user36 createGame 473 success
 user2 serverEndGame 473 success
 user28 createGame 474 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 469 success
 user2 serverEndGame 474 success
 user30 createGame 475 success
 user2 serverEndGame 475 success
 user27 createGame 476 success
 user2 serverEndGame 476 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 472 success
 user24 createGame 477 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 464 success
 user2 serverEndGame 477 success
 user22 createGame 478 success
 user2 serverEndGame 478 success
 user21 createGame 479 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 469 success
 user2 serverEndGame 479 success
 user33 createGame 480 success
 user2 serverEndGame 480 success
 user29 createGame 481 success
 user2 serverEndGame 481 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 472 success
 user17 createGame 482 success
 user2 serverEndGame 482 success
 user34 createGame 483 success
@@ -1346,12 +1346,12 @@ user37 createGame 511 success
 user2 serverEndGame 511 success
 user22 createGame 512 success
 user2 serverEndGame 512 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 509 success
 user35 createGame 513 success
 user2 serverEndGame 513 success
 user34 createGame 514 success
 user2 serverEndGame 514 success
-user8 userCancelActiveGame  success
+user8 userCancelActiveGame 509 success
 user7 createGame 515 success
 user2 serverEndGame 515 success
 user17 createGame 516 success
@@ -1384,7 +1384,7 @@ user2 serverEndGame 529 success
 user21 createGame 531 success
 user2 serverEndGame 531 success
 user48 createGame 532 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 522 success
 user2 serverEndGame 532 success
 user34 createGame 533 success
 user2 serverEndGame 533 success
@@ -1394,11 +1394,11 @@ user31 createGame 535 success
 user2 serverEndGame 535 success
 user30 createGame 536 success
 user2 serverEndGame 536 success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 528 success
+user2 serverCancelActiveGame 530 success
 user36 createGame 537 success
 user2 serverEndGame 537 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 522 success
 user35 createGame 538 success
 user17 createGame 539 success
 user2 serverEndGame 538 success
@@ -1406,8 +1406,8 @@ user24 createGame 540 success
 user2 serverEndGame 540 success
 user2 serverEndGame 539 success
 user16 createGame 541 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 528 success
+user2 serverForceGameEnd 530 success
 user27 createGame 542 success
 user2 serverEndGame 542 success
 user29 createGame 543 success
@@ -1429,7 +1429,7 @@ user2 serverEndGame 550 success
 user28 createGame 551 success
 user2 serverEndGame 551 success
 user31 createGame 552 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 549 success
 user2 serverEndGame 552 success
 user22 createGame 553 success
 user2 serverEndGame 553 success
@@ -1437,7 +1437,7 @@ user21 createGame 554 success
 user2 serverEndGame 554 success
 user34 createGame 555 success
 user2 serverEndGame 555 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 549 success
 user8 createGame 556 success
 user2 serverEndGame 556 success
 user24 createGame 557 success
@@ -1453,7 +1453,7 @@ user15 createGame 562 success
 user31 createGame 563 success
 user2 serverEndGame 563 success
 user37 createGame 564 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 560 success
 user28 createGame 565 success
 user2 serverEndGame 564 success
 user2 serverEndGame 565 success
@@ -1463,11 +1463,11 @@ user2 serverEndGame 562 success
 user22 createGame 567 success
 user14 createGame 568 success
 user2 serverEndGame 567 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 560 success
 user33 createGame 569 success
 user2 serverEndGame 569 success
 user34 createGame 570 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 568 success
 user2 serverEndGame 570 success
 user8 createGame 571 success
 user21 createGame 572 success
@@ -1477,7 +1477,7 @@ user2 serverEndGame 573 success
 user7 createGame 574 success
 user2 serverEndGame 574 success
 user22 createGame 575 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 568 success
 user2 serverEndGame 575 success
 user17 createGame 576 success
 user2 serverEndGame 576 success
@@ -1495,7 +1495,7 @@ user2 serverEndGame 581 success
 user31 createGame 582 success
 user2 serverEndGame 582 success
 user29 createGame 583 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 571 success
 user2 serverEndGame 583 success
 user48 createGame 584 success
 user2 serverEndGame 584 success
@@ -1527,7 +1527,7 @@ user2 serverEndGame 598 success
 user2 serverEndGame 597 success
 user2 serverEndGame 596 success
 user31 createGame 599 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 591 success
 user2 serverEndGame 599 success
 user29 createGame 600 success
 user15 createGame 601 success
@@ -1537,9 +1537,9 @@ user22 createGame 603 success
 user2 serverEndGame 603 success
 user50 createGame 604 success
 user2 serverEndGameConflict 600 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 591 success
 user33 createGame 605 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 601 success
 user2 serverEndGame 605 success
 user34 createGame 606 success
 user2 serverEndGame 606 success
@@ -1551,10 +1551,10 @@ user2 serverEndGame 608 success
 user14 createGame 609 success
 user2 serverEndGame 609 success
 user8 createGame 610 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 600 success
 user2 serverEndGame 610 success
 user31 createGame 611 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 601 success
 user7 createGame 612 success
 user2 serverEndGame 611 success
 user2 serverEndGame 612 success
@@ -1563,7 +1563,7 @@ user2 serverEndGame 613 success
 user36 createGame 614 success
 user2 serverEndGame 614 success
 user15 createGame 615 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 604 success
 user16 createGame 616 success
 user34 createGame 617 success
 user2 serverEndGame 617 success
@@ -1574,14 +1574,14 @@ user14 createGame 619 success
 user21 createGame 620 success
 user2 serverEndGame 619 success
 user2 serverEndGame 620 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 616 success
 user28 createGame 621 success
 user29 createGame 622 success
 user2 serverEndGame 621 success
 user2 serverEndGame 622 success
 user36 createGame 623 success
 user2 serverEndGame 623 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 616 success
 user27 createGame 624 success
 user2 serverEndGame 624 success
 user24 createGame 625 success
@@ -1637,14 +1637,14 @@ user28 createGame 650 success
 user2 serverEndGame 650 success
 user22 createGame 651 success
 user2 serverEndGame 651 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 648 success
 user14 createGame 652 success
 user2 serverEndGame 652 success
 user34 createGame 653 success
 user2 serverEndGame 653 success
 user36 createGame 654 success
 user2 serverEndGame 654 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 648 success
 user24 createGame 655 success
 user2 serverEndGame 655 success
 user22 createGame 656 success
@@ -1690,7 +1690,7 @@ user28 createGame 676 success
 user2 serverEndGame 676 success
 user33 createGame 677 success
 user2 serverEndGame 677 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 674 success
 user14 createGame 678 success
 user2 serverEndGame 678 success
 user34 createGame 679 success
@@ -1703,7 +1703,7 @@ user29 createGame 682 success
 user2 serverEndGame 682 success
 user24 createGame 683 success
 user21 createGame 684 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 674 success
 user2 serverEndGame 683 success
 user2 serverEndGame 684 success
 user36 createGame 685 success
@@ -1744,7 +1744,7 @@ user2 serverEndGame 702 success
 user2 serverEndGameConflict 700 success
 user29 createGame 703 success
 user2 serverEndGame 703 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 700 success
 user28 createGame 704 success
 user2 serverEndGame 704 success
 user37 createGame 705 success
@@ -1785,7 +1785,7 @@ user27 createGame 722 success
 user2 serverEndGame 722 success
 user21 createGame 723 success
 user2 serverEndGame 723 success
-user51 userEndGameConflict  success
+user51 userEndGameConflict 719 success
 user51 createGame 724 success
 user2 serverEndGame 724 success
 user24 createGame 725 success
@@ -1819,12 +1819,12 @@ user37 createGame 739 success
 user2 serverEndGame 739 success
 user34 createGame 740 success
 user2 serverEndGame 740 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 738 success
 user24 createGame 741 success
 user2 serverEndGame 741 success
 user51 createGame 742 success
 user2 serverEndGame 742 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 738 success
 user7 createGame 743 success
 user2 serverEndGame 743 success
 user17 createGame 744 success
@@ -1846,12 +1846,12 @@ user24 createGame 752 success
 user2 serverEndGame 752 success
 user21 createGame 753 success
 user2 serverEndGame 753 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 750 success
 user31 createGame 754 success
 user2 serverEndGame 754 success
 user28 createGame 755 success
 user2 serverEndGame 755 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 750 success
 user27 createGame 756 success
 user2 serverEndGame 756 success
 user7 createGame 757 success
@@ -1913,12 +1913,12 @@ user28 createGame 785 success
 user2 serverEndGame 785 success
 user31 createGame 786 success
 user2 serverEndGame 786 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 780 success
 user54 createGame 787 success
 user2 serverEndGame 787 success
 user24 createGame 788 success
 user2 serverEndGame 788 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 780 success
 user51 createGame 789 success
 user29 createGame 790 success
 user2 serverEndGame 790 success
@@ -1934,16 +1934,16 @@ user2 serverEndGame 795 success
 user54 createGame 796 success
 user2 serverEndGame 796 success
 user2 serverEndGame 794 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 792 success
 user8 createGame 797 success
 user2 serverEndGame 797 success
 user7 createGame 798 success
 user2 serverEndGame 798 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 789 success
 user21 createGame 799 success
 user2 serverEndGame 799 success
 user27 createGame 800 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 792 success
 user2 serverEndGame 800 success
 user29 createGame 801 success
 user2 serverEndGame 801 success
@@ -1975,11 +1975,11 @@ user2 serverEndGame 814 success
 user29 createGame 815 success
 user2 serverEndGame 815 success
 user8 createGame 816 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 812 success
 user37 createGame 817 success
 user2 serverEndGame 817 success
 user2 serverEndGame 816 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 812 success
 user29 createGame 818 success
 user2 serverEndGame 818 success
 user28 createGame 819 success
@@ -2035,13 +2035,13 @@ user36 createGame 844 success
 user2 serverEndGame 844 success
 user24 createGame 845 success
 user2 serverEndGame 845 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 843 success
 user21 createGame 846 success
 user2 serverEndGame 846 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 837 success
 user29 createGame 847 success
 user2 serverEndGame 847 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 843 success
 user34 createGame 848 success
 user2 serverEndGame 848 success
 user14 createGame 849 success
@@ -2060,7 +2060,7 @@ user7 createGame 855 success
 user34 createGame 856 success
 user2 serverEndGame 856 success
 user2 serverEndGame 855 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 851 success
 user36 createGame 857 success
 user56 createGame 858 success
 user2 serverEndGame 858 success
@@ -2080,7 +2080,7 @@ user2 serverEndGame 864 success
 user2 serverEndGameConflict 863 success
 user34 createGame 865 success
 user2 serverEndGame 865 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 863 success
 user36 createGame 866 success
 user2 serverEndGame 866 success
 user24 createGame 867 success
@@ -2161,15 +2161,15 @@ user34 createGame 904 success
 user2 serverEndGame 904 success
 user21 createGame 905 success
 user2 serverEndGame 905 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 901 success
+user2 serverForceGameEnd 898 success
 user36 createGame 906 success
 user2 serverEndGame 906 success
 user24 createGame 907 success
 user2 serverEndGame 907 success
 user28 createGame 908 success
 user2 serverEndGame 908 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 901 success
 user17 createGame 909 success
 user2 serverEndGame 909 success
 user7 createGame 910 success
@@ -2187,16 +2187,16 @@ user28 createGame 917 success
 user2 serverEndGame 917 success
 user29 createGame 918 success
 user2 serverEndGame 918 success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 911 success
+user2 serverCancelActiveGame 914 success
 user2 serverEndGameConflict 916 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 911 success
 user36 createGame 919 success
 user2 serverEndGame 919 success
 user37 createGame 920 success
 user2 serverEndGame 920 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 914 success
+user2 serverForceGameEnd 916 success
 user24 createGame 921 success
 user2 serverEndGame 921 success
 user29 createGame 922 success
@@ -2226,9 +2226,9 @@ user37 createGame 934 success
 user2 serverEndGame 934 success
 user28 createGame 935 success
 user2 serverEndGame 935 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 931 success
+user2 serverForceGameEnd 926 success
+user2 serverForceGameEnd 931 success
 user21 createGame 936 success
 user2 serverEndGame 936 success
 user34 createGame 937 success
@@ -2242,12 +2242,12 @@ user8 createGame 941 success
 user2 serverEndGame 941 success
 user27 createGame 942 success
 user2 serverEndGame 942 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 940 success
 user36 createGame 943 success
-user16 userCancelActiveGame  fail
+user16 userCancelActiveGame 931 fail
 user17 createGame failure fail
 user2 serverEndGame 943 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 940 success
 user24 createGame 944 success
 user2 serverEndGame 944 success
 user27 createGame 945 success
@@ -2363,14 +2363,14 @@ user36 createGame 1000 success
 user2 serverEndGame 1000 success
 user29 createGame 1001 success
 user2 serverEndGame 1001 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 998 success
 user24 createGame 1002 success
 user2 serverEndGame 1002 success
 user21 createGame 1003 success
 user2 serverEndGame 1003 success
 user37 createGame 1004 success
 user2 serverEndGame 1004 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 998 success
 user27 createGame 1005 success
 user2 serverEndGame 1005 success
 user36 createGame 1006 success
@@ -2394,7 +2394,7 @@ user2 serverEndGame 1014 success
 user29 createGame 1015 success
 user2 serverEndGame 1015 success
 user28 createGame 1016 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1011 success
 user2 serverEndGame 1016 success
 user34 createGame 1017 success
 user2 serverEndGame 1017 success
@@ -2412,33 +2412,33 @@ user21 createGame 1023 success
 user2 serverEndGame 1023 success
 user27 createGame 1024 success
 user2 serverEndGame 1024 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1019 fail
+user2 serverForceGameEnd 1018 success
+user2 serverForceGameEnd 1021 success
 user24 createGame 1025 success
 user2 serverEndGame 1025 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 1019 fail
+user2 serverForceGameEnd 1019 fail
 user34 createGame 1026 success
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 1019 fail
 user2 serverEndGame 1026 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 1019 fail
+user2 serverForceGameEnd 1019 fail
 user36 createGame 1027 success
 user2 serverEndGame 1027 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 1019 fail
+user2 serverForceGameEnd 1019 fail
+user2 serverForceGameEnd 1019 fail
+user2 serverForceGameEnd 1019 fail
+user2 serverForceGameEnd 1019 fail
+user2 serverForceGameEnd 1019 fail
 user21 createGame 1028 success
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 1019 fail
 user2 serverEndGame 1028 success
 user24 createGame 1029 success
 user2 serverEndGame 1029 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 1019 fail
+user2 serverForceGameEnd 1019 fail
 user2 serverEndGameConflict 1019 fail
 user37 createGame 1030 success
 user2 serverEndGame 1030 success
@@ -2459,7 +2459,7 @@ user2 serverEndGameConflict 1034 success
 user8 createGame failure fail
 user28 createGame 1038 success
 user2 serverEndGame 1038 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1034 success
 user66 createGame 1039 success
 user2 serverEndGame 1039 success
 user24 createGame 1040 success
@@ -2485,15 +2485,15 @@ user2 serverEndGame 1050 success
 user2 serverEndGameConflict 1048 success
 user36 createGame 1051 success
 user2 serverEndGame 1051 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 1049 success
 user28 createGame 1052 success
 user2 serverEndGame 1052 success
 user27 createGame 1053 success
 user2 serverEndGame 1053 success
 user29 createGame 1054 success
 user2 serverEndGame 1054 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1048 success
+user2 serverForceGameEnd 1049 success
 user24 createGame 1055 success
 user2 serverEndGame 1055 success
 user7 createGame 1056 success
@@ -2509,12 +2509,12 @@ user17 createGame 1061 success
 user28 createGame 1062 success
 user2 serverEndGame 1062 success
 user2 serverEndGame 1061 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 1057 success
 user27 createGame 1063 success
 user2 serverEndGame 1063 success
 user36 createGame 1064 success
 user2 serverEndGame 1064 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1057 success
 user34 createGame 1065 success
 user2 serverEndGame 1065 success
 user21 createGame 1066 success
@@ -2525,13 +2525,13 @@ user8 createGame 1068 success
 user2 serverEndGame 1068 success
 user14 createGame 1069 success
 user2 serverEndGame 1069 success
-user2 serverCancelActiveGame  success
-user7 userCancelActiveGame  success
+user2 serverCancelActiveGame 1067 success
+user7 userCancelActiveGame 1067 success
 user16 createGame 1070 success
 user2 serverEndGame 1070 success
 user17 createGame 1071 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 1071 success
+user2 serverForceGameEnd 1071 success
 user7 createGame 1072 success
 user2 serverEndGame 1072 success
 user3 createGame 1073 success
@@ -2572,15 +2572,15 @@ user2 serverEndGame 1089 success
 user2 serverEndGameConflict 1019 success
 user16 createGame 1090 success
 user2 serverEndGame 1090 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1086 success
+user2 serverForceGameEnd 1019 success
 user17 createGame 1091 success
 user2 serverEndGame 1091 success
 user7 createGame 1092 success
 user2 serverEndGame 1092 success
 user8 createGame 1093 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 1093 success
+user2 serverForceGameEnd 1093 success
 user14 createGame 1094 success
 user2 serverEndGame 1094 success
 user7 createGame 1095 success
@@ -2599,7 +2599,7 @@ user69 createGame 1101 success
 user7 createGame 1102 success
 user2 serverEndGame 1102 success
 user2 serverEndGameConflict 1101 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1101 success
 user8 createGame 1103 success
 user2 serverEndGame 1103 success
 user16 createGame 1104 success
@@ -2679,9 +2679,9 @@ user34 createGame 1141 success
 user2 serverEndGame 1141 success
 user28 createGame 1142 success
 user2 serverEndGame 1142 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1132 success
 user2 serverEndGameConflict 1140 success
-user69 userEndGameConflict  success
+user69 userEndGameConflict 1140 success
 user69 createGame 1143 success
 user2 serverEndGame 1143 success
 user69 createGame 1144 success
@@ -2695,7 +2695,7 @@ user2 serverEndGame 1147 success
 user8 createGame 1148 success
 user4 createGame 1149 success
 user2 serverEndGame 1149 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 1148 success
 user71 createGame 1150 success
 user69 createGame 1151 success
 user2 serverEndGame 1151 success
@@ -2705,7 +2705,7 @@ user69 createGame 1153 success
 user2 serverEndGame 1150 success
 user2 serverEndGame 1153 success
 user69 createGame 1154 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1148 success
 user8 createGame 1155 success
 user2 serverEndGame 1154 success
 user2 serverEndGame 1155 success
@@ -2719,7 +2719,7 @@ user3 createGame 1160 success
 user2 serverEndGame 1160 success
 user2 serverEndGame 1159 success
 user2 serverEndGameConflict 1158 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1158 success
 user24 createGame 1161 success
 user2 serverEndGame 1161 success
 user27 createGame 1162 success
@@ -2799,23 +2799,23 @@ user21 createGame 1200 success
 user2 serverEndGame 1200 success
 user29 createGame 1201 success
 user2 serverEndGame 1201 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 1198 success
 user36 createGame 1202 success
 user2 serverEndGame 1202 success
 user2 serverEndGameConflict 1194 success
 user16 createGame 1203 success
 user2 serverEndGame 1203 success
 user2 serverEndGameConflict 1197 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1196 success
 user17 createGame 1204 success
 user2 serverEndGame 1204 success
-user2 serverForceGameEnd  success
-user72 userEndGameConflict  success
+user2 serverForceGameEnd 1198 success
+user72 userEndGameConflict 1194 success
 user72 createGame 1205 success
 user28 createGame 1206 success
 user2 serverEndGame 1206 success
 user27 createGame 1207 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1197 success
 user2 serverEndGame 1207 success
 user34 createGame 1208 success
 user2 serverEndGame 1208 success
@@ -2830,7 +2830,7 @@ user2 serverEndGame 1212 success
 user2 serverEndGameConflict 1205 success
 user14 createGame 1213 success
 user2 serverEndGame 1213 success
-user72 userEndGameConflict  success
+user72 userEndGameConflict 1205 success
 user27 createGame 1214 success
 user2 serverEndGame 1214 success
 user21 createGame 1215 success
@@ -2908,13 +2908,13 @@ user8 createGame 1251 success
 user2 serverEndGame 1250 success
 user21 createGame 1252 success
 user2 serverEndGame 1252 success
-user2 serverForceGameEnd  success
-user2 serverCancelActiveGame  success
+user2 serverForceGameEnd 1248 success
+user2 serverCancelActiveGame 1251 success
 user27 createGame 1253 success
 user2 serverEndGame 1253 success
 user29 createGame 1254 success
 user2 serverEndGame 1254 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1251 success
 user34 createGame 1255 success
 user2 serverEndGame 1255 success
 user21 createGame 1256 success
@@ -3051,7 +3051,7 @@ user29 createGame 1321 success
 user2 serverEndGame 1321 success
 user28 createGame 1322 success
 user2 serverEndGame 1322 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1318 success
 user21 createGame 1323 success
 user2 serverEndGame 1323 success
 user28 createGame 1324 success
@@ -3134,7 +3134,7 @@ user34 createGame 1361 success
 user2 serverEndGame 1361 success
 user21 createGame 1362 success
 user2 serverEndGame 1362 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1359 success
 user29 createGame 1363 success
 user2 serverEndGame 1363 success
 user34 createGame 1364 success
@@ -3170,8 +3170,8 @@ user34 createGame 1379 success
 user2 serverEndGame 1379 success
 user29 createGame 1380 success
 user2 serverEndGame 1380 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 1376 success
+user2 serverForceGameEnd 1376 success
 user8 createGame 1381 success
 user2 serverEndGame 1381 success
 user21 createGame 1382 success
@@ -3206,7 +3206,7 @@ user2 serverEndGame 1393 success
 user2 serverEndGame 1396 success
 user77 createGame 1397 success
 user2 serverEndGame 1397 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1390 success
 user21 createGame 1398 success
 user2 serverEndGame 1398 success
 user29 createGame 1399 success
@@ -3246,8 +3246,8 @@ user81 createGame 1416 success
 user2 serverEndGame 1416 success
 user2 serverEndGameConflict 1415 success
 user16 createGame 1417 success
-user72 userEndGameConflict  success
-user72 userEndGameConflict  fail
+user72 userEndGameConflict 1415 success
+user72 userEndGameConflict 1415 fail
 user72 createGame 1418 success
 user29 createGame 1419 success
 user2 serverEndGame 1417 success
@@ -3277,18 +3277,18 @@ user72 createGame 1430 success
 user29 createGame 1431 success
 user2 serverEndGame 1431 success
 user2 serverEndGameConflict 1430 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1430 success
 user14 createGame 1432 success
 user2 serverEndGame 1432 success
 user17 createGame 1433 success
 user34 createGame 1434 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 1433 success
 user2 serverEndGame 1434 success
 user72 createGame 1435 success
 user2 serverEndGame 1435 success
 user8 createGame 1436 success
 user2 serverEndGame 1436 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1433 success
 user14 createGame 1437 success
 user2 serverEndGame 1437 success
 user29 createGame 1438 success
@@ -3307,16 +3307,16 @@ user2 serverEndGame 1444 success
 user2 serverEndGameConflict 1443 success
 user84 createGame 1445 success
 user2 serverEndGame 1445 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1443 success
 user17 createGame 1446 success
 user2 serverEndGame 1446 success
 user85 createGame 1447 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 1447 success
 user72 createGame 1448 success
 user2 serverEndGame 1448 success
 user16 createGame 1449 success
 user2 serverEndGame 1449 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1447 success
 user72 createGame 1450 success
 user2 serverEndGame 1450 success
 user72 createGame 1451 success
@@ -3386,7 +3386,7 @@ user2 serverEndGame 1482 success
 user2 serverEndGameConflict 1481 success
 user29 createGame 1483 success
 user2 serverEndGame 1483 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1481 success
 user3 createGame 1484 success
 user2 serverEndGame 1484 success
 user34 createGame 1485 success
@@ -3403,7 +3403,7 @@ user2 serverEndGame 1489 success
 user14 createGame 1491 success
 user2 serverEndGame 1491 success
 user2 serverEndGameConflict 1490 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1490 success
 user34 createGame 1492 success
 user2 serverEndGame 1492 success
 user86 createGame 1493 success
@@ -3477,7 +3477,7 @@ user2 serverEndGame 1526 success
 user2 serverEndGameConflict 1525 success
 user29 createGame 1527 success
 user2 serverEndGame 1527 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1525 success
 user72 createGame 1528 success
 user2 serverEndGame 1528 success
 user29 createGame 1529 success
@@ -3490,34 +3490,34 @@ user29 createGame 1533 success
 user2 serverEndGame 1533 success
 user2 serverEndGameConflict 1531 success
 user2 serverEndGameConflict 1532 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1531 success
+user2 serverForceGameEnd 1532 success
 user71 createGame 1534 success
 user29 createGame 1535 success
 user2 serverEndGame 1535 success
 user69 createGame 1536 success
 user34 createGame 1537 success
 user2 serverEndGame 1537 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 1536 success
 user2 serverEndGameConflict 1534 success
 user34 createGame 1538 success
 user2 serverEndGame 1538 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1536 success
+user2 serverForceGameEnd 1534 success
 user69 createGame 1539 success
 user34 createGame 1540 success
 user2 serverEndGame 1540 success
 user2 serverEndGameConflict 1539 success
 user29 createGame 1541 success
 user2 serverEndGame 1541 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1539 success
 user72 createGame 1542 success
 user29 createGame 1543 success
 user2 serverEndGame 1543 success
 user34 createGame 1544 success
 user2 serverEndGame 1544 success
 user2 serverEndGameConflict 1542 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1542 success
 user29 createGame 1545 success
 user2 serverEndGame 1545 success
 user29 createGame 1546 success
@@ -3629,7 +3629,7 @@ user89 createGame 1598 success
 user2 serverEndGameConflict 1598 success
 user29 createGame 1599 success
 user2 serverEndGame 1599 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1598 success
 user32 createGame 1600 success
 user2 serverEndGame 1600 success
 user24 createGame 1601 success
@@ -3751,42 +3751,42 @@ user35 createGame failure fail
 user29 createGame failure fail
 user37 createGame 1663 success
 user32 createGame 1664 success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 1664 success
+user2 serverCancelActiveGame 1662 success
+user2 serverCancelActiveGame 1663 success
 user69 createGame 1665 success
 user2 serverEndGame 1665 success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 1661 success
+user2 serverCancelActiveGame 1655 success
+user2 serverCancelActiveGame 1649 success
+user2 serverCancelActiveGame 1650 success
+user2 serverCancelActiveGame 1656 success
+user2 serverCancelActiveGame 1657 success
+user2 serverCancelActiveGame 1651 success
+user2 serverCancelActiveGame 1652 success
+user2 serverCancelActiveGame 1653 success
+user2 serverCancelActiveGame 1654 success
+user2 serverCancelActiveGame 1658 success
+user2 serverCancelActiveGame 1659 success
+user2 serverCancelActiveGame 1660 success
+user2 serverForceGameEnd 1664 success
+user2 serverForceGameEnd 1662 success
+user2 serverForceGameEnd 1663 success
 user69 createGame 1666 success
 user89 createGame 1667 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1661 success
+user2 serverForceGameEnd 1655 success
+user2 serverForceGameEnd 1649 success
+user2 serverForceGameEnd 1650 success
+user2 serverForceGameEnd 1656 success
+user2 serverForceGameEnd 1657 success
+user2 serverForceGameEnd 1651 success
+user2 serverForceGameEnd 1652 success
+user2 serverForceGameEnd 1653 success
+user2 serverForceGameEnd 1654 success
+user2 serverForceGameEnd 1658 success
+user2 serverForceGameEnd 1659 success
+user2 serverForceGameEnd 1660 success
 user2 serverEndGameConflict 1667 success
 user2 serverEndGameConflict 1666 success
 user29 createGame 1668 success
@@ -3798,8 +3798,8 @@ user2 serverEndGame 1670 success
 user31 createGame 1671 success
 user2 serverEndGame 1671 success
 user37 createGame 1672 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1667 success
+user2 serverForceGameEnd 1666 success
 user2 serverEndGame 1672 success
 user90 createGame 1673 success
 user2 serverEndGame 1673 success
@@ -4199,26 +4199,26 @@ user27 createGame 1873 success
 user2 serverEndGame 1873 success
 user21 createGame 1874 success
 user2 serverEndGame 1874 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1755 success
+user2 serverForceGameEnd 1785 success
+user2 serverForceGameEnd 1814 success
+user2 serverForceGameEnd 1832 success
+user2 serverForceGameEnd 1831 success
 user26 createGame 1875 success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 1867 success
+user2 serverCancelActiveGame 1868 success
+user2 serverCancelActiveGame 1869 success
+user2 serverCancelActiveGame 1870 success
+user2 serverCancelActiveGame 1871 success
+user2 serverCancelActiveGame 1872 success
 user2 serverEndGame 1875 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1867 success
 user31 createGame 1876 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1868 success
+user2 serverForceGameEnd 1869 success
+user2 serverForceGameEnd 1870 success
+user2 serverForceGameEnd 1871 success
+user2 serverForceGameEnd 1872 success
 user2 serverEndGame 1876 success
 user90 createGame 1877 success
 user2 serverEndGame 1877 success
@@ -4288,7 +4288,7 @@ user33 createGame 1910 success
 user2 serverEndGame 1909 success
 user2 serverEndGame 1910 success
 user2 serverEndGameConflict 1908 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1908 success
 user21 createGame 1911 success
 user2 serverEndGame 1911 success
 user26 createGame 1912 success
@@ -4345,7 +4345,7 @@ user34 createGame 1937 success
 user2 serverEndGame 1937 success
 user24 createGame 1938 success
 user2 serverEndGame 1938 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1930 success
 user32 createGame 1939 success
 user2 serverEndGame 1939 success
 user21 createGame 1940 success
@@ -4459,7 +4459,7 @@ user2 serverEndGame 1992 success
 user98 createGame 1994 success
 user2 serverEndGame 1994 success
 user98 createGame 1995 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 1989 success
 user28 createGame 1996 success
 user2 serverEndGame 1996 success
 user2 serverEndGame 1995 success
@@ -4474,11 +4474,11 @@ user100 createGame 2000 success
 user26 createGame 2001 success
 user2 serverEndGame 2001 success
 user37 createGame 2002 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 2000 success
 user2 serverEndGame 2002 success
 user21 createGame 2003 success
 user2 serverEndGame 2003 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2000 success
 user98 createGame 2004 success
 user2 serverEndGame 2004 success
 user27 createGame 2005 success
@@ -4503,20 +4503,20 @@ user21 createGame 2014 success
 user2 serverEndGame 2014 success
 user26 createGame 2015 success
 user2 serverEndGame 2015 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2012 success
 user27 createGame 2016 success
 user37 createGame 2017 success
 user2 serverEndGame 2017 success
 user34 createGame 2018 success
 user2 serverEndGame 2018 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 2016 success
 user21 createGame 2019 success
 user2 serverEndGame 2019 success
 user28 createGame 2020 success
 user2 serverEndGame 2020 success
 user26 createGame 2021 success
 user2 serverEndGame 2021 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2016 success
 user34 createGame 2022 success
 user2 serverEndGame 2022 success
 user21 createGame 2023 success
@@ -4655,7 +4655,7 @@ user33 createGame 2089 success
 user2 serverEndGame 2089 success
 user27 createGame 2090 success
 user2 serverEndGame 2090 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2086 success
 user37 createGame 2091 success
 user2 serverEndGame 2091 success
 user103 createGame 2092 success
@@ -4724,7 +4724,7 @@ user103 createGame 2123 success
 user33 createGame 2124 success
 user2 serverEndGame 2124 success
 user2 serverEndGameConflict 2123 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2123 success
 user26 createGame 2125 success
 user2 serverEndGame 2125 success
 user37 createGame 2126 success
@@ -4803,7 +4803,7 @@ user2 serverEndGame 2161 success
 user106 createGame 2162 success
 user2 serverEndGame 2162 success
 user106 createGame 2163 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2157 success
 user26 createGame 2164 success
 user2 serverEndGame 2164 success
 user28 createGame 2165 success
@@ -4811,7 +4811,7 @@ user2 serverEndGame 2165 success
 user34 createGame 2166 success
 user2 serverEndGame 2166 success
 user2 serverEndGameConflict 2163 success
-user106 userEndGameConflict  success
+user106 userEndGameConflict 2163 success
 user106 createGame 2167 success
 user107 createGame 2168 success
 user25 createGame 2169 success
@@ -4835,28 +4835,28 @@ user2 serverEndGameConflict 2167 success
 user107 createGame 2177 success
 user2 serverEndGame 2177 success
 user107 createGame 2178 success
-user106 userEndGameConflict  fail
+user106 userEndGameConflict 2167 fail
 user2 serverEndGame 2178 success
-user106 userEndGameConflict  fail
-user106 userEndGameConflict  fail
-user106 userEndGameConflict  fail
+user106 userEndGameConflict 2167 fail
+user106 userEndGameConflict 2167 fail
+user106 userEndGameConflict 2167 fail
 user107 createGame 2179 success
-user106 userEndGameConflict  fail
-user106 userEndGameConflict  fail
+user106 userEndGameConflict 2167 fail
+user106 userEndGameConflict 2167 fail
 user2 serverEndGame 2179 success
 user107 createGame 2180 success
 user2 serverEndGame 2180 success
 user107 createGame 2181 success
 user2 serverEndGame 2181 success
-user106 userEndGameConflict  fail
+user106 userEndGameConflict 2167 fail
 user37 createGame 2182 success
-user106 userEndGameConflict  fail
+user106 userEndGameConflict 2167 fail
 user107 createGame 2183 success
 user2 serverEndGame 2183 success
 user2 serverEndGame 2182 success
 user107 createGame 2184 success
 user2 serverEndGame 2184 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2167 success
 user25 createGame 2185 success
 user2 serverEndGame 2185 success
 user27 createGame 2186 success
@@ -4887,7 +4887,7 @@ user108 createGame 2199 success
 user2 serverEndGame 2198 success
 user2 serverEndGame 2199 success
 user2 serverEndGameConflict 2195 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2195 success
 user27 createGame 2200 success
 user2 serverEndGame 2200 success
 user26 createGame 2201 success
@@ -4902,7 +4902,7 @@ user2 serverEndGame 2205 success
 user2 serverEndGameConflict 2204 success
 user28 createGame 2206 success
 user2 serverEndGame 2206 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2204 success
 user37 createGame 2207 success
 user2 serverEndGame 2207 success
 user27 createGame 2208 success
@@ -4947,7 +4947,7 @@ user2 serverEndGame 2226 success
 user2 serverEndGame 2227 success
 user108 createGame 2228 success
 user2 serverEndGame 2228 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2218 success
 user108 createGame 2229 success
 user2 serverEndGame 2229 success
 user108 createGame 2230 success
@@ -5002,10 +5002,10 @@ user2 serverEndGame 2254 success
 user111 createGame 2255 success
 user2 serverEndGameConflict 2253 success
 user2 serverEndGame 2255 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2250 success
 user25 createGame 2256 success
 user2 serverEndGame 2256 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2253 success
 user27 createGame 2257 success
 user2 serverEndGame 2257 success
 user28 createGame 2258 success
@@ -5036,7 +5036,7 @@ user2 serverEndGame 2270 success
 user107 createGame 2271 success
 user2 serverEndGame 2269 success
 user2 serverEndGame 2271 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2267 success
 user34 createGame 2272 success
 user2 serverEndGame 2272 success
 user107 createGame 2273 success
@@ -5071,7 +5071,7 @@ user27 createGame 2287 success
 user2 serverEndGame 2287 success
 user26 createGame 2288 success
 user2 serverEndGame 2288 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2285 success
 user28 createGame 2289 success
 user2 serverEndGame 2289 success
 user114 createGame 2290 success
@@ -5080,7 +5080,7 @@ user2 serverEndGame 2291 success
 user27 createGame 2292 success
 user2 serverEndGame 2292 success
 user2 serverEndGameConflict 2290 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2290 success
 user107 createGame 2293 success
 user2 serverEndGame 2293 success
 user27 createGame 2294 success
@@ -5174,8 +5174,8 @@ user2 serverEndGame 2337 success
 user14 createGame 2338 success
 user27 createGame 2339 success
 user2 serverEndGame 2339 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 2338 success
+user2 serverForceGameEnd 2338 success
 user107 createGame 2340 success
 user2 serverEndGame 2340 success
 user107 createGame 2341 success
@@ -5234,7 +5234,7 @@ user108 createGame 2368 success
 user2 serverEndGameConflict 2366 success
 user2 serverEndGame 2367 success
 user2 serverEndGame 2368 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2366 success
 user107 createGame 2369 success
 user2 serverEndGame 2369 success
 user107 createGame 2370 success
@@ -5286,16 +5286,16 @@ user14 createGame 2393 success
 user16 createGame 2394 success
 user2 serverEndGame 2394 success
 user16 createGame 2395 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 2389 success
 user27 createGame 2396 success
 user2 serverEndGame 2396 success
 user107 createGame 2397 success
 user2 serverEndGame 2397 success
-user2 serverCancelActiveGame  success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 2393 success
+user2 serverCancelActiveGame 2395 success
 user107 createGame 2398 success
 user2 serverEndGame 2398 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2389 success
 user28 createGame 2399 success
 user2 serverEndGame 2399 success
 user119 createGame 2400 success
@@ -5303,8 +5303,8 @@ user2 serverEndGame 2400 success
 user107 createGame 2401 success
 user2 serverEndGame 2401 success
 user27 createGame 2402 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2393 success
+user2 serverForceGameEnd 2395 success
 user2 serverEndGame 2402 success
 user28 createGame 2403 success
 user2 serverEndGame 2403 success
@@ -5340,7 +5340,7 @@ user27 createGame 2418 success
 user2 serverEndGame 2418 success
 user120 createGame 2419 success
 user2 serverEndGame 2419 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2413 success
 user120 createGame 2420 success
 user120 createGame failure fail
 user2 serverEndGame 2420 success
@@ -5463,7 +5463,7 @@ user107 createGame 2479 success
 user2 serverEndGame 2479 success
 user122 createGame 2480 success
 user2 serverEndGame 2480 success
-user117 userCancelActiveGame  success
+user117 userCancelActiveGame 2473 success
 user2 serverEndGameConflict 2473 success
 user107 createGame 2481 success
 user123 createGame 2482 success
@@ -5477,8 +5477,8 @@ user107 createGame 2485 success
 user2 serverEndGame 2485 success
 user107 createGame 2486 success
 user2 serverEndGame 2486 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 2463 success
+user2 serverForceGameEnd 2473 success
 user124 createGame failure fail
 user124 createGame 2487 success
 user123 createGame 2488 success
@@ -5495,7 +5495,7 @@ user2 serverEndGame 2492 success
 user2 serverEndGame 2493 success
 user107 createGame 2494 success
 user2 serverEndGame 2494 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2463 success
 user107 createGame 2495 success
 user2 serverEndGameConflict 2487 success
 user2 serverEndGame 2495 success
@@ -5508,7 +5508,7 @@ user28 createGame 2499 success
 user2 serverEndGame 2498 success
 user2 serverEndGame 2499 success
 user107 createGame 2500 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2487 success
 user2 serverEndGame 2500 success
 user108 createGame 2501 success
 user107 createGame 2502 success
@@ -5543,8 +5543,8 @@ user107 createGame 2514 success
 user2 serverEndGame 2514 success
 user28 createGame 2515 success
 user2 serverEndGame 2515 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2505 success
+user2 serverForceGameEnd 2507 success
 user107 createGame 2516 success
 user2 serverEndGame 2516 success
 user107 createGame 2517 success
@@ -5571,20 +5571,20 @@ user107 createGame 2527 success
 user2 serverEndGame 2527 success
 user107 createGame 2528 success
 user2 serverEndGame 2528 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2523 success
 user107 createGame 2529 success
 user2 serverEndGame 2529 success
 user107 createGame 2530 success
 user126 createGame 2531 success
-user126 userCancelActiveGame  success
+user126 userCancelActiveGame 2531 success
 user1 createGame 2532 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 2531 success
 user2 serverEndGame 2532 success
 user126 createGame 2533 success
 user2 serverEndGame 2533 success
 user126 createGame 2534 success
-user2 serverCancelActiveGame  success
-user107 userCancelActiveGame  success
+user2 serverCancelActiveGame 2530 success
+user107 userCancelActiveGame 2530 success
 user2 serverEndGame 2534 success
 user126 createGame 2535 success
 user2 serverEndGame 2535 success
@@ -5648,8 +5648,8 @@ user138 createGame 2565 success
 user2 serverEndGame 2565 success
 user2 serverEndGameConflict 2562 success
 user2 serverEndGameConflict 2563 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2562 success
+user2 serverForceGameEnd 2563 success
 user138 createGame 2566 success
 user2 serverEndGame 2566 success
 user39 createGame 2567 success
@@ -5662,7 +5662,7 @@ user139 createGame 2570 success
 user2 serverEndGameConflict 2570 success
 user138 createGame 2571 success
 user2 serverEndGame 2571 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2570 success
 user140 createGame 2572 success
 user2 serverEndGame 2572 success
 user141 createGame 2573 success
@@ -5763,7 +5763,7 @@ user2 serverEndGame 2620 success
 user2 serverEndGameConflict 2619 success
 user8 createGame 2621 success
 user2 serverEndGame 2621 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2619 success
 user31 createGame 2622 success
 user2 serverEndGame 2622 success
 user28 createGame 2623 success
@@ -5796,7 +5796,7 @@ user2 serverEndGame 2636 success
 user146 createGame 2637 success
 user2 serverEndGame 2637 success
 user146 createGame 2638 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 2633 success
 user22 createGame 2639 success
 user2 serverEndGame 2638 success
 user146 createGame 2640 success
@@ -5814,7 +5814,7 @@ user146 createGame 2645 success
 user2 serverEndGame 2645 success
 user28 createGame 2646 success
 user2 serverEndGame 2646 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2633 success
 user35 createGame 2647 success
 user2 serverEndGame 2647 success
 user33 createGame 2648 success
@@ -5969,14 +5969,14 @@ user8 createGame 2722 success
 user2 serverEndGame 2722 success
 user1 createGame 2723 success
 user2 serverEndGame 2723 success
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 2702 fail
 user30 createGame 2724 success
 user2 serverEndGame 2724 success
-user2 serverForceGameEnd  fail
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 2702 fail
+user2 serverForceGameEnd 2702 fail
 user35 createGame 2725 success
 user2 serverEndGame 2725 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 2702 success
 user22 createGame 2726 success
 user2 serverEndGame 2726 success
 user27 createGame 2727 success
@@ -5987,7 +5987,7 @@ user155 createGame 2729 success
 user2 serverEndGame 2729 success
 user25 createGame 2730 success
 user2 serverEndGame 2730 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2702 success
 user34 createGame 2731 success
 user2 serverEndGame 2731 success
 user90 createGame 2732 success
@@ -6037,7 +6037,7 @@ user26 createGame 2754 success
 user159 createGame 2755 success
 user2 serverEndGame 2755 success
 user2 serverEndGame 2754 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2743 success
 user29 createGame 2756 success
 user2 serverEndGame 2756 success
 user2 serverEndGameConflict 2752 success
@@ -6045,7 +6045,7 @@ user31 createGame 2757 success
 user2 serverEndGame 2757 success
 user35 createGame 2758 success
 user2 serverEndGame 2758 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2752 success
 user30 createGame 2759 success
 user2 serverEndGame 2759 success
 user25 createGame 2760 success
@@ -6345,11 +6345,11 @@ user2 serverEndGame 2906 success
 user177 createGame 2907 success
 user2 serverEndGame 2907 success
 user177 createGame 2908 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2806 success
+user2 serverForceGameEnd 2802 success
+user2 serverForceGameEnd 2846 success
 user2 serverEndGameConflict 2908 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2908 success
 user148 createGame 2909 success
 user2 serverEndGame 2909 success
 user8 createGame 2910 success
@@ -6380,7 +6380,7 @@ user29 createGame 2922 success
 user2 serverEndGame 2922 success
 user90 createGame 2923 success
 user2 serverEndGame 2923 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2914 success
 user21 createGame 2924 success
 user177 createGame 2925 success
 user2 serverEndGame 2924 success
@@ -6395,7 +6395,7 @@ user2 serverEndGame 2929 success
 user27 createGame 2930 success
 user2 serverEndGame 2930 success
 user30 createGame 2931 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2925 success
 user2 serverEndGame 2931 success
 user29 createGame 2932 success
 user2 serverEndGameConflict 2927 success
@@ -6412,7 +6412,7 @@ user37 createGame 2937 success
 user2 serverEndGame 2937 success
 user179 createGame 2938 success
 user2 serverEndGame 2938 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2927 success
 user25 createGame 2939 success
 user2 serverEndGame 2939 success
 user24 createGame 2940 success
@@ -6478,7 +6478,7 @@ user21 createGame 2970 success
 user2 serverEndGame 2970 success
 user185 createGame 2971 success
 user2 serverEndGame 2971 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2962 success
 user186 createGame 2972 success
 user33 createGame 2973 success
 user2 serverEndGame 2973 success
@@ -6503,7 +6503,7 @@ user25 createGame 2982 success
 user2 serverEndGame 2982 success
 user2 serverEndGame 2981 success
 user128 createGame 2983 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 2969 success
 user2 serverEndGame 2983 success
 user129 createGame 2984 success
 user2 serverEndGame 2984 success
@@ -6793,7 +6793,7 @@ user26 createGame 3125 success
 user2 serverEndGame 3125 success
 user30 createGame 3126 success
 user2 serverEndGame 3126 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3118 success
 user27 createGame 3127 success
 user2 serverEndGame 3127 success
 user23 createGame 3128 success
@@ -7034,7 +7034,7 @@ user37 createGame 3245 success
 user2 serverEndGame 3245 success
 user30 createGame 3246 success
 user2 serverEndGame 3246 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3241 success
 user29 createGame 3247 success
 user2 serverEndGame 3247 success
 user33 createGame 3248 success
@@ -7315,7 +7315,7 @@ user37 createGame 3384 success
 user2 serverEndGame 3384 success
 user24 createGame 3385 success
 user2 serverEndGame 3385 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3383 success
 user26 createGame 3386 success
 user2 serverEndGame 3386 success
 user29 createGame 3387 success
@@ -7332,7 +7332,7 @@ user2 serverEndGame 3392 success
 user2 serverEndGameConflict 3391 success
 user119 createGame 3393 success
 user2 serverEndGame 3393 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3391 success
 user30 createGame 3394 success
 user2 serverEndGame 3394 success
 user202 createGame 3395 success
@@ -7345,9 +7345,9 @@ user2 serverEndGame 3398 success
 user37 createGame 3399 success
 user2 serverEndGame 3399 success
 user23 createGame 3400 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 3396 success
 user2 serverEndGame 3400 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3396 success
 user202 createGame 3401 success
 user2 serverEndGame 3401 success
 user37 createGame 3402 success
@@ -7370,7 +7370,7 @@ user37 createGame 3410 success
 user2 serverEndGame 3410 success
 user23 createGame 3411 success
 user2 serverEndGame 3411 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3408 success
 user27 createGame 3412 success
 user2 serverEndGame 3412 success
 user25 createGame 3413 success
@@ -7387,8 +7387,8 @@ user107 createGame 3418 success
 user2 serverEndGame 3418 success
 user107 createGame 3419 success
 user2 serverEndGame 3419 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3413 success
+user2 serverForceGameEnd 3414 success
 user206 createGame 3420 success
 user2 serverEndGame 3420 success
 user207 createGame 3421 success
@@ -7412,13 +7412,13 @@ user209 createGame 3430 success
 user2 serverEndGame 3429 success
 user33 createGame 3431 success
 user2 serverEndGame 3431 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3427 success
 user30 createGame 3432 success
 user2 serverEndGame 3432 success
 user28 createGame 3433 success
 user2 serverEndGameConflict 3430 success
 user2 serverEndGame 3433 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3430 success
 user30 createGame 3434 success
 user2 serverEndGame 3434 success
 user23 createGame 3435 success
@@ -7444,7 +7444,7 @@ user33 createGame 3445 success
 user213 createGame 3446 success
 user2 serverEndGame 3445 success
 user2 serverEndGame 3446 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 3441 success
 user26 createGame 3447 success
 user2 serverEndGame 3447 success
 user30 createGame 3448 success
@@ -7457,7 +7457,7 @@ user214 createGame 3451 success
 user2 serverEndGame 3451 success
 user215 createGame 3452 success
 user2 serverEndGame 3452 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3441 success
 user216 createGame 3453 success
 user2 serverEndGame 3453 success
 user216 createGame 3454 success
@@ -7557,7 +7557,7 @@ user2 serverEndGameConflict 3498 success
 user218 createGame 3501 success
 user2 serverEndGame 3501 success
 user218 createGame 3502 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3498 success
 user2 serverEndGame 3502 success
 user218 createGame 3503 success
 user2 serverEndGame 3503 success
@@ -7675,20 +7675,20 @@ user2 serverEndGame 3559 success
 user224 createGame 3560 success
 user2 serverEndGameConflict 3557 success
 user2 serverEndGameConflict 3560 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3557 success
 user222 createGame 3561 success
 user2 serverEndGame 3561 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3560 success
 user223 createGame 3562 success
 user216 createGame 3563 success
 user2 serverEndGame 3563 success
 user225 createGame 3564 success
 user2 serverEndGame 3562 success
 user223 createGame 3565 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 3564 success
 user2 serverEndGameConflict 3565 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3564 success
+user2 serverForceGameEnd 3565 success
 user226 createGame 3566 success
 user2 serverEndGame 3566 success
 user227 createGame 3567 success
@@ -7708,15 +7708,15 @@ user2 serverEndGame 3573 success
 user197 createGame 3574 success
 user2 serverEndGame 3574 success
 user229 createGame 3575 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 3575 success
+user2 serverForceGameEnd 3575 success
 user165 createGame 3576 success
 user230 createGame 3577 success
 user2 serverEndGame 3576 success
 user2 serverEndGameConflict 3577 success
 user165 createGame 3578 success
 user2 serverEndGame 3578 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3577 success
 user165 createGame 3579 success
 user2 serverEndGame 3579 success
 user185 createGame failure fail
@@ -7729,7 +7729,7 @@ user135 createGame 3582 success
 user2 serverEndGame 3582 success
 user231 createGame 3583 success
 user2 serverEndGameConflict 3583 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3583 success
 user232 createGame 3584 success
 user2 serverEndGame 3584 success
 user186 createGame 3585 success
@@ -7753,9 +7753,9 @@ user233 createGame 3594 success
 user2 serverEndGame 3594 success
 user233 createGame 3595 success
 user2 serverEndGame 3595 success
-user129 userCancelActiveGame  success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user129 userCancelActiveGame 3591 success
+user2 serverCancelActiveGame 3591 success
+user2 serverForceGameEnd 3585 success
 user234 createGame 3596 success
 user2 serverEndGame 3596 success
 user234 createGame 3597 success
@@ -7794,7 +7794,7 @@ user2 serverEndGame 3613 success
 user237 createGame 3614 success
 user2 serverEndGame 3614 success
 user2 serverEndGameConflict 3607 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3607 success
 user238 createGame 3615 success
 user2 serverEndGame 3615 success
 user239 createGame 3616 success
@@ -7823,14 +7823,14 @@ user244 createGame 3627 success
 user2 serverEndGame 3627 success
 user245 createGame 3628 success
 user2 serverEndGame 3628 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3624 success
 user246 createGame 3629 success
 user2 serverEndGame 3629 success
 user247 createGame 3630 success
 user2 serverEndGame 3630 success
 user248 createGame 3631 success
 user2 serverEndGameConflict 3631 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3631 success
 user221 createGame 3632 success
 user2 serverEndGame 3632 success
 user249 createGame 3633 success
@@ -7865,7 +7865,7 @@ user259 createGame 3647 success
 user2 serverEndGame 3647 success
 user112 createGame 3648 success
 user2 serverEndGame 3648 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3644 success
 user258 createGame 3649 success
 user2 serverEndGame 3649 success
 user258 createGame 3650 success
@@ -7899,8 +7899,8 @@ user265 createGame 3664 success
 user2 serverEndGame 3664 success
 user2 serverEndGameConflict 3662 success
 user266 createGame 3665 success
-user266 userCancelActiveGame  success
-user2 serverCancelActiveGame  success
+user266 userCancelActiveGame 3665 success
+user2 serverCancelActiveGame 3665 success
 user266 createGame 3666 success
 user2 serverEndGame 3666 success
 user267 createGame 3667 success
@@ -7910,8 +7910,8 @@ user2 serverEndGame 3668 success
 user269 createGame 3669 success
 user2 serverEndGame 3669 success
 user270 createGame 3670 success
-user270 userCancelActiveGame  success
-user2 serverCancelActiveGame  success
+user270 userCancelActiveGame 3670 success
+user2 serverCancelActiveGame 3670 success
 user270 createGame 3671 success
 user2 serverEndGame 3671 success
 user271 createGame 3672 success
@@ -7919,9 +7919,9 @@ user2 serverEndGame 3672 success
 user271 createGame 3673 success
 user272 createGame 3674 success
 user2 serverEndGame 3674 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3662 success
 user2 serverEndGameConflict 3673 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3673 success
 user106 createGame 3675 success
 user273 createGame 3676 success
 user2 serverEndGame 3675 success
@@ -7931,12 +7931,12 @@ user274 createGame 3678 success
 user2 serverEndGame 3678 success
 user2 serverEndGameConflict 3677 success
 user275 createGame 3679 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3677 success
 user2 serverEndGameConflict 3679 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3679 success
 user276 createGame 3680 success
 user2 serverEndGameConflict 3680 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3680 success
 user258 createGame 3681 success
 user2 serverEndGame 3681 success
 user277 createGame 3682 success
@@ -7964,17 +7964,17 @@ user280 createGame 3693 success
 user2 serverEndGameConflict 3688 success
 user278 createGame 3694 success
 user2 serverEndGame 3694 success
-user280 userCancelActiveGame  success
+user280 userCancelActiveGame 3693 success
 user2 serverEndGameConflict 3693 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3688 success
+user2 serverForceGameEnd 3693 success
 user261 createGame 3695 success
 user281 createGame 3696 success
 user2 serverEndGame 3695 success
 user2 serverEndGame 3696 success
 user282 createGame 3697 success
 user2 serverEndGameConflict 3697 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3697 success
 user283 createGame 3698 success
 user2 serverEndGame 3698 success
 user283 createGame 3699 success
@@ -7996,21 +7996,21 @@ user287 createGame 3706 success
 user288 createGame 3707 success
 user2 serverEndGameConflict 3706 success
 user2 serverEndGameConflict 3707 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3706 success
+user2 serverForceGameEnd 3707 success
 user258 createGame 3708 success
 user2 serverEndGameConflict 3708 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3708 success
 user289 createGame 3709 success
 user290 createGame 3710 success
-user290 userCancelActiveGame  success
-user290 userCancelActiveGame  fail
-user2 serverCancelActiveGame  success
+user290 userCancelActiveGame 3710 success
+user290 userCancelActiveGame 3710 fail
+user2 serverCancelActiveGame 3710 success
 user290 createGame 3711 success
 user2 serverEndGameConflict 3709 success
 user2 serverEndGameConflict 3711 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3709 success
+user2 serverForceGameEnd 3711 success
 user117 createGame 3712 success
 user2 serverEndGame 3712 success
 user291 createGame 3713 success
@@ -8051,36 +8051,36 @@ user122 createGame 3730 success
 user2 serverEndGame 3730 success
 user122 createGame 3731 success
 user2 serverEndGame 3731 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3727 success
 user122 createGame 3732 success
 user2 serverEndGameConflict 3729 success
 user2 serverEndGame 3732 success
 user122 createGame 3733 success
-user122 userCancelActiveGame  success
+user122 userCancelActiveGame 3733 success
 user2 serverEndGameConflict 3733 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3729 success
+user2 serverForceGameEnd 3733 success
 user122 createGame 3734 success
 user2 serverEndGame 3734 success
 user122 createGame 3735 success
 user2 serverEndGameConflict 3735 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3735 success
 user297 createGame 3736 success
 user2 serverEndGame 3736 success
 user298 createGame 3737 success
 user2 serverEndGame 3737 success
 user298 createGame 3738 success
-user298 userEndGameConflict  success
+user298 userEndGameConflict 3738 success
 user2 serverEndGameConflict 3738 success
 user2 serverEndGameConflict 3738 fail
-user298 userEndGameConflict  fail
-user2 serverForceGameEnd  success
+user298 userEndGameConflict 3738 fail
+user2 serverForceGameEnd 3738 success
 user299 createGame 3739 success
 user300 createGame 3740 success
 user2 serverEndGameConflict 3739 success
 user2 serverEndGame 3740 success
 user300 createGame 3741 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3739 success
 user2 serverEndGame 3741 success
 user300 createGame 3742 success
 user2 serverEndGame 3742 success
@@ -8098,23 +8098,23 @@ user112 createGame 3748 success
 user300 createGame 3749 success
 user2 serverEndGame 3749 success
 user2 serverEndGameConflict 3748 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3748 success
 user301 createGame 3750 success
 user2 serverEndGame 3750 success
 user301 createGame 3751 success
 user2 serverEndGameConflict 3751 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3751 success
 user112 createGame 3752 success
 user2 serverEndGame 3752 success
 user112 createGame 3753 success
 user2 serverEndGameConflict 3753 success
 user302 createGame 3754 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3753 success
 user2 serverEndGameConflict 3754 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3754 success
 user117 createGame 3755 success
 user2 serverEndGameConflict 3755 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3755 success
 user303 createGame failure fail
 user117 createGame 3756 success
 user2 serverEndGame 3756 success
@@ -8136,23 +8136,23 @@ user306 createGame 3764 success
 user2 serverEndGame 3764 success
 user307 createGame 3765 success
 user308 createGame 3766 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 3765 success
 user309 createGame 3767 success
 user2 serverEndGame 3767 success
 user309 createGame 3768 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 3766 success
+user2 serverForceGameEnd 3765 success
 user2 serverEndGameConflict 3768 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3766 success
+user2 serverForceGameEnd 3768 success
 user308 createGame 3769 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 3769 success
+user2 serverForceGameEnd 3769 success
 user306 createGame 3770 success
 user2 serverEndGame 3770 success
 user310 createGame 3771 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 3771 success
+user2 serverForceGameEnd 3771 success
 user117 createGame 3772 success
 user2 serverEndGame 3772 success
 user311 createGame 3773 success
@@ -8168,11 +8168,11 @@ user2 serverEndGame 3777 success
 user314 createGame 3778 success
 user2 serverEndGameConflict 3778 success
 user112 createGame 3779 success
-user2 serverForceGameEnd  success
-user2 serverCancelActiveGame  success
+user2 serverForceGameEnd 3778 success
+user2 serverCancelActiveGame 3779 success
 user315 createGame 3780 success
 user2 serverEndGame 3780 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3779 success
 user112 createGame 3781 success
 user2 serverEndGame 3781 success
 user112 createGame failure fail
@@ -8187,8 +8187,8 @@ user2 serverEndGame 3782 success
 user112 createGame 3783 success
 user148 createGame 3784 success
 user2 serverEndGame 3784 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 3783 success
+user2 serverForceGameEnd 3783 success
 user112 createGame 3785 success
 user2 serverEndGame 3785 success
 user312 createGame 3786 success
@@ -8207,8 +8207,8 @@ user317 createGame 3792 success
 user318 createGame 3793 success
 user2 serverEndGameConflict 3792 success
 user2 serverEndGameConflict 3793 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3792 success
+user2 serverForceGameEnd 3793 success
 user319 createGame 3794 success
 user2 serverEndGame 3794 success
 user319 createGame 3795 success
@@ -8221,7 +8221,7 @@ user320 createGame 3798 success
 user320 createGame failure fail
 user320 createGame failure fail
 user2 serverEndGame 3798 success
-user320 userCancelActiveGame  fail
+user320 userCancelActiveGame 3798 fail
 user320 createGame 3799 success
 user2 serverEndGame 3799 success
 user320 createGame 3800 success
@@ -8236,9 +8236,9 @@ user2 serverEndGame 3803 success
 user117 createGame 3804 success
 user2 serverEndGame 3804 success
 user321 createGame 3805 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 3805 success
 user322 createGame 3806 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3805 success
 user2 serverEndGameConflict 3806 success
 user323 createGame 3807 success
 user324 createGame 3808 success
@@ -8248,7 +8248,7 @@ user2 serverEndGame 3809 success
 user325 createGame 3810 success
 user2 serverEndGame 3810 success
 user325 createGame 3811 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3806 success
 user2 serverEndGameConflict 3807 success
 user2 serverEndGame 3811 success
 user325 createGame 3812 success
@@ -8261,16 +8261,16 @@ user2 serverEndGame 3814 success
 user327 createGame 3816 success
 user2 serverEndGame 3816 success
 user327 createGame 3817 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3807 success
 user2 serverEndGameConflict 3815 success
 user2 serverEndGameConflict 3817 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3815 success
+user2 serverForceGameEnd 3817 success
 user328 createGame 3818 success
 user2 serverEndGame 3818 success
 user329 createGame 3819 success
 user2 serverEndGameConflict 3819 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3819 success
 user327 createGame 3820 success
 user2 serverEndGame 3820 success
 user327 createGame 3821 success
@@ -8291,7 +8291,7 @@ user334 createGame 3828 success
 user2 serverEndGame 3828 success
 user334 createGame 3829 success
 user2 serverEndGameConflict 3829 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3829 success
 user335 createGame 3830 success
 user2 serverEndGame 3830 success
 user336 createGame 3831 success
@@ -8300,14 +8300,14 @@ user2 serverEndGame 3831 success
 user333 createGame 3833 success
 user2 serverEndGame 3833 success
 user2 serverEndGameConflict 3832 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3832 success
 user338 createGame 3834 success
 user2 serverEndGameConflict 3834 success
 user333 createGame 3835 success
 user2 serverEndGame 3835 success
 user333 createGame 3836 success
 user2 serverEndGame 3836 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3834 success
 user339 createGame 3837 success
 user2 serverEndGame 3837 success
 user339 createGame 3838 success
@@ -8335,7 +8335,7 @@ user344 createGame 3849 success
 user2 serverEndGame 3849 success
 user2 serverEndGame 3848 success
 user344 createGame 3850 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 3850 success
 user345 createGame 3851 success
 user2 serverEndGame 3851 success
 user346 createGame 3852 success
@@ -8344,7 +8344,7 @@ user343 createGame 3853 success
 user2 serverEndGame 3853 success
 user343 createGame 3854 success
 user2 serverEndGame 3854 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3850 success
 user342 createGame 3855 success
 user343 createGame 3856 success
 user2 serverEndGame 3855 success
@@ -8405,7 +8405,7 @@ user2 serverEndGame 3882 success
 user333 createGame 3883 success
 user2 serverEndGame 3883 success
 user2 serverEndGameConflict 3880 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3880 success
 user341 createGame 3884 success
 user2 serverEndGame 3884 success
 user356 createGame 3885 success
@@ -8548,7 +8548,7 @@ user342 createGame 3950 success
 user2 serverEndGameConflict 3938 success
 user2 serverEndGame 3950 success
 user360 createGame 3951 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3938 success
 user342 createGame 3952 success
 user2 serverEndGame 3952 success
 user342 createGame 3953 success
@@ -8576,7 +8576,7 @@ user2 serverEndGame 3963 success
 user333 createGame 3964 success
 user2 serverEndGame 3964 success
 user2 serverEndGameConflict 3961 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3961 success
 user363 createGame 3965 success
 user2 serverEndGame 3965 success
 user366 createGame 3966 success
@@ -8605,11 +8605,11 @@ user333 createGame 3977 success
 user370 createGame 3978 success
 user2 serverEndGame 3978 success
 user2 serverEndGame 3977 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3974 success
 user2 serverEndGameConflict 3975 success
 user363 createGame 3979 success
 user2 serverEndGame 3979 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3975 success
 user333 createGame 3980 success
 user2 serverEndGame 3980 success
 user333 createGame 3981 success
@@ -8622,7 +8622,7 @@ user2 serverEndGame 3984 success
 user2 serverEndGameConflict 3983 success
 user371 createGame 3985 success
 user2 serverEndGame 3985 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 3983 success
 user333 createGame 3986 success
 user342 createGame 3987 success
 user2 serverEndGame 3987 success
@@ -8671,7 +8671,7 @@ user2 serverEndGame 4004 success
 user372 createGame 4005 success
 user2 serverEndGame 4005 success
 user2 serverEndGameConflict 4002 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4002 success
 user365 createGame 4006 success
 user2 serverEndGame 4006 success
 user365 createGame 4007 success
@@ -8686,12 +8686,12 @@ user141 createGame 4011 success
 user2 serverEndGame 4011 success
 user141 createGame 4012 success
 user2 serverEndGame 4012 success
-user2 serverForceGameEnd  success
-user365 userEndGameConflict  fail
+user2 serverForceGameEnd 4007 success
+user365 userEndGameConflict 4007 fail
 user342 createGame 4013 success
 user2 serverEndGame 4013 success
 user365 createGame 4014 success
-user365 userEndGameConflict  success
+user365 userEndGameConflict 4014 success
 user2 serverEndGameConflict 4014 success
 user342 createGame 4015 success
 user2 serverEndGame 4015 success
@@ -8717,10 +8717,10 @@ user2 serverEndGame 4024 success
 user373 createGame 4025 success
 user2 serverEndGame 4025 success
 user365 createGame 4026 success
-user365 userEndGameConflict  success
+user365 userEndGameConflict 4026 success
 user2 serverEndGameConflict 4026 success
 user374 createGame 4027 success
-user2 serverCancelActiveGame  success
+user2 serverCancelActiveGame 4027 success
 user342 createGame 4028 success
 user2 serverEndGame 4028 success
 user342 createGame 4029 success
@@ -8755,7 +8755,7 @@ user375 createGame 4043 success
 user2 serverEndGame 4043 success
 user342 createGame 4044 success
 user2 serverEndGame 4044 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4027 success
 user376 createGame 4045 success
 user2 serverEndGame 4045 success
 user376 createGame 4046 success
@@ -8927,8 +8927,8 @@ user381 createGame 4126 success
 user2 serverEndGameConflict 4126 success
 user333 createGame 4127 success
 user2 serverEndGame 4127 success
-user2 serverForceGameEnd  success
-user2 serverForceGameEnd  fail
+user2 serverForceGameEnd 4126 success
+user2 serverForceGameEnd 4126 fail
 user333 createGame 4128 success
 user378 createGame 4129 success
 user2 serverEndGame 4129 success
@@ -8995,7 +8995,7 @@ user2 serverEndGame 4158 success
 user2 serverEndGameConflict 4156 success
 user382 createGame 4159 success
 user2 serverEndGame 4159 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4156 success
 user47 createGame 4160 success
 user2 serverEndGame 4160 success
 user333 createGame 4161 success
@@ -9027,7 +9027,7 @@ user378 createGame 4174 success
 user378 createGame failure fail
 user2 serverEndGame 4174 success
 user2 serverEndGame 4172 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4168 success
 user378 createGame 4175 success
 user2 serverEndGame 4175 success
 user378 createGame 4176 success
@@ -9058,10 +9058,10 @@ user346 createGame 4188 success
 user2 serverEndGame 4188 success
 user342 createGame 4189 success
 user2 serverEndGame 4189 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 4183 success
+user2 serverForceGameEnd 4183 success
 user2 serverEndGameConflict 4187 success
-user333 userEndGameConflict  success
+user333 userEndGameConflict 4187 success
 user378 createGame 4190 success
 user384 createGame 4191 success
 user2 serverEndGame 4191 success
@@ -9077,7 +9077,7 @@ user2 serverEndGameConflict 4190 success
 user333 createGame 4196 success
 user385 createGame 4197 success
 user2 serverEndGame 4197 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4190 success
 user378 createGame 4198 success
 user2 serverEndGame 4196 success
 user47 createGame 4199 success
@@ -9106,9 +9106,9 @@ user2 serverEndGameConflict 4208 success
 user387 createGame 4210 success
 user333 createGame 4211 success
 user2 serverEndGame 4211 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4208 success
 user2 serverEndGameConflict 4210 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4210 success
 user102 createGame 4212 success
 user2 serverEndGame 4212 success
 user333 createGame 4213 success
@@ -9159,7 +9159,7 @@ user2 serverEndGame 4235 success
 user2 serverEndGameConflict 4233 success
 user389 createGame 4236 success
 user2 serverEndGame 4236 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4233 success
 user389 createGame 4237 success
 user2 serverEndGame 4237 success
 user333 createGame 4238 success
@@ -9251,8 +9251,8 @@ user2 serverEndGame 4278 success
 user378 createGame 4279 success
 user2 serverEndGame 4279 success
 user378 createGame 4280 success
-user2 serverCancelActiveGame  success
-user2 serverForceGameEnd  success
+user2 serverCancelActiveGame 4280 success
+user2 serverForceGameEnd 4280 success
 user378 createGame 4281 success
 user2 serverEndGame 4281 success
 user389 createGame 4282 success
@@ -9344,7 +9344,7 @@ user2 serverEndGame 4324 success
 user395 createGame 4325 success
 user2 serverEndGame 4323 success
 user2 serverEndGame 4325 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4321 success
 user395 createGame 4326 success
 user2 serverEndGame 4326 success
 user395 createGame 4327 success
@@ -9358,9 +9358,9 @@ user342 createGame 4331 success
 user2 serverEndGame 4330 success
 user396 createGame 4332 success
 user2 serverEndGameConflict 4332 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4328 success
 user2 serverEndGame 4331 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4332 success
 user342 createGame 4333 success
 user2 serverEndGame 4333 success
 user342 createGame 4334 success
@@ -9410,9 +9410,9 @@ user2 serverEndGame 4355 success
 user399 createGame 4356 success
 user2 serverEndGame 4356 success
 user399 createGame 4357 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4350 success
 user2 serverEndGameConflict 4357 success
-user2 serverForceGameEnd  success
+user2 serverForceGameEnd 4357 success
 user333 createGame 4358 success
 user342 createGame 4359 success
 user389 createGame 4360 success
