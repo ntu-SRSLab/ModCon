@@ -190,6 +190,13 @@ async function filter(){
                 Methods[HashMethodMap[tx.input.substring(0,10)].name]+=1;
             if(option.all || option.printTx){
                 let input = web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10));
+                // if(input && input._tokenId && input._tokenId != "30070001"){
+                //     continue;
+                // }else{
+                //     console.log(tx.from, tx.to);
+                //     console.log(tx.hash);
+                //     console.log(input);
+                // }
                 console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
                 HashMethodMap[tx.input.substring(0,10)].name + " "
                 +

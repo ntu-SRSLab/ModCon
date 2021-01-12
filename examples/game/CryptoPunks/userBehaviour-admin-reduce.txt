@@ -1,0 +1,34 @@
+alphabet
+offerPunkForSale
+acceptBidForPunk
+punkNoLongerForSale
+getPunk
+setInitialOwner
+withdrawBidForPunk
+enterBidForPunk
+transferPunk
+offerPunkForSaleToAddress
+buyPunk
+---------------------
+positive examples
+setInitialOwner enterBidForPunk buyPunk
+setInitialOwner
+setInitialOwner offerPunkForSale acceptBidForPunk
+setInitialOwner offerPunkForSale
+setInitialOwner acceptBidForPunk
+setInitialOwner enterBidForPunk withdrawBidForPunk
+setInitialOwner acceptBidForPunk
+setInitialOwner enterBidForPunk
+setInitialOwner enterBidForPunk withdrawBidForPunk
+setInitialOwner enterBidForPunk
+setInitialOwner
+setInitialOwner buyPunk
+setInitialOwner enterBidForPunk
+setInitialOwner enterBidForPunk transferPunk
+setInitialOwner transferPunk
+setInitialOwner offerPunkForSale punkNoLongerForSale
+setInitialOwner transferPunk
+setInitialOwner enterBidForPunk withdrawBidForPunk
+setInitialOwner offerPunkForSale
+setInitialOwner offerPunkForSale punkNoLongerForSale
+setInitialOwner buyPunk transferPunk

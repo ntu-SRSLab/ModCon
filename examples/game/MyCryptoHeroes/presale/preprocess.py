@@ -184,7 +184,7 @@ def getUserBehaviour(input_file):
             for pair in pairs:
                 user, function = tuple(pair.split("-"))
                 if user not in roles:
-                    roles[user] = NORMAL_USER if function == "createGame" else SERVER_USER
+                    roles[user] = NORMAL_USER if user != "creator" else SERVER_USER
         user_traces = set()
         server_traces = set()
         for session in sessions:
@@ -382,10 +382,22 @@ if __name__ == "__main__":
      
     if "user_behaviour" in options:
         used_methods, user_traces, server_traces = getUserBehaviour(options["input"])
-        print(user_traces, server_traces)
+        # print(user_traces, server_traces)
+        # print(user_traces, server_traces)
         if "output" in options:
             # print all user traces
-            df.to_csv(options["output"], index=False) 
+            with open(options["output"].split(".")[0]+"-user."+options["output"].split(".")[1], "w") as f:
+                f.write("alphabet\n")
+                f.write("\n".join(used_methods))
+                f.write("\n---------------------\n")
+                f.write("positive examples\n")
+                f.write("\n".join(user_traces))
+            with open(options["output"].split(".")[0]+"-admin."+options["output"].split(".")[1], "w") as f:
+                f.write("alphabet\n")
+                f.write("\n".join(used_methods))
+                f.write("\n---------------------\n")
+                f.write("positive examples\n")
+                f.write("\n".join(server_traces))
     
     if "trace_reduce" in options:
         outputs = reduce_trace(options["input"])

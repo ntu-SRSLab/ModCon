@@ -1,0 +1,24 @@
+alphabet
+withdrawHeroToAssetOwnerByAdmin
+depositHeroToGateway
+mintHero
+---------------------
+positive examples
+withdrawHeroToAssetOwnerByAdmin
+mintHero withdrawHeroToAssetOwnerByAdmin
+withdrawHeroToAssetOwnerByAdmin
+mintHero withdrawHeroToAssetOwnerByAdmin
+withdrawHeroToAssetOwnerByAdmin
+withdrawHeroToAssetOwnerByAdmin
+mintHero withdrawHeroToAssetOwnerByAdmin
+withdrawHeroToAssetOwnerByAdmin
+withdrawHeroToAssetOwnerByAdmin
+withdrawHeroToAssetOwnerByAdmin
+withdrawHeroToAssetOwnerByAdmin
+mintHero withdrawHeroToAssetOwnerByAdmin
+mintHero withdrawHeroToAssetOwnerByAdmin
+withdrawHeroToAssetOwnerByAdmin
+mintHero withdrawHeroToAssetOwnerByAdmin
+mintHero withdrawHeroToAssetOwnerByAdmin
+mintHero withdrawHeroToAssetOwnerByAdmin
+withdrawHeroToAssetOwnerByAdmin

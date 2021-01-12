@@ -1,0 +1,8 @@
+alphabet
+purchaseByEMONT
+airDrop
+purchase
+addSales
+---------------------
+positive examples
+addSales

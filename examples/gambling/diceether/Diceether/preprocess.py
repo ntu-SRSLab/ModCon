@@ -53,21 +53,22 @@ def loop_handle(Trace):
     return output
     pass 
 
-def reduce_trace():
+def reduce_trace(input_file):
     outputs = []
-    with open("./usertrace.txt", encoding="utf-8") as f: 
+    with open(input_file, encoding="utf-8") as f: 
             lines = f.readlines()
             for line in lines:
                 trace = line.strip().split(" ")
-                if len(trace) > 40:
-                    trace = trace[:40]
+                if len(trace) > 8:
+                    continue
                 output = loop_handle(trace)
                 # print(output)
                 outputs.append(output)
     # print(outputs)
-    with open("./usertrace_reduced.txt", "w", encoding="utf-8") as fo:
-         fo.write( "\n".join(outputs))
-    pass
+    # with open(output_file, "w", encoding="utf-8") as fo:
+    #      fo.write( "\n".join(outputs))
+    # pass
+    return outputs
 
 
 def tuplize_result(line):
@@ -301,6 +302,9 @@ if __name__ == "__main__":
             elif args[i] == "--user_behaviour":
                 options["user_behaviour"] = True 
                 i += 1
+            elif args[i] == "--trace_reduce":
+                options["trace_reduce"] = True 
+                i += 1
             else:
                 print("wrong program input; program input should be: ")
                 print(cmdOpt)
@@ -377,7 +381,26 @@ if __name__ == "__main__":
      
     if "user_behaviour" in options:
         used_methods, user_traces, server_traces = getUserBehaviour(options["input"])
-        print(user_traces, server_traces)
+        # print(user_traces, server_traces)
         if "output" in options:
             # print all user traces
-            df.to_csv(options["output"], index=False) 
+            with open(options["output"].split(".")[0]+"-user."+options["output"].split(".")[1], "w") as f:
+                f.write("alphabet\n")
+                f.write("\n".join(used_methods))
+                f.write("\n---------------------\n")
+                f.write("positive examples\n")
+                f.write("\n".join(user_traces))
+            with open(options["output"].split(".")[0]+"-admin."+options["output"].split(".")[1], "w") as f:
+                f.write("alphabet\n")
+                f.write("\n".join(used_methods))
+                f.write("\n---------------------\n")
+                f.write("positive examples\n")
+                f.write("\n".join(server_traces))
+    
+    if "trace_reduce" in options:
+        outputs = reduce_trace(options["input"])
+        print(outputs)
+        if "output" in options:
+            with open(options["output"], "w", encoding="utf-8") as fo:
+                fo.write( "\n".join(outputs))
+            pass   

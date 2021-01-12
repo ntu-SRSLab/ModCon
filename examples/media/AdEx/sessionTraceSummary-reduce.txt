@@ -1,14 +1,14 @@
 alphabet
-giveupBid
 verifyBid
-cancelBid
-refundBid
+giveupBid
 acceptBid
+refundBid
+cancelBid
 ---------------------
 positive examples
-acceptBid verifyBid
-cancelBid
-acceptBid verifyBid
-acceptBid giveupBid
-acceptBid
 acceptBid refundBid
+acceptBid verifyBid
+acceptBid verifyBid
+acceptBid
+cancelBid
+acceptBid giveupBid

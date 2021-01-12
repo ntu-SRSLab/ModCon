@@ -107,7 +107,7 @@ def test_kmeans(input_matrix_file):
     # print(csvdata)
     X = csvdata.to_numpy()[:,1:]
     print(X)
-    SIZE = 3
+    SIZE = 2
     kmeans = KMeans(n_clusters=SIZE, random_state=10).fit(X)
     users = csvdata.to_numpy()[:,0]
     labels = kmeans.labels_
@@ -120,7 +120,7 @@ def test_kmeans(input_matrix_file):
         for row in result:
             if  row[1] == size:
                 clusters[size].add(row[0])
-        print("cluster: %d, size: %s" % (size, str(len(clusters[size])) if len(clusters[size])>5 else clusters[size]))
+        print("cluster: %d, size: %s" % (size, str(len(clusters[size])) if len(clusters[size])>21 else clusters[size]))
 
     df = pd.DataFrame(np.transpose([users, labels]),   columns=['user', 'cluster_id'])
     return df 
@@ -184,7 +184,7 @@ def getUserBehaviour(input_file):
             for pair in pairs:
                 user, function = tuple(pair.split("-"))
                 if user not in roles:
-                    roles[user] = NORMAL_USER if function == "createGame" else SERVER_USER
+                    roles[user] = NORMAL_USER #if function == "createGame" else SERVER_USER
         user_traces = set()
         server_traces = set()
         for session in sessions:
@@ -382,10 +382,21 @@ if __name__ == "__main__":
      
     if "user_behaviour" in options:
         used_methods, user_traces, server_traces = getUserBehaviour(options["input"])
-        print(user_traces, server_traces)
+         # print(user_traces, server_traces)
         if "output" in options:
             # print all user traces
-            df.to_csv(options["output"], index=False) 
+            with open(options["output"].split(".")[0]+"-user."+options["output"].split(".")[1], "w") as f:
+                f.write("alphabet\n")
+                f.write("\n".join(used_methods))
+                f.write("\n---------------------\n")
+                f.write("positive examples\n")
+                f.write("\n".join(user_traces))
+            with open(options["output"].split(".")[0]+"-admin."+options["output"].split(".")[1], "w") as f:
+                f.write("alphabet\n")
+                f.write("\n".join(used_methods))
+                f.write("\n---------------------\n")
+                f.write("positive examples\n")
+                f.write("\n".join(server_traces))
     
     if "trace_reduce" in options:
         outputs = reduce_trace(options["input"])

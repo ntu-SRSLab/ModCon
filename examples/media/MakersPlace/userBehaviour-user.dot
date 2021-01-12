@@ -1,0 +1,43 @@
+digraph g {
+
+	s0 [shape="circle" label="0"];
+	s1 [shape="doublecircle" label="1"];
+	s2 [shape="doublecircle" label="2"];
+	s3 [shape="doublecircle" label="3"];
+	s4 [shape="doublecircle" label="4"];
+	s5 [shape="doublecircle" label="5"];
+	s6 [shape="doublecircle" label="6"];
+	s7 [shape="circle" label="7"];
+	s8 [shape="doublecircle" label="8"];
+	s9 [shape="doublecircle" label="9"];
+	s10 [shape="doublecircle" label="10"];
+	s11 [shape="doublecircle" label="11"];
+	s12 [shape="circle" label="12"];
+	s0 -> s1 [label="transferFrom"];
+	s2 -> s0 [label="transferFrom"];
+	s3 -> s12 [label="approve"];
+	s4 -> s2 [label="transferFrom"];
+	s5 -> s3 [label="approve"];
+	s6 -> s1 [label="safeTransferFrom"];
+	s6 -> s1 [label="burn"];
+	s6 -> s4 [label="transferFrom"];
+	s7 -> s6 [label="safeTransferFrom"];
+	s7 -> s1 [label="burn"];
+	s7 -> s1 [label="burnToken"];
+	s7 -> s5 [label="approve"];
+	s7 -> s11 [label="transferFrom"];
+	s8 -> s1 [label="transferFrom"];
+	s9 -> s1 [label="approve"];
+	s10 -> s1 [label="safeTransferFrom"];
+	s10 -> s1 [label="approve"];
+	s10 -> s8 [label="transferFrom"];
+	s11 -> s1 [label="safeTransferFrom"];
+	s11 -> s1 [label="burn"];
+	s11 -> s1 [label="approve"];
+	s11 -> s10 [label="transferFrom"];
+	s12 -> s9 [label="approve"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s7;
+
+}

@@ -1,0 +1,47 @@
+alphabet
+oboCreateDigitalMediaReleases
+approve
+safeTransferFrom
+oboCreateDigitalMediaAndReleases
+burn
+transferFrom
+burnDigitalMedia
+burnToken
+---------------------
+positive examples
+approve approve approve burnToken burnDigitalMedia
+approve
+approve burnToken burnDigitalMedia
+safeTransferFrom
+approve approve approve approve approve approve
+safeTransferFrom approve approve safeTransferFrom
+approve approve approve approve
+approve approve safeTransferFrom
+approve approve approve
+safeTransferFrom safeTransferFrom safeTransferFrom approve safeTransferFrom
+approve safeTransferFrom
+approve burnToken
+approve approve burnToken
+approve safeTransferFrom safeTransferFrom
+approve approve burnDigitalMedia
+safeTransferFrom burnToken burnDigitalMedia
+approve approve approve approve approve
+approve approve approve burnToken
+safeTransferFrom safeTransferFrom
+approve approve approve safeTransferFrom
+approve approve approve approve approve approve approve approve approve approve
+approve approve safeTransferFrom safeTransferFrom
+burnToken burnDigitalMedia
+approve approve approve approve approve burnToken burnDigitalMedia
+approve approve approve approve approve approve approve approve
+approve approve burnToken burnDigitalMedia
+approve approve approve approve safeTransferFrom
+approve approve
+approve approve approve approve burnToken burnDigitalMedia
+safeTransferFrom approve approve approve
+approve safeTransferFrom approve
+safeTransferFrom approve
+approve approve approve approve approve approve approve approve approve
+approve burnDigitalMedia burnToken
+burnToken
+approve approve approve approve approve approve approve
