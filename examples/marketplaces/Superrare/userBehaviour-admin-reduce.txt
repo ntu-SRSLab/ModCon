@@ -1,0 +1,87 @@
+alphabet
+acceptBid
+transfer
+buy
+setSalePrice
+cancelBid
+bid
+---------------------
+positive examples
+bid transfer
+setSalePrice
+buy setSalePrice transfer
+setSalePrice transfer acceptBid
+setSalePrice acceptBid
+setSalePrice acceptBid
+setSalePrice
+bid
+setSalePrice transfer setSalePrice acceptBid
+setSalePrice acceptBid
+setSalePrice
+setSalePrice acceptBid
+setSalePrice transfer
+bid cancelBid bid transfer
+bid setSalePrice
+setSalePrice transfer
+bid setSalePrice
+setSalePrice
+setSalePrice acceptBid
+setSalePrice
+setSalePrice transfer setSalePrice
+setSalePrice transfer
+setSalePrice
+setSalePrice bid setSalePrice acceptBid
+setSalePrice transfer
+setSalePrice acceptBid
+transfer
+setSalePrice acceptBid
+acceptBid bid
+bid cancelBid bid transfer
+bid cancelBid
+setSalePrice acceptBid setSalePrice
+setSalePrice transfer
+setSalePrice transfer
+buy transfer
+setSalePrice transfer
+bid cancelBid setSalePrice transfer
+bid
+transfer bid
+setSalePrice transfer
+setSalePrice transfer
+acceptBid
+setSalePrice acceptBid
+bid transfer
+setSalePrice transfer setSalePrice
+bid acceptBid
+bid setSalePrice acceptBid
+acceptBid
+bid cancelBid
+bid setSalePrice
+setSalePrice
+bid setSalePrice
+bid setSalePrice
+acceptBid transfer
+bid transfer
+setSalePrice acceptBid
+setSalePrice acceptBid
+bid setSalePrice
+bid cancelBid bid setSalePrice transfer
+bid cancelBid setSalePrice transfer
+setSalePrice acceptBid
+setSalePrice acceptBid
+bid setSalePrice transfer
+setSalePrice
+bid cancelBid
+setSalePrice
+bid
+setSalePrice transfer
+setSalePrice bid setSalePrice
+transfer bid
+buy setSalePrice
+buy
+transfer acceptBid
+setSalePrice transfer
+bid setSalePrice
+setSalePrice
+bid setSalePrice acceptBid
+setSalePrice

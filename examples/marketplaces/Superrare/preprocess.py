@@ -184,7 +184,7 @@ def getUserBehaviour(input_file):
             for pair in pairs:
                 user, function = tuple(pair.split("-"))
                 if user not in roles:
-                    roles[user] = NORMAL_USER if function == "createGame" else SERVER_USER
+                    roles[user] = NORMAL_USER if function != "setSalePrice" else SERVER_USER
         user_traces = set()
         server_traces = set()
         for session in sessions:
@@ -192,16 +192,31 @@ def getUserBehaviour(input_file):
             pairs = session.strip("\n").split(" ")[1:]
             user_trace = list()
             server_trace = list()
-            for pair in pairs:
-                user, function = tuple(pair.split("-"))
-                if roles[user] == NORMAL_USER:
-                    user_trace.append(function)
-                else:
-                    server_trace.append(function)
-            if len(user_trace)>0:
-                user_traces.add(" ".join(user_trace))
-            if len(server_trace)>0:
-                server_traces.add(" ".join(server_trace))
+            
+            singleFlag = True
+            if singleFlag:
+                recorded = dict()
+                for pair in pairs:
+                    user, function = tuple(pair.split("-"))
+                    if user not in recorded:
+                        recorded[user] = list()
+                    recorded[user].append(function)
+                for user in recorded:
+                    if roles[user] == NORMAL_USER:
+                        user_traces.add(" ".join(recorded[user]))
+                    else:
+                        server_traces.add(" ".join(recorded[user]))
+            else:
+                for pair in pairs:
+                    user, function = tuple(pair.split("-"))
+                    if roles[user] == NORMAL_USER:
+                        user_trace.append(function)
+                    else:
+                        server_trace.append(function)
+                if len(user_trace)>0:
+                    user_traces.add(" ".join(user_trace))
+                if len(server_trace)>0:
+                    server_traces.add(" ".join(server_trace))
         return used_methods, user_traces, server_traces
 
 def get_trace_from_result_bySessionId(input_file):
@@ -385,7 +400,18 @@ if __name__ == "__main__":
         print(user_traces, server_traces)
         if "output" in options:
             # print all user traces
-            df.to_csv(options["output"], index=False) 
+            with open(options["output"].split(".")[0]+"-user."+options["output"].split(".")[1], "w") as f:
+                f.write("alphabet\n")
+                f.write("\n".join(used_methods))
+                f.write("\n---------------------\n")
+                f.write("positive examples\n")
+                f.write("\n".join(user_traces))
+            with open(options["output"].split(".")[0]+"-admin."+options["output"].split(".")[1], "w") as f:
+                f.write("alphabet\n")
+                f.write("\n".join(used_methods))
+                f.write("\n---------------------\n")
+                f.write("positive examples\n")
+                f.write("\n".join(server_traces)) 
     
     if "trace_reduce" in options:
         outputs = reduce_trace(options["input"])

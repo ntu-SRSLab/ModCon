@@ -1,34 +1,34 @@
 alphabet
-offerPunkForSale
-acceptBidForPunk
-punkNoLongerForSale
-getPunk
-setInitialOwner
-withdrawBidForPunk
-enterBidForPunk
-transferPunk
 offerPunkForSaleToAddress
+enterBidForPunk
+acceptBidForPunk
+getPunk
+punkNoLongerForSale
 buyPunk
+withdrawBidForPunk
+setInitialOwner
+offerPunkForSale
+transferPunk
 ---------------------
 positive examples
-setInitialOwner enterBidForPunk buyPunk
+setInitialOwner transferPunk
+setInitialOwner
+setInitialOwner offerPunkForSale offerPunkForSale
+setInitialOwner enterBidForPunk
+setInitialOwner setInitialOwner transferPunk
+setInitialOwner setInitialOwner acceptBidForPunk
+setInitialOwner setInitialOwner enterBidForPunk
+setInitialOwner offerPunkForSale punkNoLongerForSale
+setInitialOwner offerPunkForSale offerPunkForSale punkNoLongerForSale
 setInitialOwner setInitialOwner
 setInitialOwner offerPunkForSale acceptBidForPunk
-setInitialOwner offerPunkForSale offerPunkForSale
-setInitialOwner setInitialOwner acceptBidForPunk
+setInitialOwner buyPunk
+setInitialOwner enterBidForPunk buyPunk
+setInitialOwner offerPunkForSale
+setInitialOwner enterBidForPunk transferPunk
+setInitialOwner enterBidForPunk enterBidForPunk
+setInitialOwner buyPunk transferPunk
+setInitialOwner enterBidForPunk enterBidForPunk enterBidForPunk withdrawBidForPunk
+setInitialOwner enterBidForPunk withdrawBidForPunk
 setInitialOwner enterBidForPunk withdrawBidForPunk enterBidForPunk withdrawBidForPunk
 setInitialOwner acceptBidForPunk
-setInitialOwner setInitialOwner enterBidForPunk
-setInitialOwner enterBidForPunk enterBidForPunk enterBidForPunk withdrawBidForPunk
-setInitialOwner enterBidForPunk enterBidForPunk
-setInitialOwner
-setInitialOwner buyPunk
-setInitialOwner enterBidForPunk
-setInitialOwner enterBidForPunk transferPunk
-setInitialOwner setInitialOwner transferPunk
-setInitialOwner offerPunkForSale punkNoLongerForSale
-setInitialOwner transferPunk
-setInitialOwner enterBidForPunk withdrawBidForPunk
-setInitialOwner offerPunkForSale
-setInitialOwner offerPunkForSale offerPunkForSale punkNoLongerForSale
-setInitialOwner buyPunk transferPunk

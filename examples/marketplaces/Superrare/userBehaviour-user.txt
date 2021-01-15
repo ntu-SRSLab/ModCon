@@ -1,0 +1,325 @@
+alphabet
+acceptBid
+transfer
+buy
+setSalePrice
+cancelBid
+bid
+---------------------
+positive examples
+setSalePrice setSalePrice transfer setSalePrice
+bid buy transfer
+buy setSalePrice transfer transfer
+bid bid bid bid bid setSalePrice
+bid cancelBid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+setSalePrice transfer setSalePrice acceptBid
+transfer setSalePrice transfer
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid
+bid cancelBid bid cancelBid buy transfer
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid bid cancelBid bid
+bid cancelBid bid cancelBid buy setSalePrice
+bid bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid cancelBid bid
+bid setSalePrice setSalePrice setSalePrice acceptBid
+bid setSalePrice setSalePrice
+bid bid bid cancelBid
+bid cancelBid buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid setSalePrice setSalePrice setSalePrice acceptBid buy setSalePrice
+setSalePrice setSalePrice setSalePrice acceptBid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid cancelBid bid setSalePrice setSalePrice acceptBid
+setSalePrice acceptBid transfer
+bid bid bid bid bid bid bid bid bid bid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid cancelBid bid cancelBid buy setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid bid bid bid
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid cancelBid
+bid bid cancelBid bid cancelBid bid setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice transfer setSalePrice setSalePrice setSalePrice transfer setSalePrice
+bid bid bid bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid cancelBid bid cancelBid bid bid cancelBid bid cancelBid
+bid bid bid cancelBid bid bid cancelBid
+bid bid bid cancelBid buy
+bid cancelBid bid bid cancelBid
+bid cancelBid bid cancelBid bid cancelBid bid cancelBid bid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid bid cancelBid bid bid bid
+bid cancelBid bid
+bid cancelBid bid bid bid bid cancelBid bid cancelBid
+bid bid buy setSalePrice setSalePrice setSalePrice
+bid bid setSalePrice acceptBid
+bid cancelBid bid bid bid bid
+bid bid cancelBid bid bid cancelBid bid cancelBid
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+transfer transfer setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+buy setSalePrice transfer setSalePrice
+buy transfer acceptBid
+bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid setSalePrice setSalePrice transfer setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid buy transfer
+bid bid bid setSalePrice
+bid setSalePrice setSalePrice acceptBid
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid bid cancelBid bid
+bid cancelBid setSalePrice acceptBid
+buy transfer setSalePrice setSalePrice setSalePrice
+bid bid cancelBid bid cancelBid bid bid cancelBid
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+acceptBid buy
+bid setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid setSalePrice
+bid transfer bid transfer
+bid bid cancelBid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid bid buy setSalePrice setSalePrice setSalePrice
+bid cancelBid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice
+bid cancelBid bid cancelBid bid cancelBid bid
+bid cancelBid bid bid bid cancelBid bid cancelBid
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid buy setSalePrice setSalePrice transfer setSalePrice setSalePrice transfer setSalePrice
+bid bid bid bid cancelBid bid cancelBid bid
+bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid cancelBid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid cancelBid bid cancelBid bid cancelBid bid cancelBid bid cancelBid
+bid cancelBid setSalePrice
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid bid cancelBid bid setSalePrice acceptBid
+bid bid setSalePrice
+setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid cancelBid transfer
+bid bid bid cancelBid bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid bid bid bid cancelBid
+transfer setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer setSalePrice bid cancelBid
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid setSalePrice transfer
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid bid bid cancelBid bid bid cancelBid bid cancelBid
+bid bid bid bid cancelBid bid cancelBid bid bid cancelBid bid cancelBid
+transfer
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid bid cancelBid bid cancelBid bid cancelBid bid
+bid cancelBid bid transfer
+bid bid bid bid setSalePrice
+acceptBid bid cancelBid
+bid cancelBid buy setSalePrice acceptBid
+bid buy setSalePrice setSalePrice transfer
+bid cancelBid bid bid cancelBid bid cancelBid bid bid
+bid transfer setSalePrice
+buy setSalePrice setSalePrice acceptBid
+bid transfer setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid cancelBid bid bid bid
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer setSalePrice
+bid bid acceptBid
+bid bid bid cancelBid bid cancelBid
+bid cancelBid acceptBid
+bid acceptBid
+bid bid bid cancelBid bid setSalePrice setSalePrice setSalePrice
+bid bid bid bid cancelBid
+bid setSalePrice setSalePrice transfer
+bid cancelBid bid setSalePrice setSalePrice setSalePrice setSalePrice
+acceptBid
+buy acceptBid
+bid bid cancelBid buy setSalePrice setSalePrice setSalePrice
+bid bid setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid cancelBid bid bid bid cancelBid
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid cancelBid bid bid cancelBid
+bid cancelBid bid setSalePrice setSalePrice transfer
+bid cancelBid bid cancelBid buy transfer setSalePrice
+buy setSalePrice setSalePrice setSalePrice transfer
+bid bid cancelBid bid setSalePrice setSalePrice setSalePrice
+bid cancelBid bid setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid bid bid bid bid bid cancelBid bid bid cancelBid
+bid bid bid acceptBid
+bid bid buy setSalePrice setSalePrice setSalePrice transfer
+bid bid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid cancelBid bid cancelBid
+setSalePrice transfer bid cancelBid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid bid cancelBid bid
+bid bid bid bid cancelBid buy
+bid bid bid bid bid bid bid bid
+bid buy setSalePrice setSalePrice transfer setSalePrice transfer setSalePrice
+buy setSalePrice transfer
+buy transfer transfer
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid bid setSalePrice
+buy setSalePrice setSalePrice transfer setSalePrice setSalePrice setSalePrice
+bid bid bid bid bid cancelBid
+bid bid bid cancelBid bid cancelBid bid
+buy setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid bid setSalePrice transfer
+setSalePrice
+bid bid cancelBid buy
+bid cancelBid bid bid transfer
+bid bid cancelBid bid cancelBid bid cancelBid
+setSalePrice acceptBid bid transfer
+bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid cancelBid bid cancelBid bid
+bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid cancelBid bid bid bid cancelBid
+bid bid bid setSalePrice acceptBid
+setSalePrice acceptBid buy setSalePrice acceptBid
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid bid bid transfer
+bid cancelBid bid cancelBid bid cancelBid bid cancelBid bid cancelBid
+transfer transfer
+bid bid cancelBid bid setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid bid bid bid bid bid bid
+bid cancelBid buy
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid bid bid bid bid bid bid bid cancelBid
+bid setSalePrice transfer setSalePrice
+transfer bid cancelBid
+bid cancelBid buy acceptBid
+bid bid buy
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid setSalePrice setSalePrice setSalePrice transfer
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid bid bid bid cancelBid bid
+setSalePrice setSalePrice setSalePrice transfer
+transfer transfer transfer
+buy setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid buy transfer
+bid bid bid bid cancelBid bid bid cancelBid bid bid cancelBid
+bid bid setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid bid
+bid cancelBid bid setSalePrice acceptBid
+buy setSalePrice setSalePrice transfer setSalePrice setSalePrice transfer setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid bid cancelBid bid bid bid cancelBid
+buy setSalePrice acceptBid
+bid bid bid bid setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+buy setSalePrice setSalePrice setSalePrice setSalePrice transfer setSalePrice setSalePrice transfer setSalePrice transfer
+bid setSalePrice acceptBid
+bid cancelBid bid buy transfer
+bid bid cancelBid
+bid bid bid setSalePrice setSalePrice setSalePrice
+bid transfer buy transfer
+bid bid bid cancelBid bid cancelBid bid cancelBid bid cancelBid buy
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid buy setSalePrice setSalePrice
+bid cancelBid buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+acceptBid transfer
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid cancelBid bid cancelBid bid cancelBid buy
+bid cancelBid bid cancelBid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid cancelBid bid bid bid bid cancelBid
+setSalePrice setSalePrice acceptBid
+setSalePrice setSalePrice acceptBid bid cancelBid
+bid buy setSalePrice
+bid bid cancelBid buy setSalePrice setSalePrice
+bid bid cancelBid bid bid bid bid setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid cancelBid buy setSalePrice setSalePrice setSalePrice
+bid cancelBid buy setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer setSalePrice
+bid cancelBid
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+buy
+bid cancelBid setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+setSalePrice setSalePrice transfer
+bid cancelBid bid bid cancelBid bid cancelBid
+bid bid cancelBid setSalePrice acceptBid
+bid cancelBid buy setSalePrice setSalePrice setSalePrice
+cancelBid
+bid transfer
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid cancelBid bid cancelBid bid cancelBid bid cancelBid buy
+bid cancelBid buy setSalePrice setSalePrice
+setSalePrice acceptBid
+bid bid buy setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid cancelBid bid cancelBid bid cancelBid
+bid bid cancelBid bid bid bid cancelBid bid cancelBid
+bid bid bid bid bid bid
+bid bid cancelBid bid cancelBid buy setSalePrice setSalePrice setSalePrice
+bid bid bid bid bid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid cancelBid buy
+bid cancelBid bid setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid transfer setSalePrice setSalePrice
+setSalePrice transfer
+bid cancelBid setSalePrice setSalePrice setSalePrice
+buy setSalePrice setSalePrice transfer
+setSalePrice transfer transfer
+buy transfer
+bid cancelBid bid cancelBid bid setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid cancelBid bid setSalePrice
+bid bid bid bid cancelBid bid bid bid cancelBid bid bid
+bid cancelBid buy transfer bid cancelBid
+buy setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid cancelBid buy setSalePrice setSalePrice setSalePrice transfer
+bid bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid bid bid bid bid bid cancelBid bid cancelBid
+bid bid transfer
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice transfer acceptBid
+bid cancelBid bid bid
+bid bid bid bid bid bid bid bid bid cancelBid
+bid bid setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid setSalePrice setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid bid transfer
+bid cancelBid bid cancelBid bid cancelBid bid cancelBid bid cancelBid bid cancelBid bid cancelBid
+bid bid bid bid bid cancelBid bid cancelBid
+bid cancelBid bid cancelBid bid cancelBid bid cancelBid
+bid setSalePrice setSalePrice setSalePrice setSalePrice
+bid cancelBid bid bid bid bid bid cancelBid bid cancelBid
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid setSalePrice transfer
+bid cancelBid bid acceptBid
+setSalePrice bid cancelBid
+bid cancelBid bid setSalePrice setSalePrice setSalePrice
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid cancelBid buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+buy setSalePrice
+bid buy
+bid bid bid bid cancelBid bid cancelBid
+buy transfer bid cancelBid bid transfer bid transfer bid transfer bid transfer
+bid bid cancelBid bid setSalePrice
+buy setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
