@@ -218,7 +218,7 @@ async function filter(){
         }
         if(tx.input == ""||tx.input == "0x"){
             if(option.all || option.printTx)
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", " ", tx.isError=="0"?"success":"fail");
+                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", " ", (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
             if(option.all || option.printBlockNumber){
                 console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.blockNumber);
             }
@@ -243,14 +243,14 @@ async function filter(){
                     :""
                 )
                 , 
-                tx.isError=="0"?"success":"fail");
+                (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
             }
             if(option.all || option.printBlockNumber){
                     console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], HashMethodMap[tx.input.substring(0,10)].name, tx.blockNumber);
             }
         }else {
             if(option.all || option.printTx)
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from],"fallback", " ", tx.isError=="0"?"success":"fail");
+                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from],"fallback", " ",(tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
          
             if(option.all || option.printBlockNumber){
                 console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.blockNumber);

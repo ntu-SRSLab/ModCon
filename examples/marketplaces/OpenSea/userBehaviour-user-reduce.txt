@@ -4,71 +4,71 @@ bid
 cancelAuction
 ---------------------
 positive examples
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid createAuction cancelAuction
 createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
 createAuction cancelAuction createAuction bid
+createAuction bid createAuction cancelAuction
+createAuction cancelAuction
 createAuction cancelAuction createAuction bid createAuction
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction createAuction
-createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction
-createAuction bid
 createAuction cancelAuction createAuction bid
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction
 createAuction cancelAuction createAuction bid
-createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction
-createAuction cancelAuction createAuction bid
-createAuction bid createAuction cancelAuction
-createAuction bid createAuction cancelAuction
 createAuction cancelAuction createAuction bid
 createAuction bid
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction bid
-createAuction cancelAuction createAuction
 createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction bid createAuction cancelAuction createAuction bid
-createAuction bid createAuction cancelAuction
-createAuction bid createAuction
 createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid createAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction
-createAuction cancelAuction createAuction
 createAuction cancelAuction
 createAuction cancelAuction createAuction bid
 createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction bid createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid
 createAuction
-createAuction bid
+createAuction cancelAuction createAuction bid createAuction
+createAuction cancelAuction createAuction bid createAuction cancelAuction
+createAuction cancelAuction createAuction
+createAuction cancelAuction createAuction bid createAuction cancelAuction
 createAuction cancelAuction createAuction bid
+createAuction cancelAuction createAuction
+createAuction cancelAuction createAuction bid createAuction
+createAuction cancelAuction createAuction bid
+createAuction bid createAuction cancelAuction createAuction bid
 createAuction bid createAuction cancelAuction createAuction
 createAuction cancelAuction createAuction bid
+createAuction cancelAuction createAuction bid createAuction cancelAuction
+createAuction bid
 createAuction cancelAuction createAuction bid
+createAuction cancelAuction
+createAuction cancelAuction createAuction
+createAuction cancelAuction createAuction bid
+createAuction cancelAuction createAuction bid
+createAuction bid createAuction cancelAuction createAuction bid
+createAuction cancelAuction createAuction bid createAuction cancelAuction
+createAuction bid createAuction cancelAuction
+createAuction cancelAuction createAuction bid
+createAuction cancelAuction createAuction bid
+createAuction cancelAuction createAuction bid createAuction
+createAuction cancelAuction createAuction bid createAuction cancelAuction
+createAuction cancelAuction createAuction bid
+createAuction bid createAuction cancelAuction
+createAuction cancelAuction createAuction bid
+createAuction cancelAuction
+createAuction cancelAuction createAuction
+createAuction bid
+createAuction cancelAuction
+createAuction bid createAuction cancelAuction
+createAuction cancelAuction
+createAuction cancelAuction createAuction bid createAuction cancelAuction
+createAuction cancelAuction
+createAuction cancelAuction createAuction bid createAuction cancelAuction
+createAuction cancelAuction createAuction bid createAuction cancelAuction
 createAuction cancelAuction createAuction
 createAuction cancelAuction createAuction bid createAuction cancelAuction
+createAuction bid createAuction
+createAuction bid
+createAuction cancelAuction createAuction bid createAuction cancelAuction
+createAuction cancelAuction createAuction bid createAuction cancelAuction
+createAuction cancelAuction
+createAuction cancelAuction createAuction bid createAuction
+createAuction bid createAuction cancelAuction
+createAuction cancelAuction createAuction bid createAuction cancelAuction createAuction
+createAuction cancelAuction createAuction bid
+createAuction cancelAuction createAuction bid
+createAuction cancelAuction createAuction bid
+createAuction cancelAuction createAuction bid
+createAuction cancelAuction createAuction bid

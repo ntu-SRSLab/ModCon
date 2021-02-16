@@ -166,8 +166,13 @@ async function filter(){
     let gameIdCntr = 1;
     let Methods = new Map();
     let MethodCount = 0;
+    if (option.printTxHash){
+        console.log(json.result[0].hash)
+    }
     for(let tx of json.result.slice(1)){
-        // console.log(tx.input, tx.input.substring(0,11));
+        if (option.printTxHash){
+            console.log(tx.hash)
+        }
         Users.add(tx.from);
         if (undefined == UserIdMap[tx.from]){
             // assert(tx.from != creator);
@@ -176,9 +181,9 @@ async function filter(){
         }
         if(tx.input == ""||tx.input == "0x"){
             if(option.all || option.printTx)
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.isError=="0"?"success":"fail");
+                console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", (tx.isError=="0" && tx.txreceipt_status!="0") ?"success":"fail");
             if(option.all || option.printBlockNumber){
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.blockNumber);
+                console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.blockNumber);
             }
         }
         else if (HashMethodMap[tx.input.substring(0,10)]){
@@ -194,31 +199,31 @@ async function filter(){
                      let n = input.addresses.length;
                      let punkIndices = input.indices;  
                      for(let i=0; i<n; i++){
-                        console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
+                        console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
                         "setInitialOwner" + " "
                         +
                         punkIndices[i]
                         , 
-                        tx.isError=="0"?"success":"fail");
+                        (tx.isError=="0" && tx.txreceipt_status!="0") ?"success":"fail");
                      } 
                 }else{
-                    console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
+                    console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
                     HashMethodMap[tx.input.substring(0,10)].name + " "
                     +
                     (input!=undefined? (input.punkIndex != undefined? input.punkIndex:""):"")
                     , 
-                    tx.isError=="0"?"success":"fail");
+                    (tx.isError=="0" && tx.txreceipt_status!="0") ?"success":"fail");
                 }
             }
             if(option.all || option.printBlockNumber){
-                    console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], HashMethodMap[tx.input.substring(0,10)].name, tx.blockNumber);
+                    console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from], HashMethodMap[tx.input.substring(0,10)].name, tx.blockNumber);
             }
         }else {
             if(option.all || option.printTx)
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from],"fallback", tx.isError=="0"?"success":"fail");
+                console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from],"fallback",    (tx.isError=="0" && tx.txreceipt_status!="0") ?"success":"fail");
          
             if(option.all || option.printBlockNumber){
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.blockNumber);
+                console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.blockNumber);
         }
         }
     }
@@ -236,6 +241,7 @@ async function main(){
                       \n--tx  print only transactions information
                       \n--user  print only users statistics
                       \n--abi  print contract ABI
+                      \n--txHash print only transaction hashes
                       \n--bn  print blocknumber`;
     if (args.length==0){
         option.all = true;
@@ -265,6 +271,10 @@ async function main(){
           }   
           case "--bn":{
             option.printBlockNumber = true;
+            break;
+          } 
+          case "--txHash":{
+            option.printTxHash = true;
             break;
           } 
           default:{

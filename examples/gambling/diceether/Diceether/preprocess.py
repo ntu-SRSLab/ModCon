@@ -1,5 +1,6 @@
 import sys
 import numpy as np
+import pandas as pd 
 # preprocess data
 def combine_words(input,length):
     if len(input) == 1:
@@ -70,6 +71,18 @@ def reduce_trace(input_file):
     # pass
     return outputs
 
+def augment_trace(input_file):
+    outputs = []
+    with open(input_file, encoding="utf-8") as f: 
+            lines = f.readlines()
+            for line in lines:
+                if line.strip()=="positive examples":
+                    outputs.append(line.strip())
+                    continue
+                trace = line.strip().split(" ")
+                for i in range(1,len(trace)+1):
+                    outputs.append(" ".join(trace[:i]))
+    return outputs
 
 def tuplize_result(line):
     arr = line.strip().split(" ")
@@ -82,6 +95,10 @@ def tuplize_bn(line):
 def tuplize_session(line):
     arr = line.strip().split(" ")
     return arr[0], arr[1], arr[-2],1 if arr[-1]=="success" else 0
+
+def tuplize_ether_session(line):
+    arr = line.strip().split(" ")
+    return arr[0], arr[1], arr[2], arr[-2],1 if arr[-1]=="success" else 0
 
 
 # get trace from result.txt 
@@ -98,17 +115,15 @@ def get_trace_from_result(input_file):
         return userTraces
 
 
-
-
 def test_kmeans(input_matrix_file):
-    import pandas as pd 
+   
     from sklearn.cluster import KMeans
     csvdata = pd.read_csv(input_matrix_file, sep=" ")
-    # print(csvdata)
+    print(csvdata)
     X = csvdata.to_numpy()[:,1:]
     print(X)
-    SIZE = 3
-    kmeans = KMeans(n_clusters=SIZE, random_state=10).fit(X)
+    SIZE = 2
+    kmeans = KMeans(n_clusters=SIZE, random_state=0).fit(X)
     users = csvdata.to_numpy()[:,0]
     labels = kmeans.labels_
     
@@ -161,9 +176,25 @@ def get_session_statistics(input_file):
             for pair in pairs:
                 user, function = tuple(pair.split("-"))
                 trace.append(function)
-            traces.add(" ".join(trace))
+            strTrace = " ".join(trace)
+            # traces.add(strTrace)
+            ### translate 
+            strTrace = strTrace.replace("createGame", "createSession deposit").replace("userCancelActiveGame","withdraw").replace("serverCancelActiveGame","clearSession").replace("serverForceGameEnd", "endSession").replace("serverEndGameConflict", "endSession").replace("serverEndGame", "endSession").replace("userEndGameConflict", "endSession")
+            # print(strTrace)
+            seq = strTrace.split(" ")
+            for i in range(1, len(seq)+1):
+                traces.add(" ".join(seq[:i]))
+            # traces.add(strTrace)
 
-        return used_methods, userVectors, traces, userSessions
+        game_structure = set()
+        game_structure.add("createSession")
+        game_structure.add("endSession")
+        game_structure.add("clearSession")
+        game_structure.add("deposit")
+        game_structure.add("withdraw")
+        game_structure.add("update")
+
+        return game_structure, used_methods, userVectors, traces, userSessions
 
 def getUserBehaviour(input_file):
     NORMAL_USER = 0
@@ -217,6 +248,43 @@ def get_trace_from_result_bySessionId(input_file):
                     gameIdTraceMap[session].append([user, function])
             return gameIdTraceMap
 
+def get_ether_trace_from_result_bySessionId(input_file):
+    with open(input_file) as f: 
+                gameIdTraceMap  = dict()
+                lines = f.readlines()[1:]
+                for line in lines:
+                    user, function, session, ether, status = tuplize_ether_session(line)
+                    if status ==1 and session!="":
+                        print(user, function ,session, ether)
+                        if session not in gameIdTraceMap:
+                            gameIdTraceMap[session] = list()
+                        if ether!="":
+                            gameIdTraceMap[session].append([user, function, ether])
+                        else: 
+                            gameIdTraceMap[session].append([user, function])
+                return gameIdTraceMap
+
+def get_user_permission_matrix(input_file):
+    with open(input_file) as f: 
+                userFunctions = dict()
+                lines = f.readlines()[1:]
+                functions = set()
+                for line in lines:
+                    user, function, session, ether, status = tuplize_ether_session(line)
+                    if status == 1:
+                        functions.add(function)
+                        if user not in userFunctions:
+                            userFunctions[user] = set()
+                        userFunctions[user].add(function)
+                
+                title = [[function for function in functions]]
+                matrix = [ [1 if function in userFunctions[user] else 0 for function in functions]  for user in userFunctions ]
+                df =  pd.DataFrame(np.array(matrix), columns=title)
+                userLabels = [ user for user in userFunctions]
+                return userLabels, df
+
+                
+
 def get_duration_from_tracebn(input_file):
     with open(input_file) as f: 
         userDurations  = dict()
@@ -259,6 +327,9 @@ cmdOpt = '''--------------------------------------------------------------
     --session_statistics_traces  get traces summary information about session
     --user_behaviour  get behavior traces of different users
     --cluster  cluster users 
+    --trace_reduce
+    --ether_session extract ether trace by session from transaction result
+    --permission  get user permission matrix
         '''
 
 if __name__ == "__main__":
@@ -290,6 +361,9 @@ if __name__ == "__main__":
             elif args[i] == "--session":
                 options["session"] = True 
                 i += 1
+            elif args[i] == "--ether_session":
+                options["ether_session"] = True 
+                i += 1
             elif args[i] == "--session_statistics":
                 options["session_statistics"] = True 
                 i += 1
@@ -304,6 +378,12 @@ if __name__ == "__main__":
                 i += 1
             elif args[i] == "--trace_reduce":
                 options["trace_reduce"] = True 
+                i += 1
+            elif args[i] == "--trace_augment":
+                options["trace_augment"] = True 
+                i += 1
+            elif args[i] == "--permission":
+                options["permission"] = True 
                 i += 1
             else:
                 print("wrong program input; program input should be: ")
@@ -353,21 +433,30 @@ if __name__ == "__main__":
                     f.write("%s %s\n" %(gameId, " ".join([ pair[0]+"-"+pair[1] for pair in gameIdTraceMap[gameId]])))
 
     if "session_statistics" in options:
-        used_methods,  userVectors, traces, userSessions = get_session_statistics(options["input"])
+        _, used_methods,  userVectors, traces, userSessions = get_session_statistics(options["input"])
         if "output" in options:
             # print all user traces
             with open(options["output"], "w") as f:
-                f.write("user "+" ".join(used_methods)+" session_count\n")
+                f.write("user "+" ".join(used_methods)+" iscreator isConfiguredAddress isExternalTokenOwner\n")
                 for user in userVectors:
-                    f.write("%s %s %s\n" %(user, " ".join(map(lambda val: str(val), userVectors[user])), str(len(userSessions[user]))))
+                    f.write("%s %s %s %s %s\n" %(user, " ".join(map(lambda val: str(val), userVectors[user])), str(3 if user=="creator" else 0), str(3 if user=="user2" else 0), str(0)))
+
+                # nums = [ len(userSessions[user]) for user in userVectors]
+                # HigherAvg = np.average(np.ma.masked_greater(nums, np.max(nums)/2))
+                # maxNum =  np.max(nums)
+                # print("higherAvg:" ,  HigherAvg)
+                # for user in userVectors:
+                #     f.write("%s %s %s\n" %(user, " ".join(map(lambda val: str(val), userVectors[user])), str(3 if len(userSessions[user])> 2*maxNum/3 else 1 if len(userSessions[user])> 1*maxNum/3 else 0)))
     
     if "session_statistics_traces" in options:
-        used_methods,  userVectors, traces, userSessions = get_session_statistics(options["input"])
+        gamestructure , used_methods,  userVectors, traces, userSessions = get_session_statistics(options["input"])
         if "output" in options:
             # print all user traces
             with open(options["output"], "w") as f:
                 f.write("alphabet\n")
                 f.write("\n".join(used_methods))
+                f.write("\n")
+                f.write("\n".join(gamestructure))
                 f.write("\n---------------------\n")
                 f.write("positive examples\n")
                 f.write("\n".join(traces))
@@ -404,3 +493,29 @@ if __name__ == "__main__":
             with open(options["output"], "w", encoding="utf-8") as fo:
                 fo.write( "\n".join(outputs))
             pass   
+    
+    if "ether_session" in options:
+        gameIdTraceMap = get_ether_trace_from_result_bySessionId(options["input"])
+        if "output" in options:
+            # print all user traces
+            with open(options["output"], "w") as f:
+                f.write("session  user-function-ether user-function-ether  user-function-ether ...\n")
+                for gameId in gameIdTraceMap:
+                    f.write("%s %s\n" %(gameId, " ".join([ ":".join(pair) for pair in gameIdTraceMap[gameId]])))
+
+    
+    if "trace_augment" in options:
+        outputs = augment_trace(options["input"])
+        print(outputs)
+        if "output" in options:
+            with open(options["output"], "w", encoding="utf-8") as fo:
+                fo.write( "\n".join(outputs))
+            pass   
+      
+    if "permission" in options:
+        userLabels, df = get_user_permission_matrix(options["input"])
+        if "output" in options:
+            with open(options["output"], "w", encoding="utf-8") as fo:
+                df.to_csv(options["output"], index=False) 
+            with open("userLabel.txt", "w", encoding="utf-8") as fo:
+                fo.write("\n".join(userLabels))

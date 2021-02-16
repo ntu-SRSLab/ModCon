@@ -1,0 +1,1 @@
+node filterTx.js --tx > txResult.txt 

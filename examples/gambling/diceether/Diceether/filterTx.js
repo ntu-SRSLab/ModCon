@@ -1,10 +1,11 @@
 const { assert } = require("console");
 const fs = require("fs");
 const web3 = require("web3-eth-abi");
+const web3util = require("web3-utils");
 const request = require('request');
 const sleep = require('sleep');
 const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require("constants");
-const { exit } = require("process");
+const { exit, rawListeners } = require("process");
 var HashMethodMap = new Map();
 
 String.prototype.format = function() {
@@ -143,7 +144,13 @@ async function filter(){
     let gameIdCntr = 1;
     let Methods = new Map();
     let MethodCount = 0;
+    if (option.printTxHash){
+        console.log(json.result[0].hash)
+    }
     for(let tx of json.result.slice(1)){
+        if (option.printTxHash){
+            console.log(tx.hash)
+        }
         // console.log(tx.input, tx.input.substring(0,11));
         Users.add(tx.from);
         if (undefined == UserIdMap[tx.from]){
@@ -153,7 +160,7 @@ async function filter(){
         }
         if(tx.input == ""||tx.input == "0x"){
             if(option.all || option.printTx)
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.isError=="0"?"success":"fail");
+                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback",  (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
             if(option.all || option.printBlockNumber){
                 console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.blockNumber);
             }
@@ -174,21 +181,77 @@ async function filter(){
                 HashMethodMap[tx.input.substring(0,10)].name.indexOf("CancelActiveGame")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._gameId:
                 "")
                 , 
-                tx.isError=="0"?"success":"fail");
+                (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
             }
+
+            if (option.all || option.ether){
+                let args;
+                try{
+                    args  = web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))
+                }catch(err){
+                    console.err(err);
+                    throw err;
+                }
+                if (args && args._balance){
+                    console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
+                    HashMethodMap[tx.input.substring(0,10)].name + " " +(
+                    HashMethodMap[tx.input.substring(0,10)].name == "createGame"? (tx.isError=="0"?gameIdCntr++: "failure"):
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("EndGame")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._gameId:
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("ForceGameEnd")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._gameId:
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("CancelActiveGame")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._gameId:
+                    "")
+                    ,
+                    web3util.fromWei(args._balance,"ether")+"ether"
+                    , 
+                    (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
+                }else if (tx.value!="0") {
+                    console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
+                    HashMethodMap[tx.input.substring(0,10)].name + " " +(
+                    HashMethodMap[tx.input.substring(0,10)].name == "createGame"? (tx.isError=="0"?gameIdCntr++: "failure"):
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("EndGame")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._gameId:
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("ForceGameEnd")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._gameId:
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("CancelActiveGame")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._gameId:
+                    "")
+                    ,
+                    web3util.fromWei(tx.value, "ether")+"ether"
+                    , 
+                    (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
+                }
+                else{
+                    console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
+                    HashMethodMap[tx.input.substring(0,10)].name + " " +(
+                    HashMethodMap[tx.input.substring(0,10)].name == "createGame"? (tx.isError=="0"?gameIdCntr++: "failure"):
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("EndGame")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._gameId:
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("ForceGameEnd")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._gameId:
+                    HashMethodMap[tx.input.substring(0,10)].name.indexOf("CancelActiveGame")!=-1?web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10))._gameId:
+                    "")
+                    ,
+                    " "
+                    , 
+                    (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
+                }
+                
+            }
+
             if(option.all || option.printBlockNumber){
                     console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], HashMethodMap[tx.input.substring(0,10)].name, tx.blockNumber);
             }
         }else {
             if(option.all || option.printTx)
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from],"fallback", tx.isError=="0"?"success":"fail");
+                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from],"fallback", (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
          
             if(option.all || option.printBlockNumber){
                 console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.blockNumber);
         }
         }
     }
-    if(option.all || option.printUser){
+    if(option.printUser){
+        console.log("user\taddress");
+        for (let address of Object.keys(UserIdMap)){
+            console.log("user{0}\t{1}".format(UserIdMap[address], address));
+        }
+    }
+    if(option.all || option.printStatistics){
         console.log("totally ",Users.size, " users");
         console.log("totally ", MethodCount, " different functions are invoked");
         console.log("functions: ", Methods);
@@ -200,9 +263,12 @@ async function main(){
     let optionHelp = `\n--help  usage instruction
                       \n--all  print all information
                       \n--tx  print only transactions information
-                      \n--user  print only users statistics
+                      \n--user  print users address mapping
+                      \n--statistics  print only statistics
                       \n--abi  print contract ABI
-                      \n--bn  print blocknumber`;
+                      \n--bn  print blocknumber
+                      \n--txHash print only transaction hashes
+                      \n--ether print ether flow`;
     if (args.length==0){
         option.all = true;
     }
@@ -225,12 +291,24 @@ async function main(){
             option.printUser = true;
             break;
           }
+          case "--statistics":{
+            option.printStatistics = true;
+            break;
+          }
           case "--abi":{
             option.printABI = true;
             break;
           }   
           case "--bn":{
             option.printBlockNumber = true;
+            break;
+          } 
+          case "--txHash":{
+            option.printTxHash = true;
+            break;
+          } 
+          case "--ether":{
+            option.ether = true;
             break;
           } 
           default:{

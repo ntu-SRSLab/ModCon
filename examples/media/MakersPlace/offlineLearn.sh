@@ -4,8 +4,8 @@ workdir=$(pwd)
 
 cd /home/liuye/Projects/MachineLearning/learnlib-demo/target/
 
-# files=("sessionTraceSummary-reduce" "userBehaviour-user-reduce" "userBehaviour-admin-reduce")
 files=(userBehaviour-admin-reduce userBehaviour-user-reduce)
+files=(sessionTraceSummaryAugmented)
 for file in ${files[@]};
 do 
     echo $file

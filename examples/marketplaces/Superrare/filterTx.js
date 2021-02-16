@@ -163,7 +163,7 @@ async function filter(){
     UserIdMap[creator] = id;
     id++;
     // assert(UserIdMap[creator] == 0, UserIdMap[creator] +" "+ creator);
-    let gameIdCntr = 1;
+    let tokenIdCntr = 1;
     let Methods = new Map();
     let MethodCount = 0;
     for(let tx of json.result.slice(1)){
@@ -176,7 +176,7 @@ async function filter(){
         }
         if(tx.input == ""||tx.input == "0x"){
             if(option.all || option.printTx)
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.isError=="0"?"success":"fail");
+                console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback",  (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
             if(option.all || option.printBlockNumber){
                 console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.blockNumber);
             }
@@ -191,23 +191,52 @@ async function filter(){
             if(option.all || option.printTx){
                 let input;
                 try{
-                 input = web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10));
+                    input = web3.decodeParameters(HashMethodMap[tx.input.substring(0,10)].inputs, "0x"+tx.input.slice(10));
                 }catch(err){
                     input = undefined;
                 }
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
-                HashMethodMap[tx.input.substring(0,10)].name + " "
-                +
-                (input!=undefined? (input._tokenId != undefined? input._tokenId:""):"")
-                , 
-                tx.isError=="0"?"success":"fail");
+                if ( HashMethodMap[tx.input.substring(0,10)].name == "addNewToken"){
+                    console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
+                    HashMethodMap[tx.input.substring(0,10)].name + " "
+                    +
+                    (tokenIdCntr++)
+                    , 
+                    (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
+                    if (false == (tx.isError=="0" && tx.txreceipt_status!="0")){
+                        tokenIdCntr --;
+                    }
+                }else if (HashMethodMap[tx.input.substring(0,10)].name == "addNewTokenWithEditions"){
+                    let editions = parseInt(input._editions);
+                    for (let i=0; i<=editions; i++){
+                        console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
+                        "addNewToken" + " "
+                        +
+                        (tokenIdCntr++)
+                        , 
+                        (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
+                        if (false == (tx.isError=="0" && tx.txreceipt_status!="0")){
+                            tokenIdCntr --;
+                        }
+                    }
+                }
+                else {
+                    console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from], 
+                    HashMethodMap[tx.input.substring(0,10)].name + " "
+                    +
+                    (input!=undefined? (input._tokenId != undefined? input._tokenId:""):"")
+                    , 
+                    (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
+                    // if ((tx.isError=="0" && tx.txreceipt_status!="0") && (HashMethodMap[tx.input.substring(0,10)].name == "acceptBid" || HashMethodMap[tx.input.substring(0,10)].name == "buy" || HashMethodMap[tx.input.substring(0,10)].name == "transfer") ){
+                    //     tokenIdCntr --;
+                    // }
+                }
             }
             if(option.all || option.printBlockNumber){
                     console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], HashMethodMap[tx.input.substring(0,10)].name, tx.blockNumber);
             }
         }else {
             if(option.all || option.printTx)
-                console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from],"fallback", tx.isError=="0"?"success":"fail");
+                console.log(tx.hash, tx.from==creator?"creator":"user"+UserIdMap[tx.from],"fallback",  (tx.isError=="0" && tx.txreceipt_status!="0")?"success":"fail");
          
             if(option.all || option.printBlockNumber){
                 console.log(tx.from==creator?"creator":"user"+UserIdMap[tx.from], "fallback", tx.blockNumber);

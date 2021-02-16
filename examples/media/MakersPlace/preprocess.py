@@ -70,6 +70,20 @@ def reduce_trace(input_file):
     # pass
     return outputs
 
+def augment_trace(input_file):
+    outputs = []
+    with open(input_file, encoding="utf-8") as f: 
+            lines = f.readlines()
+            for line in lines:
+                if line.strip()=="positive examples":
+                    outputs.append(line.strip())
+                    continue
+                trace = line.strip().split(" ")
+                for i in range(1,len(trace)+1):
+                    outputs.append(" ".join(trace[:i]))
+    return outputs
+
+
 def tuplize_result(line):
     arr = line.strip().split(" ")
     return arr[0], arr[1], 1 if arr[-1]=="success" else 0
@@ -161,6 +175,33 @@ def get_session_statistics(input_file):
 
         return used_methods, userVectors, traces, userSessions
 
+
+def getUserInteractionBehavior(input_file, typeA, typeB, admin_set):
+    def isTypeA(user):
+        # print(user)
+        if typeA=="admin":
+            return user in set(admin_set)
+        else:
+            return user not in set(admin_set)
+    def isTypeB(user):
+        if typeB=="admin":
+            return user in set(admin_set)
+        else:
+            return user not in set(admin_set)
+    traces = set()
+    with open(input_file) as f:
+        sessions = f.readlines()[1:]
+        for session in sessions:
+            pairs = session.strip("\n").split(" ")[1:]
+            for i in range(0,len(pairs)-1):
+                pair1 = pairs[i]
+                pair2 = pairs[i+1] 
+                user1, function1 = tuple(pair1.split("-"))
+                user2, function2 = tuple(pair2.split("-"))
+                if user1!=user2 and isTypeA(user1) and isTypeB(user2):
+                    traces.add(" ".join([function1, function2]))
+    return traces
+
 def getUserBehaviour(input_file):
     NORMAL_USER = 0
     SERVER_USER = 1
@@ -180,8 +221,8 @@ def getUserBehaviour(input_file):
             for pair in pairs:
                 user, function = tuple(pair.split("-"))
                 if user not in roles:
-                    # roles[user] = NORMAL_USER if user not in set(["user2",  "user239","user353"]) else SERVER_USER
-                    roles[user] = NORMAL_USER if user not in set(["user3"]) else SERVER_USER
+                    roles[user] = NORMAL_USER if user not in set(["user2",  "user239","user353"]) else SERVER_USER
+                    # roles[user] = NORMAL_USER if user not in set(["user3"]) else SERVER_USER
         user_traces = set()
         server_traces = set()
         for session in sessions:
@@ -337,6 +378,12 @@ if __name__ == "__main__":
             elif args[i] == "--user_behaviour":
                 options["user_behaviour"] = True 
                 i += 1
+            elif args[i] == "--trace_augment":
+                options["trace_augment"] = True 
+                i += 1
+            elif args[i] == "--user_interact":
+                options["user_interact"] = True 
+                i += 1
             else:
                 print("wrong program input; program input should be: ")
                 print(cmdOpt)
@@ -424,4 +471,20 @@ if __name__ == "__main__":
         if "output" in options:
             with open(options["output"], "w", encoding="utf-8") as fo:
                 fo.write( "\n".join(outputs))
-            pass   
+    
+    if "trace_augment" in options:
+        outputs = augment_trace(options["input"])
+        print(outputs)
+        if "output" in options:
+            with open(options["output"], "w", encoding="utf-8") as fo:
+                fo.write( "\n".join(outputs))
+
+    if "user_interact" in options:
+        typeA = "admin"
+        typeB = "admin"
+        admin_set = set(["user2", "user3",  "user239","user353"]) 
+        outputs = getUserInteractionBehavior(options["input"], typeA, typeB, admin_set)
+        print(outputs)
+        if "output" in options:
+            with open(options["output"], "w", encoding="utf-8") as fo:
+                fo.write( "\n".join(outputs))

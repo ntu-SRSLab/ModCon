@@ -1,74 +1,18 @@
 alphabet
-createAuction
+update
 bid
+deposit
+createSession
+createAuction
+clearSession
+withdraw
+endSession
 cancelAuction
 ---------------------
 positive examples
-createAuction bid createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction
-createAuction cancelAuction createAuction
-createAuction cancelAuction createAuction
-createAuction cancelAuction createAuction bid
-createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction
-createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction
-createAuction cancelAuction createAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction bid createAuction cancelAuction createAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction createAuction
-createAuction bid createAuction
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction
-createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid createAuction
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction bid createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid createAuction
-createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction bid
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid
-createAuction bid createAuction cancelAuction
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction bid
-createAuction cancelAuction createAuction bid
-createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction cancelAuction
-createAuction cancelAuction createAuction bid createAuction
-createAuction cancelAuction createAuction bid
-createAuction bid createAuction cancelAuction
-createAuction
-createAuction cancelAuction createAuction bid
+createSession endSession
+createSession endSession
+createSession
+createSession deposit
+endSession
+endSession

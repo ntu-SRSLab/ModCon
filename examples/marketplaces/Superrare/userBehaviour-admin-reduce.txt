@@ -1,87 +1,80 @@
 alphabet
-acceptBid
-transfer
 buy
 setSalePrice
-cancelBid
 bid
+acceptBid
+addNewToken
+transfer
+cancelBid
 ---------------------
 positive examples
-bid transfer
+bid cancelBid buy setSalePrice
 setSalePrice
-buy setSalePrice transfer
-setSalePrice transfer acceptBid
-setSalePrice acceptBid
-setSalePrice acceptBid
-setSalePrice
-bid
-setSalePrice transfer setSalePrice acceptBid
-setSalePrice acceptBid
-setSalePrice
-setSalePrice acceptBid
-setSalePrice transfer
-bid cancelBid bid transfer
-bid setSalePrice
-setSalePrice transfer
-bid setSalePrice
-setSalePrice
-setSalePrice acceptBid
-setSalePrice
-setSalePrice transfer setSalePrice
-setSalePrice transfer
-setSalePrice
-setSalePrice bid setSalePrice acceptBid
-setSalePrice transfer
-setSalePrice acceptBid
-transfer
-setSalePrice acceptBid
-acceptBid bid
-bid cancelBid bid transfer
-bid cancelBid
-setSalePrice acceptBid setSalePrice
-setSalePrice transfer
-setSalePrice transfer
-buy transfer
 setSalePrice transfer
 bid cancelBid setSalePrice transfer
-bid
-transfer bid
-setSalePrice transfer
-setSalePrice transfer
-acceptBid
-setSalePrice acceptBid
-bid transfer
-setSalePrice transfer setSalePrice
-bid acceptBid
-bid setSalePrice acceptBid
-acceptBid
 bid cancelBid
-bid setSalePrice
-setSalePrice
-bid setSalePrice
-bid setSalePrice
-acceptBid transfer
-bid transfer
 setSalePrice acceptBid
 setSalePrice acceptBid
-bid setSalePrice
-bid cancelBid bid setSalePrice transfer
-bid cancelBid setSalePrice transfer
-setSalePrice acceptBid
-setSalePrice acceptBid
+addNewToken setSalePrice bid setSalePrice acceptBid
+addNewToken setSalePrice acceptBid
 bid setSalePrice transfer
 setSalePrice
-bid cancelBid
-setSalePrice
-bid
-setSalePrice transfer
-setSalePrice bid setSalePrice
-transfer bid
+setSalePrice acceptBid
+setSalePrice acceptBid
+addNewToken setSalePrice
+addNewToken setSalePrice acceptBid
 buy setSalePrice
-buy
-transfer acceptBid
+setSalePrice
 setSalePrice transfer
+setSalePrice transfer
+buy setSalePrice transfer
+bid cancelBid bid setSalePrice
+setSalePrice transfer
+bid cancelBid setSalePrice transfer
+buy
 bid setSalePrice
 setSalePrice
+addNewToken setSalePrice acceptBid
+acceptBid
+addNewToken acceptBid
+addNewToken setSalePrice transfer
+setSalePrice transfer
+setSalePrice
+buy setSalePrice
+bid
+transfer
+setSalePrice
+bid setSalePrice
+setSalePrice transfer
+setSalePrice transfer
+setSalePrice
+setSalePrice
+setSalePrice
+bid buy setSalePrice
+addNewToken transfer
+bid cancelBid bid setSalePrice transfer
+buy setSalePrice
+bid setSalePrice
+bid setSalePrice
+bid transfer
+setSalePrice
+addNewToken setSalePrice acceptBid
+bid
+bid
+setSalePrice acceptBid
+setSalePrice
+bid setSalePrice
+setSalePrice transfer
 bid setSalePrice acceptBid
+buy setSalePrice
+bid acceptBid
+setSalePrice
+setSalePrice
+setSalePrice acceptBid
+addNewToken setSalePrice
+acceptBid
+buy transfer
+bid cancelBid
+addNewToken setSalePrice acceptBid
+bid setSalePrice
 setSalePrice

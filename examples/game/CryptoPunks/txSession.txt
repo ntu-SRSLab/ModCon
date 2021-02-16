@@ -9,7 +9,7 @@ session  user-function user-function  user-function ...
 7 creator-setInitialOwner user61-enterBidForPunk user5-enterBidForPunk user5-withdrawBidForPunk user664-enterBidForPunk user664-withdrawBidForPunk user214-enterBidForPunk user821-enterBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user334-enterBidForPunk user334-withdrawBidForPunk
 8 creator-setInitialOwner user61-enterBidForPunk user47-enterBidForPunk user107-enterBidForPunk user5-enterBidForPunk user5-withdrawBidForPunk user182-enterBidForPunk user182-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user803-enterBidForPunk user803-withdrawBidForPunk user334-enterBidForPunk user334-withdrawBidForPunk
 9 creator-setInitialOwner user61-enterBidForPunk user44-enterBidForPunk user44-withdrawBidForPunk user5-enterBidForPunk user5-withdrawBidForPunk user3-enterBidForPunk user3-withdrawBidForPunk user3-enterBidForPunk user3-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user673-enterBidForPunk user673-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user664-enterBidForPunk user664-withdrawBidForPunk user815-enterBidForPunk user815-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk
-10 creator-setInitialOwner user61-enterBidForPunk user47-enterBidForPunk user5-enterBidForPunk user5-withdrawBidForPunk user5-enterBidForPunk user5-withdrawBidForPunk user360-getPunk
+10 creator-setInitialOwner user61-enterBidForPunk user47-enterBidForPunk user5-enterBidForPunk user5-withdrawBidForPunk user5-enterBidForPunk user5-withdrawBidForPunk
 11 creator-setInitialOwner
 12 creator-setInitialOwner user47-enterBidForPunk user664-enterBidForPunk user664-withdrawBidForPunk
 13 creator-setInitialOwner user47-enterBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user664-enterBidForPunk user664-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk
@@ -279,7 +279,7 @@ session  user-function user-function  user-function ...
 277 creator-setInitialOwner
 278 creator-setInitialOwner
 279 creator-setInitialOwner user47-enterBidForPunk
-280 creator-setInitialOwner user94-enterBidForPunk user47-enterBidForPunk user94-enterBidForPunk user47-enterBidForPunk creator-offerPunkForSale user18-buyPunk user177-acceptBidForPunk user18-acceptBidForPunk user980-enterBidForPunk
+280 creator-setInitialOwner user94-enterBidForPunk user47-enterBidForPunk user94-enterBidForPunk user47-enterBidForPunk creator-offerPunkForSale user18-buyPunk user18-acceptBidForPunk user980-enterBidForPunk
 281 creator-setInitialOwner user3-enterBidForPunk user94-enterBidForPunk user3-enterBidForPunk user94-enterBidForPunk creator-acceptBidForPunk user20-enterBidForPunk user20-withdrawBidForPunk user520-enterBidForPunk user520-withdrawBidForPunk user716-enterBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk
 282 creator-setInitialOwner
 283 creator-setInitialOwner user94-enterBidForPunk user47-enterBidForPunk
@@ -837,7 +837,7 @@ session  user-function user-function  user-function ...
 835 creator-setInitialOwner
 836 creator-setInitialOwner creator-offerPunkForSale user47-enterBidForPunk user47-withdrawBidForPunk user78-enterBidForPunk user101-buyPunk
 837 creator-setInitialOwner
-838 creator-setInitialOwner user47-enterBidForPunk user61-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user47-enterBidForPunk user94-enterBidForPunk user59-enterBidForPunk creator-acceptBidForPunk user59-offerPunkForSale user58-enterBidForPunk user58-withdrawBidForPunk user59-offerPunkForSale user58-enterBidForPunk user171-buyPunk user58-withdrawBidForPunk user189-enterBidForPunk user189-withdrawBidForPunk user177-transferPunk user171-transferPunk user413-enterBidForPunk user18-transferPunk user711-transferPunk user413-withdrawBidForPunk
+838 creator-setInitialOwner user47-enterBidForPunk user61-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user47-enterBidForPunk user94-enterBidForPunk user59-enterBidForPunk creator-acceptBidForPunk user59-offerPunkForSale user58-enterBidForPunk user58-withdrawBidForPunk user59-offerPunkForSale user58-enterBidForPunk user171-buyPunk user58-withdrawBidForPunk user189-enterBidForPunk user189-withdrawBidForPunk user171-transferPunk user413-enterBidForPunk user18-transferPunk user711-transferPunk user413-withdrawBidForPunk
 839 creator-setInitialOwner
 840 creator-setInitialOwner
 841 creator-setInitialOwner
@@ -930,7 +930,7 @@ session  user-function user-function  user-function ...
 928 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk
 929 creator-setInitialOwner user664-enterBidForPunk user664-withdrawBidForPunk
 930 creator-setInitialOwner
-931 creator-setInitialOwner user47-enterBidForPunk user59-enterBidForPunk creator-acceptBidForPunk user59-offerPunkForSale user58-enterBidForPunk user58-withdrawBidForPunk user59-offerPunkForSale user171-buyPunk user177-transferPunk user171-transferPunk user18-transferPunk user58-transferPunk user18-transferPunk user711-transferPunk
+931 creator-setInitialOwner user47-enterBidForPunk user59-enterBidForPunk creator-acceptBidForPunk user59-offerPunkForSale user58-enterBidForPunk user58-withdrawBidForPunk user59-offerPunkForSale user171-buyPunk user171-transferPunk user18-transferPunk user58-transferPunk user18-transferPunk user711-transferPunk
 932 creator-setInitialOwner
 933 creator-setInitialOwner
 934 creator-setInitialOwner creator-transferPunk user1425-enterBidForPunk
@@ -1019,7 +1019,7 @@ session  user-function user-function  user-function ...
 1017 creator-setInitialOwner
 1018 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk
 1019 creator-setInitialOwner
-1020 creator-setInitialOwner user58-offerPunkForSale user58-punkNoLongerForSale user58-offerPunkForSale user58-punkNoLongerForSale user175-buyPunk user320-enterBidForPunk user58-offerPunkForSale user58-punkNoLongerForSale user58-offerPunkForSale user58-punkNoLongerForSale user58-offerPunkForSale user58-offerPunkForSale user58-punkNoLongerForSale user58-transferPunk
+1020 creator-setInitialOwner user58-offerPunkForSale user58-punkNoLongerForSale user58-offerPunkForSale user58-punkNoLongerForSale user58-offerPunkForSale user58-punkNoLongerForSale user58-offerPunkForSale user58-punkNoLongerForSale user58-offerPunkForSale user58-offerPunkForSale user58-punkNoLongerForSale user58-transferPunk
 1021 creator-setInitialOwner user78-enterBidForPunk user273-enterBidForPunk user273-withdrawBidForPunk user788-enterBidForPunk user788-withdrawBidForPunk user917-enterBidForPunk user917-withdrawBidForPunk user917-enterBidForPunk user917-withdrawBidForPunk
 1022 creator-setInitialOwner user10-offerPunkForSale user10-offerPunkForSale user10-punkNoLongerForSale user10-offerPunkForSale user10-punkNoLongerForSale user10-transferPunk user138-transferPunk user205-transferPunk user714-offerPunkForSale user714-punkNoLongerForSale
 1023 creator-setInitialOwner user10-transferPunk user138-transferPunk user205-transferPunk
@@ -1115,7 +1115,7 @@ session  user-function user-function  user-function ...
 1113 creator-setInitialOwner user943-offerPunkForSale
 1114 creator-setInitialOwner
 1115 creator-setInitialOwner user4-transferPunk user809-enterBidForPunk user809-withdrawBidForPunk user1074-enterBidForPunk user134-offerPunkForSale user134-acceptBidForPunk user1297-enterBidForPunk user1297-withdrawBidForPunk
-1116 creator-setInitialOwner user38-transferPunk user78-enterBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-offerPunkForSale user357-buyPunk
+1116 creator-setInitialOwner user38-transferPunk user78-enterBidForPunk user59-offerPunkForSale user357-buyPunk
 1117 creator-setInitialOwner
 1118 creator-setInitialOwner user1017-enterBidForPunk user1017-withdrawBidForPunk
 1119 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user123-enterBidForPunk user123-withdrawBidForPunk user1422-enterBidForPunk user1484-enterBidForPunk user1484-withdrawBidForPunk
@@ -1169,7 +1169,7 @@ session  user-function user-function  user-function ...
 1167 creator-setInitialOwner
 1168 creator-setInitialOwner
 1169 creator-setInitialOwner
-1170 creator-setInitialOwner user59-offerPunkForSale user78-enterBidForPunk user59-punkNoLongerForSale user59-offerPunkForSale user314-enterBidForPunk user337-buyPunk user337-offerPunkForSale user315-buyPunk user315-transferPunk
+1170 creator-setInitialOwner user59-offerPunkForSale user78-enterBidForPunk user59-punkNoLongerForSale user59-offerPunkForSale user337-buyPunk user337-offerPunkForSale user315-buyPunk user315-transferPunk
 1171 creator-setInitialOwner
 1172 creator-setInitialOwner
 1173 creator-setInitialOwner
@@ -1255,7 +1255,7 @@ session  user-function user-function  user-function ...
 1253 creator-setInitialOwner
 1254 creator-setInitialOwner user123-offerPunkForSale user101-enterBidForPunk user123-acceptBidForPunk
 1255 creator-setInitialOwner
-1256 creator-setInitialOwner user185-offerPunkForSale user185-transferPunk user185-transferPunk user234-offerPunkForSale user234-offerPunkForSale user607-enterBidForPunk user607-withdrawBidForPunk user593-buyPunk user593-offerPunkForSale user754-buyPunk user754-transferPunk
+1256 creator-setInitialOwner user185-offerPunkForSale user185-transferPunk user234-offerPunkForSale user234-offerPunkForSale user607-enterBidForPunk user607-withdrawBidForPunk user593-buyPunk user593-offerPunkForSale user754-buyPunk user754-transferPunk
 1257 creator-setInitialOwner user59-offerPunkForSale user3-buyPunk user3-offerPunkForSale user78-enterBidForPunk user88-buyPunk
 1258 creator-setInitialOwner user71-offerPunkForSale user600-buyPunk
 1259 creator-setInitialOwner user47-enterBidForPunk user43-acceptBidForPunk
@@ -1505,7 +1505,7 @@ session  user-function user-function  user-function ...
 1504 creator-setInitialOwner
 1505 creator-setInitialOwner user59-offerPunkForSale user88-buyPunk
 1506 creator-setInitialOwner user1345-enterBidForPunk user1345-withdrawBidForPunk user1434-offerPunkForSale
-1507 creator-setInitialOwner user38-transferPunk user47-enterBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-offerPunkForSale user273-buyPunk user273-offerPunkForSale user273-offerPunkForSale user353-buyPunk
+1507 creator-setInitialOwner user38-transferPunk user47-enterBidForPunk user59-offerPunkForSale user273-buyPunk user273-offerPunkForSale user273-offerPunkForSale user353-buyPunk
 1508 creator-setInitialOwner user1-enterBidForPunk user78-enterBidForPunk user716-enterBidForPunk user716-withdrawBidForPunk
 1509 creator-setInitialOwner user7-offerPunkForSale user7-offerPunkForSale user781-buyPunk user781-offerPunkForSale user887-buyPunk
 1510 creator-setInitialOwner user112-enterBidForPunk user112-withdrawBidForPunk user712-enterBidForPunk user712-withdrawBidForPunk user712-enterBidForPunk user712-withdrawBidForPunk user1118-enterBidForPunk user79-transferPunk user1118-withdrawBidForPunk user1485-offerPunkForSale
@@ -1718,10 +1718,10 @@ session  user-function user-function  user-function ...
 1717 creator-setInitialOwner user13-offerPunkForSale user13-offerPunkForSale user13-offerPunkForSale
 1718 creator-setInitialOwner
 1719 creator-setInitialOwner
-1720 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-acceptBidForPunk user258-buyPunk
+1720 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user258-buyPunk
 1721 creator-setInitialOwner user357-enterBidForPunk user357-withdrawBidForPunk
 1722 creator-setInitialOwner user47-enterBidForPunk user4-transferPunk user712-enterBidForPunk user712-withdrawBidForPunk
-1723 creator-setInitialOwner user280-offerPunkForSale user296-enterBidForPunk user296-withdrawBidForPunk user296-withdrawBidForPunk user296-withdrawBidForPunk user298-buyPunk user296-withdrawBidForPunk user298-transferPunk
+1723 creator-setInitialOwner user280-offerPunkForSale user296-enterBidForPunk user296-withdrawBidForPunk user298-buyPunk user298-transferPunk
 1724 creator-setInitialOwner
 1725 creator-setInitialOwner
 1726 creator-setInitialOwner
@@ -1760,7 +1760,7 @@ session  user-function user-function  user-function ...
 1759 creator-setInitialOwner user47-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user47-enterBidForPunk user94-enterBidForPunk
 1760 creator-setInitialOwner user5-offerPunkForSale user5-punkNoLongerForSale user664-enterBidForPunk user5-acceptBidForPunk user664-offerPunkForSale user664-offerPunkForSale user712-enterBidForPunk user948-buyPunk user953-enterBidForPunk user953-withdrawBidForPunk
 1761 creator-setInitialOwner
-1762 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-acceptBidForPunk user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user473-buyPunk user473-transferPunk
+1762 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user473-buyPunk user473-transferPunk
 1763 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user303-buyPunk
 1764 creator-setInitialOwner user796-enterBidForPunk user1483-enterBidForPunk user1345-enterBidForPunk user1345-withdrawBidForPunk user1345-enterBidForPunk user663-enterBidForPunk user1345-enterBidForPunk user1073-enterBidForPunk user1297-enterBidForPunk user1297-withdrawBidForPunk user1073-enterBidForPunk user73-acceptBidForPunk
 1765 creator-setInitialOwner
@@ -1772,7 +1772,7 @@ session  user-function user-function  user-function ...
 1771 creator-setInitialOwner
 1772 creator-setInitialOwner
 1773 creator-setInitialOwner user664-enterBidForPunk user5-acceptBidForPunk user664-offerPunkForSale user664-transferPunk user720-offerPunkForSale user720-transferPunk user1107-offerPunkForSale user1107-offerPunkForSale user1107-offerPunkForSale user1107-offerPunkForSale user1107-offerPunkForSale user1107-offerPunkForSale user1107-offerPunkForSale user1142-buyPunk user1142-offerPunkForSale user674-enterBidForPunk user674-withdrawBidForPunk user1175-buyPunk user1175-offerPunkForSale user1375-buyPunk
-1774 creator-setInitialOwner user129-offerPunkForSale user214-enterBidForPunk user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user214-withdrawBidForPunk user214-withdrawBidForPunk user129-offerPunkForSale user343-buyPunk user343-enterBidForPunk
+1774 creator-setInitialOwner user129-offerPunkForSale user214-enterBidForPunk user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user214-withdrawBidForPunk user129-offerPunkForSale user343-buyPunk
 1775 creator-setInitialOwner user3-enterBidForPunk user3-withdrawBidForPunk user44-enterBidForPunk user44-withdrawBidForPunk user1000-enterBidForPunk
 1776 creator-setInitialOwner
 1777 creator-setInitialOwner
@@ -1780,7 +1780,7 @@ session  user-function user-function  user-function ...
 1779 creator-setInitialOwner
 1780 creator-setInitialOwner user39-offerPunkForSale user39-offerPunkForSale user39-offerPunkForSale user39-offerPunkForSale user39-offerPunkForSale user355-enterBidForPunk user355-withdrawBidForPunk user355-buyPunk user1246-enterBidForPunk user1337-enterBidForPunk user1246-enterBidForPunk user1143-enterBidForPunk user1423-enterBidForPunk user1337-enterBidForPunk user1423-enterBidForPunk user355-acceptBidForPunk
 1781 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user358-buyPunk user358-offerPunkForSale user1420-buyPunk user1421-enterBidForPunk user1420-offerPunkForSale user1421-withdrawBidForPunk user1032-enterBidForPunk user1032-withdrawBidForPunk user1421-enterBidForPunk user1347-buyPunk user1421-withdrawBidForPunk user1347-transferPunk
-1782 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-acceptBidForPunk user59-acceptBidForPunk user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user396-buyPunk user396-offerPunkForSale user396-offerPunkForSale user396-punkNoLongerForSale user396-offerPunkForSale user396-offerPunkForSale
+1782 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user396-buyPunk user396-offerPunkForSale user396-offerPunkForSale user396-punkNoLongerForSale user396-offerPunkForSale user396-offerPunkForSale
 1783 creator-setInitialOwner
 1784 creator-setInitialOwner user47-enterBidForPunk user73-offerPunkForSale user3-buyPunk user3-offerPunkForSale user47-withdrawBidForPunk user3-offerPunkForSale user3-offerPunkForSale user157-buyPunk user157-offerPunkForSale user803-buyPunk user803-offerPunkForSale user803-offerPunkForSale user803-offerPunkForSale user803-offerPunkForSale user803-offerPunkForSale user656-enterBidForPunk user656-withdrawBidForPunk user771-enterBidForPunk user803-offerPunkForSale user771-withdrawBidForPunk user771-buyPunk user771-offerPunkForSale user771-offerPunkForSale user771-punkNoLongerForSale
 1785 creator-setInitialOwner user23-offerPunkForSale user631-buyPunk
@@ -2057,7 +2057,7 @@ session  user-function user-function  user-function ...
 2058 creator-setInitialOwner
 2059 creator-setInitialOwner
 2060 creator-setInitialOwner
-2061 creator-setInitialOwner user59-offerPunkForSale user221-buyPunk user221-offerPunkForSale user221-offerPunkForSale user221-offerPunkForSale user221-offerPunkForSale user232-buyPunk user232-buyPunk user15-buyPunk user214-buyPunk user419-enterBidForPunk user419-withdrawBidForPunk user232-offerPunkForSale
+2061 creator-setInitialOwner user59-offerPunkForSale user221-buyPunk user221-offerPunkForSale user221-offerPunkForSale user221-offerPunkForSale user221-offerPunkForSale user232-buyPunk user419-enterBidForPunk user419-withdrawBidForPunk user232-offerPunkForSale
 2062 creator-setInitialOwner
 2063 creator-setInitialOwner user59-offerPunkForSale user59-punkNoLongerForSale user59-offerPunkForSale user915-buyPunk
 2064 creator-setInitialOwner user47-enterBidForPunk user72-acceptBidForPunk
@@ -2067,7 +2067,7 @@ session  user-function user-function  user-function ...
 2068 creator-setInitialOwner
 2069 creator-setInitialOwner user7-offerPunkForSale user47-enterBidForPunk user47-withdrawBidForPunk user58-enterBidForPunk user58-withdrawBidForPunk user7-transferPunk user664-enterBidForPunk user888-offerPunkForSale user664-withdrawBidForPunk user667-enterBidForPunk user667-withdrawBidForPunk user457-buyPunk
 2070 creator-setInitialOwner user59-offerPunkForSale user297-enterBidForPunk user297-withdrawBidForPunk user372-enterBidForPunk user407-buyPunk user372-withdrawBidForPunk
-2071 creator-setInitialOwner user59-offerPunkForSale user271-buyPunk user271-buyPunk user1425-enterBidForPunk
+2071 creator-setInitialOwner user59-offerPunkForSale user271-buyPunk user1425-enterBidForPunk
 2072 creator-setInitialOwner user59-offerPunkForSale user279-buyPunk
 2073 creator-setInitialOwner user59-offerPunkForSale user358-enterBidForPunk user358-withdrawBidForPunk user59-offerPunkForSale user413-enterBidForPunk user413-withdrawBidForPunk creator-buyPunk
 2074 creator-setInitialOwner
@@ -2235,7 +2235,7 @@ session  user-function user-function  user-function ...
 2236 creator-setInitialOwner
 2237 creator-setInitialOwner user78-enterBidForPunk
 2238 creator-setInitialOwner user59-offerPunkForSale user656-buyPunk user656-transferPunk
-2239 creator-setInitialOwner user47-enterBidForPunk user3-enterBidForPunk user78-enterBidForPunk user43-acceptBidForPunk user3-enterBidForPunk user3-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk
+2239 creator-setInitialOwner user47-enterBidForPunk user3-enterBidForPunk user78-enterBidForPunk user43-acceptBidForPunk user3-enterBidForPunk user3-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk
 2240 creator-setInitialOwner
 2241 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user59-punkNoLongerForSale user59-offerPunkForSale user906-enterBidForPunk user906-withdrawBidForPunk user906-buyPunk user906-offerPunkForSale user906-offerPunkForSale user909-buyPunk user909-offerPunkForSale user909-punkNoLongerForSale
 2242 creator-setInitialOwner user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-punkNoLongerForSale user129-offerPunkForSale user445-buyPunk user1036-enterBidForPunk user1111-enterBidForPunk user1111-withdrawBidForPunk user445-transferPunk user1111-offerPunkForSale user1111-punkNoLongerForSale user1313-enterBidForPunk user1111-acceptBidForPunk user1313-transferPunk user1328-enterBidForPunk user1328-withdrawBidForPunk user1111-offerPunkForSale user1111-offerPunkForSale user1401-enterBidForPunk user1111-acceptBidForPunk user1401-offerPunkForSale
@@ -2383,7 +2383,7 @@ session  user-function user-function  user-function ...
 2384 creator-setInitialOwner user59-offerPunkForSale user368-buyPunk
 2385 creator-setInitialOwner
 2386 creator-setInitialOwner user78-enterBidForPunk user80-enterBidForPunk user78-enterBidForPunk user44-enterBidForPunk user78-enterBidForPunk user59-enterBidForPunk user59-withdrawBidForPunk user44-enterBidForPunk user78-enterBidForPunk user2-offerPunkForSale user68-enterBidForPunk user2-offerPunkForSale user68-withdrawBidForPunk user2-offerPunkForSale user3-enterBidForPunk user68-enterBidForPunk user2-acceptBidForPunk user520-enterBidForPunk user520-withdrawBidForPunk user664-enterBidForPunk user664-withdrawBidForPunk user716-enterBidForPunk user716-withdrawBidForPunk user68-offerPunkForSale user214-enterBidForPunk user664-enterBidForPunk user716-buyPunk user664-withdrawBidForPunk user716-offerPunkForSale user899-enterBidForPunk user899-withdrawBidForPunk user716-offerPunkForSale user716-offerPunkForSale user899-enterBidForPunk user716-offerPunkForSale user821-buyPunk user899-withdrawBidForPunk user821-transferPunk user821-transferPunk
-2387 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-acceptBidForPunk user243-buyPunk
+2387 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user243-buyPunk
 2388 creator-setInitialOwner user59-offerPunkForSale user442-buyPunk user442-offerPunkForSale user442-punkNoLongerForSale user442-offerPunkForSale user442-punkNoLongerForSale user442-transferPunk
 2389 creator-setInitialOwner user664-enterBidForPunk user5-acceptBidForPunk user664-offerPunkForSale user664-offerPunkForSale user712-enterBidForPunk user712-withdrawBidForPunk user712-buyPunk
 2390 creator-setInitialOwner user4-transferPunk user134-offerPunkForSale user1284-enterBidForPunk user134-offerPunkForSale user1284-withdrawBidForPunk user1284-enterBidForPunk user134-acceptBidForPunk user1284-offerPunkForSale user1284-punkNoLongerForSale user1284-offerPunkForSale user1284-offerPunkForSale user1284-punkNoLongerForSale user1284-offerPunkForSale user1284-offerPunkForSale user1284-punkNoLongerForSale user1284-offerPunkForSale user1284-punkNoLongerForSale user1284-offerPunkForSale user1284-punkNoLongerForSale user1284-offerPunkForSale user1284-punkNoLongerForSale user1284-transferPunk user1284-offerPunkForSale user1284-offerPunkForSale user1284-offerPunkForSale user1284-punkNoLongerForSale user1284-transferPunk user1345-offerPunkForSale user1345-offerPunkForSale user1345-transferPunk user1164-offerPunkForSale user1164-offerPunkForSale user1324-enterBidForPunk user1324-withdrawBidForPunk user1345-buyPunk user1345-transferPunk user1418-offerPunkForSale user1440-buyPunk
@@ -2439,7 +2439,7 @@ session  user-function user-function  user-function ...
 2440 creator-setInitialOwner
 2441 creator-setInitialOwner user39-offerPunkForSale user78-enterBidForPunk user39-offerPunkForSale user39-offerPunkForSale user39-offerPunkForSale user214-enterBidForPunk user722-buyPunk user722-offerPunkForSale user722-offerPunkForSale user722-offerPunkForSale user593-buyPunk user214-withdrawBidForPunk user593-offerPunkForSale
 2442 creator-setInitialOwner user59-offerPunkForSale user357-enterBidForPunk user357-withdrawBidForPunk user59-offerPunkForSale user470-buyPunk user100-enterBidForPunk user470-offerPunkForSale user470-offerPunkForSale user726-enterBidForPunk user726-withdrawBidForPunk user470-offerPunkForSale user470-punkNoLongerForSale
-2443 creator-setInitialOwner user59-offerPunkForSale user221-buyPunk user290-enterBidForPunk user290-withdrawBidForPunk user290-buyPunk
+2443 creator-setInitialOwner user59-offerPunkForSale user290-enterBidForPunk user290-withdrawBidForPunk user290-buyPunk
 2444 creator-setInitialOwner user394-offerPunkForSale user394-offerPunkForSale user394-offerPunkForSale user663-buyPunk user663-offerPunkForSale user663-punkNoLongerForSale user663-offerPunkForSale user663-punkNoLongerForSale user663-offerPunkForSale user663-offerPunkForSale user997-buyPunk user997-offerPunkForSale user1100-buyPunk user1100-transferPunk
 2445 creator-setInitialOwner user36-offerPunkForSale user44-buyPunk user44-offerPunkForSale user44-transferPunk user111-offerPunkForSale user111-offerPunkForSale user111-offerPunkForSale user214-enterBidForPunk user214-withdrawBidForPunk user714-buyPunk
 2446 creator-setInitialOwner
@@ -2462,7 +2462,7 @@ session  user-function user-function  user-function ...
 2463 creator-setInitialOwner
 2464 creator-setInitialOwner user78-enterBidForPunk user1084-enterBidForPunk
 2465 creator-setInitialOwner
-2466 creator-setInitialOwner user189-enterBidForPunk user129-offerPunkForSale user175-buyPunk user189-withdrawBidForPunk user175-transferPunk user175-transferPunk user281-offerPunkForSale user295-buyPunk user295-transferPunk user295-transferPunk user419-enterBidForPunk user419-withdrawBidForPunk
+2466 creator-setInitialOwner user189-enterBidForPunk user129-offerPunkForSale user175-buyPunk user189-withdrawBidForPunk user175-transferPunk user281-offerPunkForSale user295-buyPunk user295-transferPunk user419-enterBidForPunk user419-withdrawBidForPunk
 2467 creator-setInitialOwner user59-offerPunkForSale user168-buyPunk
 2468 creator-setInitialOwner
 2469 creator-setInitialOwner user59-offerPunkForSale user776-enterBidForPunk user59-punkNoLongerForSale user776-withdrawBidForPunk user59-offerPunkForSale user826-buyPunk user826-offerPunkForSale user937-buyPunk user937-offerPunkForSale user937-punkNoLongerForSale user937-offerPunkForSale user1056-buyPunk user1056-offerPunkForSale user1119-buyPunk
@@ -2488,7 +2488,7 @@ session  user-function user-function  user-function ...
 2489 creator-setInitialOwner user15-offerPunkForSale user15-offerPunkForSale user15-offerPunkForSale user15-offerPunkForSale user15-offerPunkForSale user582-buyPunk
 2490 creator-setInitialOwner user664-enterBidForPunk user5-acceptBidForPunk user664-offerPunkForSale user656-buyPunk user656-offerPunkForSale user1163-buyPunk user1163-offerPunkForSale user1163-offerPunkForSale user1163-offerPunkForSale user1163-punkNoLongerForSale user1163-offerPunkForSale user1163-punkNoLongerForSale user1163-offerPunkForSale user1347-enterBidForPunk user1347-withdrawBidForPunk user1163-offerPunkForSale user1163-offerPunkForSale user1163-offerPunkForSale user1163-offerPunkForSale user1345-enterBidForPunk user1163-offerPunkForSale user1163-punkNoLongerForSale user1345-withdrawBidForPunk user1163-offerPunkForSale user1228-enterBidForPunk user334-buyPunk user1228-withdrawBidForPunk user334-transferPunk user1504-enterBidForPunk user1096-acceptBidForPunk user1504-offerPunkForSale
 2491 creator-setInitialOwner user78-enterBidForPunk user191-enterBidForPunk user191-withdrawBidForPunk user623-enterBidForPunk user821-enterBidForPunk user821-withdrawBidForPunk
-2492 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-acceptBidForPunk user59-offerPunkForSale user303-enterBidForPunk user303-withdrawBidForPunk user327-buyPunk
+2492 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user303-enterBidForPunk user303-withdrawBidForPunk user327-buyPunk
 2493 creator-setInitialOwner
 2494 creator-setInitialOwner user47-enterBidForPunk user94-enterBidForPunk
 2495 creator-setInitialOwner
@@ -2617,7 +2617,7 @@ session  user-function user-function  user-function ...
 2618 creator-setInitialOwner
 2619 creator-setInitialOwner user59-offerPunkForSale user368-buyPunk
 2620 creator-setInitialOwner user712-enterBidForPunk user712-withdrawBidForPunk
-2621 creator-setInitialOwner user47-enterBidForPunk user40-offerPunkForSale user3-buyPunk user3-offerPunkForSale user3-punkNoLongerForSale user3-offerPunkForSale user3-offerPunkForSale user3-offerPunkForSale user3-offerPunkForSale user3-punkNoLongerForSale user3-transferPunk user3-transferPunk user214-offerPunkForSale user327-buyPunk
+2621 creator-setInitialOwner user47-enterBidForPunk user40-offerPunkForSale user3-buyPunk user3-offerPunkForSale user3-punkNoLongerForSale user3-offerPunkForSale user3-offerPunkForSale user3-offerPunkForSale user3-offerPunkForSale user3-punkNoLongerForSale user3-transferPunk user214-offerPunkForSale user327-buyPunk
 2622 creator-setInitialOwner user129-offerPunkForSale user129-offerPunkForSale user129-punkNoLongerForSale user129-offerPunkForSale user368-enterBidForPunk user129-acceptBidForPunk
 2623 creator-setInitialOwner user47-enterBidForPunk user413-enterBidForPunk user413-withdrawBidForPunk
 2624 creator-setInitialOwner user76-offerPunkForSale user76-offerPunkForSale user1-buyPunk user1-offerPunkForSale user10-buyPunk user10-transferPunk user138-transferPunk user205-transferPunk user714-transferPunk user664-offerPunkForSale user620-enterBidForPunk user620-withdrawBidForPunk user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user214-enterBidForPunk user664-offerPunkForSale user214-withdrawBidForPunk user664-offerPunkForSale user906-enterBidForPunk user664-acceptBidForPunk user906-offerPunkForSale user906-offerPunkForSale
@@ -2829,9 +2829,9 @@ session  user-function user-function  user-function ...
 2830 creator-setInitialOwner user38-transferPunk creator-enterBidForPunk user59-offerPunkForSale user59-acceptBidForPunk creator-transferPunk user1425-enterBidForPunk
 2831 creator-setInitialOwner user78-enterBidForPunk user4-transferPunk user809-enterBidForPunk user809-withdrawBidForPunk user36-enterBidForPunk user36-withdrawBidForPunk user36-enterBidForPunk user134-offerPunkForSale user1284-buyPunk user1284-offerPunkForSale user36-withdrawBidForPunk user1284-punkNoLongerForSale user1284-offerPunkForSale user1284-punkNoLongerForSale user1284-offerPunkForSale user1284-offerPunkForSale user1284-transferPunk user36-enterBidForPunk user1284-acceptBidForPunk
 2832 creator-setInitialOwner user38-transferPunk user59-offerPunkForSale user549-buyPunk user549-offerPunkForSale user549-punkNoLongerForSale user549-offerPunkForSale user895-enterBidForPunk user895-withdrawBidForPunk user892-buyPunk user892-offerPunkForSale user892-punkNoLongerForSale user892-offerPunkForSale user28-buyPunk user28-offerPunkForSale user28-offerPunkForSale user1480-enterBidForPunk user1480-withdrawBidForPunk
-2833 creator-setInitialOwner user78-enterBidForPunk user344-withdrawBidForPunk user344-withdrawBidForPunk user344-withdrawBidForPunk
+2833 creator-setInitialOwner user78-enterBidForPunk
 2834 creator-setInitialOwner user59-offerPunkForSale user221-buyPunk
-2835 creator-setInitialOwner user319-enterBidForPunk user351-enterBidForPunk user382-enterBidForPunk user371-enterBidForPunk user527-enterBidForPunk user535-enterBidForPunk user535-withdrawBidForPunk
+2835 creator-setInitialOwner user319-enterBidForPunk user382-enterBidForPunk user371-enterBidForPunk user527-enterBidForPunk user535-enterBidForPunk user535-withdrawBidForPunk
 2836 creator-setInitialOwner user47-enterBidForPunk user1-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user664-enterBidForPunk user664-withdrawBidForPunk
 2837 creator-setInitialOwner user59-offerPunkForSale user279-buyPunk
 2838 creator-setInitialOwner user59-offerPunkForSale user372-enterBidForPunk user372-withdrawBidForPunk user372-buyPunk user228-enterBidForPunk
@@ -2847,7 +2847,7 @@ session  user-function user-function  user-function ...
 2848 creator-setInitialOwner user59-offerPunkForSale user498-enterBidForPunk user582-buyPunk user498-withdrawBidForPunk user582-offerPunkForSale user607-enterBidForPunk user607-withdrawBidForPunk user268-buyPunk user268-transferPunk
 2849 creator-setInitialOwner user59-offerPunkForSale user485-buyPunk user1425-enterBidForPunk
 2850 creator-setInitialOwner user71-offerPunkForSale user470-enterBidForPunk user470-enterBidForPunk user470-withdrawBidForPunk user656-buyPunk user656-transferPunk user656-transferPunk
-2851 creator-setInitialOwner user146-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user473-buyPunk user473-transferPunk user809-enterBidForPunk user473-offerPunkForSale user473-offerPunkForSale user473-offerPunkForSale user809-withdrawBidForPunk user1294-enterBidForPunk user473-offerPunkForSale user473-punkNoLongerForSale user473-transferPunk user1294-withdrawBidForPunk user1300-offerPunkForSale user1300-offerPunkForSale user1300-offerPunkForSale
+2851 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user473-buyPunk user473-transferPunk user809-enterBidForPunk user473-offerPunkForSale user473-offerPunkForSale user473-offerPunkForSale user809-withdrawBidForPunk user1294-enterBidForPunk user473-offerPunkForSale user473-punkNoLongerForSale user473-transferPunk user1294-withdrawBidForPunk user1300-offerPunkForSale user1300-offerPunkForSale user1300-offerPunkForSale
 2852 creator-setInitialOwner
 2853 creator-setInitialOwner user59-offerPunkForSale user232-buyPunk
 2854 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user470-enterBidForPunk user5-acceptBidForPunk user470-offerPunkForSale user470-offerPunkForSale user470-offerPunkForSale user470-offerPunkForSale user470-offerPunkForSale user470-punkNoLongerForSale
@@ -2892,7 +2892,7 @@ session  user-function user-function  user-function ...
 2893 creator-setInitialOwner user78-enterBidForPunk
 2894 creator-setInitialOwner user44-enterBidForPunk user44-withdrawBidForPunk user1425-enterBidForPunk user1425-withdrawBidForPunk
 2895 creator-setInitialOwner user78-enterBidForPunk user94-enterBidForPunk user47-enterBidForPunk
-2896 creator-setInitialOwner user78-enterBidForPunk user59-acceptBidForPunk user368-enterBidForPunk user59-acceptBidForPunk
+2896 creator-setInitialOwner user78-enterBidForPunk user368-enterBidForPunk user59-acceptBidForPunk
 2897 creator-setInitialOwner user15-offerPunkForSale creator-buyPunk user780-enterBidForPunk user780-withdrawBidForPunk
 2898 creator-setInitialOwner user15-offerPunkForSale user78-enterBidForPunk user15-offerPunkForSale user15-offerPunkForSale user689-enterBidForPunk user15-offerPunkForSale user689-withdrawBidForPunk user15-offerPunkForSale user15-offerPunkForSale user214-enterBidForPunk user15-offerPunkForSale user664-buyPunk user214-withdrawBidForPunk user664-offerPunkForSale user664-offerPunkForSale user796-enterBidForPunk user796-withdrawBidForPunk user667-buyPunk user667-transferPunk user1354-offerPunkForSale user1354-offerPunkForSale
 2899 creator-setInitialOwner
@@ -2987,12 +2987,12 @@ session  user-function user-function  user-function ...
 2988 creator-setInitialOwner user17-offerPunkForSale user17-punkNoLongerForSale
 2989 creator-setInitialOwner user59-offerPunkForSale user565-buyPunk user1425-enterBidForPunk
 2990 creator-setInitialOwner
-2991 creator-setInitialOwner user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user241-buyPunk user119-offerPunkForSale user241-transferPunk user905-transferPunk user913-transferPunk
+2991 creator-setInitialOwner user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user241-buyPunk user241-transferPunk user905-transferPunk user913-transferPunk
 2992 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user1345-enterBidForPunk user1345-withdrawBidForPunk user796-enterBidForPunk user796-withdrawBidForPunk
 2993 creator-setInitialOwner
 2994 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user413-enterBidForPunk user218-enterBidForPunk user59-acceptBidForPunk user218-offerPunkForSale
 2995 creator-setInitialOwner user214-enterBidForPunk user59-acceptBidForPunk user214-offerPunkForSale user214-offerPunkForSale user214-offerPunkForSale user214-offerPunkForSale user891-enterBidForPunk user891-withdrawBidForPunk user714-buyPunk
-2996 creator-setInitialOwner user59-offerPunkForSale user307-enterBidForPunk user307-withdrawBidForPunk user307-withdrawBidForPunk user538-buyPunk user1425-enterBidForPunk
+2996 creator-setInitialOwner user59-offerPunkForSale user307-enterBidForPunk user307-withdrawBidForPunk user538-buyPunk user1425-enterBidForPunk
 2997 creator-setInitialOwner user45-offerPunkForSale user49-buyPunk user49-offerPunkForSale user94-enterBidForPunk user49-offerPunkForSale user49-offerPunkForSale user94-buyPunk
 2998 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user59-punkNoLongerForSale user59-offerPunkForSale user663-buyPunk user663-offerPunkForSale user663-punkNoLongerForSale user663-offerPunkForSale user663-punkNoLongerForSale user663-offerPunkForSale user663-offerPunkForSale user997-buyPunk user997-offerPunkForSale user334-buyPunk user334-offerPunkForSale user334-offerPunkForSaleToAddress user334-offerPunkForSale user334-offerPunkForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user1079-buyPunk user1079-transferPunk user1083-offerPunkForSale user664-buyPunk user664-transferPunk user1056-offerPunkForSale user1056-punkNoLongerForSale user1056-transferPunk
 2999 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user59-punkNoLongerForSale user59-transferPunk user1260-offerPunkForSale user1266-enterBidForPunk user1266-withdrawBidForPunk user1260-offerPunkForSale user1260-offerPunkForSale user1260-offerPunkForSale user1295-buyPunk user1247-enterBidForPunk user1247-withdrawBidForPunk user1295-transferPunk user1304-offerPunkForSale user1304-transferPunk
@@ -3006,7 +3006,7 @@ session  user-function user-function  user-function ...
 3007 creator-setInitialOwner user712-enterBidForPunk user712-withdrawBidForPunk user712-enterBidForPunk user712-withdrawBidForPunk
 3008 creator-setInitialOwner user4-transferPunk
 3009 creator-setInitialOwner user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-transferPunk user966-offerPunkForSale user966-offerPunkForSale user966-offerPunkForSale
-3010 creator-setInitialOwner user5-offerPunkForSale user324-enterBidForPunk user324-withdrawBidForPunk user324-withdrawBidForPunk user5-offerPunkForSale user5-offerPunkForSale user472-buyPunk user472-offerPunkForSale user470-buyPunk user470-offerPunkForSale user470-offerPunkForSale user648-buyPunk user648-offerPunkForSale user648-offerPunkForSale user648-offerPunkForSale user648-offerPunkForSale user648-offerPunkForSale user648-offerPunkForSale user648-transferPunk
+3010 creator-setInitialOwner user5-offerPunkForSale user324-enterBidForPunk user324-withdrawBidForPunk user5-offerPunkForSale user5-offerPunkForSale user472-buyPunk user472-offerPunkForSale user470-buyPunk user470-offerPunkForSale user470-offerPunkForSale user648-buyPunk user648-offerPunkForSale user648-offerPunkForSale user648-offerPunkForSale user648-offerPunkForSale user648-offerPunkForSale user648-offerPunkForSale user648-transferPunk
 3011 creator-setInitialOwner user3-enterBidForPunk user3-withdrawBidForPunk user20-enterBidForPunk user20-withdrawBidForPunk user20-enterBidForPunk user20-withdrawBidForPunk user4-transferPunk user815-enterBidForPunk user815-withdrawBidForPunk user1283-enterBidForPunk user777-enterBidForPunk user134-offerPunkForSale user815-buyPunk user815-transferPunk user777-withdrawBidForPunk user815-offerPunkForSale user815-punkNoLongerForSale user815-offerPunkForSale user716-buyPunk
 3012 creator-setInitialOwner
 3013 creator-setInitialOwner user59-offerPunkForSale user899-buyPunk user899-offerPunkForSale user663-enterBidForPunk user663-withdrawBidForPunk user899-punkNoLongerForSale user899-offerPunkForSale user718-buyPunk
@@ -3025,7 +3025,7 @@ session  user-function user-function  user-function ...
 3026 creator-setInitialOwner user4-transferPunk user134-offerPunkForSale user134-offerPunkForSale
 3027 creator-setInitialOwner user4-transferPunk
 3028 creator-setInitialOwner user4-transferPunk user895-enterBidForPunk user134-offerPunkForSale user895-withdrawBidForPunk user895-buyPunk user895-offerPunkForSale user895-offerPunkForSale user895-punkNoLongerForSale
-3029 creator-setInitialOwner user78-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-offerPunkForSale user368-buyPunk
+3029 creator-setInitialOwner user78-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user368-buyPunk
 3030 creator-setInitialOwner user13-offerPunkForSale
 3031 creator-setInitialOwner user4-transferPunk user78-enterBidForPunk
 3032 creator-setInitialOwner user47-enterBidForPunk
@@ -3227,7 +3227,7 @@ session  user-function user-function  user-function ...
 3228 creator-setInitialOwner user28-offerPunkForSale user220-buyPunk user220-offerPunkForSale user220-punkNoLongerForSale user220-offerPunkForSale user1-buyPunk user1-offerPunkForSale user1242-buyPunk user1242-transferPunk
 3229 creator-setInitialOwner user47-enterBidForPunk
 3230 creator-setInitialOwner
-3231 creator-setInitialOwner user78-enterBidForPunk user59-acceptBidForPunk user368-enterBidForPunk user59-acceptBidForPunk
+3231 creator-setInitialOwner user78-enterBidForPunk user368-enterBidForPunk user59-acceptBidForPunk
 3232 creator-setInitialOwner user40-offerPunkForSale user218-enterBidForPunk user218-withdrawBidForPunk user541-buyPunk
 3233 creator-setInitialOwner user78-enterBidForPunk user40-offerPunkForSale user40-offerPunkForSale user101-buyPunk user625-enterBidForPunk
 3234 creator-setInitialOwner user59-offerPunkForSale user473-buyPunk user664-enterBidForPunk user473-acceptBidForPunk user664-transferPunk
@@ -3427,7 +3427,7 @@ session  user-function user-function  user-function ...
 3428 creator-setInitialOwner user62-offerPunkForSale user62-punkNoLongerForSale user62-offerPunkForSale user161-buyPunk user1425-enterBidForPunk
 3429 creator-setInitialOwner user664-enterBidForPunk user5-acceptBidForPunk user664-offerPunkForSale user664-offerPunkForSale user653-buyPunk user653-transferPunk
 3430 creator-setInitialOwner user38-transferPunk user368-enterBidForPunk user59-acceptBidForPunk user368-offerPunkForSale user368-punkNoLongerForSale
-3431 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-offerPunkForSale user470-buyPunk user470-offerPunkForSale user726-enterBidForPunk user726-withdrawBidForPunk user470-offerPunkForSale user470-offerPunkForSale user470-offerPunkForSale user470-punkNoLongerForSale user470-offerPunkForSale user470-punkNoLongerForSale
+3431 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user470-buyPunk user470-offerPunkForSale user726-enterBidForPunk user726-withdrawBidForPunk user470-offerPunkForSale user470-offerPunkForSale user470-offerPunkForSale user470-punkNoLongerForSale user470-offerPunkForSale user470-punkNoLongerForSale
 3432 creator-setInitialOwner user4-transferPunk user809-enterBidForPunk user809-withdrawBidForPunk user664-enterBidForPunk user664-withdrawBidForPunk user1226-enterBidForPunk user134-offerPunkForSale user1226-withdrawBidForPunk user334-enterBidForPunk user334-withdrawBidForPunk
 3433 creator-setInitialOwner user59-offerPunkForSale user656-buyPunk user656-transferPunk user1085-offerPunkForSale user1085-offerPunkForSale user1242-buyPunk user1242-transferPunk
 3434 creator-setInitialOwner
@@ -3519,7 +3519,7 @@ session  user-function user-function  user-function ...
 3520 creator-setInitialOwner user4-transferPunk
 3521 creator-setInitialOwner user7-offerPunkForSale user47-enterBidForPunk user373-buyPunk
 3522 creator-setInitialOwner
-3523 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-acceptBidForPunk user100-enterBidForPunk user59-acceptBidForPunk user841-enterBidForPunk user59-enterBidForPunk user841-enterBidForPunk user841-withdrawBidForPunk user100-offerPunkForSale user13-buyPunk
+3523 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user100-enterBidForPunk user59-acceptBidForPunk user841-enterBidForPunk user59-enterBidForPunk user841-enterBidForPunk user841-withdrawBidForPunk user100-offerPunkForSale user13-buyPunk
 3524 creator-setInitialOwner user5-offerPunkForSale user5-transferPunk
 3525 creator-setInitialOwner user78-enterBidForPunk user413-enterBidForPunk user413-withdrawBidForPunk
 3526 creator-setInitialOwner user1425-enterBidForPunk
@@ -3541,7 +3541,7 @@ session  user-function user-function  user-function ...
 3542 creator-setInitialOwner user5-offerPunkForSale user277-enterBidForPunk user5-acceptBidForPunk
 3543 creator-setInitialOwner user78-enterBidForPunk user5-offerPunkForSale user205-buyPunk user205-transferPunk user714-transferPunk user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user796-enterBidForPunk user664-offerPunkForSale user796-withdrawBidForPunk user783-enterBidForPunk user593-buyPunk user593-offerPunkForSale user593-offerPunkForSale user940-buyPunk user940-offerPunkForSale user940-punkNoLongerForSale user940-offerPunkForSale user940-offerPunkForSale
 3544 creator-setInitialOwner user59-offerPunkForSale user1-buyPunk user1-offerPunkForSale user4-buyPunk user4-transferPunk
-3545 creator-setInitialOwner user38-transferPunk user78-enterBidForPunk user59-offerPunkForSale user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user511-enterBidForPunk user59-acceptBidForPunk user511-transferPunk user856-offerPunkForSale creator-buyPunk
+3545 creator-setInitialOwner user38-transferPunk user78-enterBidForPunk user59-offerPunkForSale user511-enterBidForPunk user59-acceptBidForPunk user511-transferPunk user856-offerPunkForSale creator-buyPunk
 3546 creator-setInitialOwner
 3547 creator-setInitialOwner user47-enterBidForPunk user357-enterBidForPunk user5-acceptBidForPunk
 3548 creator-setInitialOwner
@@ -3577,7 +3577,7 @@ session  user-function user-function  user-function ...
 3578 creator-setInitialOwner user628-enterBidForPunk user628-withdrawBidForPunk user628-enterBidForPunk user628-withdrawBidForPunk user628-enterBidForPunk user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user628-withdrawBidForPunk user628-enterBidForPunk user5-acceptBidForPunk user628-offerPunkForSale user214-enterBidForPunk user214-withdrawBidForPunk user628-punkNoLongerForSale user228-enterBidForPunk
 3579 creator-setInitialOwner
 3580 creator-setInitialOwner user59-transferPunk user1177-offerPunkForSale user1176-buyPunk
-3581 creator-setInitialOwner user78-enterBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-offerPunkForSale user357-enterBidForPunk user59-acceptBidForPunk
+3581 creator-setInitialOwner user78-enterBidForPunk user59-offerPunkForSale user357-enterBidForPunk user59-acceptBidForPunk
 3582 creator-setInitialOwner user628-enterBidForPunk user628-withdrawBidForPunk user5-transferPunk user664-enterBidForPunk user891-enterBidForPunk user891-withdrawBidForPunk
 3583 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user664-enterBidForPunk user664-withdrawBidForPunk user59-punkNoLongerForSale user59-offerPunkForSale user59-punkNoLongerForSale user59-transferPunk
 3584 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user612-buyPunk
@@ -3678,7 +3678,7 @@ session  user-function user-function  user-function ...
 3679 creator-setInitialOwner
 3680 creator-setInitialOwner user59-offerPunkForSale user899-buyPunk user899-offerPunkForSale user899-punkNoLongerForSale user899-offerPunkForSale user682-buyPunk user682-offerPunkForSale user682-offerPunkForSale user682-punkNoLongerForSale user682-offerPunkForSale user682-punkNoLongerForSale user682-offerPunkForSale user682-offerPunkForSale user682-transferPunk user334-offerPunkForSale user334-offerPunkForSale user334-offerPunkForSale user334-transferPunk user334-offerPunkForSale user334-offerPunkForSale user1160-buyPunk user1160-transferPunk
 3681 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user635-buyPunk user635-offerPunkForSale user635-offerPunkForSale user635-offerPunkForSale user635-offerPunkForSale user1010-buyPunk user1010-offerPunkForSale user1247-enterBidForPunk user1247-withdrawBidForPunk user1267-buyPunk user1267-offerPunkForSale user1267-transferPunk
-3682 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-punkNoLongerForSale user146-enterBidForPunk user20-offerPunkForSale user146-withdrawBidForPunk user20-punkNoLongerForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user251-buyPunk user251-buyPunk user806-enterBidForPunk user806-withdrawBidForPunk user1425-enterBidForPunk
+3682 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-punkNoLongerForSale user146-enterBidForPunk user20-offerPunkForSale user146-withdrawBidForPunk user20-punkNoLongerForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user251-buyPunk user806-enterBidForPunk user806-withdrawBidForPunk user1425-enterBidForPunk
 3683 creator-setInitialOwner user59-transferPunk user1178-offerPunkForSale user1176-buyPunk
 3684 creator-setInitialOwner user17-enterBidForPunk user17-withdrawBidForPunk user17-enterBidForPunk user2-enterBidForPunk user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-punkNoLongerForSale user2-withdrawBidForPunk user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user136-enterBidForPunk user20-offerPunkForSale user20-punkNoLongerForSale user20-punkNoLongerForSale user136-withdrawBidForPunk user136-enterBidForPunk user2-enterBidForPunk user2-withdrawBidForPunk user20-offerPunkForSale user20-transferPunk user628-enterBidForPunk user628-withdrawBidForPunk user966-offerPunkForSale user716-enterBidForPunk user664-enterBidForPunk user716-enterBidForPunk user966-offerPunkForSale user966-offerPunkForSale user899-enterBidForPunk user966-offerPunkForSale user899-withdrawBidForPunk user899-enterBidForPunk user899-withdrawBidForPunk user966-offerPunkForSale user1105-buyPunk
 3685 creator-setInitialOwner user17-enterBidForPunk user5-offerPunkForSale user5-acceptBidForPunk
@@ -3734,7 +3734,7 @@ session  user-function user-function  user-function ...
 3735 creator-setInitialOwner
 3736 creator-setInitialOwner
 3737 creator-setInitialOwner
-3738 creator-setInitialOwner user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user343-buyPunk user343-buyPunk
+3738 creator-setInitialOwner user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user343-buyPunk
 3739 creator-setInitialOwner user5-offerPunkForSale user716-enterBidForPunk user716-enterBidForPunk user716-withdrawBidForPunk user5-offerPunkForSale user5-offerPunkForSale user5-transferPunk
 3740 creator-setInitialOwner
 3741 creator-setInitialOwner user1-offerPunkForSale user635-buyPunk user635-transferPunk user1425-enterBidForPunk
@@ -3762,7 +3762,7 @@ session  user-function user-function  user-function ...
 3763 creator-setInitialOwner user228-enterBidForPunk user228-withdrawBidForPunk
 3764 creator-setInitialOwner
 3765 creator-setInitialOwner user78-enterBidForPunk user4-transferPunk user661-enterBidForPunk user661-withdrawBidForPunk
-3766 creator-setInitialOwner user47-enterBidForPunk user59-acceptBidForPunk user59-offerPunkForSale user228-buyPunk user228-offerPunkForSale user815-buyPunk user815-offerPunkForSale user815-offerPunkForSale user815-offerPunkForSale user815-offerPunkForSale user890-enterBidForPunk user1019-enterBidForPunk user1019-withdrawBidForPunk user1019-buyPunk user1019-offerPunkForSale user1019-transferPunk
+3766 creator-setInitialOwner user47-enterBidForPunk user59-offerPunkForSale user228-buyPunk user228-offerPunkForSale user815-buyPunk user815-offerPunkForSale user815-offerPunkForSale user815-offerPunkForSale user815-offerPunkForSale user890-enterBidForPunk user1019-enterBidForPunk user1019-withdrawBidForPunk user1019-buyPunk user1019-offerPunkForSale user1019-transferPunk
 3767 creator-setInitialOwner user5-offerPunkForSale user5-punkNoLongerForSale user5-offerPunkForSale user5-offerPunkForSale user337-buyPunk user337-offerPunkForSale user386-buyPunk
 3768 creator-setInitialOwner user4-transferPunk user134-offerPunkForSale user1281-enterBidForPunk user134-acceptBidForPunk user1281-offerPunkForSale user1281-offerPunkForSale user1281-punkNoLongerForSale user1281-transferPunk user1177-offerPunkForSale user1177-offerPunkForSale user1177-offerPunkForSale user1298-enterBidForPunk user1298-withdrawBidForPunk user473-buyPunk user473-transferPunk user1300-offerPunkForSale user1314-enterBidForPunk
 3769 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user656-buyPunk user656-transferPunk user1217-offerPunkForSale user1242-buyPunk user1242-transferPunk
@@ -3786,7 +3786,7 @@ session  user-function user-function  user-function ...
 3787 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSaleToAddress user664-buyPunk user664-offerPunkForSale user656-buyPunk user656-offerPunkForSale user659-buyPunk user659-offerPunkForSale user659-punkNoLongerForSale user659-transferPunk
 3788 creator-setInitialOwner user119-offerPunkForSale user119-punkNoLongerForSale user119-offerPunkForSale user119-offerPunkForSale user119-offerPunkForSale user175-buyPunk user175-transferPunk user281-offerPunkForSale user176-buyPunk user176-transferPunk user1425-enterBidForPunk
 3789 creator-setInitialOwner
-3790 creator-setInitialOwner user5-offerPunkForSale user324-enterBidForPunk user324-withdrawBidForPunk user324-withdrawBidForPunk user5-offerPunkForSale user5-offerPunkForSale user473-buyPunk user473-transferPunk
+3790 creator-setInitialOwner user5-offerPunkForSale user324-enterBidForPunk user324-withdrawBidForPunk user5-offerPunkForSale user5-offerPunkForSale user473-buyPunk user473-transferPunk
 3791 creator-setInitialOwner user78-enterBidForPunk user78-withdrawBidForPunk user189-enterBidForPunk user189-withdrawBidForPunk
 3792 creator-setInitialOwner
 3793 creator-setInitialOwner user1112-offerPunkForSale user656-enterBidForPunk user716-buyPunk user716-offerPunkForSale user656-withdrawBidForPunk user716-offerPunkForSale user716-offerPunkForSale user716-punkNoLongerForSale
@@ -3823,7 +3823,7 @@ session  user-function user-function  user-function ...
 3824 creator-setInitialOwner
 3825 creator-setInitialOwner user5-offerPunkForSale user754-enterBidForPunk user5-acceptBidForPunk user754-transferPunk user1425-enterBidForPunk
 3826 creator-setInitialOwner user592-enterBidForPunk user592-withdrawBidForPunk user413-enterBidForPunk user5-offerPunkForSale user5-acceptBidForPunk user413-offerPunkForSale user413-offerPunkForSale user413-offerPunkForSale user413-offerPunkForSale user413-punkNoLongerForSale user413-offerPunkForSale user413-offerPunkForSale user413-offerPunkForSale user1047-enterBidForPunk user1047-withdrawBidForPunk user1111-buyPunk user1111-offerPunkForSale user1111-punkNoLongerForSale user1111-transferPunk user659-offerPunkForSale user659-offerPunkForSale user1180-buyPunk
-3827 creator-setInitialOwner user38-transferPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-withdrawBidForPunk user59-offerPunkForSale user368-enterBidForPunk user59-acceptBidForPunk
+3827 creator-setInitialOwner user38-transferPunk user214-enterBidForPunk user214-withdrawBidForPunk user59-offerPunkForSale user368-enterBidForPunk user59-acceptBidForPunk
 3828 creator-setInitialOwner user59-offerPunkForSale user480-buyPunk user480-transferPunk
 3829 creator-setInitialOwner user15-offerPunkForSale user95-buyPunk user95-offerPunkForSale user95-punkNoLongerForSale user95-offerPunkForSale user17-buyPunk
 3830 creator-setInitialOwner user7-offerPunkForSale user47-enterBidForPunk user7-transferPunk user888-offerPunkForSale user887-buyPunk
@@ -3835,7 +3835,7 @@ session  user-function user-function  user-function ...
 3836 creator-setInitialOwner
 3837 creator-setInitialOwner
 3838 creator-setInitialOwner user46-offerPunkForSale user46-offerPunkForSale user46-punkNoLongerForSale
-3839 creator-setInitialOwner user228-enterBidForPunk user221-enterBidForPunk user344-acceptBidForPunk user1243-transferPunk user1269-transferPunk user1253-offerPunkForSale user1253-offerPunkForSale user1253-offerPunkForSale user937-buyPunk user937-transferPunk
+3839 creator-setInitialOwner user228-enterBidForPunk user221-enterBidForPunk user1243-transferPunk user1269-transferPunk user1253-offerPunkForSale user1253-offerPunkForSale user1253-offerPunkForSale user937-buyPunk user937-transferPunk
 3840 creator-setInitialOwner user59-offerPunkForSale user624-buyPunk user624-transferPunk user1425-enterBidForPunk
 3841 creator-setInitialOwner user47-enterBidForPunk user71-offerPunkForSale user687-enterBidForPunk user687-withdrawBidForPunk user821-buyPunk user664-enterBidForPunk user664-withdrawBidForPunk
 3842 creator-setInitialOwner
@@ -3866,7 +3866,7 @@ session  user-function user-function  user-function ...
 3867 creator-setInitialOwner
 3868 creator-setInitialOwner
 3869 creator-setInitialOwner
-3870 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-acceptBidForPunk user59-offerPunkForSale user283-buyPunk user283-offerPunkForSale user283-punkNoLongerForSale
+3870 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user283-buyPunk user283-offerPunkForSale user283-punkNoLongerForSale
 3871 creator-setInitialOwner
 3872 creator-setInitialOwner user47-enterBidForPunk
 3873 creator-setInitialOwner user78-enterBidForPunk user110-enterBidForPunk user78-enterBidForPunk user292-enterBidForPunk user292-withdrawBidForPunk user625-enterBidForPunk user625-withdrawBidForPunk user625-enterBidForPunk
@@ -3889,7 +3889,7 @@ session  user-function user-function  user-function ...
 3890 creator-setInitialOwner user18-transferPunk user711-transferPunk
 3891 creator-setInitialOwner user394-offerPunkForSale user394-offerPunkForSale user394-offerPunkForSale user394-offerPunkForSale user891-enterBidForPunk user891-withdrawBidForPunk user394-offerPunkForSale
 3892 creator-setInitialOwner user71-offerPunkForSale user656-buyPunk user656-offerPunkForSale user656-punkNoLongerForSale user656-transferPunk user682-offerPunkForSale user682-offerPunkForSale user682-transferPunk
-3893 creator-setInitialOwner user28-offerPunkForSale user252-buyPunk user243-buyPunk user252-offerPunkForSale
+3893 creator-setInitialOwner user28-offerPunkForSale user252-buyPunk user252-offerPunkForSale
 3894 creator-setInitialOwner user57-offerPunkForSale user57-offerPunkForSale user470-buyPunk user470-offerPunkForSale user470-offerPunkForSale user470-offerPunkForSale user470-offerPunkForSale user470-offerPunkForSale user470-punkNoLongerForSale
 3895 creator-setInitialOwner
 3896 creator-setInitialOwner user78-enterBidForPunk user1-enterBidForPunk user78-enterBidForPunk user41-offerPunkForSale user41-offerPunkForSale user41-offerPunkForSale user41-offerPunkForSale user41-offerPunkForSale user41-offerPunkForSale user181-buyPunk user596-enterBidForPunk user1101-enterBidForPunk user1101-withdrawBidForPunk user1425-enterBidForPunk
@@ -3905,7 +3905,7 @@ session  user-function user-function  user-function ...
 3906 creator-setInitialOwner user59-offerPunkForSale user762-buyPunk user762-offerPunkForSale
 3907 creator-setInitialOwner user59-offerPunkForSale user334-enterBidForPunk user59-offerPunkForSale user334-withdrawBidForPunk user334-buyPunk user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-offerPunkForSale user334-offerPunkForSale user334-offerPunkForSale user674-buyPunk user674-offerPunkForSale
 3908 creator-setInitialOwner user3-enterBidForPunk user3-withdrawBidForPunk user4-transferPunk user214-enterBidForPunk user1284-enterBidForPunk user214-enterBidForPunk user611-enterBidForPunk user1284-enterBidForPunk user134-offerPunkForSale user1284-withdrawBidForPunk
-3909 creator-setInitialOwner user129-offerPunkForSale user214-enterBidForPunk user214-enterBidForPunk user129-offerPunkForSale user129-offerPunkForSale user129-punkNoLongerForSale user214-withdrawBidForPunk user214-withdrawBidForPunk user129-offerPunkForSale user129-offerPunkForSale user368-enterBidForPunk user129-acceptBidForPunk
+3909 creator-setInitialOwner user129-offerPunkForSale user214-enterBidForPunk user129-offerPunkForSale user129-offerPunkForSale user129-punkNoLongerForSale user214-withdrawBidForPunk user129-offerPunkForSale user129-offerPunkForSale user368-enterBidForPunk user129-acceptBidForPunk
 3910 creator-setInitialOwner user4-transferPunk
 3911 creator-setInitialOwner
 3912 creator-setInitialOwner
@@ -3924,7 +3924,7 @@ session  user-function user-function  user-function ...
 3925 creator-setInitialOwner user413-enterBidForPunk user806-enterBidForPunk user806-withdrawBidForPunk
 3926 creator-setInitialOwner user7-offerPunkForSale user47-enterBidForPunk user7-transferPunk user888-offerPunkForSale user915-buyPunk
 3927 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user39-offerPunkForSale user39-offerPunkForSale user39-offerPunkForSale user39-offerPunkForSale user39-punkNoLongerForSale user39-offerPunkForSale user214-enterBidForPunk user664-enterBidForPunk user664-withdrawBidForPunk user474-buyPunk user474-offerPunkForSale user474-transferPunk
-3928 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user182-enterBidForPunk user182-withdrawBidForPunk user146-offerPunkForSale user5-offerPunkForSale user377-buyPunk
+3928 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user182-enterBidForPunk user182-withdrawBidForPunk user5-offerPunkForSale user377-buyPunk
 3929 creator-setInitialOwner user59-transferPunk
 3930 creator-setInitialOwner user3-enterBidForPunk user47-enterBidForPunk user3-enterBidForPunk user78-enterBidForPunk user59-acceptBidForPunk
 3931 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user473-buyPunk user473-transferPunk
@@ -4440,7 +4440,7 @@ session  user-function user-function  user-function ...
 4441 creator-setInitialOwner user112-enterBidForPunk user112-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user714-enterBidForPunk user714-withdrawBidForPunk user714-enterBidForPunk user714-withdrawBidForPunk user664-enterBidForPunk user664-withdrawBidForPunk user716-enterBidForPunk user716-withdrawBidForPunk
 4442 creator-setInitialOwner user78-enterBidForPunk user78-withdrawBidForPunk user5-offerPunkForSale user5-transferPunk
 4443 creator-setInitialOwner
-4444 creator-setInitialOwner user94-enterBidForPunk user285-enterBidForPunk user457-enterBidForPunk user457-withdrawBidForPunk user1243-offerPunkForSale user1243-transferPunk user1269-transferPunk user1269-offerPunkForSale user1269-offerPunkForSale user1348-enterBidForPunk user1269-offerPunkForSale user1269-offerPunkForSale user1269-transferPunk user1348-withdrawBidForPunk user1383-offerPunkForSale user1383-offerPunkForSale user1383-offerPunkForSale user1383-offerPunkForSale user1383-offerPunkForSale user1102-buyPunk
+4444 creator-setInitialOwner user94-enterBidForPunk user457-enterBidForPunk user457-withdrawBidForPunk user1243-offerPunkForSale user1243-transferPunk user1269-transferPunk user1269-offerPunkForSale user1269-offerPunkForSale user1348-enterBidForPunk user1269-offerPunkForSale user1269-offerPunkForSale user1269-transferPunk user1348-withdrawBidForPunk user1383-offerPunkForSale user1383-offerPunkForSale user1383-offerPunkForSale user1383-offerPunkForSale user1383-offerPunkForSale user1102-buyPunk
 4445 creator-setInitialOwner user1-offerPunkForSale user7-buyPunk user7-offerPunkForSale user7-punkNoLongerForSale user7-offerPunkForSale user845-buyPunk
 4446 creator-setInitialOwner user79-offerPunkForSale user79-offerPunkForSale user1474-buyPunk
 4447 creator-setInitialOwner
@@ -4498,7 +4498,7 @@ session  user-function user-function  user-function ...
 4499 creator-setInitialOwner user533-enterBidForPunk user59-offerPunkForSale user533-withdrawBidForPunk user533-buyPunk
 4500 creator-setInitialOwner user47-enterBidForPunk user18-offerPunkForSale user18-acceptBidForPunk user419-enterBidForPunk user419-withdrawBidForPunk
 4501 creator-setInitialOwner user78-enterBidForPunk
-4502 creator-setInitialOwner user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user307-enterBidForPunk user129-acceptBidForPunk user129-acceptBidForPunk user1425-enterBidForPunk
+4502 creator-setInitialOwner user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user307-enterBidForPunk user129-acceptBidForPunk user1425-enterBidForPunk
 4503 creator-setInitialOwner creator-setInitialOwner
 4504 creator-setInitialOwner creator-setInitialOwner
 4505 creator-setInitialOwner creator-setInitialOwner user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user752-enterBidForPunk user752-withdrawBidForPunk user59-offerPunkForSale user899-buyPunk user899-offerPunkForSale user809-buyPunk user809-offerPunkForSale user809-offerPunkForSale user809-punkNoLongerForSale user809-transferPunk user1057-offerPunkForSale user1057-transferPunk
@@ -4506,7 +4506,7 @@ session  user-function user-function  user-function ...
 4507 creator-setInitialOwner creator-setInitialOwner
 4508 creator-setInitialOwner creator-setInitialOwner
 4509 creator-setInitialOwner creator-setInitialOwner user15-offerPunkForSale user1-buyPunk user1-offerPunkForSale user78-enterBidForPunk user88-buyPunk user88-offerPunkForSale user88-punkNoLongerForSale
-4510 creator-setInitialOwner creator-setInitialOwner user1-transferPunk user100-transferPunk user354-getPunk user1425-enterBidForPunk
+4510 creator-setInitialOwner creator-setInitialOwner user1-transferPunk user100-transferPunk user1425-enterBidForPunk
 4511 creator-setInitialOwner creator-setInitialOwner user59-offerPunkForSale user890-buyPunk user890-transferPunk
 4512 creator-setInitialOwner creator-setInitialOwner
 4513 creator-setInitialOwner creator-setInitialOwner user47-enterBidForPunk user59-enterBidForPunk user59-withdrawBidForPunk user44-enterBidForPunk user44-withdrawBidForPunk user44-enterBidForPunk user44-withdrawBidForPunk user520-enterBidForPunk user520-withdrawBidForPunk user520-enterBidForPunk user520-withdrawBidForPunk user656-enterBidForPunk user656-withdrawBidForPunk user46-offerPunkForSale user899-enterBidForPunk user46-punkNoLongerForSale user46-offerPunkForSale user899-withdrawBidForPunk user46-offerPunkForSaleToAddress user664-enterBidForPunk user899-buyPunk user664-withdrawBidForPunk user899-offerPunkForSale user899-punkNoLongerForSale user899-offerPunkForSale user899-punkNoLongerForSale user899-transferPunk user989-offerPunkForSale user989-punkNoLongerForSale user989-transferPunk user899-transferPunk
@@ -4835,7 +4835,7 @@ session  user-function user-function  user-function ...
 4836 creator-setInitialOwner user59-offerPunkForSale user498-enterBidForPunk user584-buyPunk user498-withdrawBidForPunk user1425-enterBidForPunk
 4837 creator-setInitialOwner
 4838 creator-setInitialOwner user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user214-enterBidForPunk user59-acceptBidForPunk user214-offerPunkForSale user505-buyPunk
-4839 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk creator-buyPunk user1145-enterBidForPunk
+4839 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale creator-buyPunk user1145-enterBidForPunk
 4840 creator-setInitialOwner user81-enterBidForPunk user72-acceptBidForPunk user81-transferPunk user72-offerPunkForSale user77-buyPunk user77-offerPunkForSale user78-buyPunk
 4841 creator-setInitialOwner user59-transferPunk user1005-offerPunkForSale user1176-buyPunk
 4842 creator-setInitialOwner user15-offerPunkForSale user1-buyPunk user1-offerPunkForSale user4-buyPunk user4-transferPunk
@@ -4844,7 +4844,7 @@ session  user-function user-function  user-function ...
 4845 creator-setInitialOwner
 4846 creator-setInitialOwner
 4847 creator-setInitialOwner user59-offerPunkForSale user946-buyPunk
-4848 creator-setInitialOwner user38-transferPunk user78-enterBidForPunk user59-acceptBidForPunk user368-enterBidForPunk user59-acceptBidForPunk
+4848 creator-setInitialOwner user38-transferPunk user78-enterBidForPunk user368-enterBidForPunk user59-acceptBidForPunk
 4849 creator-setInitialOwner
 4850 creator-setInitialOwner user1-enterBidForPunk user13-enterBidForPunk user47-enterBidForPunk user44-enterBidForPunk user44-withdrawBidForPunk user44-enterBidForPunk user44-withdrawBidForPunk user1118-enterBidForPunk user1118-withdrawBidForPunk user1425-enterBidForPunk
 4851 creator-setInitialOwner user78-enterBidForPunk user1-enterBidForPunk user78-enterBidForPunk user739-transferPunk user1317-enterBidForPunk user1317-withdrawBidForPunk user1064-enterBidForPunk user1385-acceptBidForPunk user1064-transferPunk
@@ -5297,7 +5297,7 @@ session  user-function user-function  user-function ...
 5298 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user100-enterBidForPunk user100-withdrawBidForPunk user205-enterBidForPunk user205-withdrawBidForPunk
 5299 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user629-transferPunk
 5300 creator-setInitialOwner user18-offerPunkForSale user18-transferPunk user711-transferPunk
-5301 creator-setInitialOwner user129-offerPunkForSale user129-offerPunkForSale user214-enterBidForPunk user129-offerPunkForSale user298-buyPunk user214-withdrawBidForPunk user214-withdrawBidForPunk user214-withdrawBidForPunk user298-transferPunk user1425-enterBidForPunk
+5301 creator-setInitialOwner user129-offerPunkForSale user129-offerPunkForSale user214-enterBidForPunk user129-offerPunkForSale user298-buyPunk user214-withdrawBidForPunk user298-transferPunk user1425-enterBidForPunk
 5302 creator-setInitialOwner user123-enterBidForPunk user44-enterBidForPunk user65-offerPunkForSale user123-enterBidForPunk user65-offerPunkForSale user123-withdrawBidForPunk user123-buyPunk user137-enterBidForPunk user123-offerPunkForSale user137-withdrawBidForPunk user3-enterBidForPunk user123-transferPunk user3-withdrawBidForPunk
 5303 creator-setInitialOwner user47-enterBidForPunk
 5304 creator-setInitialOwner user4-transferPunk user1284-enterBidForPunk user1284-withdrawBidForPunk
@@ -5347,7 +5347,7 @@ session  user-function user-function  user-function ...
 5348 creator-setInitialOwner
 5349 creator-setInitialOwner
 5350 creator-setInitialOwner user716-enterBidForPunk user716-withdrawBidForPunk
-5351 creator-setInitialOwner user284-offerPunkForSale user284-offerPunkForSale user1425-enterBidForPunk
+5351 creator-setInitialOwner user1425-enterBidForPunk
 5352 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSaleToAddress user677-buyPunk user677-offerPunkForSale user752-buyPunk user752-offerPunkForSale user752-punkNoLongerForSale
 5353 creator-setInitialOwner user27-offerPunkForSale user257-buyPunk
 5354 creator-setInitialOwner user59-offerPunkForSale user664-buyPunk user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user664-punkNoLongerForSale user664-transferPunk user777-offerPunkForSale user664-buyPunk user664-transferPunk user334-offerPunkForSale user1143-buyPunk user1143-offerPunkForSale user909-buyPunk user909-transferPunk user1324-enterBidForPunk user909-offerPunkForSale user909-punkNoLongerForSale user1324-withdrawBidForPunk
@@ -5576,7 +5576,7 @@ session  user-function user-function  user-function ...
 5577 creator-setInitialOwner user78-enterBidForPunk user59-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user59-enterBidForPunk user59-withdrawBidForPunk user94-enterBidForPunk user47-enterBidForPunk user917-enterBidForPunk user917-withdrawBidForPunk user970-enterBidForPunk user970-withdrawBidForPunk user1425-enterBidForPunk user1280-enterBidForPunk user1280-withdrawBidForPunk
 5578 creator-setInitialOwner
 5579 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSaleToAddress user664-buyPunk user664-offerPunkForSale user656-buyPunk user656-transferPunk
-5580 creator-setInitialOwner user146-offerPunkForSale user5-offerPunkForSale user480-buyPunk
+5580 creator-setInitialOwner user5-offerPunkForSale user480-buyPunk
 5581 creator-setInitialOwner user59-offerPunkForSale user59-punkNoLongerForSale user59-transferPunk user1178-offerPunkForSale user1178-punkNoLongerForSale user1178-offerPunkForSale user1178-offerPunkForSale user1209-enterBidForPunk user535-buyPunk user1209-withdrawBidForPunk user535-offerPunkForSale user535-offerPunkForSale user535-offerPunkForSale user535-offerPunkForSale user535-offerPunkForSale user535-offerPunkForSale user535-offerPunkForSale
 5582 creator-setInitialOwner
 5583 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user42-offerPunkForSale user716-buyPunk user716-offerPunkForSale user716-offerPunkForSale user716-punkNoLongerForSale user664-enterBidForPunk user664-withdrawBidForPunk user716-offerPunkForSale user890-enterBidForPunk user890-withdrawBidForPunk user716-offerPunkForSale user937-enterBidForPunk user937-withdrawBidForPunk user716-offerPunkForSale user716-offerPunkForSale user664-enterBidForPunk user965-buyPunk user664-withdrawBidForPunk
@@ -5824,13 +5824,13 @@ session  user-function user-function  user-function ...
 5825 creator-setInitialOwner user47-enterBidForPunk user123-enterBidForPunk user123-withdrawBidForPunk user4-transferPunk
 5826 creator-setInitialOwner user4-transferPunk user134-offerPunkForSale user228-enterBidForPunk
 5827 creator-setInitialOwner user4-offerPunkForSale user20-enterBidForPunk user20-withdrawBidForPunk user20-buyPunk user20-offerPunkForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user211-buyPunk user211-offerPunkForSale user211-punkNoLongerForSale user1425-enterBidForPunk user211-offerPunkForSale
-5828 creator-setInitialOwner user5-offerPunkForSale user364-buyPunk user364-buyPunk
+5828 creator-setInitialOwner user5-offerPunkForSale user364-buyPunk
 5829 creator-setInitialOwner user4-transferPunk user134-offerPunkForSale user36-enterBidForPunk user134-offerPunkForSale user36-withdrawBidForPunk user228-enterBidForPunk user1480-buyPunk user1480-offerPunkForSale
 5830 creator-setInitialOwner user4-transferPunk user134-offerPunkForSale
 5831 creator-setInitialOwner user4-transferPunk
 5832 creator-setInitialOwner user4-transferPunk
 5833 creator-setInitialOwner user94-enterBidForPunk user78-enterBidForPunk user78-withdrawBidForPunk user27-offerPunkForSale user440-buyPunk
-5834 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user375-buyPunk user375-buyPunk
+5834 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user375-buyPunk
 5835 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk
 5836 creator-setInitialOwner
 5837 creator-setInitialOwner user1-offerPunkForSale user1199-buyPunk user1199-offerPunkForSale user1199-punkNoLongerForSale user1199-offerPunkForSale user1199-offerPunkForSale user1325-buyPunk user1325-transferPunk
@@ -6034,7 +6034,7 @@ session  user-function user-function  user-function ...
 6035 creator-setInitialOwner
 6036 creator-setInitialOwner user7-offerPunkForSale user607-enterBidForPunk user607-withdrawBidForPunk user644-buyPunk user644-offerPunkForSale user644-punkNoLongerForSale user644-offerPunkForSale user644-punkNoLongerForSale user644-offerPunkForSale user607-buyPunk user607-offerPunkForSale user511-enterBidForPunk user607-acceptBidForPunk user511-transferPunk
 6037 creator-setInitialOwner user4-transferPunk
-6038 creator-setInitialOwner user59-enterBidForPunk user59-withdrawBidForPunk user221-offerPunkForSale user1425-enterBidForPunk
+6038 creator-setInitialOwner user59-enterBidForPunk user59-withdrawBidForPunk user1425-enterBidForPunk
 6039 creator-setInitialOwner user15-offerPunkForSale user101-buyPunk
 6040 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user10-transferPunk user138-offerPunkForSale user138-offerPunkForSale user138-transferPunk user205-transferPunk user716-enterBidForPunk user716-withdrawBidForPunk
 6041 creator-setInitialOwner
@@ -6141,7 +6141,7 @@ session  user-function user-function  user-function ...
 6142 creator-setInitialOwner user27-offerPunkForSale user470-enterBidForPunk user470-withdrawBidForPunk user656-buyPunk user656-transferPunk user656-transferPunk
 6143 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user470-enterBidForPunk user5-offerPunkForSale user470-withdrawBidForPunk user5-transferPunk user146-offerPunkForSale user146-offerPunkForSale user470-enterBidForPunk user616-buyPunk user616-offerPunkForSale user616-offerPunkForSale user470-withdrawBidForPunk user616-offerPunkForSale user616-offerPunkForSale user616-offerPunkForSale user616-offerPunkForSale user616-offerPunkForSale user616-punkNoLongerForSale user616-offerPunkForSale user616-punkNoLongerForSale user616-offerPunkForSale user616-punkNoLongerForSale
 6144 creator-setInitialOwner
-6145 creator-setInitialOwner user1-enterBidForPunk user3-enterBidForPunk user13-enterBidForPunk user47-enterBidForPunk user13-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user79-withdrawBidForPunk user79-acceptBidForPunk creator-enterBidForPunk creator-withdrawBidForPunk creator-enterBidForPunk creator-withdrawBidForPunk
+6145 creator-setInitialOwner user1-enterBidForPunk user3-enterBidForPunk user13-enterBidForPunk user47-enterBidForPunk user13-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user79-acceptBidForPunk creator-enterBidForPunk creator-withdrawBidForPunk creator-enterBidForPunk creator-withdrawBidForPunk
 6146 creator-setInitialOwner
 6147 creator-setInitialOwner user68-enterBidForPunk user68-withdrawBidForPunk user5-offerPunkForSale user5-offerPunkForSaleToAddress user664-buyPunk user664-offerPunkForSale user664-offerPunkForSale user667-enterBidForPunk user664-offerPunkForSale user664-offerPunkForSale user754-buyPunk user667-withdrawBidForPunk user754-offerPunkForSale user806-enterBidForPunk user754-acceptBidForPunk
 6148 creator-setInitialOwner user18-transferPunk user711-transferPunk
@@ -6184,7 +6184,7 @@ session  user-function user-function  user-function ...
 6185 creator-setInitialOwner user23-offerPunkForSale user1013-enterBidForPunk user1013-withdrawBidForPunk user1013-buyPunk
 6186 creator-setInitialOwner
 6187 creator-setInitialOwner user123-enterBidForPunk user123-withdrawBidForPunk
-6188 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user78-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-acceptBidForPunk user59-acceptBidForPunk user243-buyPunk
+6188 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user78-enterBidForPunk user38-transferPunk user59-offerPunkForSale user243-buyPunk
 6189 creator-setInitialOwner
 6190 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user164-buyPunk
 6191 creator-setInitialOwner user38-transferPunk user59-offerPunkForSale user891-enterBidForPunk user59-offerPunkForSale user891-withdrawBidForPunk user891-buyPunk user891-transferPunk user890-offerPunkForSaleToAddress user890-punkNoLongerForSale user890-offerPunkForSale user890-punkNoLongerForSale user890-offerPunkForSale user890-offerPunkForSale user902-buyPunk user902-offerPunkForSale user902-punkNoLongerForSale user902-offerPunkForSale user902-punkNoLongerForSale user902-offerPunkForSale user821-buyPunk
@@ -6471,7 +6471,7 @@ session  user-function user-function  user-function ...
 6472 creator-setInitialOwner user47-enterBidForPunk
 6473 creator-setInitialOwner
 6474 creator-setInitialOwner user50-offerPunkForSale user47-enterBidForPunk
-6475 creator-setInitialOwner user146-offerPunkForSale user5-offerPunkForSale user5-transferPunk
+6475 creator-setInitialOwner user5-offerPunkForSale user5-transferPunk
 6476 creator-setInitialOwner
 6477 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user1511-enterBidForPunk
 6478 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user5-transferPunk
@@ -6577,7 +6577,7 @@ session  user-function user-function  user-function ...
 6578 creator-setInitialOwner
 6579 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user470-buyPunk user470-offerPunkForSale user470-offerPunkForSale user470-offerPunkForSale user470-offerPunkForSale user470-punkNoLongerForSale
 6580 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSaleToAddress user677-buyPunk user677-offerPunkForSale user677-offerPunkForSale user677-offerPunkForSale user795-enterBidForPunk user795-withdrawBidForPunk user663-buyPunk user663-offerPunkForSaleToAddress user663-punkNoLongerForSale user663-offerPunkForSale user663-punkNoLongerForSale user663-offerPunkForSale user593-buyPunk user593-offerPunkForSale user100-enterBidForPunk user593-acceptBidForPunk user100-offerPunkForSale user1452-enterBidForPunk user1452-withdrawBidForPunk user937-enterBidForPunk user937-withdrawBidForPunk user1444-buyPunk user1444-transferPunk
-6581 creator-setInitialOwner user144-offerPunkForSale user144-transferPunk user58-offerPunkForSale user58-punkNoLongerForSale user58-offerPunkForSale user58-offerPunkForSale user58-offerPunkForSale user58-offerPunkForSale user138-buyPunk user138-transferPunk user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user5-offerPunkForSale user205-offerPunkForSale user205-offerPunkForSale user214-enterBidForPunk user205-offerPunkForSale user214-withdrawBidForPunk user694-buyPunk user694-offerPunkForSale user694-punkNoLongerForSale user664-enterBidForPunk user664-withdrawBidForPunk user694-offerPunkForSale user891-enterBidForPunk user694-offerPunkForSale user891-withdrawBidForPunk user891-enterBidForPunk user891-withdrawBidForPunk user694-punkNoLongerForSale user694-offerPunkForSale user694-offerPunkForSale user694-punkNoLongerForSale user891-enterBidForPunk user694-offerPunkForSale user891-withdrawBidForPunk user694-punkNoLongerForSale user694-transferPunk user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user1335-enterBidForPunk user1335-withdrawBidForPunk user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale
+6581 creator-setInitialOwner user144-offerPunkForSale user144-transferPunk user58-offerPunkForSale user58-punkNoLongerForSale user58-offerPunkForSale user58-offerPunkForSale user58-offerPunkForSale user58-offerPunkForSale user138-buyPunk user138-transferPunk user205-offerPunkForSale user205-offerPunkForSale user214-enterBidForPunk user205-offerPunkForSale user214-withdrawBidForPunk user694-buyPunk user694-offerPunkForSale user694-punkNoLongerForSale user664-enterBidForPunk user664-withdrawBidForPunk user694-offerPunkForSale user891-enterBidForPunk user694-offerPunkForSale user891-withdrawBidForPunk user891-enterBidForPunk user891-withdrawBidForPunk user694-punkNoLongerForSale user694-offerPunkForSale user694-offerPunkForSale user694-punkNoLongerForSale user891-enterBidForPunk user694-offerPunkForSale user891-withdrawBidForPunk user694-punkNoLongerForSale user694-transferPunk user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user1335-enterBidForPunk user1335-withdrawBidForPunk user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale user914-punkNoLongerForSale user914-offerPunkForSale
 6582 creator-setInitialOwner
 6583 creator-setInitialOwner user5-offerPunkForSale user5-offerPunkForSaleToAddress user664-buyPunk user664-offerPunkForSale user664-offerPunkForSale user663-buyPunk user663-offerPunkForSale user663-punkNoLongerForSale user663-offerPunkForSale user656-buyPunk user656-transferPunk user656-transferPunk
 6584 creator-setInitialOwner user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user441-buyPunk
@@ -6654,7 +6654,7 @@ session  user-function user-function  user-function ...
 6655 creator-setInitialOwner user59-transferPunk
 6656 creator-setInitialOwner user840-transferPunk
 6657 creator-setInitialOwner user59-transferPunk user664-offerPunkForSale user664-transferPunk user1177-offerPunkForSale user1223-buyPunk user1223-transferPunk user1111-offerPunkForSale user1111-offerPunkForSale user1111-offerPunkForSale user1111-offerPunkForSale user1111-offerPunkForSale user1111-offerPunkForSale user1291-buyPunk user1291-transferPunk user1304-offerPunkForSale
-6658 creator-setInitialOwner user5-offerPunkForSale user324-enterBidForPunk user324-withdrawBidForPunk user324-withdrawBidForPunk user5-offerPunkForSale user5-offerPunkForSale user472-buyPunk user472-offerPunkForSale user890-buyPunk user890-transferPunk user1425-enterBidForPunk user939-offerPunkForSale
+6658 creator-setInitialOwner user5-offerPunkForSale user324-enterBidForPunk user324-withdrawBidForPunk user5-offerPunkForSale user5-offerPunkForSale user472-buyPunk user472-offerPunkForSale user890-buyPunk user890-transferPunk user1425-enterBidForPunk user939-offerPunkForSale
 6659 creator-setInitialOwner user4-transferPunk
 6660 creator-setInitialOwner
 6661 creator-setInitialOwner user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user465-buyPunk user465-offerPunkForSale user465-offerPunkForSale user465-offerPunkForSale user465-offerPunkForSale
@@ -7150,7 +7150,7 @@ session  user-function user-function  user-function ...
 7151 creator-setInitialOwner
 7152 creator-setInitialOwner user47-enterBidForPunk
 7153 creator-setInitialOwner user59-offerPunkForSale user368-buyPunk
-7154 creator-setInitialOwner user73-offerPunkForSale user292-enterBidForPunk user73-acceptBidForPunk user73-acceptBidForPunk user73-acceptBidForPunk
+7154 creator-setInitialOwner user73-offerPunkForSale user292-enterBidForPunk user73-acceptBidForPunk
 7155 creator-setInitialOwner user59-offerPunkForSale user1080-buyPunk
 7156 creator-setInitialOwner user638-enterBidForPunk user5-acceptBidForPunk
 7157 creator-setInitialOwner user10-transferPunk user138-transferPunk user205-transferPunk user714-transferPunk user58-offerPunkForSale user58-offerPunkForSale user58-offerPunkForSale user58-transferPunk user677-offerPunkForSale user677-offerPunkForSale user664-buyPunk user664-offerPunkForSale user664-offerPunkForSale user758-buyPunk user758-offerPunkForSale user758-punkNoLongerForSale
@@ -7362,7 +7362,7 @@ session  user-function user-function  user-function ...
 7363 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user180-transferPunk user62-offerPunkForSale user243-buyPunk
 7364 creator-setInitialOwner user5-offerPunkForSale user5-transferPunk
 7365 creator-setInitialOwner user78-enterBidForPunk
-7366 creator-setInitialOwner user38-transferPunk user59-offerPunkForSale user243-buyPunk user246-buyPunk
+7366 creator-setInitialOwner user38-transferPunk user59-offerPunkForSale user243-buyPunk
 7367 creator-setInitialOwner user47-enterBidForPunk
 7368 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user71-offerPunkForSale user71-offerPunkForSale user175-buyPunk user175-transferPunk user281-offerPunkForSale user281-offerPunkForSale user413-enterBidForPunk user619-buyPunk user413-withdrawBidForPunk user413-enterBidForPunk user619-acceptBidForPunk user413-offerPunkForSale user413-punkNoLongerForSale user413-offerPunkForSale user413-punkNoLongerForSale user413-offerPunkForSale user413-punkNoLongerForSale
 7369 creator-setInitialOwner user3-enterBidForPunk user47-enterBidForPunk user67-acceptBidForPunk
@@ -7595,7 +7595,7 @@ session  user-function user-function  user-function ...
 7596 creator-setInitialOwner user112-enterBidForPunk user112-withdrawBidForPunk
 7597 creator-setInitialOwner user23-offerPunkForSale user61-enterBidForPunk user61-withdrawBidForPunk user1000-enterBidForPunk user23-punkNoLongerForSale
 7598 creator-setInitialOwner user28-offerPunkForSale user712-enterBidForPunk user664-buyPunk user664-offerPunkForSale user712-withdrawBidForPunk user664-transferPunk user690-offerPunkForSale user1030-enterBidForPunk user1030-withdrawBidForPunk user1021-buyPunk
-7599 creator-setInitialOwner user78-enterBidForPunk user311-acceptBidForPunk user311-offerPunkForSale user311-acceptBidForPunk user318-buyPunk user318-offerPunkForSale user384-buyPunk
+7599 creator-setInitialOwner user78-enterBidForPunk user311-offerPunkForSale user318-buyPunk user318-offerPunkForSale user384-buyPunk
 7600 creator-setInitialOwner user18-transferPunk user711-transferPunk
 7601 creator-setInitialOwner user123-enterBidForPunk user123-withdrawBidForPunk user1337-enterBidForPunk user1337-withdrawBidForPunk
 7602 creator-setInitialOwner user1010-enterBidForPunk user1010-withdrawBidForPunk
@@ -7891,7 +7891,7 @@ session  user-function user-function  user-function ...
 7892 creator-setInitialOwner user47-enterBidForPunk
 7893 creator-setInitialOwner
 7894 creator-setInitialOwner
-7895 creator-setInitialOwner user78-enterBidForPunk user325-acceptBidForPunk
+7895 creator-setInitialOwner user78-enterBidForPunk
 7896 creator-setInitialOwner
 7897 creator-setInitialOwner
 7898 creator-setInitialOwner user47-enterBidForPunk user37-enterBidForPunk user37-withdrawBidForPunk user47-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user44-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user78-enterBidForPunk user94-enterBidForPunk user47-enterBidForPunk user44-enterBidForPunk user44-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user57-offerPunkForSale user57-acceptBidForPunk user57-enterBidForPunk user677-enterBidForPunk user677-withdrawBidForPunk user922-enterBidForPunk user922-withdrawBidForPunk user664-enterBidForPunk user664-withdrawBidForPunk user937-enterBidForPunk user937-withdrawBidForPunk user214-offerPunkForSale user752-enterBidForPunk user890-enterBidForPunk user899-buyPunk user890-withdrawBidForPunk user899-transferPunk
@@ -7963,7 +7963,7 @@ session  user-function user-function  user-function ...
 7964 creator-setInitialOwner user437-enterBidForPunk user498-enterBidForPunk user692-enterBidForPunk user725-enterBidForPunk user725-withdrawBidForPunk user725-enterBidForPunk user725-withdrawBidForPunk user59-transferPunk user1178-offerPunkForSale user1178-transferPunk user1178-offerPunkForSale user1176-buyPunk
 7965 creator-setInitialOwner user59-offerPunkForSale user511-enterBidForPunk user59-acceptBidForPunk user511-transferPunk
 7966 creator-setInitialOwner
-7967 creator-setInitialOwner user78-enterBidForPunk user38-transferPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-offerPunkForSale user664-enterBidForPunk user664-withdrawBidForPunk user664-buyPunk user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user1018-enterBidForPunk user1006-enterBidForPunk user664-acceptBidForPunk user1006-offerPunkForSale user334-enterBidForPunk user817-buyPunk user334-withdrawBidForPunk
+7967 creator-setInitialOwner user78-enterBidForPunk user38-transferPunk user59-offerPunkForSale user664-enterBidForPunk user664-withdrawBidForPunk user664-buyPunk user664-offerPunkForSale user664-offerPunkForSale user664-offerPunkForSale user1018-enterBidForPunk user1006-enterBidForPunk user664-acceptBidForPunk user1006-offerPunkForSale user334-enterBidForPunk user817-buyPunk user334-withdrawBidForPunk
 7968 creator-setInitialOwner user59-offerPunkForSale user1046-enterBidForPunk user59-acceptBidForPunk user1046-transferPunk user1063-transferPunk
 7969 creator-setInitialOwner user59-transferPunk
 7970 creator-setInitialOwner
@@ -8016,7 +8016,7 @@ session  user-function user-function  user-function ...
 8017 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user17-offerPunkForSale user17-punkNoLongerForSale
 8018 creator-setInitialOwner user4-transferPunk
 8019 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user243-buyPunk
-8020 creator-setInitialOwner user47-enterBidForPunk user189-enterBidForPunk user129-offerPunkForSale user175-buyPunk user189-withdrawBidForPunk user175-transferPunk user175-transferPunk user281-offerPunkForSale user357-enterBidForPunk user357-withdrawBidForPunk user357-buyPunk
+8020 creator-setInitialOwner user47-enterBidForPunk user189-enterBidForPunk user129-offerPunkForSale user175-buyPunk user189-withdrawBidForPunk user175-transferPunk user281-offerPunkForSale user357-enterBidForPunk user357-withdrawBidForPunk user357-buyPunk
 8021 creator-setInitialOwner user129-offerPunkForSale user129-offerPunkForSale user129-punkNoLongerForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user173-enterBidForPunk user129-acceptBidForPunk user173-offerPunkForSale user173-offerPunkForSale user228-enterBidForPunk user173-offerPunkForSale user173-offerPunkForSale user173-offerPunkForSale user173-offerPunkForSale user173-offerPunkForSale user173-offerPunkForSale user1345-buyPunk user1345-offerPunkForSale user1345-punkNoLongerForSale user1345-offerPunkForSale user1460-enterBidForPunk user1345-acceptBidForPunk
 8022 creator-setInitialOwner user5-offerPunkForSale user238-buyPunk user1425-enterBidForPunk
 8023 creator-setInitialOwner user616-enterBidForPunk user616-withdrawBidForPunk
@@ -8119,7 +8119,7 @@ session  user-function user-function  user-function ...
 8120 creator-setInitialOwner
 8121 creator-setInitialOwner
 8122 creator-setInitialOwner user59-offerPunkForSale user59-punkNoLongerForSale user59-transferPunk user1012-offerPunkForSale user1012-offerPunkForSale user1280-buyPunk
-8123 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-acceptBidForPunk user243-buyPunk
+8123 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user243-buyPunk
 8124 creator-setInitialOwner user47-enterBidForPunk user592-enterBidForPunk user592-withdrawBidForPunk user5-offerPunkForSale user740-enterBidForPunk user5-acceptBidForPunk user740-offerPunkForSale user740-offerPunkForSale user740-offerPunkForSale user740-offerPunkForSale user740-offerPunkForSale user740-punkNoLongerForSale user740-offerPunkForSale
 8125 creator-setInitialOwner user7-offerPunkForSale user7-offerPunkForSale user659-buyPunk user659-transferPunk user709-transferPunk user659-offerPunkForSale user214-enterBidForPunk user214-withdrawBidForPunk user659-punkNoLongerForSale user659-offerPunkForSale user1000-enterBidForPunk user659-punkNoLongerForSale user659-offerPunkForSale user659-punkNoLongerForSale user659-offerPunkForSale user659-punkNoLongerForSale user659-offerPunkForSale user659-transferPunk
 8126 creator-setInitialOwner
@@ -8186,7 +8186,7 @@ session  user-function user-function  user-function ...
 8187 creator-setInitialOwner user47-enterBidForPunk user3-enterBidForPunk user47-enterBidForPunk user74-offerPunkForSale user74-offerPunkForSale user74-offerPunkForSale user74-offerPunkForSale user74-offerPunkForSale user74-offerPunkForSale user74-punkNoLongerForSale user74-offerPunkForSale user74-offerPunkForSale user592-enterBidForPunk user592-withdrawBidForPunk user659-enterBidForPunk user659-withdrawBidForPunk user74-offerPunkForSale user687-enterBidForPunk user687-withdrawBidForPunk user442-buyPunk user442-offerPunkForSale user442-transferPunk
 8188 creator-setInitialOwner user10-offerPunkForSale user10-punkNoLongerForSale user47-enterBidForPunk user10-transferPunk user138-transferPunk user205-transferPunk user664-offerPunkForSale user664-offerPunkForSale user809-buyPunk user809-offerPunkForSale user809-offerPunkForSale user892-buyPunk user892-transferPunk user821-offerPunkForSale user821-offerPunkForSale user1047-enterBidForPunk user821-offerPunkForSale user1047-withdrawBidForPunk user1047-buyPunk user1047-offerPunkForSale user1047-punkNoLongerForSale user1047-offerPunkForSale user1047-punkNoLongerForSale user1047-offerPunkForSale user1171-buyPunk user1171-offerPunkForSale user1171-transferPunk user1171-offerPunkForSale
 8189 creator-setInitialOwner user28-offerPunkForSale user712-enterBidForPunk user664-buyPunk user664-offerPunkForSale user712-withdrawBidForPunk user664-transferPunk user690-offerPunkForSale user1097-buyPunk
-8190 creator-setInitialOwner user78-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-acceptBidForPunk user59-offerPunkForSale user687-buyPunk user687-offerPunkForSale user687-transferPunk user722-offerPunkForSale user722-transferPunk user687-offerPunkForSale user687-offerPunkForSale user687-offerPunkForSale user687-offerPunkForSale user664-enterBidForPunk user687-offerPunkForSale user687-offerPunkForSale user664-withdrawBidForPunk user687-offerPunkForSale user687-offerPunkForSale user687-offerPunkForSale user687-offerPunkForSale user815-buyPunk user815-offerPunkForSale user815-punkNoLongerForSale user815-offerPunkForSale user815-offerPunkForSale user815-offerPunkForSale user815-offerPunkForSale user1047-enterBidForPunk user1047-withdrawBidForPunk user815-punkNoLongerForSale user815-offerPunkForSale user815-punkNoLongerForSale user815-transferPunk user1216-transferPunk user682-offerPunkForSale user682-transferPunk user682-offerPunkForSale user1284-enterBidForPunk user682-offerPunkForSale user682-offerPunkForSale user1284-withdrawBidForPunk user682-offerPunkForSale user682-offerPunkForSale user682-offerPunkForSale user682-offerPunkForSale user1188-enterBidForPunk user682-offerPunkForSale user682-acceptBidForPunk
+8190 creator-setInitialOwner user78-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user687-buyPunk user687-offerPunkForSale user687-transferPunk user722-offerPunkForSale user722-transferPunk user687-offerPunkForSale user687-offerPunkForSale user687-offerPunkForSale user687-offerPunkForSale user664-enterBidForPunk user687-offerPunkForSale user687-offerPunkForSale user664-withdrawBidForPunk user687-offerPunkForSale user687-offerPunkForSale user687-offerPunkForSale user687-offerPunkForSale user815-buyPunk user815-offerPunkForSale user815-punkNoLongerForSale user815-offerPunkForSale user815-offerPunkForSale user815-offerPunkForSale user815-offerPunkForSale user1047-enterBidForPunk user1047-withdrawBidForPunk user815-punkNoLongerForSale user815-offerPunkForSale user815-punkNoLongerForSale user815-transferPunk user1216-transferPunk user682-offerPunkForSale user682-transferPunk user682-offerPunkForSale user1284-enterBidForPunk user682-offerPunkForSale user682-offerPunkForSale user1284-withdrawBidForPunk user682-offerPunkForSale user682-offerPunkForSale user682-offerPunkForSale user682-offerPunkForSale user1188-enterBidForPunk user682-offerPunkForSale user682-acceptBidForPunk
 8191 creator-setInitialOwner user44-enterBidForPunk user100-enterBidForPunk user100-withdrawBidForPunk user464-enterBidForPunk user464-withdrawBidForPunk user1337-enterBidForPunk user1337-withdrawBidForPunk user1337-enterBidForPunk user1337-withdrawBidForPunk user1337-enterBidForPunk user1337-withdrawBidForPunk
 8192 creator-setInitialOwner user5-offerPunkForSale user5-transferPunk
 8193 creator-setInitialOwner
@@ -8215,7 +8215,7 @@ session  user-function user-function  user-function ...
 8216 creator-setInitialOwner user40-offerPunkForSale user816-buyPunk user816-offerPunkForSale user816-offerPunkForSale user816-offerPunkForSale user865-buyPunk
 8217 creator-setInitialOwner user94-enterBidForPunk user1000-enterBidForPunk
 8218 creator-setInitialOwner user13-offerPunkForSale user13-offerPunkForSale
-8219 creator-setInitialOwner user78-enterBidForPunk user5-enterBidForPunk user5-withdrawBidForPunk user214-enterBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user917-enterBidForPunk user917-withdrawBidForPunk user917-enterBidForPunk user917-withdrawBidForPunk user1118-enterBidForPunk user1118-withdrawBidForPunk user1118-enterBidForPunk user214-enterBidForPunk user79-transferPunk user214-withdrawBidForPunk user1485-offerPunkForSale user1485-punkNoLongerForSale user1485-offerPunkForSale user1485-offerPunkForSale user1414-enterBidForPunk user1485-acceptBidForPunk user1414-transferPunk
+8219 creator-setInitialOwner user78-enterBidForPunk user5-enterBidForPunk user5-withdrawBidForPunk user214-enterBidForPunk user214-withdrawBidForPunk user917-enterBidForPunk user917-withdrawBidForPunk user917-enterBidForPunk user917-withdrawBidForPunk user1118-enterBidForPunk user1118-withdrawBidForPunk user1118-enterBidForPunk user214-enterBidForPunk user79-transferPunk user214-withdrawBidForPunk user1485-offerPunkForSale user1485-punkNoLongerForSale user1485-offerPunkForSale user1485-offerPunkForSale user1414-enterBidForPunk user1485-acceptBidForPunk user1414-transferPunk
 8220 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user1118-enterBidForPunk user79-transferPunk user1118-withdrawBidForPunk user1485-offerPunkForSale
 8221 creator-setInitialOwner
 8222 creator-setInitialOwner
@@ -8402,7 +8402,7 @@ session  user-function user-function  user-function ...
 8403 creator-setInitialOwner user57-offerPunkForSale user716-enterBidForPunk user716-withdrawBidForPunk user716-enterBidForPunk user716-withdrawBidForPunk user57-offerPunkForSale user890-buyPunk
 8404 creator-setInitialOwner
 8405 creator-setInitialOwner user78-enterBidForPunk user4-transferPunk
-8406 creator-setInitialOwner user129-offerPunkForSale user221-buyPunk user221-buyPunk
+8406 creator-setInitialOwner user129-offerPunkForSale user221-buyPunk
 8407 creator-setInitialOwner user39-offerPunkForSale user47-enterBidForPunk user5-enterBidForPunk user39-offerPunkForSale user39-offerPunkForSale user5-withdrawBidForPunk user39-offerPunkForSale user214-enterBidForPunk user39-offerPunkForSale user664-enterBidForPunk user664-withdrawBidForPunk user656-buyPunk user656-offerPunkForSale user1028-enterBidForPunk user1028-withdrawBidForPunk user656-punkNoLongerForSale user656-transferPunk
 8408 creator-setInitialOwner user59-transferPunk user334-offerPunkForSale user334-offerPunkForSale user1174-buyPunk
 8409 creator-setInitialOwner user59-transferPunk user1178-offerPunkForSale user1178-transferPunk user1178-offerPunkForSale user1176-buyPunk
@@ -8429,7 +8429,7 @@ session  user-function user-function  user-function ...
 8430 creator-setInitialOwner user796-enterBidForPunk user796-withdrawBidForPunk user28-offerPunkForSale
 8431 creator-setInitialOwner user214-enterBidForPunk user214-withdrawBidForPunk user214-enterBidForPunk user5-acceptBidForPunk user214-offerPunkForSale user214-offerPunkForSale user656-buyPunk user656-offerPunkForSale user656-punkNoLongerForSale user656-punkNoLongerForSale user656-transferPunk user656-transferPunk user669-offerPunkForSale
 8432 creator-setInitialOwner user72-offerPunkForSale user1-buyPunk user1-offerPunkForSaleToAddress user100-buyPunk user100-offerPunkForSale user100-punkNoLongerForSale user334-enterBidForPunk user334-withdrawBidForPunk user334-enterBidForPunk user334-withdrawBidForPunk user228-enterBidForPunk user1297-enterBidForPunk user1297-withdrawBidForPunk user1297-enterBidForPunk user1297-withdrawBidForPunk
-8433 creator-setInitialOwner user5-offerPunkForSale user5-punkNoLongerForSale user146-offerPunkForSale user5-offerPunkForSale user329-buyPunk user329-offerPunkForSale user517-buyPunk
+8433 creator-setInitialOwner user5-offerPunkForSale user5-punkNoLongerForSale user5-offerPunkForSale user329-buyPunk user329-offerPunkForSale user517-buyPunk
 8434 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user122-transferPunk user213-offerPunkForSale user214-enterBidForPunk user667-enterBidForPunk user667-withdrawBidForPunk user665-buyPunk user833-enterBidForPunk user833-withdrawBidForPunk
 8435 creator-setInitialOwner user4-transferPunk
 8436 creator-setInitialOwner user59-offerPunkForSale user59-punkNoLongerForSale user59-transferPunk user1281-offerPunkForSale user1281-offerPunkForSale user1281-punkNoLongerForSale user1281-transferPunk user1297-offerPunkForSale user1297-transferPunk user1177-offerPunkForSale user1298-buyPunk user1298-offerPunkForSale user1294-enterBidForPunk user1343-buyPunk user1294-withdrawBidForPunk
@@ -8631,7 +8631,7 @@ session  user-function user-function  user-function ...
 8632 creator-setInitialOwner
 8633 creator-setInitialOwner user1425-enterBidForPunk
 8634 creator-setInitialOwner user4-transferPunk
-8635 creator-setInitialOwner user40-offerPunkForSale user20-buyPunk user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user358-enterBidForPunk user358-withdrawBidForPunk user358-withdrawBidForPunk user358-withdrawBidForPunk user473-buyPunk user664-enterBidForPunk user664-withdrawBidForPunk user664-enterBidForPunk user937-enterBidForPunk user334-enterBidForPunk user473-offerPunkForSale user334-withdrawBidForPunk user334-enterBidForPunk user473-acceptBidForPunk user334-transferPunk user334-transferPunk user334-offerPunkForSale user334-punkNoLongerForSale user334-transferPunk user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-offerPunkForSale user663-enterBidForPunk user334-offerPunkForSale user663-withdrawBidForPunk user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-offerPunkForSale user334-offerPunkForSale user334-punkNoLongerForSale user1428-enterBidForPunk user1428-withdrawBidForPunk user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-transferPunk user1337-offerPunkForSale user661-buyPunk user661-offerPunkForSale
+8635 creator-setInitialOwner user40-offerPunkForSale user20-buyPunk user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user358-enterBidForPunk user358-withdrawBidForPunk user473-buyPunk user664-enterBidForPunk user664-withdrawBidForPunk user664-enterBidForPunk user937-enterBidForPunk user334-enterBidForPunk user473-offerPunkForSale user334-withdrawBidForPunk user334-enterBidForPunk user473-acceptBidForPunk user334-transferPunk user334-transferPunk user334-offerPunkForSale user334-punkNoLongerForSale user334-transferPunk user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-offerPunkForSale user663-enterBidForPunk user334-offerPunkForSale user663-withdrawBidForPunk user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-offerPunkForSale user334-offerPunkForSale user334-punkNoLongerForSale user1428-enterBidForPunk user1428-withdrawBidForPunk user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-offerPunkForSale user334-punkNoLongerForSale user334-transferPunk user1337-offerPunkForSale user661-buyPunk user661-offerPunkForSale
 8636 creator-setInitialOwner user4-transferPunk
 8637 creator-setInitialOwner
 8638 creator-setInitialOwner user47-enterBidForPunk user4-transferPunk user661-enterBidForPunk user661-withdrawBidForPunk
@@ -8847,7 +8847,7 @@ session  user-function user-function  user-function ...
 8848 creator-setInitialOwner user5-offerPunkForSale user5-transferPunk
 8849 creator-setInitialOwner user47-enterBidForPunk user4-transferPunk
 8850 creator-setInitialOwner user5-offerPunkForSale user391-buyPunk user391-transferPunk
-8851 creator-setInitialOwner user47-enterBidForPunk user197-offerPunkForSale user189-buyPunk user173-enterBidForPunk user173-enterBidForPunk user173-withdrawBidForPunk user189-offerPunkForSale user315-buyPunk user315-transferPunk
+8851 creator-setInitialOwner user47-enterBidForPunk user197-offerPunkForSale user189-buyPunk user173-enterBidForPunk user173-withdrawBidForPunk user189-offerPunkForSale user315-buyPunk user315-transferPunk
 8852 creator-setInitialOwner user7-offerPunkForSale user7-transferPunk user888-offerPunkForSale user887-enterBidForPunk user887-withdrawBidForPunk user887-buyPunk
 8853 creator-setInitialOwner user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user129-offerPunkForSale user432-enterBidForPunk user129-acceptBidForPunk user432-offerPunkForSale user602-buyPunk
 8854 creator-setInitialOwner user74-offerPunkForSale user101-buyPunk
@@ -8874,7 +8874,7 @@ session  user-function user-function  user-function ...
 8875 creator-setInitialOwner
 8876 creator-setInitialOwner user28-offerPunkForSale
 8877 creator-setInitialOwner user15-offerPunkForSale user47-enterBidForPunk user15-offerPunkForSale user146-enterBidForPunk user146-withdrawBidForPunk user15-offerPunkForSale user15-offerPunkForSale user15-offerPunkForSale user15-offerPunkForSale user292-enterBidForPunk user15-acceptBidForPunk
-8878 creator-setInitialOwner user1-offerPunkForSale user6-buyPunk user6-offerPunkForSale user101-buyPunk user15-offerPunkForSale
+8878 creator-setInitialOwner user1-offerPunkForSale user6-buyPunk user6-offerPunkForSale user101-buyPunk
 8879 creator-setInitialOwner user1-offerPunkForSale user1139-buyPunk user1139-transferPunk
 8880 creator-setInitialOwner user112-transferPunk
 8881 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user656-enterBidForPunk user656-withdrawBidForPunk
@@ -8930,7 +8930,7 @@ session  user-function user-function  user-function ...
 8931 creator-setInitialOwner user5-offerPunkForSale user5-transferPunk user718-transferPunk user950-offerPunkForSale user950-offerPunkForSale user962-buyPunk user962-offerPunkForSale user962-offerPunkForSale user964-buyPunk user964-offerPunkForSale user1135-buyPunk
 8932 creator-setInitialOwner user4-transferPunk
 8933 creator-setInitialOwner user25-offerPunkForSale user228-enterBidForPunk
-8934 creator-setInitialOwner user5-offerPunkForSale user228-buyPunk user228-buyPunk user228-offerPunkForSale user228-offerPunkForSale user638-enterBidForPunk user638-withdrawBidForPunk user716-enterBidForPunk user716-buyPunk user716-offerPunkForSale user716-offerPunkForSale user716-punkNoLongerForSale
+8934 creator-setInitialOwner user5-offerPunkForSale user228-buyPunk user228-offerPunkForSale user228-offerPunkForSale user638-enterBidForPunk user638-withdrawBidForPunk user716-enterBidForPunk user716-buyPunk user716-offerPunkForSale user716-offerPunkForSale user716-punkNoLongerForSale
 8935 creator-setInitialOwner user47-enterBidForPunk user5-offerPunkForSale user716-enterBidForPunk user5-transferPunk user716-withdrawBidForPunk user716-enterBidForPunk user716-withdrawBidForPunk
 8936 creator-setInitialOwner
 8937 creator-setInitialOwner
@@ -8948,7 +8948,7 @@ session  user-function user-function  user-function ...
 8949 creator-setInitialOwner user5-offerPunkForSale user5-transferPunk user146-offerPunkForSale user146-offerPunkForSale user146-offerPunkForSale user781-buyPunk user781-offerPunkForSale user781-offerPunkForSale user691-buyPunk user691-offerPunkForSale user691-transferPunk user664-offerPunkForSale user664-punkNoLongerForSale user664-transferPunk
 8950 creator-setInitialOwner user94-enterBidForPunk user5-acceptBidForPunk
 8951 creator-setInitialOwner user47-enterBidForPunk user85-offerPunkForSale user85-offerPunkForSale user47-withdrawBidForPunk user445-buyPunk user445-transferPunk
-8952 creator-setInitialOwner user129-offerPunkForSale user207-enterBidForPunk user257-enterBidForPunk user129-acceptBidForPunk user129-acceptBidForPunk user129-acceptBidForPunk
+8952 creator-setInitialOwner user129-offerPunkForSale user207-enterBidForPunk user257-enterBidForPunk user129-acceptBidForPunk
 8953 creator-setInitialOwner user4-transferPunk
 8954 creator-setInitialOwner user72-offerPunkForSale user3-buyPunk user3-offerPunkForSale user78-enterBidForPunk user1-buyPunk
 8955 creator-setInitialOwner
@@ -9383,7 +9383,7 @@ session  user-function user-function  user-function ...
 9384 creator-setInitialOwner user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user59-punkNoLongerForSale user59-transferPunk
 9385 creator-setInitialOwner user5-offerPunkForSale user743-buyPunk
 9386 creator-setInitialOwner user94-enterBidForPunk user78-enterBidForPunk user78-withdrawBidForPunk
-9387 creator-setInitialOwner user47-enterBidForPunk user18-acceptBidForPunk user18-acceptBidForPunk user419-enterBidForPunk user419-withdrawBidForPunk
+9387 creator-setInitialOwner user47-enterBidForPunk user18-acceptBidForPunk user419-enterBidForPunk user419-withdrawBidForPunk
 9388 creator-setInitialOwner
 9389 creator-setInitialOwner
 9390 creator-setInitialOwner user40-offerPunkForSale user78-enterBidForPunk user40-offerPunkForSale user40-offerPunkForSale user40-offerPunkForSale user40-offerPunkForSale user40-offerPunkForSale user809-buyPunk user809-transferPunk
@@ -9516,10 +9516,10 @@ session  user-function user-function  user-function ...
 9517 creator-setInitialOwner
 9518 creator-setInitialOwner user40-offerPunkForSale user1-buyPunk
 9519 creator-setInitialOwner user59-offerPunkForSale user59-punkNoLongerForSale user59-transferPunk
-9520 creator-setInitialOwner user40-offerPunkForSale user3-buyPunk user3-offerPunkForSale user3-offerPunkForSale user3-punkNoLongerForSale user147-enterBidForPunk user147-withdrawBidForPunk user3-transferPunk user3-transferPunk user214-offerPunkForSale user357-enterBidForPunk user357-withdrawBidForPunk user357-buyPunk
+9520 creator-setInitialOwner user40-offerPunkForSale user3-buyPunk user3-offerPunkForSale user3-offerPunkForSale user3-punkNoLongerForSale user147-enterBidForPunk user147-withdrawBidForPunk user3-transferPunk user214-offerPunkForSale user357-enterBidForPunk user357-withdrawBidForPunk user357-buyPunk
 9521 creator-setInitialOwner user62-offerPunkForSale user20-buyPunk user20-offerPunkForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-offerPunkForSale user20-punkNoLongerForSale user20-offerPunkForSale user20-transferPunk user966-offerPunkForSale user966-offerPunkForSale user966-offerPunkForSale
 9522 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user44-enterBidForPunk user44-withdrawBidForPunk user36-enterBidForPunk
-9523 creator-setInitialOwner user71-offerPunkForSale user358-enterBidForPunk user358-withdrawBidForPunk user358-withdrawBidForPunk user752-enterBidForPunk user752-withdrawBidForPunk user752-buyPunk
+9523 creator-setInitialOwner user71-offerPunkForSale user358-enterBidForPunk user358-withdrawBidForPunk user752-enterBidForPunk user752-withdrawBidForPunk user752-buyPunk
 9524 creator-setInitialOwner
 9525 creator-setInitialOwner user4-transferPunk
 9526 creator-setInitialOwner user47-enterBidForPunk
@@ -9695,7 +9695,7 @@ session  user-function user-function  user-function ...
 9696 creator-setInitialOwner
 9697 creator-setInitialOwner user5-offerPunkForSale user667-enterBidForPunk user5-acceptBidForPunk user667-offerPunkForSale user667-offerPunkForSale user667-offerPunkForSale user667-offerPunkForSale user667-offerPunkForSale user868-enterBidForPunk user868-withdrawBidForPunk user868-buyPunk user667-enterBidForPunk user616-enterBidForPunk user876-enterBidForPunk user868-offerPunkForSale user868-acceptBidForPunk user876-offerPunkForSale user809-buyPunk user809-offerPunkForSale user809-offerPunkForSale user809-offerPunkForSale user809-offerPunkForSale user809-punkNoLongerForSale user809-transferPunk user937-offerPunkForSale
 9698 creator-setInitialOwner
-9699 creator-setInitialOwner user61-enterBidForPunk user47-enterBidForPunk user177-acceptBidForPunk user18-acceptBidForPunk
+9699 creator-setInitialOwner user61-enterBidForPunk user47-enterBidForPunk user18-acceptBidForPunk
 9700 creator-setInitialOwner
 9701 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk
 9702 creator-setInitialOwner user25-offerPunkForSale user25-offerPunkForSale
@@ -9857,7 +9857,7 @@ session  user-function user-function  user-function ...
 9858 creator-setInitialOwner user47-enterBidForPunk user47-withdrawBidForPunk user153-transferPunk
 9859 creator-setInitialOwner user38-transferPunk user59-offerPunkForSale user340-buyPunk user340-offerPunkForSale user809-buyPunk user809-transferPunk
 9860 creator-setInitialOwner user7-offerPunkForSale user47-enterBidForPunk user7-transferPunk user888-offerPunkForSale user909-buyPunk user909-offerPunkForSale user1106-buyPunk user1106-transferPunk user1131-transferPunk
-9861 creator-setInitialOwner user214-enterBidForPunk user214-enterBidForPunk user5-acceptBidForPunk user214-offerPunkForSale user214-offerPunkForSale user214-offerPunkForSale user638-buyPunk
+9861 creator-setInitialOwner user214-enterBidForPunk user5-acceptBidForPunk user214-offerPunkForSale user214-offerPunkForSale user214-offerPunkForSale user638-buyPunk
 9862 creator-setInitialOwner user59-offerPunkForSale user340-buyPunk
 9863 creator-setInitialOwner user45-offerPunkForSale user47-enterBidForPunk user59-buyPunk user59-offerPunkForSale user59-offerPunkForSale user357-enterBidForPunk user357-withdrawBidForPunk user357-buyPunk
 9864 creator-setInitialOwner user47-enterBidForPunk user38-transferPunk user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user59-offerPunkForSale user17-enterBidForPunk user59-acceptBidForPunk user17-offerPunkForSale user664-enterBidForPunk user664-withdrawBidForPunk user17-punkNoLongerForSale user17-offerPunkForSale user890-enterBidForPunk user890-withdrawBidForPunk user17-offerPunkForSale user17-punkNoLongerForSale

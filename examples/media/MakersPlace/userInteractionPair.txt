@@ -1,0 +1,7 @@
+safeTransferFrom transferFrom
+transferFrom burn
+safeTransferFrom safeTransferFrom
+safeTransferFrom burn
+transferFrom transferFrom
+transferFrom safeTransferFrom
+transferFrom approve

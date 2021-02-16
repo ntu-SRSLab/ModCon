@@ -1,0 +1,6 @@
+oboCreateDigitalMediaReleases approve
+oboCreateDigitalMediaAndReleases approve
+oboCreateDigitalMediaAndReleases safeTransferFrom
+oboCreateDigitalMediaReleases safeTransferFrom
+oboCreateDigitalMediaAndReleases burnToken
+oboCreateDigitalMediaReleases burnToken

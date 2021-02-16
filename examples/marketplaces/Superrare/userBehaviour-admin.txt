@@ -1,87 +1,80 @@
 alphabet
-acceptBid
-transfer
 buy
 setSalePrice
-cancelBid
 bid
+acceptBid
+addNewToken
+transfer
+cancelBid
 ---------------------
 positive examples
-bid transfer
-setSalePrice setSalePrice
-buy setSalePrice transfer
-setSalePrice setSalePrice transfer acceptBid
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
-setSalePrice acceptBid
+bid cancelBid buy setSalePrice setSalePrice
 setSalePrice
-bid
-setSalePrice setSalePrice transfer setSalePrice setSalePrice acceptBid
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
-setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
-bid cancelBid bid cancelBid bid transfer
-bid setSalePrice setSalePrice
-setSalePrice setSalePrice setSalePrice setSalePrice transfer
-bid bid setSalePrice
-setSalePrice setSalePrice setSalePrice
-setSalePrice setSalePrice setSalePrice acceptBid
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
-setSalePrice setSalePrice transfer setSalePrice setSalePrice setSalePrice
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
-setSalePrice bid setSalePrice acceptBid
-setSalePrice transfer
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
-transfer
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
-acceptBid bid
-bid cancelBid bid transfer
-bid cancelBid bid cancelBid
-setSalePrice setSalePrice setSalePrice acceptBid setSalePrice setSalePrice
 setSalePrice transfer transfer
-setSalePrice setSalePrice setSalePrice transfer
-buy transfer
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
 bid cancelBid setSalePrice setSalePrice transfer transfer
-bid bid bid
-transfer bid bid bid
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
-acceptBid acceptBid acceptBid acceptBid
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
-bid bid transfer
-setSalePrice transfer setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
-bid acceptBid
-bid setSalePrice acceptBid
-acceptBid
-bid bid cancelBid
-bid bid bid setSalePrice setSalePrice setSalePrice
-setSalePrice setSalePrice setSalePrice setSalePrice
-bid bid setSalePrice setSalePrice
-bid setSalePrice setSalePrice setSalePrice
-acceptBid transfer
-bid bid bid transfer
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
-bid setSalePrice setSalePrice setSalePrice setSalePrice
-bid cancelBid bid setSalePrice setSalePrice transfer
-bid cancelBid setSalePrice transfer transfer
-setSalePrice setSalePrice acceptBid
-setSalePrice acceptBid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid cancelBid bid cancelBid
+setSalePrice setSalePrice setSalePrice acceptBid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+addNewToken setSalePrice bid setSalePrice acceptBid
+addNewToken setSalePrice setSalePrice acceptBid
 bid setSalePrice transfer
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
-bid cancelBid
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
-bid bid
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
-setSalePrice setSalePrice bid setSalePrice
-transfer bid
-buy setSalePrice
-buy
-transfer acceptBid
-setSalePrice setSalePrice transfer
-bid setSalePrice
-setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
-bid setSalePrice setSalePrice setSalePrice acceptBid
 setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice acceptBid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+addNewToken setSalePrice
+addNewToken setSalePrice acceptBid
+buy setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+setSalePrice setSalePrice transfer
+buy setSalePrice transfer
+bid cancelBid bid setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid cancelBid setSalePrice transfer transfer
+buy
+bid setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+addNewToken setSalePrice setSalePrice setSalePrice acceptBid
+acceptBid acceptBid acceptBid acceptBid
+addNewToken acceptBid
+addNewToken setSalePrice setSalePrice transfer
+setSalePrice transfer
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+buy setSalePrice setSalePrice setSalePrice
+bid bid bid
+transfer
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice transfer
+setSalePrice setSalePrice setSalePrice transfer
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid buy setSalePrice
+addNewToken transfer
+bid cancelBid bid setSalePrice setSalePrice transfer
+buy setSalePrice setSalePrice
+bid setSalePrice
+bid bid bid setSalePrice setSalePrice setSalePrice
+bid transfer
+setSalePrice setSalePrice setSalePrice setSalePrice
+addNewToken setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid
+bid bid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+bid bid setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice transfer
+bid setSalePrice acceptBid
+buy setSalePrice
+bid acceptBid
+setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice acceptBid
+addNewToken setSalePrice setSalePrice
+acceptBid
+buy transfer
+bid cancelBid
+addNewToken setSalePrice setSalePrice setSalePrice setSalePrice acceptBid
+bid setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice setSalePrice
+setSalePrice setSalePrice

@@ -81,7 +81,7 @@ def tuplize_bn(line):
 
 def tuplize_session(line):
     arr = line.strip().split(" ")
-    return arr[0], arr[1], arr[-2],1 if arr[-1]=="success" else 0
+    return arr[1], arr[2], arr[-2],1 if arr[-1]=="success" else 0
 
 
 # get trace from result.txt 
@@ -126,6 +126,27 @@ def test_kmeans(input_matrix_file):
     return df 
     
 def get_session_statistics(input_file):
+    def split_keep(string, sep):
+        print(string, sep)
+        start = 0
+        oldstart = 0
+        while (end := string.find(sep, start) + 1) > 0:
+            if oldstart!=end-1:
+                yield string[oldstart:end-1]
+                print(string[oldstart:end-1])
+            oldstart = end-1
+            start = end+len(sep)
+        yield string[oldstart:]
+        print(string[oldstart:])
+      
+    def splitPreciseSession(strTraces, createFunctions, i):
+        if i==len(createFunctions):
+            return strTraces
+        traces = []
+        for strTrace in strTraces:
+            traces.extend(split_keep(strTrace, createFunctions[i]))
+        return splitPreciseSession(traces, createFunctions, i+1)
+
     with open(input_file) as f:
         sessions = f.readlines()[1:]
         used_methods = set()
@@ -155,14 +176,31 @@ def get_session_statistics(input_file):
                 userSessions[user].add(sessionId)    
         
         traces = set()
-        for session in sessions:
+        for session in sessions[:min(500, len(sessions))]:
             pairs = session.strip("\n").split(" ")[1:]
             trace = list()
             for pair in pairs:
                 user, function = tuple(pair.split("-"))
                 trace.append(function)
-            traces.add(" ".join(trace))
-
+            strTrace = " ".join(trace)
+            # traces.add(strTrace)
+            ### known createSession functions
+            strTrace = strTrace.replace("addNewToken", "createSession").replace("buy","endSession createSession").replace("bid","deposit").replace("acceptBid","endSession createSession").replace("transfer", "endSession createSession").replace("cancelBid", "withdraw").replace("setSalePrice", "configSession")
+            # print(strTrace)
+            strTraces = splitPreciseSession([strTrace], ["createSession"],0)
+            for strTrace in strTraces:
+                seq = strTrace.split(" ")
+                # if len(seq)<10:
+                for i in range(1, len(seq)+1):
+                        traces.add(" ".join(seq[:i]))
+        
+        used_methods.add("createSession")
+        used_methods.add("endSession")
+        used_methods.add("configSession")
+        used_methods.add("clearSession")
+        used_methods.add("deposit")
+        used_methods.add("withdraw")
+        used_methods.add("update")
         return used_methods, userVectors, traces, userSessions
 
 def getUserBehaviour(input_file):

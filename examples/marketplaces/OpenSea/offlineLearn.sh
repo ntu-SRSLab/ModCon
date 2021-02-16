@@ -2,10 +2,11 @@
 
 workdir=$(pwd)
 
-cd /home/liuye/Projects/MachineLearning/learnlib-demo/target/
+cd /home/liuye/Projects/InfModConExtended/learnlib-demo/target/
 
 # files=("sessionTraceSummary-reduce" "userBehaviour-user-reduce" "userBehaviour-admin-reduce")
-files=(userBehaviour-admin-reduce userBehaviour-user-reduce)
+
+files=(sessionTraceSummary)
 for file in ${files[@]};
 do 
     echo $file
