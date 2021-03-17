@@ -1,0 +1,5 @@
+(depositHeroToGateway,setHeroAssetAddress,withdrawHeroToAssetOwnerByAdmin,transferOwnership,mintHero):0
+(setHeroAssetAddress,transferOwnership):1
+(withdrawHeroToAssetOwnerByAdmin,mintHero):1
+(depositHeroToGateway):1495
+():1497

@@ -1,0 +1,8 @@
+(purchase):1675
+(transferFrom):486
+(purchaseTo):13
+(setApprovalForAll):1078
+(safeTransferFrom):125
+(approve):58
+(fallback):73
+(transferFrom,purchase,updateOptionalCommission,createActiveEdition,updateEditionTokenURI,createActivePreMintedEdition,updateStartDate,updateArtistCommission,updatePriceInWei,addAddressToAccessControl,updateActive,updateTotalAvailable,mint,setApprovalForAll,safeTransferFrom,updateArtistsAccount):1

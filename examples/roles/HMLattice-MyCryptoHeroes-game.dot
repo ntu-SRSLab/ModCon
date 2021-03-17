@@ -1,0 +1,22 @@
+// <Lattice object of 3 atoms 5 concepts 3 coatoms at 0x7fafdc1a8e80>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	c0
+	c1
+	c1 -> c1 [color=transparent headlabel="" labelangle=270]
+	c1 -> c1 [color=transparent labelangle=90 taillabel="setHeroAssetAddress transferOwnership"]
+	c1 -> c0
+	c2
+	c2 -> c2 [color=transparent headlabel="" labelangle=270]
+	c2 -> c2 [color=transparent labelangle=90 taillabel="withdrawHeroToAssetOwnerByAdmin mintHero"]
+	c2 -> c0
+	c3
+	c3 -> c3 [color=transparent headlabel="" labelangle=270]
+	c3 -> c3 [color=transparent labelangle=90 taillabel=depositHeroToGateway]
+	c3 -> c0
+	c4
+	c4 -> c1
+	c4 -> c2
+	c4 -> c3
+}

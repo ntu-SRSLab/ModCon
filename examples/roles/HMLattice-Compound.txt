@@ -1,0 +1,12 @@
+(transfer,transferFrom,delegate,approve):0
+(transferFrom,approve):1
+(transfer,transferFrom):3
+(transferFrom):5
+(transfer,delegate,approve):155
+(transfer,delegate):456
+(delegate,approve):590
+(transfer,approve):1124
+(delegate):2630
+(approve):4911
+(transfer):16068
+():21595

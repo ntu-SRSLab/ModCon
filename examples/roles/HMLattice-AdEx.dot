@@ -1,0 +1,90 @@
+// <Lattice object of 3 atoms 23 concepts 3 coatoms at 0x7facd267ebe0>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	c0
+	c1
+	c1 -> c1 [color=transparent headlabel="" labelangle=270]
+	c1 -> c0
+	c2
+	c2 -> c2 [color=transparent headlabel="" labelangle=270]
+	c2 -> c0
+	c3
+	c3 -> c3 [color=transparent headlabel="" labelangle=270]
+	c3 -> c0
+	c4
+	c4 -> c1
+	c4 -> c2
+	c5
+	c5 -> c1
+	c5 -> c3
+	c6
+	c6 -> c6 [color=transparent headlabel="" labelangle=270]
+	c6 -> c4
+	c7
+	c7 -> c7 [color=transparent headlabel="" labelangle=270]
+	c7 -> c4
+	c8
+	c8 -> c8 [color=transparent headlabel="" labelangle=270]
+	c8 -> c8 [color=transparent labelangle=90 taillabel=refundBid]
+	c8 -> c5
+	c9
+	c9 -> c9 [color=transparent headlabel="" labelangle=270]
+	c9 -> c9 [color=transparent labelangle=90 taillabel=giveupBid]
+	c9 -> c2
+	c9 -> c3
+	c10
+	c10 -> c6
+	c10 -> c7
+	c11
+	c11 -> c4
+	c11 -> c5
+	c11 -> c9
+	c12
+	c12 -> c6
+	c12 -> c11
+	c13
+	c13 -> c13 [color=transparent headlabel="" labelangle=270]
+	c13 -> c11
+	c14
+	c14 -> c12
+	c14 -> c13
+	c15
+	c15 -> c15 [color=transparent headlabel="" labelangle=270]
+	c15 -> c6
+	c16
+	c16 -> c16 [color=transparent labelangle=90 taillabel=verifyBid]
+	c16 -> c10
+	c16 -> c15
+	c17
+	c17 -> c17 [color=transparent headlabel="" labelangle=270]
+	c17 -> c7
+	c17 -> c8
+	c17 -> c11
+	c18
+	c18 -> c18 [color=transparent headlabel="" labelangle=270]
+	c18 -> c18 [color=transparent labelangle=90 taillabel=withdraw]
+	c18 -> c10
+	c18 -> c12
+	c18 -> c17
+	c19
+	c19 -> c19 [color=transparent headlabel="" labelangle=270]
+	c19 -> c19 [color=transparent labelangle=90 taillabel=cancelBid]
+	c19 -> c13
+	c19 -> c17
+	c20
+	c20 -> c20 [color=transparent headlabel="" labelangle=270]
+	c20 -> c20 [color=transparent labelangle=90 taillabel=acceptBid]
+	c20 -> c14
+	c20 -> c15
+	c21
+	c21 -> c21 [color=transparent headlabel="" labelangle=270]
+	c21 -> c21 [color=transparent labelangle=90 taillabel=deposit]
+	c21 -> c14
+	c21 -> c18
+	c21 -> c19
+	c22
+	c22 -> c16
+	c22 -> c20
+	c22 -> c21
+}

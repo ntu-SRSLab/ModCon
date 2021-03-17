@@ -1,0 +1,10 @@
+(transferFrom,transfer,mint,approve,transferOwnership):0
+(transferOwnership):1
+(mint,approve):1
+(transferFrom,transfer):1
+(transferFrom,approve):3
+(transferFrom):4
+(transfer,approve):2308
+(transfer):8630
+(approve):17736
+():24059

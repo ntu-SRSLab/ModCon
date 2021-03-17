@@ -1,0 +1,38 @@
+strict digraph  {
+"('safeTransferFrom',)\n---------\n521";
+"()\n---------\n77";
+"()\n---------\n7";
+"()\n---------\n4";
+"()\n---------\n11";
+"()\n---------\n2";
+"('unpause', 'setMarketplaceManager', 'setMarketplace', 'evolveAxie', 'pause', 'setGeneScientist', 'setRetirementManager', 'setSpawningManager', 'setSpawner', 'setGeneManager')\n---------\n1";
+"('setApprovalForAll',)\n---------\n140";
+"()\n---------\n7";
+"()\n---------\n1";
+"()\n---------\n1";
+"('transferFrom',)\n---------\n76";
+"()\n---------\n2";
+"('approve',)\n---------\n10";
+"('safeTransferFrom',)\n---------\n521" -> "()\n---------\n77";
+"('safeTransferFrom',)\n---------\n521" -> "()\n---------\n11";
+"('safeTransferFrom',)\n---------\n521" -> "()\n---------\n2";
+"('safeTransferFrom',)\n---------\n521" -> "('unpause', 'setMarketplaceManager', 'setMarketplace', 'evolveAxie', 'pause', 'setGeneScientist', 'setRetirementManager', 'setSpawningManager', 'setSpawner', 'setGeneManager')\n---------\n1";
+"()\n---------\n77" -> "()\n---------\n7";
+"()\n---------\n77" -> "()\n---------\n4";
+"()\n---------\n11" -> "()\n---------\n7";
+"()\n---------\n2" -> "()\n---------\n4";
+"('setApprovalForAll',)\n---------\n140" -> "()\n---------\n77";
+"('setApprovalForAll',)\n---------\n140" -> "()\n---------\n7";
+"('setApprovalForAll',)\n---------\n140" -> "()\n---------\n1";
+"()\n---------\n7" -> "()\n---------\n7";
+"()\n---------\n7" -> "()\n---------\n1";
+"()\n---------\n1" -> "()\n---------\n4";
+"()\n---------\n1" -> "()\n---------\n1";
+"('transferFrom',)\n---------\n76" -> "()\n---------\n11";
+"('transferFrom',)\n---------\n76" -> "()\n---------\n7";
+"('transferFrom',)\n---------\n76" -> "()\n---------\n2";
+"()\n---------\n2" -> "()\n---------\n1";
+"('approve',)\n---------\n10" -> "()\n---------\n2";
+"('approve',)\n---------\n10" -> "()\n---------\n1";
+"('approve',)\n---------\n10" -> "()\n---------\n2";
+}

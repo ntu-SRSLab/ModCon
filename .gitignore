@@ -87,4 +87,6 @@ contracts/
 .gitignore.sw*
 deployed_contract/
 
+**/*.json
+*.json
 

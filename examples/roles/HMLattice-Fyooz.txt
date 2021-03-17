@@ -1,0 +1,11 @@
+(renouncePauser,renounceMinter,transferOwnership,transferFrom,addPauser,setRelayer,addMinter,transfer,unpause,approveProxy,approve,pause,setTotalSupply):0
+(renouncePauser,renounceMinter,transferOwnership,addPauser,setRelayer,addMinter,transfer,unpause,approve):1
+(addPauser,addMinter,transfer,unpause,pause,setTotalSupply):1
+(transfer,approveProxy,approve):1
+(transferFrom,approve):1
+(addPauser,addMinter,transfer,unpause):2
+(transferFrom):2
+(transfer,approve):387
+(transfer):1020
+(approve):3682
+():4316

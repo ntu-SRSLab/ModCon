@@ -1,0 +1,19 @@
+strict digraph  {
+"{}\n---------\n0";
+"('placeBet',)\n---------\n297";
+"()\n---------\n0";
+"('approveNextOwner',)\n---------\n1";
+"('setMaxProfit', 'refundBet', 'setSecretSigner', 'acceptNextOwner', 'setCroupier', 'withdrawFunds')\n---------\n1";
+"('fallback',)\n---------\n1";
+"('settleBetUncleMerkleProof', 'settleBet')\n---------\n1";
+"{}\n---------\n0" -> "('placeBet',)\n---------\n297";
+"{}\n---------\n0" -> "('approveNextOwner',)\n---------\n1";
+"{}\n---------\n0" -> "('setMaxProfit', 'refundBet', 'setSecretSigner', 'acceptNextOwner', 'setCroupier', 'withdrawFunds')\n---------\n1";
+"{}\n---------\n0" -> "('fallback',)\n---------\n1";
+"{}\n---------\n0" -> "('settleBetUncleMerkleProof', 'settleBet')\n---------\n1";
+"('placeBet',)\n---------\n297" -> "()\n---------\n0";
+"('approveNextOwner',)\n---------\n1" -> "()\n---------\n0";
+"('setMaxProfit', 'refundBet', 'setSecretSigner', 'acceptNextOwner', 'setCroupier', 'withdrawFunds')\n---------\n1" -> "()\n---------\n0";
+"('fallback',)\n---------\n1" -> "()\n---------\n0";
+"('settleBetUncleMerkleProof', 'settleBet')\n---------\n1" -> "()\n---------\n0";
+}

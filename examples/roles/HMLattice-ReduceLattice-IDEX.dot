@@ -1,0 +1,23 @@
+strict digraph  {
+"{}\n---------\n0";
+"('deposit',)\n---------\n10018";
+"()\n---------\n1517";
+"()\n---------\n0";
+"('setAdmin',)\n---------\n1";
+"('withdraw',)\n---------\n1";
+"('depositToken',)\n---------\n2933";
+"('trade', 'adminWithdraw')\n---------\n13";
+"('invalidateOrdersBefore',)\n---------\n4";
+"{}\n---------\n0" -> "('deposit',)\n---------\n10018";
+"{}\n---------\n0" -> "('depositToken',)\n---------\n2933";
+"{}\n---------\n0" -> "('trade', 'adminWithdraw')\n---------\n13";
+"('deposit',)\n---------\n10018" -> "()\n---------\n1517";
+"('deposit',)\n---------\n10018" -> "('setAdmin',)\n---------\n1";
+"('deposit',)\n---------\n10018" -> "('withdraw',)\n---------\n1";
+"()\n---------\n1517" -> "()\n---------\n0";
+"('setAdmin',)\n---------\n1" -> "()\n---------\n0";
+"('withdraw',)\n---------\n1" -> "()\n---------\n0";
+"('depositToken',)\n---------\n2933" -> "()\n---------\n1517";
+"('trade', 'adminWithdraw')\n---------\n13" -> "('invalidateOrdersBefore',)\n---------\n4";
+"('invalidateOrdersBefore',)\n---------\n4" -> "()\n---------\n0";
+}

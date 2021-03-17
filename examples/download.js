@@ -55,7 +55,14 @@ async function getTransactions(contract, address, transactions_number){
     return;
 }
 // get contract ABI
+<<<<<<< HEAD
 async function getABI(contract, address){
+=======
+async function getABI(contract, address){  
+    if(fs.existsSync("./data/"+contract+"-abi.json")){
+        return;
+    }
+>>>>>>> save
    let body = await GET(url_abi.format(api_key, address))  
   
    fs.writeFileSync("./data/"+contract+"-abi.json",JSON.stringify(JSON.parse(JSON.parse(body).result)));
@@ -64,6 +71,12 @@ async function getABI(contract, address){
 
 // get contract source code
 async function getSourceCode(contract, address){
+<<<<<<< HEAD
+=======
+    if(fs.existsSync("./data/"+contract+".sol")){
+      return;
+    }
+>>>>>>> save
     let body = await GET(url_source.format(api_key, address))
     let sourceCode = JSON.parse(body).result[0].SourceCode;
     try {

@@ -1,0 +1,9 @@
+(bid):740
+(buy):361
+(transfer):265
+(whitelistCreator):2
+(setSalePrice):433
+(addNewToken):168
+(acceptBid):233
+(cancelBid,bid,addNewToken,setSalePrice,acceptBid,transfer,buy):417
+(transferOwnership,whitelistCreator):1

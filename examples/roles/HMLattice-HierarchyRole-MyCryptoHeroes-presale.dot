@@ -1,0 +1,15 @@
+strict digraph  {
+"('airDrop',)\n---------\n1430";
+"()\n---------\n140";
+"()\n---------\n77";
+"()\n---------\n107";
+"('purchase',)\n---------\n85";
+"('purchaseByEMONT',)\n---------\n85";
+"('setCoinAddress', 'withdrawEMONT', 'withdrawEther', 'setHeroAssetAddress', 'addSales')\n---------\n1";
+"('airDrop',)\n---------\n1430" -> "()\n---------\n140";
+"('airDrop',)\n---------\n1430" -> "()\n---------\n107";
+"()\n---------\n140" -> "()\n---------\n77";
+"()\n---------\n107" -> "()\n---------\n77";
+"('purchase',)\n---------\n85" -> "()\n---------\n140";
+"('purchaseByEMONT',)\n---------\n85" -> "()\n---------\n107";
+}

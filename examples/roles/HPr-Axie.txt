@@ -1,0 +1,5 @@
+(safeTransferFrom):623
+(setApprovalForAll):237
+(transferFrom):97
+(approve):15
+(setMarketplaceManager,setSpawner,evolveAxie,unpause,pause,safeTransferFrom,setGeneScientist,setMarketplace,setRetirementManager,setSpawningManager,setGeneManager):1

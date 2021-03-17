@@ -1,0 +1,18 @@
+strict digraph  {
+"{}\n---------\n0";
+"('createGame',)\n---------\n378";
+"('userCancelActiveGame', 'createGame')\n---------\n13";
+"('serverCancelActiveGame', 'addHouseStake', 'activateConflictResolution', 'userCancelActiveGame', 'serverEndGameConflict', 'serverForceGameEnd', 'createGame', 'updateConflictResolution', 'activate', 'unpause', 'userEndGameConflict', 'serverEndGame')\n---------\n0";
+"('createGame', 'userEndGameConflict')\n---------\n7";
+"('addHouseStake', 'activateConflictResolution', 'updateConflictResolution', 'activate', 'unpause')\n---------\n1";
+"('serverCancelActiveGame', 'serverEndGameConflict', 'serverForceGameEnd', 'serverEndGame')\n---------\n1";
+"{}\n---------\n0" -> "('createGame',)\n---------\n378";
+"{}\n---------\n0" -> "('addHouseStake', 'activateConflictResolution', 'updateConflictResolution', 'activate', 'unpause')\n---------\n1";
+"{}\n---------\n0" -> "('serverCancelActiveGame', 'serverEndGameConflict', 'serverForceGameEnd', 'serverEndGame')\n---------\n1";
+"('createGame',)\n---------\n378" -> "('userCancelActiveGame', 'createGame')\n---------\n13";
+"('createGame',)\n---------\n378" -> "('createGame', 'userEndGameConflict')\n---------\n7";
+"('userCancelActiveGame', 'createGame')\n---------\n13" -> "('serverCancelActiveGame', 'addHouseStake', 'activateConflictResolution', 'userCancelActiveGame', 'serverEndGameConflict', 'serverForceGameEnd', 'createGame', 'updateConflictResolution', 'activate', 'unpause', 'userEndGameConflict', 'serverEndGame')\n---------\n0";
+"('createGame', 'userEndGameConflict')\n---------\n7" -> "('serverCancelActiveGame', 'addHouseStake', 'activateConflictResolution', 'userCancelActiveGame', 'serverEndGameConflict', 'serverForceGameEnd', 'createGame', 'updateConflictResolution', 'activate', 'unpause', 'userEndGameConflict', 'serverEndGame')\n---------\n0";
+"('addHouseStake', 'activateConflictResolution', 'updateConflictResolution', 'activate', 'unpause')\n---------\n1" -> "('serverCancelActiveGame', 'addHouseStake', 'activateConflictResolution', 'userCancelActiveGame', 'serverEndGameConflict', 'serverForceGameEnd', 'createGame', 'updateConflictResolution', 'activate', 'unpause', 'userEndGameConflict', 'serverEndGame')\n---------\n0";
+"('serverCancelActiveGame', 'serverEndGameConflict', 'serverForceGameEnd', 'serverEndGame')\n---------\n1" -> "('serverCancelActiveGame', 'addHouseStake', 'activateConflictResolution', 'userCancelActiveGame', 'serverEndGameConflict', 'serverForceGameEnd', 'createGame', 'updateConflictResolution', 'activate', 'unpause', 'userEndGameConflict', 'serverEndGame')\n---------\n0";
+}

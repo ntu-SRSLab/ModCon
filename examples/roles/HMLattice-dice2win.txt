@@ -1,0 +1,7 @@
+(setMaxProfit,withdrawFunds,acceptNextOwner,setSecretSigner,setCroupier,settleBet,refundBet,fallback,settleBetUncleMerkleProof,approveNextOwner,placeBet):0
+(approveNextOwner):1
+(setMaxProfit,withdrawFunds,acceptNextOwner,setSecretSigner,setCroupier,refundBet):1
+(fallback):1
+(settleBet,settleBetUncleMerkleProof):1
+(placeBet):297
+():301

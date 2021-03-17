@@ -1,0 +1,623 @@
+['--input', 'data/Diceether-userPermissionMatrix.csv', '--rolemining', '--output', 'Diceether']
+{'userCancelActiveGame'} {'createGame'}
+{'userCancelActiveGame', 'createGame'}
+{'serverCancelActiveGame'} {'serverEndGameConflict'}
+{'serverCancelActiveGame', 'serverEndGameConflict'}
+{'activateConflictResolution'} {'addHouseStake'}
+{'activateConflictResolution', 'addHouseStake'}
+{'activate'} {'updateConflictResolution'}
+{'updateConflictResolution', 'activate'}
+{'serverEndGame'} {'serverForceGameEnd'}
+{'serverForceGameEnd', 'serverEndGame'}
+{'activateConflictResolution', 'addHouseStake'} {'unpause'}
+{'unpause', 'activateConflictResolution', 'addHouseStake'}
+{'unpause', 'activateConflictResolution', 'addHouseStake'} {'updateConflictResolution', 'activate'}
+{'activate', 'addHouseStake', 'updateConflictResolution', 'activateConflictResolution', 'unpause'}
+{'serverCancelActiveGame', 'serverEndGameConflict'} {'serverForceGameEnd', 'serverEndGame'}
+{'serverForceGameEnd', 'serverCancelActiveGame', 'serverEndGameConflict', 'serverEndGame'}
+400 12
+400 12
+3 0 9
+2 0 10
+1 1 10
+0 4 8
+0 1 11
+0 0 12
+0 0 12
+['--input', 'data/CryptoPunks-userPermissionMatrix.csv', '--rolemining', '--output', 'CryptoPunks']
+{'enterBidForPunk'} {'withdrawBidForPunk'}
+{'withdrawBidForPunk', 'enterBidForPunk'}
+{'withdraw'} {'offerPunkForSale'}
+{'withdraw', 'offerPunkForSale'}
+{'buyPunk'} {'withdrawBidForPunk', 'enterBidForPunk'}
+{'withdrawBidForPunk', 'enterBidForPunk', 'buyPunk'}
+{'punkNoLongerForSale'} {'withdraw', 'offerPunkForSale'}
+{'withdraw', 'punkNoLongerForSale', 'offerPunkForSale'}
+{'transferPunk'} {'withdrawBidForPunk', 'enterBidForPunk', 'buyPunk'}
+{'enterBidForPunk', 'withdrawBidForPunk', 'transferPunk', 'buyPunk'}
+{'acceptBidForPunk'} {'withdraw', 'punkNoLongerForSale', 'offerPunkForSale'}
+{'withdraw', 'punkNoLongerForSale', 'acceptBidForPunk', 'offerPunkForSale'}
+{'enterBidForPunk', 'withdrawBidForPunk', 'transferPunk', 'buyPunk'} {'withdraw', 'punkNoLongerForSale', 'acceptBidForPunk', 'offerPunkForSale'}
+{'withdrawBidForPunk', 'punkNoLongerForSale', 'transferPunk', 'withdraw', 'acceptBidForPunk', 'enterBidForPunk', 'buyPunk', 'offerPunkForSale'}
+{'offerPunkForSaleToAddress'} {'withdrawBidForPunk', 'punkNoLongerForSale', 'transferPunk', 'withdraw', 'acceptBidForPunk', 'enterBidForPunk', 'buyPunk', 'offerPunkForSale'}
+{'withdrawBidForPunk', 'buyPunk', 'punkNoLongerForSale', 'withdraw', 'enterBidForPunk', 'transferPunk', 'offerPunkForSaleToAddress', 'acceptBidForPunk', 'offerPunkForSale'}
+{'getPunk'} {'withdrawBidForPunk', 'buyPunk', 'punkNoLongerForSale', 'withdraw', 'enterBidForPunk', 'transferPunk', 'offerPunkForSaleToAddress', 'acceptBidForPunk', 'offerPunkForSale'}
+{'withdrawBidForPunk', 'punkNoLongerForSale', 'transferPunk', 'offerPunkForSaleToAddress', 'withdraw', 'acceptBidForPunk', 'enterBidForPunk', 'getPunk', 'buyPunk', 'offerPunkForSale'}
+{'allInitialOwnersAssigned'} {'setInitialOwner'}
+{'setInitialOwner', 'allInitialOwnersAssigned'}
+1507 12
+1507 12
+10 0 332
+7 1 334
+4 2 336
+5 3 334
+4 4 334
+3 4 335
+3 4 335
+2 5 335
+2 5 335
+1 4 337
+1 2 339
+0 2 340
+1 1 340
+1 4 337
+1 4 337
+1 3 338
+2 5 335
+1 4 337
+2 3 337
+3 4 335
+2 5 335
+1 5 336
+2 4 336
+3 5 334
+2 4 336
+3 3 336
+4 4 334
+3 4 335
+1 4 337
+1 5 336
+2 3 337
+2 4 336
+4 4 334
+3 4 335
+1 3 338
+2 4 336
+3 3 336
+2 3 337
+4 3 335
+3 3 336
+2 3 337
+1 4 337
+2 4 336
+3 3 336
+2 4 336
+3 4 335
+3 3 336
+2 4 336
+3 3 336
+4 2 336
+3 2 337
+2 3 337
+1 4 337
+2 3 337
+3 3 336
+2 4 336
+3 3 336
+6 2 334
+2 3 337
+1 4 337
+3 3 336
+1 4 337
+2 3 337
+2 3 337
+6 2 334
+2 3 337
+1 4 337
+1 3 338
+2 3 337
+4 2 336
+2 3 337
+2 2 338
+3 2 337
+5 1 336
+4 2 336
+4 3 335
+4 4 334
+4 4 334
+3 5 334
+2 5 335
+1 4 337
+2 4 336
+2 4 336
+2 3 337
+3 5 334
+2 4 336
+3 3 336
+3 3 336
+2 4 336
+3 4 335
+3 3 336
+2 4 336
+3 3 336
+5 2 335
+5 3 334
+5 3 334
+4 4 334
+3 4 335
+1 3 338
+2 3 337
+3 3 336
+2 2 338
+4 4 334
+3 3 336
+4 3 335
+3 3 336
+1 2 339
+5 2 335
+4 2 336
+3 3 336
+4 3 335
+4 2 336
+8 1 333
+7 2 333
+4 3 335
+4 3 335
+3 4 335
+2 4 336
+1 3 338
+2 3 337
+2 3 337
+2 2 338
+3 4 335
+2 3 337
+3 3 336
+6 3 333
+5 3 334
+4 3 335
+2 4 336
+4 4 334
+5 2 335
+1 3 338
+5 3 334
+6 3 333
+5 4 333
+2 3 337
+3 3 336
+6 3 333
+2 2 338
+4 3 335
+4 2 336
+3 2 337
+2 3 337
+3 3 336
+5 2 335
+4 3 335
+6 2 334
+1 3 338
+2 2 338
+1 2 339
+8 1 333
+4 2 336
+2 3 337
+1 2 339
+3 2 337
+2 3 337
+5 2 335
+2 3 337
+5 2 335
+3 2 337
+4 1 337
+3 2 337
+8 1 333
+3 2 337
+2 3 337
+3 2 337
+3 2 337
+5 1 336
+3 2 337
+4 1 337
+5 1 336
+1 1 340
+['--input', 'data/MyCryptoHeroes-presale-userPermissionMatrix.csv', '--rolemining', '--output', 'MyCryptoHeroes-presale']
+{'airDrop'} {'purchase'}
+{'purchase', 'airDrop'}
+{'purchaseByEMONT'} {'purchase', 'airDrop'}
+{'purchaseByEMONT', 'airDrop', 'purchase'}
+{'setCoinAddress'} {'addSales'}
+{'addSales', 'setCoinAddress'}
+{'setHeroAssetAddress'} {'withdrawEther'}
+{'setHeroAssetAddress', 'withdrawEther'}
+{'addSales', 'setCoinAddress'} {'withdrawEMONT'}
+{'withdrawEMONT', 'addSales', 'setCoinAddress'}
+{'setHeroAssetAddress', 'withdrawEther'} {'withdrawEMONT', 'addSales', 'setCoinAddress'}
+{'addSales', 'withdrawEMONT', 'setCoinAddress', 'setHeroAssetAddress', 'withdrawEther'}
+1771 8
+1771 8
+4 0 12
+2 1 13
+1 2 13
+1 2 13
+0 2 14
+1 2 13
+1 1 14
+1 1 14
+1 1 14
+['--input', 'data/MyCryptoHeroes-game-userPermissionMatrix.csv', '--rolemining', '--output', 'MyCryptoHeroes-game']
+{'setHeroAssetAddress'} {'transferOwnership'}
+{'transferOwnership', 'setHeroAssetAddress'}
+{'mintHero'} {'withdrawHeroToAssetOwnerByAdmin'}
+{'withdrawHeroToAssetOwnerByAdmin', 'mintHero'}
+1497 5
+1497 5
+3 0 5
+1 0 7
+0 3 5
+0 0 8
+0 0 8
+['--input', 'data/EtherEstates-userPermissionMatrix.csv', '--rolemining', '--output', 'EtherEstates']
+{'withdrawRent'} {'purchaseEstate'}
+{'withdrawRent', 'purchaseEstate'}
+{'updatePayout'} {'withdrawRent', 'purchaseEstate'}
+{'withdrawRent', 'purchaseEstate', 'updatePayout'}
+{'createListing'} {'withdraw'}
+{'withdraw', 'createListing'}
+112 6
+112 6
+3 0 15
+1 1 16
+2 1 15
+1 2 15
+0 4 14
+1 1 16
+2 1 15
+1 2 15
+2 1 15
+1 1 16
+['--input', 'data/OpenSea-userPermissionMatrix.csv', '--rolemining', '--output', 'OpenSea']
+{'createAuction'} {'cancelAuction'}
+{'cancelAuction', 'createAuction'}
+{'bid'} {'cancelAuction', 'createAuction'}
+{'cancelAuction', 'bid', 'createAuction'}
+{'fallback'} {'cancelAuction', 'bid', 'createAuction'}
+{'cancelAuction', 'bid', 'createAuction', 'fallback'}
+668 5
+668 5
+3 0 15
+2 1 15
+2 1 15
+1 2 15
+1 2 15
+0 2 16
+1 1 16
+1 2 15
+1 1 16
+1 1 16
+['--input', 'data/Superrare-userPermissionMatrix.csv', '--rolemining', '--output', 'Superrare']
+{'cancelBid'} {'bid'}
+{'cancelBid', 'bid'}
+{'setSalePrice'} {'acceptBid'}
+{'setSalePrice', 'acceptBid'}
+{'buy'} {'cancelBid', 'bid'}
+{'cancelBid', 'buy', 'bid'}
+{'addNewToken'} {'setSalePrice', 'acceptBid'}
+{'addNewToken', 'setSalePrice', 'acceptBid'}
+{'transfer'} {'addNewToken', 'setSalePrice', 'acceptBid'}
+{'addNewToken', 'acceptBid', 'setSalePrice', 'transfer'}
+{'cancelBid', 'buy', 'bid'} {'addNewToken', 'acceptBid', 'setSalePrice', 'transfer'}
+{'acceptBid', 'cancelBid', 'addNewToken', 'setSalePrice', 'buy', 'transfer', 'bid'}
+{'whitelistCreator'} {'transferOwnership'}
+{'whitelistCreator', 'transferOwnership'}
+1083 9
+1083 9
+7 0 145
+6 1 145
+4 1 147
+4 2 146
+3 3 146
+2 4 146
+1 4 147
+1 4 147
+0 2 150
+1 4 147
+1 4 147
+1 3 148
+3 3 146
+2 4 146
+1 3 148
+2 3 147
+2 3 147
+2 2 148
+3 2 147
+1 3 148
+1 3 148
+3 2 147
+1 3 148
+3 2 147
+5 2 145
+4 3 145
+3 4 145
+2 5 145
+1 4 147
+2 4 146
+2 4 146
+2 3 147
+4 3 145
+3 4 145
+2 4 146
+3 4 145
+3 3 146
+3 3 146
+4 2 146
+3 3 146
+1 4 147
+3 3 146
+4 2 146
+4 3 145
+1 3 148
+5 2 145
+2 3 147
+2 2 148
+5 1 146
+4 2 146
+3 3 146
+2 4 146
+1 4 147
+2 3 147
+3 3 146
+2 4 146
+3 3 146
+4 2 146
+3 3 146
+1 3 148
+3 2 147
+4 2 146
+2 3 147
+4 2 146
+4 1 147
+3 2 147
+2 3 147
+3 2 147
+5 1 146
+4 2 146
+2 3 147
+2 2 148
+5 1 146
+3 2 147
+4 1 147
+1 1 150
+1 1 150
+['--input', 'data/AdEx-userPermissionMatrix.csv', '--rolemining', '--output', 'AdEx']
+{'deposit'} {'cancelBid'}
+{'deposit', 'cancelBid'}
+{'withdraw'} {'deposit', 'cancelBid'}
+{'withdraw', 'deposit', 'cancelBid'}
+{'verifyBid'} {'acceptBid'}
+{'acceptBid', 'verifyBid'}
+{'giveupBid'} {'withdraw', 'deposit', 'cancelBid'}
+{'withdraw', 'deposit', 'cancelBid', 'giveupBid'}
+{'refundBid'} {'acceptBid', 'verifyBid'}
+{'verifyBid', 'acceptBid', 'refundBid'}
+55 7
+55 7
+3 0 41
+3 1 40
+2 1 41
+3 2 39
+3 3 38
+2 1 41
+1 2 41
+0 3 41
+1 2 41
+2 3 39
+1 2 41
+2 2 40
+1 2 41
+1 1 42
+1 2 41
+3 1 40
+2 2 40
+1 3 40
+2 2 40
+2 2 40
+2 1 41
+1 2 41
+2 1 41
+['--input', 'data/MakersPlace-userPermissionMatrix.csv', '--rolemining', '--output', 'MakersPlace']
+{'transferFrom'} {'setApprovalForAll'}
+{'transferFrom', 'setApprovalForAll'}
+{'safeTransferFrom'} {'approve'}
+{'safeTransferFrom', 'approve'}
+{'transferFrom', 'setApprovalForAll'} {'safeTransferFrom', 'approve'}
+{'approve', 'safeTransferFrom', 'transferFrom', 'setApprovalForAll'}
+{'oboCreateDigitalMediaReleases'} {'oboCreateDigitalMediaAndReleases'}
+{'oboCreateDigitalMediaAndReleases', 'oboCreateDigitalMediaReleases'}
+{'burnDigitalMedia'} {'burnToken'}
+{'burnDigitalMedia', 'burnToken'}
+{'unpause'} {'addApprovedTokenCreator'}
+{'unpause', 'addApprovedTokenCreator'}
+{'unpause', 'addApprovedTokenCreator'} {'setV1DigitalMediaStoreAddress'}
+{'unpause', 'setV1DigitalMediaStoreAddress', 'addApprovedTokenCreator'}
+740 12
+740 12
+8 0 48
+4 1 51
+1 2 53
+2 3 51
+1 3 52
+0 6 50
+1 3 52
+3 2 51
+2 3 51
+1 3 52
+2 3 51
+1 2 53
+1 2 53
+4 1 51
+2 2 52
+1 3 52
+1 2 53
+1 2 53
+4 1 51
+4 2 50
+1 3 52
+1 2 53
+2 2 52
+4 1 51
+1 2 53
+4 1 51
+1 1 54
+1 1 54
+1 1 54
+[
+  '--contract',
+  'EthexBet',
+  '--address',
+  '0x0e26B2Dc8EF577bAF50891Eac94f0DEf59B5Da16',
+  '--transactions',
+  '5821'
+]
+[
+  '--contract',
+  'DecentralGames',
+  '--address',
+  '0xEE06A81a695750E71a662B51066F2c74CF4478a0',
+  '--transactions',
+  '1720'
+]
+[
+  '--contract',
+  'PoolTogether',
+  '--address',
+  '0xb7896fce748396EcFC240F5a0d3Cc92ca42D7d84',
+  '--transactions',
+  '4579'
+]
+[
+  '--contract',
+  'Degens',
+  '--address',
+  '0x8888888883585b9a8202Db34D8b09d7252bfc61C',
+  '--transactions',
+  '42284'
+]
+[
+  '--contract',
+  'OceanMarket',
+  '--address',
+  '0x967da4048cd07ab37855c090aaf366e4ce1b9f48',
+  '--transactions',
+  '98712'
+]
+[
+  '--contract',
+  'FunFair',
+  '--address',
+  '0x419D0d8BdD9aF5e606Ae2232ed285Aff190E711b',
+  '--transactions',
+  '431948'
+]
+['--input', './data/EthexBet-txResult.txt', '--permission', '--output', 'EthexBet']
+['--input', './data/EthexBet-userPermissionMatrix.csv', '--rolemining', '--output', 'EthexBet']
+{'setOldVersion'} {'transferOwnership'}
+{'setOldVersion', 'transferOwnership'}
+{'placeBet'} {'settleBets'}
+{'placeBet', 'settleBets'}
+55 4
+55 4
+3 0 7
+1 0 9
+1 2 7
+0 2 8
+1 0 9
+0 0 10
+['--input', './data/DecentralGames-txResult.txt', '--permission', '--output', 'DecentralGames']
+['--input', './data/DecentralGames-userPermissionMatrix.csv', '--rolemining', '--output', 'DecentralGames']
+{'transfer'} {'approve'}
+{'approve', 'transfer'}
+892 2
+892 2
+2 0 4
+1 0 5
+0 2 4
+1 0 5
+['--input', './data/Degens-txResult.txt', '--permission', '--output', 'Degens']
+['--input', './data/Degens-userPermissionMatrix.csv', '--rolemining', '--output', 'Degens']
+{'claim'} {'trade'}
+{'trade', 'claim'}
+{'cancel'} {'trade', 'claim'}
+{'trade', 'cancel', 'claim'}
+{'cancelAll'} {'trade', 'cancel', 'claim'}
+{'cancelAll', 'trade', 'cancel', 'claim'}
+445 5
+445 5
+5 0 29
+3 1 30
+2 2 30
+1 3 30
+1 3 30
+0 2 32
+1 3 30
+2 2 30
+1 3 30
+2 2 30
+4 1 29
+1 2 31
+1 2 31
+1 2 31
+3 1 30
+1 2 31
+3 1 30
+1 1 32
+['--input', './data/OceanMarket-txResult.txt', '--permission', '--output', 'OceanMarket']
+['--input', './data/OceanMarket-userPermissionMatrix.csv', '--rolemining', '--output', 'OceanMarket']
+{'approve'} {'transfer'}
+{'transfer', 'approve'}
+17762 3
+17762 3
+3 0 11
+2 1 11
+1 2 11
+0 3 11
+1 2 11
+2 1 11
+1 2 11
+2 1 11
+['--input', './data/FunFair-txResult.txt', '--permission', '--output', 'FunFair']
+['--input', './data/FunFair-userPermissionMatrix.csv', '--rolemining', '--output', 'FunFair']
+{'approve'} {'transfer'}
+{'transfer', 'approve'}
+{'changeOwner'} {'setController'}
+{'setController', 'changeOwner'}
+{'increaseApproval'} {'acceptOwnership'}
+{'acceptOwnership', 'increaseApproval'}
+{'multiTransfer'} {'multiApprove'}
+{'multiApprove', 'multiTransfer'}
+{'transfer', 'approve'} {'transferFrom'}
+{'transferFrom', 'transfer', 'approve'}
+{'multiApprove', 'multiTransfer'} {'setController', 'changeOwner'}
+{'changeOwner', 'setController', 'multiApprove', 'multiTransfer'}
+101857 11
+101857 11
+9 0 33
+4 1 37
+2 2 38
+1 2 39
+0 9 33
+1 2 39
+2 2 38
+1 2 39
+1 2 39
+1 3 38
+2 1 39
+1 2 39
+1 1 40
+1 1 40
+2 1 39
+3 1 38
+1 2 39
+1 2 39
+1 2 39
+2 1 39
+2 1 39
+2 1 39

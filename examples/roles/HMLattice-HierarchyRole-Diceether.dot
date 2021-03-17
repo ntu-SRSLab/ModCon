@@ -1,0 +1,9 @@
+strict digraph  {
+"('createGame',)\n---------\n378";
+"('userCancelActiveGame',)\n---------\n13";
+"('userEndGameConflict',)\n---------\n7";
+"('unpause', 'addHouseStake', 'activateConflictResolution', 'activate', 'updateConflictResolution')\n---------\n1";
+"('serverEndGameConflict', 'serverForceGameEnd', 'serverEndGame', 'serverCancelActiveGame')\n---------\n1";
+"('createGame',)\n---------\n378" -> "('userCancelActiveGame',)\n---------\n13";
+"('createGame',)\n---------\n378" -> "('userEndGameConflict',)\n---------\n7";
+}

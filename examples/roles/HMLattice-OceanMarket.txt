@@ -1,0 +1,8 @@
+(transfer,transferFrom,approve):0
+(transferFrom,approve):1
+(transfer,transferFrom):3
+(transferFrom):4
+(transfer,approve):2101
+(approve):9523
+(transfer):10340
+():17762

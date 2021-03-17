@@ -1,0 +1,41 @@
+// <Lattice object of 4 atoms 10 concepts 3 coatoms at 0x7f66228a8760>
+digraph Lattice {
+	node [label="" shape=circle style=filled width=.25]
+	edge [dir=none labeldistance=1.5 minlen=2]
+	c0
+	c1
+	c1 -> c1 [color=transparent headlabel="" labelangle=270]
+	c1 -> c0
+	c2
+	c2 -> c2 [color=transparent headlabel="" labelangle=270]
+	c2 -> c0
+	c3
+	c3 -> c3 [color=transparent headlabel="" labelangle=270]
+	c3 -> c3 [color=transparent labelangle=90 taillabel=withdraw]
+	c3 -> c0
+	c4
+	c4 -> c4 [color=transparent headlabel="" labelangle=270]
+	c4 -> c4 [color=transparent labelangle=90 taillabel=updatePayout]
+	c4 -> c0
+	c5
+	c5 -> c5 [color=transparent labelangle=90 taillabel=transferOwnership]
+	c5 -> c1
+	c5 -> c2
+	c6
+	c6 -> c6 [color=transparent labelangle=90 taillabel=createListing]
+	c6 -> c2
+	c6 -> c3
+	c7
+	c7 -> c7 [color=transparent headlabel="" labelangle=270]
+	c7 -> c7 [color=transparent labelangle=90 taillabel=withdrawRent]
+	c7 -> c1
+	c7 -> c4
+	c8
+	c8 -> c8 [color=transparent headlabel="" labelangle=270]
+	c8 -> c8 [color=transparent labelangle=90 taillabel=purchaseEstate]
+	c8 -> c7
+	c9
+	c9 -> c5
+	c9 -> c6
+	c9 -> c8
+}
