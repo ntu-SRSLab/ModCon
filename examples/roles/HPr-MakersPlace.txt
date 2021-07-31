@@ -1,9 +1,0 @@
-(setApprovalForAll):469
-(transferFrom):246
-(safeTransferFrom):155
-(burnToken):2
-(approve):90
-(burn):10
-(oboCreateDigitalMediaAndReleases,oboCreateDigitalMediaReleases):3
-(addApprovedTokenCreator,unpause,setV1DigitalMediaStoreAddress):1
-(burnDigitalMedia,approve,burnToken,safeTransferFrom):1

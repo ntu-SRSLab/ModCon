@@ -1,5 +1,0 @@
-strict digraph  {
-"('depositHeroToGateway',)\n---------\n1495";
-"('transferOwnership', 'setHeroAssetAddress')\n---------\n1";
-"('withdrawHeroToAssetOwnerByAdmin', 'mintHero')\n---------\n1";
-}

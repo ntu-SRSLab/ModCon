@@ -1,1 +1,0 @@
-node filterTx.js --tx > txResult-hash.txt 

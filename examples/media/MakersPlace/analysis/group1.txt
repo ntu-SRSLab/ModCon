@@ -1,7 +1,0 @@
-alphabet
-setV1DigitalMediaStoreAddress
-unpause
-addApprovedTokenCreator
----------------------
-positive examples
-setV1DigitalMediaStoreAddress addApprovedTokenCreator unpause addApprovedTokenCreator addApprovedTokenCreator

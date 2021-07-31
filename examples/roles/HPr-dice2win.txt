@@ -1,5 +1,0 @@
-(approveNextOwner):1
-(fallback):1
-(placeBet):297
-(settleBet,settleBetUncleMerkleProof):1
-(setMaxProfit,setSecretSigner,acceptNextOwner,setCroupier,withdrawFunds,refundBet):1

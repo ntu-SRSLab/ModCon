@@ -1,6 +1,0 @@
-alphabet
-setApprovalForAll
-burn
----------------------
-positive examples
-setApprovalForAll setApprovalForAll burn burn

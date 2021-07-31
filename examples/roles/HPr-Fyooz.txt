@@ -1,6 +1,0 @@
-(transfer):1020
-(approve):3682
-(transferFrom):2
-(setTotalSupply,transfer,addMinter,addPauser,pause,unpause):1
-(renouncePauser,transfer,renounceMinter,addPauser,setRelayer,unpause,approve,addMinter,transferOwnership):1
-(approve,approveProxy,transfer):1

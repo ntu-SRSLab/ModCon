@@ -1,3 +1,0 @@
-transferFrom approve
-transferFrom burnToken
-transferFrom safeTransferFrom

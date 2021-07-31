@@ -1,8 +1,0 @@
-alphabet
-transferFrom
-burn
----------------------
-positive examples
-burn burn burn burn burn burn burn burn burn burn burn burn burn burn
-burn
-burn burn burn burn burn transferFrom

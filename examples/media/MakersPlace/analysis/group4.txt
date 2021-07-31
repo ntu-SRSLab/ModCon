@@ -1,6 +1,0 @@
-alphabet
-approve
-burn
----------------------
-positive examples
-approve burn

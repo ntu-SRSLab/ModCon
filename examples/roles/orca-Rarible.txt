@@ -1,8 +1,0 @@
-(perform hierarchy)
-(transfer)
-(approve)
-(****)
-(transferFrom)
-(mint)
-(transferOwnership)
-(approve,transfer)

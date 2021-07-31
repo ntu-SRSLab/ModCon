@@ -1,7 +1,0 @@
-safeTransferFrom transferFrom
-transferFrom safeTransferFrom
-safeTransferFrom burn
-transferFrom transferFrom
-safeTransferFrom safeTransferFrom
-transferFrom burn
-transferFrom approve

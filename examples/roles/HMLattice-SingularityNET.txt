@@ -1,6 +1,0 @@
-(transfer,transferOwnership,approve,pause):1
-(transferOwnership,approve):2
-(transfer,approve):741
-(approve):1516
-(transfer):12602
-():13377

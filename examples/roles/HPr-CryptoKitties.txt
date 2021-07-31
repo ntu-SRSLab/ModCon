@@ -1,7 +1,0 @@
-(createSiringAuction):137
-(breedWithAuto):151
-(bidOnSiringAuction):116
-(createSaleAuction):104
-(setCFO,unpause):1
-(setSiringAuctionAddress,transfer,setSaleAuctionAddress,setAutoBirthFee,setGeneScienceAddress,createSaleAuction,createPromoKitty,setCEO,giveBirth):1
-(bidOnSiringAuction,breedWithAuto,createSaleAuction,fallback,createSiringAuction):1

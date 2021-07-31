@@ -1,7 +1,0 @@
-(set_admin,transfer,transferFrom,approve,set_minter):0
-(set_admin,transfer,approve,set_minter):1
-(transfer,transferFrom):1
-(transfer,approve):1362
-(approve):5317
-(transfer):6276
-():10231

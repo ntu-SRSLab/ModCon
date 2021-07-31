@@ -1,3 +1,0 @@
-(transfer):27148
-(approve):3368
-(transferFrom):5

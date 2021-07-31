@@ -1,9 +1,0 @@
-alphabet
-approve
-transferFrom
-safeTransferFrom
----------------------
-positive examples
-approve approve transferFrom transferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom safeTransferFrom
-transferFrom approve approve safeTransferFrom approve approve
-safeTransferFrom transferFrom safeTransferFrom approve approve approve safeTransferFrom approve

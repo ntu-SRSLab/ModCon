@@ -1,6 +1,0 @@
-alphabet
-createAuction
-bid
-cancelAuction
----------------------
-positive examples

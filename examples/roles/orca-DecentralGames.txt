@@ -1,5 +1,0 @@
-(perform hierarchy)
-(transfer)
-(approve)
-(****)
-(approve,transfer)

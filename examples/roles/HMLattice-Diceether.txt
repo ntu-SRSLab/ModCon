@@ -1,7 +1,0 @@
-(serverCancelActiveGame,addHouseStake,activateConflictResolution,userCancelActiveGame,serverEndGameConflict,serverForceGameEnd,createGame,updateConflictResolution,activate,unpause,userEndGameConflict,serverEndGame):0
-(addHouseStake,activateConflictResolution,updateConflictResolution,activate,unpause):1
-(serverCancelActiveGame,serverEndGameConflict,serverForceGameEnd,serverEndGame):1
-(createGame,userEndGameConflict):7
-(userCancelActiveGame,createGame):13
-(createGame):398
-():400

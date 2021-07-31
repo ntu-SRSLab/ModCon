@@ -1,8 +1,0 @@
-strict digraph  {
-"('placeBet',)\n---------\n50";
-"()\n---------\n1";
-"('settleBets',)\n---------\n3";
-"('transferOwnership', 'setOldVersion')\n---------\n1";
-"('placeBet',)\n---------\n50" -> "()\n---------\n1";
-"('settleBets',)\n---------\n3" -> "()\n---------\n1";
-}

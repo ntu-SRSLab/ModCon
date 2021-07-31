@@ -20,7 +20,7 @@ global.Popper = Popper;
 global.vm = vm; //Define you app variable globally
 
 var myArgs = process.argv.slice(2);
-var SocketInstance = SocketIO('http://localhost:3000', {
+var SocketInstance = SocketIO('http://127.0.0.1:3000', {
   reconnection: true,
   reconnectionDelay: 3000
 });

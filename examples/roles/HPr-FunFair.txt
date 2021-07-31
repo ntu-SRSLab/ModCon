@@ -1,9 +1,0 @@
-(transfer):97522
-(approve):5919
-(transferFrom):13
-(burn):6
-(acceptOwnership,changeOwner):1
-(acceptOwnership,setController):1
-(increaseApproval,acceptOwnership):1
-(multiTransfer,multiApprove,changeOwner,setController,transfer):1
-(transferFrom,decreaseApproval,transfer,approve):5

@@ -1,5 +1,0 @@
-alphabet
-burnToken
----------------------
-positive examples
-burnToken burnToken burnToken burnToken burnToken burnToken burnToken burnToken burnToken

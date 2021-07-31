@@ -1,7 +1,0 @@
-strict digraph  {
-"('placeBet',)\n---------\n297";
-"('approveNextOwner',)\n---------\n1";
-"('setMaxProfit', 'refundBet', 'setSecretSigner', 'acceptNextOwner', 'setCroupier', 'withdrawFunds')\n---------\n1";
-"('fallback',)\n---------\n1";
-"('settleBetUncleMerkleProof', 'settleBet')\n---------\n1";
-}
