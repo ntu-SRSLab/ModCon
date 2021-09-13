@@ -105,13 +105,14 @@ class AddressPool extends Pool {
     // eg.   bytes.  range.start = 1,  range.end = 10;
     constructor(range, size, description) {
         super(range, size, description);
+        this.accounts = g_ethereumAccounts.slice(4);
     }
     _constant() {
-        return g_ethereumAccounts;
+        return this.accounts;
     }
     _random() {
-        return g_ethereumAccounts[
-            Math.floor(Math.random()  * g_ethereumAccounts.length)
+        return this.accounts[
+            Math.floor(Math.random()  * this.accounts.length)
         ];
     }
 }
@@ -311,7 +312,8 @@ async function gen_callFun(abi, address, option) {
     let gasLimit = await gen_callGasMax();
     let callFun = {
         /// g_account_list[0] is the initial account, which is also a miner account
-        from: g_ethereumAccounts[0],
+        // from: g_ethereumAccounts[0],
+        from: g_ethereumAccounts[randomNum(0, g_ethereumAccounts.length)],
         to: address,
         abi: abi,
         gas: gasLimit,
@@ -349,3 +351,4 @@ exports.write2file = write2file;
 exports.types = types;
 exports.gen_callFun = gen_callFun;
 exports.importAccounts = importAccounts;
+exports.randomNum = randomNum

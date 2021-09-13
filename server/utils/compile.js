@@ -94,7 +94,9 @@ function compileWecredit() {
 function compile(folder, contracts) {
 	let output = {};
 	let input = {};
-	let version = "0.4.25";
+	let VERSION425 = "0.4.25"
+	let version;
+	console.log(folder, contracts)
 	for (let contract of contracts) {
 		input[contract.contract] = fs.readFileSync(spath.join(folder, contract.contract), 'utf8');
 		let match =  input[contract.contract].match(/solidity\s+(>=|>|\^)(.*);/);
@@ -104,7 +106,16 @@ function compile(folder, contracts) {
 	}
 	console.log("solidity version: ", version);
 	let compiledContract ;
-	if (version.indexOf("0.4")!=-1){
+	if (version.indexOf(VERSION425)!=-1){
+		if(false == checkSolcInstalled(VERSION425))
+			shell.exec("npm install solc-"+VERSION425+"@npm:solc@"+VERSION425 + " --save");
+		let solc = require("solc-"+VERSION425);
+		compiledContract = solc.compile({
+			sources: input
+		}, 1);
+		console.log("keys:", Object.keys(compiledContract.sources));
+	}
+	else if  (version.indexOf("0.4")!=-1){
 		// install specific solc version
 		if(false == checkSolcInstalled(version))
 			shell.exec("npm install solc-"+version+"@npm:solc@"+version + " --save");
@@ -113,7 +124,7 @@ function compile(folder, contracts) {
 			sources: input
 		}, 1);
 		console.log("keys:", Object.keys(compiledContract.sources));
-	}else {
+	} else {
 		    // try new version
 		    if(false == checkSolcInstalled(version))
 				shell.exec("npm install solc-"+version+"@npm:solc@"+version + " --save");
@@ -142,13 +153,13 @@ function compile(folder, contracts) {
 				for(let contract_name of Object.keys(compiledContract.contracts[source])){
 					
 							let content = compiledContract.contracts[source][contract_name];
-							content.sourcePath = spath.join(__dirname, "../" + folder, file_name + ".sol");
+							content.sourcePath = spath.join(folder, file_name + ".sol");
 							console.log(content.sourcePath);
 							write2File("./deployed_contract/" + contract_name, contract_name + ".abi", JSON.stringify(content.abi));
 							// console.log(content.evm.bytecode);
 							write2File("./deployed_contract/" + contract_name, contract_name + ".bin", JSON.stringify(content.evm.bytecode));
 							write2File("./deployed_contract/" + contract_name, contract_name + ".artifact", JSON.stringify(content));
-							shell.cp("-f",content.sourcePath, spath.join(__dirname,"../deployed_contract/", contract_name));
+							shell.cp("-f",content.sourcePath, spath.join("./deployed_contract/", contract_name));
 							output[contract_name] = content.abi;
 				
 				}
@@ -165,18 +176,17 @@ function compile(folder, contracts) {
 	
 		console.log(file_name, " to compile");
 		let content = compiledContract.contracts[name];
-		content.sourcePath = spath.join(__dirname, "../" + folder, file_name + ".sol");
+		content.sourcePath = spath.join(folder, file_name + ".sol");
 		console.log(content.sourcePath);
 		write2File("./deployed_contract/" + contract_name, contract_name + ".abi", JSON.stringify(JSON.parse(content.interface)));
 		write2File("./deployed_contract/" + contract_name, contract_name + ".bin", content.bytecode);
 		write2File("./deployed_contract/" + contract_name, contract_name + ".artifact", JSON.stringify(content));
-		shell.cp("-f",content.sourcePath, spath.join(__dirname,"../deployed_contract/", contract_name));
-		console.log(spath.join(__dirname,"../deployed_contract/", contract_name));
+		shell.cp("-f",content.sourcePath, spath.join("./deployed_contract/", contract_name));
+		console.log(spath.join("./deployed_contract/", contract_name));
 		output[contract_name] = JSON.parse(content.interface);
 	
 	}
-	
-	console.log(output);
+	// console.log(output);
 	return output;
 }
 module.exports.compile = compile;

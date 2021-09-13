@@ -10,7 +10,7 @@ const types = require("./common.js").types;
 
 const gen_callFun = require("./common_randompool.js").gen_callFun;
 const importAccounts = require("./common_randompool").importAccounts;
-
+const randomNum = require("./common_randompool").randomNum;
 const abiDecoder = require('abi-decoder');
 
 
@@ -23,22 +23,48 @@ class EthereumContractKit {
          this.httprpc = httprpc;
          this.max_gas  = max_gas;
          this.max_value = max_value;
-        //  this.initialize();
+         this.initialize();
     }
     static getInstance(workdir) {
         if (!EthereumContractKit.instance) {
-            EthereumContractKit.instance = new EthereumContractKit(workdir,  null, null, "http://localhost:8645", 10000000000, 100);
+            EthereumContractKit.instance = new EthereumContractKit(workdir,  null, null, "http://localhost:8545", 10000000000, 100);
         }
         return EthereumContractKit.instance;
     }
-    async initialize(){
+    testBlockchainNetworkConnection(){
+        this.Provider = new Web3.providers.HttpProvider(this.httprpc);
+        this.web3 =  new Web3(this.Provider); 
+        // console.log(this.web3);
+        console.log(`connect to ethereum?  ${this.web3.isConnected()? "yes":"no"}`);
+        return this.web3.isConnected();
+    }
+    initialize(){
         if(!this.initialized){
         this.Provider = new Web3.providers.HttpProvider(this.httprpc);
         this.web3 =  new Web3(this.Provider); 
         console.log(`connect to ethereum?  ${this.web3.isConnected()? "yes":"no"}`);
         console.log(   `ethereum accounts: ${this.web3.eth.accounts}`);
-        let account = this.web3.eth.accounts[0];
+        this.accounts = this.web3.eth.accounts
+        
+        const personal = this.web3.personal;
+        let primary = this.accounts[0];
+        personal.unlockAccount(primary,"",200*60*60);
+        for (let account of this.accounts.slice(1)){
+            this.web3.personal.unlockAccount(account, "123456", 60*60*24)
+        }
+        
+        for(let account of this.accounts.slice(1)){
+            personal.sendTransaction({from: this.accounts[0], to: account, value:"0x2000000000000"})    
+        }
+        // personal.sendTransaction({from: this.accounts[0], to: this.accounts[1], value:"0x2000000000000"})
+        // personal.sendTransaction({from: this.accounts[0], to: this.accounts[2], value:"0x2000000000000"})
+        // personal.sendTransaction({from: this.accounts[0], to: this.accounts[3], value:"0x2000000000000"})
+        // personal.sendTransaction({from: this.accounts[0], to: this.accounts[4], value:"0x2000000000000"})
+        // personal.sendTransaction({from: this.accounts[0], to: this.accounts[5], value:"0x2000000000000"})
+
+        let account = this.accounts[0];
         for(let acc of this.web3.eth.accounts){
+                console.log(acc, this.web3.eth.getBalance(acc))
                 if(this.web3.eth.getBalance(acc) > this.web3.eth.getBalance(account) )
                     account = acc;
         }
@@ -108,7 +134,7 @@ class EthereumContractKit {
             abi: abi,
             bytecode: bytecode
         });
-        this.defaultAmountParams.gas = 5*this.web3.eth.getBlock("latest").gasLimit/6;
+        this.defaultAmountParams.gas = Math.floor(5*this.web3.eth.getBlock("latest").gasLimit/6);
         console.log(this.defaultAmountParams.gas);
         let instance = await Contract.new(this.defaultAmountParams);
         contract_mapping[contract_name] =  instance;
@@ -126,7 +152,7 @@ class EthereumContractKit {
             abi: abi,
             bytecode: bytecode
         });
-        this.defaultAmountParams.gas = 5*this.web3.eth.getBlock("latest").gasLimit/6;
+        this.defaultAmountParams.gas = Math.floor(5*this.web3.eth.getBlock("latest").gasLimit/6);
         console.log(this.defaultAmountParams.gas);
         let instance;
         if(params && params.length){
@@ -134,13 +160,20 @@ class EthereumContractKit {
         }else{
                  instance = await Contract.new(this.defaultAmountParams);
         }
+        // console.log(instance);
         contract_mapping[contract_name] =  instance;
         contract_mapping[instance.address] = instance;
         write2file(path.join(this.workdir, contract_name, instance.address), JSON.stringify(instance));
         instance.name = contract_name;
-        return instance;
+
+        let transaction = await this.web3.eth.getTransaction(instance.transactionHash);
+        transaction.txreceipt_status = 1;
+        transaction.isError = 0;
+        transaction.input = "constructor";
+
+        return {instance: instance, receipt: transaction};
     }
-    async transcation_send(contract_name, address, full_func, params){
+    async transcation_send(contract_name, address, full_func, params, caller){
         assert (contract_name in contract_mapping, `${contract_name} has  not been deployed.`);
         let instance;
         if(contract_name)
@@ -151,23 +184,33 @@ class EthereumContractKit {
         let fun_name = full_func.split("(")[0];
         console.log(contract_name, address, full_func,  params);
         let receipt;
-        this.defaultAmountParams.gas = 5*this.web3.eth.getBlock("latest").gasLimit/6;
-        console.log(this.defaultAmountParams.gas);
+        let AmountParams = JSON.parse(JSON.stringify(this.defaultAmountParams));
+        AmountParams.gas = Math.floor(5*this.web3.eth.getBlock("latest").gasLimit/6);
+        if (caller!=undefined)
+            AmountParams.from = caller;
+        console.log(AmountParams.gas);
         let attempt_count =  0;
         while(!receipt&&attempt_count<10){
-                    if(params && params.length){
-                        receipt = await  instance[fun_name](...params, this.defaultAmountParams);
-                        // assert(receipt, "receipt is null");
-                    }
-                    else{
-                        receipt = await  instance[fun_name]( this.defaultAmountParams);
-                        // assert(receipt, "receipt is null");
-                    }
+            if(params && params.length){
+                receipt = await  instance[fun_name](...params, AmountParams);
+                // assert(receipt, "receipt is null");
+            }
+            else{
+                receipt = await  instance[fun_name]( AmountParams);
+                // assert(receipt, "receipt is null");
+            }
         }
         assert(receipt, "receipt is null, and the reason is unknown");
-        console.log("receipt: ", receipt);
         if(receipt && receipt.receipt)
-            receipt.status = ((this.defaultAmountParams.gas == receipt.receipt.gasUsed) && (receipt.receipt.gasUsed !=2300)) ?"-0x1":"0x0";
+            receipt.receipt.status = ((this.defaultAmountParams.gas == receipt.receipt.gasUsed) && (receipt.receipt.gasUsed !=2300)) ?"-0x1":"0x0";
+        if (receipt.receipt.status == "0x0"){
+            receipt.receipt.isError = "0";
+            receipt.receipt.txreceipt_status = "1";
+        }else{
+            receipt.receipt.isError = "1";
+            receipt.receipt.txreceipt_status = "1";
+        }
+        console.log("receipt: ", receipt);
         return receipt;
     }
     async getInstance(contract_name, address) {
@@ -205,7 +248,7 @@ class EthereumFuzzer {
         assert(this.instance);
         this.Kit =  EthereumContractKit.getInstance("../../deployed_contract");
     }
-static getInstance(seed, contract_name) {
+    static getInstance(seed, contract_name) {
         if (!EthereumFuzzer.instance) {
             EthereumFuzzer.instance = new EthereumFuzzer(seed, contract_name);
         }
@@ -233,8 +276,31 @@ static getInstance(seed, contract_name) {
             execResults: []
         };
     }
+    async fuzz_contract(contract_name, address){
+        let instance = await this.Kit.getInstance(contract_name, address);
+        let abis = instance.abi.filter(e => {
+            return e.type == "function" && (!e.constant || e.stateMutability!="view")
+        });
+        let abi = abis[randomNum(0, abis.length)];
+        let raw_tx = await this._fuzz_fun(instance.address, instance.abi, abi.name);
 
-  async full_fuzz_fun(contract_name, address, fun_name, option){
+        if (abi.constant || abi.stateMutability=="view") {
+            let receipt = await this.Kit.transcation_send(contract_name, instance.address, raw_tx.fun, raw_tx.param, raw_tx.from);
+            return {receipt: receipt, logs: null, raw_tx:raw_tx};
+        } else {
+            let receipt = await this.Kit.transcation_send(contract_name, instance.address, raw_tx.fun, raw_tx.param, raw_tx.from);
+            abiDecoder.addABI(instance.abi);
+            let log = await  abiDecoder.decodeLogs(receipt.logs);
+            let tx = await this.Kit.web3.eth.getTransaction(receipt.receipt.transactionHash);
+            receipt.receipt.input = tx.input;
+            receipt.receipt.gas = tx.gas;
+            receipt.receipt.gasPrice = tx.gasPrice;
+            receipt.receipt.nonce = tx.nonce;
+            return {receipt: receipt,  logs: log, raw_tx:raw_tx};
+        }
+    }
+
+    async full_fuzz_fun(contract_name, address, fun_name, option){
         console.log("full_fuzz_fun: "+ contract_name);
         // assert(false);
         if(fun_name.indexOf("("))
