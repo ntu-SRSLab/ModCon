@@ -1,0 +1,25 @@
+MODULE main 
+VAR 
+        input: {bid,close,finish,unbid,reveal,cancelABB,cancelRB};
+        state: {s3,s2,s4,s0, error};
+    
+ASSIGN
+        init(state) := s0;
+        next(state) := case
+                       state = s0 & input = bid : s3;
+			state = s2 & input = reveal : s2;
+			state = s2 & input = cancelRB : s4;
+			state = s2 & input = finish : s0;
+			state = s3 & input = close : s2;
+			state = s3 & input = cancelABB : s4;
+			state = s3 & input = bid : s3;
+			state = s4 & input = unbid : s4;
+			TRUE: error;
+                       esac; 
+    
+SPEC
+        AG(input = close -> AG(input = bid -> AX(state = error)))
+
+LTLSPEC
+         G (input = close -> G(input = bid -> X(state = error)))
+    

@@ -1,0 +1,19 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s1 [shape="circle" label="1"];
+	s2 [shape="doublecircle" label="2"];
+	s0 -> s2 [label="Complete"];
+	s0 -> s2 [label="TransferResponsibility"];
+	s0 -> s1 [label="IngestTelemetry"];
+	s1 -> s1 [label="Complete"];
+	s1 -> s1 [label="TransferResponsibility"];
+	s1 -> s1 [label="IngestTelemetry"];
+	s2 -> s1 [label="Complete"];
+	s2 -> s1 [label="TransferResponsibility"];
+	s2 -> s1 [label="IngestTelemetry"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

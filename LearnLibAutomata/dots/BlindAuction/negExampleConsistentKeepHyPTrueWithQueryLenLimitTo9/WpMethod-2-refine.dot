@@ -1,0 +1,28 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s2 [shape="doublecircle" label="2"];
+	s3 [shape="doublecircle" label="3"];
+	s4 [shape="doublecircle" label="4"];
+	s5 [shape="doublecircle" label="5"];
+	s6 [shape="doublecircle" label="6"];
+	s7 [shape="doublecircle" label="7"];
+	s0 -> s3 [label="bid"];
+	s2 -> s2 [label="unbid"];
+	s3 -> s2 [label="cancelABB"];
+	s3 -> s7 [label="bid"];
+	s3 -> s5 [label="close"];
+	s4 -> s4 [label="reveal"];
+	s4 -> s2 [label="cancelRB"];
+	s4 -> s6 [label="finish"];
+	s5 -> s4 [label="reveal"];
+	s5 -> s6 [label="finish"];
+	s6 -> s6 [label="withdraw"];
+	s7 -> s2 [label="cancelABB"];
+	s7 -> s7 [label="bid"];
+	s7 -> s4 [label="close"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

@@ -1,0 +1,18 @@
+MODULE main 
+VAR 
+        input: {bid};
+        state: {s0, error};
+    
+ASSIGN
+        init(state) := s0;
+        next(state) := case
+                       state = s0 & input = bid : s0;
+			TRUE: error;
+                       esac; 
+    
+SPEC
+        TRUE
+
+LTLSPEC
+        TRUE
+    

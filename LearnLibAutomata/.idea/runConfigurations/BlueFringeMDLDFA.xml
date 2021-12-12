@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="BlueFringeMDLDFA" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="org.learnlib.modcon.passive.BlueFringeMDLDFA" />
+    <module name="learnlib-demo" />
+    <option name="PROGRAM_PARAMETERS" value="--input $PROJECT_DIR$/../../ModCon/examples/game/CryptoPunks/userBehaviour-user-reduce.txt --output $PROJECT_DIR$/../../ModCon/examples/game/CryptoPunks/userBehaviour-user-reduce.dot" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

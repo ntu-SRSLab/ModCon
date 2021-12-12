@@ -1,0 +1,27 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s1 [shape="circle" label="1"];
+	s2 [shape="doublecircle" label="2"];
+	s3 [shape="doublecircle" label="3"];
+	s0 -> s3 [label="close"];
+	s0 -> s2 [label="enableRefunds"];
+	s0 -> s0 [label="deposit"];
+	s0 -> s1 [label="refund"];
+	s1 -> s1 [label="close"];
+	s1 -> s1 [label="enableRefunds"];
+	s1 -> s1 [label="deposit"];
+	s1 -> s1 [label="refund"];
+	s2 -> s3 [label="close"];
+	s2 -> s1 [label="enableRefunds"];
+	s2 -> s1 [label="deposit"];
+	s2 -> s2 [label="refund"];
+	s3 -> s3 [label="close"];
+	s3 -> s1 [label="enableRefunds"];
+	s3 -> s1 [label="deposit"];
+	s3 -> s1 [label="refund"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

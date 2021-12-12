@@ -1,0 +1,25 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s1 [shape="circle" label="1"];
+	s0 -> s1 [label="close 10=<a<=80"];
+	s0 -> s1 [label="unbid 10=<a<=80"];
+	s0 -> s1 [label="withdraw 10=<a<=80"];
+	s0 -> s1 [label="reveal 10=<a<=80"];
+	s0 -> s1 [label="cancelRB 10=<a<=80"];
+	s0 -> s1 [label="cancelABB 10=<a<=80"];
+	s0 -> s1 [label="finish 10=<a<=80"];
+	s0 -> s1 [label="bid 10=<a<=80"];
+	s1 -> s1 [label="close 10=<a<=80"];
+	s1 -> s1 [label="unbid 10=<a<=80"];
+	s1 -> s1 [label="withdraw 10=<a<=80"];
+	s1 -> s1 [label="reveal 10=<a<=80"];
+	s1 -> s1 [label="cancelRB 10=<a<=80"];
+	s1 -> s1 [label="cancelABB 10=<a<=80"];
+	s1 -> s1 [label="finish 10=<a<=80"];
+	s1 -> s1 [label="bid 10=<a<=80"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

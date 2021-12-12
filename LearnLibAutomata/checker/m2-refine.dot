@@ -1,0 +1,19 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s2 [shape="doublecircle" label="2"];
+	s3 [shape="doublecircle" label="3"];
+	s4 [shape="doublecircle" label="4"];
+	s0 -> s3 [label="bid"];
+	s2 -> s2 [label="reveal"];
+	s2 -> s4 [label="cancelRB"];
+	s2 -> s0 [label="finish"];
+	s3 -> s2 [label="close"];
+	s3 -> s4 [label="cancelABB"];
+	s3 -> s3 [label="bid"];
+	s4 -> s4 [label="unbid"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

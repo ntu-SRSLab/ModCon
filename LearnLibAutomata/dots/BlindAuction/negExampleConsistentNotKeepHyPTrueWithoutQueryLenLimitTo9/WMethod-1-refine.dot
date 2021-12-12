@@ -1,0 +1,56 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s2 [shape="doublecircle" label="2"];
+	s3 [shape="doublecircle" label="3"];
+	s4 [shape="doublecircle" label="4"];
+	s5 [shape="doublecircle" label="5"];
+	s6 [shape="doublecircle" label="6"];
+	s7 [shape="doublecircle" label="7"];
+	s8 [shape="doublecircle" label="8"];
+	s9 [shape="doublecircle" label="9"];
+	s10 [shape="doublecircle" label="10"];
+	s11 [shape="doublecircle" label="11"];
+	s12 [shape="doublecircle" label="12"];
+	s13 [shape="doublecircle" label="13"];
+	s14 [shape="doublecircle" label="14"];
+	s15 [shape="doublecircle" label="15"];
+	s16 [shape="doublecircle" label="16"];
+	s17 [shape="doublecircle" label="17"];
+	s18 [shape="doublecircle" label="18"];
+	s0 -> s3 [label="bid"];
+	s2 -> s2 [label="unbid"];
+	s3 -> s2 [label="cancelABB"];
+	s3 -> s3 [label="bid"];
+	s3 -> s5 [label="close"];
+	s4 -> s10 [label="reveal"];
+	s4 -> s14 [label="cancelRB"];
+	s4 -> s14 [label="finish"];
+	s5 -> s4 [label="reveal"];
+	s5 -> s2 [label="cancelRB"];
+	s5 -> s13 [label="finish"];
+	s6 -> s15 [label="withdraw"];
+	s7 -> s11 [label="reveal"];
+	s7 -> s17 [label="cancelRB"];
+	s7 -> s8 [label="finish"];
+	s8 -> s9 [label="withdraw"];
+	s9 -> s14 [label="withdraw"];
+	s10 -> s7 [label="reveal"];
+	s10 -> s18 [label="cancelRB"];
+	s10 -> s15 [label="finish"];
+	s11 -> s12 [label="reveal"];
+	s11 -> s16 [label="cancelRB"];
+	s11 -> s9 [label="finish"];
+	s12 -> s14 [label="reveal"];
+	s12 -> s14 [label="cancelRB"];
+	s12 -> s14 [label="finish"];
+	s13 -> s6 [label="withdraw"];
+	s15 -> s8 [label="withdraw"];
+	s16 -> s14 [label="unbid"];
+	s17 -> s16 [label="unbid"];
+	s18 -> s17 [label="unbid"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

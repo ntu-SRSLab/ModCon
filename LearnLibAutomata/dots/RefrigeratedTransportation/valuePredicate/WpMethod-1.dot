@@ -1,0 +1,25 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s1 [shape="circle" label="1"];
+	s2 [shape="doublecircle" label="2"];
+	s0 -> s2 [label="Complete"];
+	s0 -> s0 [label="TransferResponsibility"];
+	s0 -> s0 [label="IngestTelemetry 10=<a<=80,0=<b<=100"];
+	s0 -> s2 [label="IngestTelemetry 0=<a<10,0=<b<=100"];
+	s0 -> s2 [label="IngestTelemetry a>80,0=<b<=100"];
+	s1 -> s1 [label="Complete"];
+	s1 -> s1 [label="TransferResponsibility"];
+	s1 -> s1 [label="IngestTelemetry 10=<a<=80,0=<b<=100"];
+	s1 -> s1 [label="IngestTelemetry 0=<a<10,0=<b<=100"];
+	s1 -> s1 [label="IngestTelemetry a>80,0=<b<=100"];
+	s2 -> s1 [label="Complete"];
+	s2 -> s1 [label="TransferResponsibility"];
+	s2 -> s1 [label="IngestTelemetry 10=<a<=80,0=<b<=100"];
+	s2 -> s1 [label="IngestTelemetry 0=<a<10,0=<b<=100"];
+	s2 -> s1 [label="IngestTelemetry a>80,0=<b<=100"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

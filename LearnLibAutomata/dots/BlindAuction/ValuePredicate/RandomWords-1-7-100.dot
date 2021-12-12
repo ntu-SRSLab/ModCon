@@ -1,0 +1,41 @@
+digraph g {
+
+	s0 [shape="doublecircle" label="0"];
+	s1 [shape="circle" label="1"];
+	s0 -> s1 [label="cancelABB a>0"];
+	s0 -> s1 [label="cancelABB a=0"];
+	s0 -> s1 [label="bid a>0"];
+	s0 -> s0 [label="bid a=0"];
+	s0 -> s1 [label="reveal a>0"];
+	s0 -> s1 [label="reveal a=0"];
+	s0 -> s1 [label="withdraw a>0"];
+	s0 -> s1 [label="withdraw a=0"];
+	s0 -> s1 [label="unbid a>0"];
+	s0 -> s1 [label="unbid a=0"];
+	s0 -> s1 [label="cancelRB a>0"];
+	s0 -> s1 [label="cancelRB a=0"];
+	s0 -> s1 [label="finish a>0"];
+	s0 -> s1 [label="finish a=0"];
+	s0 -> s1 [label="close a>0"];
+	s0 -> s1 [label="close a=0"];
+	s1 -> s1 [label="cancelABB a>0"];
+	s1 -> s1 [label="cancelABB a=0"];
+	s1 -> s1 [label="bid a>0"];
+	s1 -> s1 [label="bid a=0"];
+	s1 -> s1 [label="reveal a>0"];
+	s1 -> s1 [label="reveal a=0"];
+	s1 -> s1 [label="withdraw a>0"];
+	s1 -> s1 [label="withdraw a=0"];
+	s1 -> s1 [label="unbid a>0"];
+	s1 -> s1 [label="unbid a=0"];
+	s1 -> s1 [label="cancelRB a>0"];
+	s1 -> s1 [label="cancelRB a=0"];
+	s1 -> s1 [label="finish a>0"];
+	s1 -> s1 [label="finish a=0"];
+	s1 -> s1 [label="close a>0"];
+	s1 -> s1 [label="close a=0"];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

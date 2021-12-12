@@ -1,0 +1,6 @@
+org/learnlib/modcon/util/ABIPredicate.class
+org/learnlib/modcon/modelchecker/ModelChecker.class
+org/learnlib/modcon/util/Reader.class
+org/learnlib/modcon/active/TTTDFALearner.class
+org/learnlib/modcon/active/ActiveDFALearner.class
+org/learnlib/modcon/util/ABIPredicate$ABIRenaming.class
