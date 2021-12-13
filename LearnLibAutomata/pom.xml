@@ -311,7 +311,7 @@
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
                             <mainClass>
-                                org.learnlib.modcon.passive.BlueFringeMDLDFA
+                                org.learnlib.modcon.active.LStarDFALearner
                             </mainClass>
                         </manifest>
                     </archive>
