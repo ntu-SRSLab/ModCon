@@ -15,4 +15,6 @@ RUN apt update && apt install -y wget nodejs npm &&\
 npm i -g n && n latest
 RUN npm i -g npm@6.14.4 && apt install -y git
 
+RUN apt install python3-pip
+
 CMD ["bash", "bootstrap.sh"]

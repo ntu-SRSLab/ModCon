@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d83f91d0-9684-4d55-8708-28dc133183a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/learnlib/modcon/passive/BlueFringeMDLDFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/learnlib/modcon/passive/BlueFringeMDLDFA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/learnlib/modcon/passive/BlueFringeMDLDFA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/learnlib/modcon/passive/BlueFringeMDLDFA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/learnlib-demo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/learnlib-demo-1.0-SNAPSHOT.jar" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jUOhgIatkq4IUwEoUQ3q9uy8Ns" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/daikon-5.8.6" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.learnlib.modcon" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="$PROJECT_DIR$/src/main/resources/proto" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.learnlib.modcon.active" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/src/main/resources/proto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.BlueFringeMDLDFA">
+    <configuration name="ABIPredicate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.learnlib.modcon.util.ABIPredicate" />
+      <module name="learnlib-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.learnlib.modcon.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlockchainClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.learnlib.modcon.driver.BlockchainClient" />
+      <module name="learnlib-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.learnlib.modcon.driver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlockchainServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.learnlib.modcon.driver.BlockchainServer" />
+      <module name="learnlib-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.learnlib.modcon.driver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlockchainServer" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="org.learnlib.modcon.driver.BlockchainServer" />
+      <module name="learnlib-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.learnlib.modcon.driver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlueFringeEDSMDFA" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.learnlib.modcon.passive.BlueFringeEDSMDFA" />
+      <module name="learnlib-demo" />
+      <option name="PROGRAM_PARAMETERS" value="--input $PROJECT_DIR$/../../ModCon/examples/gambling/diceether/Diceether/sessionTraceSummary.txt --output $PROJECT_DIR$/../../ModCon/examples/gambling/diceether/Diceether/sessionTraceSummary.dot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlueFringeRPNIDFA" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.learnlib.modcon.passive.BlueFringeRPNIDFA" />
+      <module name="learnlib-demo" />
+      <option name="PROGRAM_PARAMETERS" value="--input $PROJECT_DIR$/../../ModCon/examples/media/MakersPlace/sessionTraceSummary.txt --output $PROJECT_DIR$/../../ModCon/examples/media/MakersPlace/sessionTraceSummary.dot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LStarDFALearner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.learnlib.modcon.active.LStarDFALearner" />
+      <module name="learnlib-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.learnlib.modcon.active.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModelChecker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.learnlib.modcon.modelchecker.ModelChecker" />
+      <module name="learnlib-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.learnlib.modcon.modelchecker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LStarDFALearner" />
+        <item itemvalue="Application.BlockchainClient" />
+        <item itemvalue="Application.ModelChecker" />
+        <item itemvalue="Application.ABIPredicate" />
+        <item itemvalue="Application.BlockchainServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d83f91d0-9684-4d55-8708-28dc133183a2" name="Default Changelist" comment="" />
+      <created>1603855325436</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603855325436</updated>
+      <workItem from="1603855326551" duration="11873000" />
+      <workItem from="1603876945137" duration="26000" />
+      <workItem from="1603877026406" duration="11691000" />
+      <workItem from="1604046308484" duration="1733000" />
+      <workItem from="1604060897103" duration="9630000" />
+      <workItem from="1604236755610" duration="11049000" />
+      <workItem from="1604637944098" duration="12485000" />
+      <workItem from="1604800167894" duration="605000" />
+      <workItem from="1604808925055" duration="32000" />
+      <workItem from="1604809057536" duration="3164000" />
+      <workItem from="1604815121706" duration="85000" />
+      <workItem from="1604824188124" duration="754000" />
+      <workItem from="1604824984485" duration="1006000" />
+      <workItem from="1604829705454" duration="1465000" />
+      <workItem from="1604834765100" duration="375000" />
+      <workItem from="1604835622189" duration="533000" />
+      <workItem from="1604837074183" duration="178000" />
+      <workItem from="1604837931615" duration="216000" />
+      <workItem from="1604838645262" duration="3673000" />
+      <workItem from="1604893237877" duration="5235000" />
+      <workItem from="1604979879177" duration="7575000" />
+      <workItem from="1605011031519" duration="3523000" />
+      <workItem from="1605158692644" duration="35114000" />
+      <workItem from="1605596719158" duration="8783000" />
+      <workItem from="1605782411600" duration="459000" />
+      <workItem from="1605788857954" duration="1014000" />
+      <workItem from="1605844987324" duration="3197000" />
+      <workItem from="1605942732536" duration="6775000" />
+      <workItem from="1606101373074" duration="9670000" />
+      <workItem from="1606200301247" duration="6462000" />
+      <workItem from="1606792657673" duration="4522000" />
+      <workItem from="1606879763760" duration="48000" />
+      <workItem from="1606879869446" duration="14576000" />
+      <workItem from="1606896383535" duration="9255000" />
+      <workItem from="1607747934737" duration="11682000" />
+      <workItem from="1609134485958" duration="4783000" />
+      <workItem from="1609911333548" duration="18176000" />
+      <workItem from="1611648009152" duration="680000" />
+      <workItem from="1612344139044" duration="282000" />
+      <workItem from="1612356455991" duration="739000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
