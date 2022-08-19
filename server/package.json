@@ -26,7 +26,6 @@
 		}
 	],
 	"dependencies": {
-		"@grpc/proto-loader": "^0.1.0",
 		"@truffle/contract": "^4.1.10",
 		"@xstate/test": "^0.4.0",
 		"aa": "^0.1.40",
@@ -38,7 +37,6 @@
 		"express": "^4.17.1",
 		"get-line-from-pos": "^1.0.0",
 		"google-protobuf": "^3.0.0",
-		"grpc": "^1.11.0",
 		"hex2ascii": "0.0.3",
 		"locks": "^0.2.2",
 		"lodash": "^4.6.1",
@@ -49,7 +47,9 @@
 		"shelljs": "^0.8.4",
 		"socket.io": "^2.3.0",
 		"socketio-file-upload": "^0.7.2",
+		"solc-0.4.15": "npm:solc@^0.4.15",
 		"solc-0.4.25": "npm:solc@^0.4.25",
+		"solc-0.5.0": "npm:solc@^0.5.0",
 		"solc-latest": "npm:solc@^0.5.2",
 		"sprintf-js": "^1.1.2",
 		"truffle": "^4.1.10",

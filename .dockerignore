@@ -1,0 +1,9 @@
+node_modules/
+*/node_modules/
+deployed_contract/
+*/deployed_contract/
+logs/
+*/logs/
+.vscode/
+sleep/
+*/*/package-lock.json

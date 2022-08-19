@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const spath = require('path');
+const { exit } = require("process");
 const shell = require("shelljs");
 const { isRegExp } = require("util");
 
@@ -34,9 +35,37 @@ function compile(folder, contracts) {
 	let version = "0.4.25";
 	for (let contract of contracts) {
 		input[contract.contract] = fs.readFileSync(spath.join(folder, contract.contract), 'utf8');
-		let match =  input[contract.contract].match(/solidity\s+(>=|>|\^)(.*);/);
+		let match = input[contract.contract].match(/^\s*pragma solidity\s+(>=|>|\^)\s*([0-9|.]*)\s*(<|<=)*([0-9|.]*)\s*;/);
+		console.log(match)
 		if(match){
-			version = match[2];
+			exact_or_gt_or_ge = match[1]
+			small_version = match[2];
+			le_or_leq = match[3]
+			large_version = match[4]
+			if (exact_or_gt_or_ge == "^"){
+				version = small_version
+			}else if (exact_or_gt_or_ge == ">="){
+				version = small_version 
+			}else if (exact_or_gt_or_ge == ">"){
+				version_levels = small_version.split(".")
+				version = version_levels[0]+ "." + version_levels[1] + "." + parseInt(version_levels[version_levels.length-1])+1
+			}
+			if (le_or_leq){
+				if (le_or_leq == "<="){
+					le_or_leq =  large_version
+				}else if (le_or_leq == "<"){
+					version_levels =  large_version.split(".")
+					small_version_levels = small_version.split(".")
+					if (parseInt(version_levels[version_levels.length-1])>0){
+						version = version_levels[0]+ "." + version_levels[1] + ".0"
+					}else if (parseInt(version_levels[version_levels.length-2]) - parseInt(small_version_levels[version_levels.length-2]) > 1){
+						version = version_levels[0]+ "." + (parseInt(version_levels[1])-1) + ".0"
+					}
+				}
+			}
+			
+		}else{
+			version = "0.4.25";
 		}
 	}
 	console.log("solidity version: ", version);
@@ -44,12 +73,14 @@ function compile(folder, contracts) {
 	if (version.indexOf("0.4")!=-1){
 		// install specific solc version
 		if(false == checkSolcInstalled(version))
-			shell.exec("npm install solc-"+version+"@npm:solc@"+version + " --save");
+		shell.exec("npm install solc-"+version+"@npm:solc@"+version + " --save");
 		let solc = require("solc-"+version);
 		compiledContract = solc.compile({
 			sources: input
 		}, 1);
-		console.log("keys:", Object.keys(compiledContract.sources));
+		console.log(compiledContract)
+		// console.log("keys:", Object.keys(compiledContract));
+		// exit(0)
 		// console.log(compiledContract);
 		for (let contract of Object.keys(compiledContract.contracts)) {
 			let name = contract;

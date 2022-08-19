@@ -5,7 +5,6 @@ const shell = require("shelljs");
 const fs = require("fs");
 
 var assert = require("assert");
-var membershipQueryServer = require("./connection/protos/Server");
 var compiler = require("./utils/compile");
 console.log(compiler);
 var FiscoContractKit = require("./connection/fisco/fuzzer").FiscoDeployer;
@@ -175,48 +174,6 @@ class FSMStateReplayer {
     return contract_instance.address;
   }
 }
-
-const MEMBERQUERY_LIMIT = 10;
-class MembershipQueryEngine{
-  constructor(seed, contract_name, network) {
-      //  super(seed, contract_name);
-      this.network = network;
-      if (!this.network && this.network == "fisco-bcos") {
-        this.fuzzer = FiscoFuzzer.getInstance(seed, contract_name)
-      }else{
-        this.fuzzer = EthereumFuzzer.getInstance(seed, contract_name);
-      }
-      this.replayer = FSMStateReplayer.getInstance(network);
-      // current address of smart contract instance .
-      this.address = null;
-  }
-  static getOrCreateInstance(seed, contract_name, network) {
-    if (!MembershipQueryEngine.instance) {
-      MembershipQueryEngine.instance = new MembershipQueryEngine(seed, contract_name, network)
-    }
-    return MembershipQueryEngine.instance;
-  }
-  async reset(){
-    this.address  =  await this.replayer.initialize();
-  }
-  async fuzz(method){
-    let ret = new Object();
-    let count = 0;
-    while ((
-          (!ret || !ret.receipt || !ret.receipt.status) // result is null
-          || 
-          (ret.receipt.status!="0x0") // result is not null but the status is not "0x0" ("0x0" means no error)
-          )
-        && count<MEMBERQUERY_LIMIT  // maximum number to try to make staus at "0x0"
-        ){
-      ret = await this.fuzzer.full_fuzz_fun(this.replayer.deployment_configuration_data.contract, this.address, method);
-      
-      count++;
-    }
-    return ret.receipt&& ret.receipt.status=="0x0";
-  }
-}
-
 
 class FiscoStateMachineTestEngine {
   constructor(seed, contract_name, network) {
@@ -543,17 +500,7 @@ class EventHandler {
       console.error(err);
     };
   }
-  Learn_client(data){
-    let target_contract = data.target_contract;
-    let network = data.network;
-    let mqQueryEngine = MembershipQueryEngine.getOrCreateInstance(1, target_contract, network);
-    console.log(mqQueryEngine);
-    membershipQueryServer.setMembershipQueryEngine(mqQueryEngine);
-    membershipQueryServer.bootstrap();
-  }
 }
-
-
 
 io.on('connection', socket => {
   console.log(`A user connected with socket id ${socket.id}`)
