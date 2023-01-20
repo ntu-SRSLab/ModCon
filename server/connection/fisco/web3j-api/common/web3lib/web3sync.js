@@ -150,6 +150,11 @@ function getSignDeployTx(groupId, account, privateKey, bin, blockLimit) {
  * @return {String} signed deploy transaction data
  */
 function getSignDeployArgsTx(groupId, account, privateKey, bin, func, params, blockLimit) {
+    bin = JSON.parse(bin);
+    console.log(bin);
+    if (undefined != bin.object){
+        bin = bin.object;
+    }
     let txData = bin.indexOf('0x') === 0 ? bin : ('0x' + bin);
     txData +=  ethjsUtil.stripHexPrefix(getParamsData(func, params));
 //    console.log("txdata:", txData);
