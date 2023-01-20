@@ -10,7 +10,7 @@ docker pull liuyedocker/ntu-srslab-modcon:v1.0
 
 * Run the docker images
 ```bash
-docker run -it -p 8080:8080 -p 3000:3000 liuyedocker/ntusrslab-modcon:v1.0
+docker run -it -p 8080:8080 -p 3000:3000 liuyedocker/ntusrslab-modcon:v1.1
 ```
    The ModCon website application can be assessed on: http://localhost:8080/.
 ### Get Started
