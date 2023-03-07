@@ -34,9 +34,9 @@ app.get('/clients', (req, res) => {
   res.send(Object.keys(io.sockets.clients().connected))
 })
 // start  fisco-bcos network
-shell.exec("cd ../fisco-bcos && ./quickstart.sh ");
+// shell.exec("cd ../fisco-bcos && ./quickstart.sh ");
 // start  geth-ethereum network
-// shell.exec("cd ../ethereum/geth-ethereum && ./quickstart.sh &",{async:true} );
+shell.exec("cd ../ethereum/geth-ethereum && ./quickstart.sh &",{async:true} );
 shell.mkdir("-p","./uploads")
 shell.mkdir("-p","./logs")
 

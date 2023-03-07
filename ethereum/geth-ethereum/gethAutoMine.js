@@ -1,8 +1,12 @@
 //gethrun script .
 //function : 1、detect whether there exists one transaction has been submitted 
 //           2、auto mine to enable the transaction in BlockChain
-//console.log(web3.personal.newAccount("123456"));
-//console.log(web3.personal.newAccount("123456"));
+
+// console.log(web3);
+if (eth.accounts.length ==0){
+   personal.newAccount("123456");
+   personal.newAccount("123456");
+}
 console.log(eth.accounts);
 var primary = eth.accounts[0];
 personal.unlockAccount(primary,"123456",200*60*60);
