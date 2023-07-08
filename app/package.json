@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.4.0",
-    "@vue/cli-plugin-babel": "4.1.1",
+    "@vue/cli-plugin-babel": "5.0.8",
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
     "collections": "^5.1.11",
@@ -20,7 +20,7 @@
     "js-beautify": "^1.11.0",
     "json-stringify-pretty-compact": "^2.0.0",
     "konva": "^6.0.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^9.0.0",
     "sass-loader": "^8.0.2",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
@@ -35,8 +35,8 @@
     "vue-socket.io": "^3.0.9"
   },
   "devDependencies": {
-    "@vue/cli-plugin-eslint": "4.1.1",
-    "@vue/cli-service": "4.1.1",
+    "@vue/cli-plugin-eslint": "5.0.8",
+    "@vue/cli-service": "5.0.8",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.0.1",
